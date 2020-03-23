@@ -4,21 +4,21 @@
       <page-header :icon="headerItem.icon">
         {{ headerItem.title }}
       </page-header>
-      <div class="UpdatedAt">
+      <!-- <div class="UpdatedAt">
         <span>{{ $t('最終更新') }} </span>
         <time :datetime="updatedAt">{{ Data.lastUpdate }}</time>
       </div>
       <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="Annotation">
         <span>{{ $t('注釈') }} </span>
-      </div>
+      </div> -->
     </div>
-    <whats-new class="mb-4" :items="newsItems" />
+    <!-- <whats-new class="mb-4" :items="newsItems" />
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
       :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
       :btn-text="$t('相談の手順を見る')"
-    />
+    /> -->
     <v-row class="DataBlock">
       <!-- <confirmed-cases-details-card /> -->
       <!-- <tested-cases-details-card /> -->
@@ -40,13 +40,13 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
-import WhatsNew from '@/components/WhatsNew.vue'
-import StaticInfo from '@/components/StaticInfo.vue'
+// import WhatsNew from '@/components/WhatsNew.vue'
+// import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
-import News from '@/data/news.json'
+// import News from '@/data/news.json'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
+// import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
 // import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
@@ -62,8 +62,8 @@ import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 export default Vue.extend({
   components: {
     PageHeader,
-    WhatsNew,
-    StaticInfo,
+    // WhatsNew,
+    // StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard
     // ConfirmedCasesDetailsCard,
@@ -82,20 +82,20 @@ export default Vue.extend({
       Data,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('都内の最新感染動向')
-      },
-      newsItems: News.newsItems
+        title: this.$t('石川県内の最新感染動向')
+      }
+      // newsItems: News.newsItems
     }
     return data
   },
-  computed: {
-    updatedAt() {
-      return convertDatetimeToISO8601Format(this.$data.Data.lastUpdate)
-    }
-  },
+  // computed: {
+  //   updatedAt() {
+  //     return convertDatetimeToISO8601Format(this.$data.Data.lastUpdate)
+  //   }
+  // },
   head(): MetaInfo {
     return {
-      title: this.$t('都内の最新感染動向') as string
+      title: this.$t('石川県内の最新感染動向') as string
     }
   }
 })
