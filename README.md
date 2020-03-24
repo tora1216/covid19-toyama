@@ -1,8 +1,8 @@
 # 石川県 新型コロナウイルス感染症対策サイト（非公式）
 
-![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg)
+![](https://ishikawacorona.s3-ap-northeast-1.amazonaws.com/readmeishikawa.png)
 
-[![石川県 新型コロナウイルス感染症対策サイト](/static/readishikawa.png)](https://stopcovid19.metro.tokyo.lg.jp/)
+[![石川県 新型コロナウイルス感染症対策サイト](https://ishikawacorona.s3-ap-northeast-1.amazonaws.com/readmeishikawa.png)](https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html)
 
 ## 行動原則
 詳しくは[サイト構築にあたっての行動原則](./CODE_OF_CONDUCT.md)を御覧ください。
