@@ -144,11 +144,11 @@ export default Vue.extend({
           title: this.$t('石川県内の最新感染動向'),
           link: this.localePath('/')
         },
-        {
-          icon: 'CovidIcon',
-          title: this.$t('新型コロナウイルス感染症が心配なときに'),
-          link: this.localePath('/flow')
-        },
+        // {
+        //   icon: 'CovidIcon',
+        //   title: this.$t('新型コロナウイルス感染症が心配なときに'),
+        //   link: this.localePath('/flow')
+        // },
         // {
         //   icon: 'ParentIcon',
         //   title: this.$t('お子様をお持ちの皆様へ'),
@@ -161,7 +161,7 @@ export default Vue.extend({
         },
         {
           icon: 'mdi-domain',
-          title: this.$t('企業の皆様・はたらく皆様へ'),
+          title: this.$t('経営に影響を受けている事業者の皆様へ'),
           link: 'https://www.pref.ishikawa.lg.jp/kinyuu/kinyuu/korona.html'
         },
         // {
