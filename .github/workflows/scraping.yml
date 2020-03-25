@@ -1,9 +1,6 @@
 name: scrapingdata
 
 on:
-  push:
-      branches:
-        - development
   schedule:
     - cron: '*/5 * * * * '
 
@@ -57,5 +54,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: development
+          publish_dir: ./data
+          publish_branch: dev-pages
