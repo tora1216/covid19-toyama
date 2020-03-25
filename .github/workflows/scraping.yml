@@ -1,6 +1,9 @@
 name: scrapingdata
 
 on:
+  push:
+      branches:
+        - development
   schedule:
     - cron: '*/5 * * * * '
 
