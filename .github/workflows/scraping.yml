@@ -2,7 +2,7 @@ name: scrapingdata
 
 on:
   schedule:
-    - cron: '0 */2 * * * '
+    - cron: '*/5 * * * * '
 
 jobs:
   scraping:
@@ -31,3 +31,28 @@ jobs:
 
       - name: Run scraping
         run: python ./tool/scraping.py
+      
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn run test
+      - run: yarn run generate:dev --fail-on-page-error
+      - run: "echo \"User-agent: *\nDisallow: /\" > ./dist/robots.txt"
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: dev-pages
