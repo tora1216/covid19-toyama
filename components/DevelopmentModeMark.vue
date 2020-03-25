@@ -5,7 +5,6 @@
       target="_blank"
       rel="noopener"
     >
-      公開サイトへ
     </a> -->
   </div>
 </template>
@@ -37,22 +36,22 @@
 </style>
 
 <script>
-// export default {
-//   name: 'DevelopmentModeMark',
-//   props: {
-//     value: {
-//       type: String,
-//       required: false,
-//       default: ''
-//     }
-//   },
-//   computed: {
-//     isDevelopmentMode: () => {
-//       if (process && process.env && process.env.GENERATE_ENV) {
-//         return process.env.GENERATE_ENV === 'development'
-//       }
-//       return false
-//     }
-//   }
-// }
+export default {
+  name: 'DevelopmentModeMark',
+  props: {
+    value: {
+      type: String,
+      required: false,
+      default: ''
+    }
+  },
+  computed: {
+    isDevelopmentMode: () => {
+      if (process && process.env && process.env.GENERATE_ENV) {
+        return process.env.GENERATE_ENV === 'development'
+      }
+      return false
+    }
+  }
+}
 </script>
