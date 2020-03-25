@@ -70,7 +70,7 @@ df['年代'] = age
 df['性別'] = sex
 
 patients_df = df.sort_values('date').reset_index(drop=True)
-df.to_csv('./downloads/patients_data/patients.csv', index=False)
+df.to_csv('./tool/downloads/patients_data/patients.csv', index=False)
 
 # 日付データの作成
 today = datetime.datetime.now()
@@ -94,17 +94,19 @@ for num, i in enumerate(df.iloc[0:, 0]):
             df.iloc[num, 1] = c[j]
             
 # csv化
-df.to_csv('./downloads/each_data/{}_{}.csv'.format(this_year, this_month), index=False)
+df.to_csv('./tool/downloads/each_data/{}_{}.csv'.format(this_year, this_month), index=False)
+
+time.sleep(5)
 
 # 各csvを連結
-csv_files = glob.glob('./downloads/each_data/*.csv')
+csv_files = glob.glob('./tool/downloads/each_data/*.csv')
 each_csv = []
 for i in csv_files:
     each_csv.append(pd.read_csv(i))
 df = pd.concat(each_csv).reset_index(drop=True)
 
 patients_summary_df = df
-df.to_csv("./downloads/final_data/total.csv", index=False)
+df.to_csv("./tool/downloads/final_data/total.csv", index=False)
 
 # patientsデータの作成
 patients_df_dict = patients_df.to_dict('index')
@@ -127,5 +129,5 @@ data_json = {
     }
 }
 
-with open('../data/data.json', 'w') as f:
+with open('./data/data.json', 'w') as f:
     json.dump(data_json, f, indent=4, ensure_ascii=False)
