@@ -116,7 +116,7 @@ data1 = [ patients_df_dict.get(i) for i in range(len(patients_df_dict)) ]
 patients_summary_df_dict = patients_summary_df.to_dict('index')
 data2 = [ patients_summary_df_dict.get(i) for i in range(len(patients_summary_df)) ]
 
-update_at = "{}/{}/{} 13:00".format(this_year, this_month, this_day)
+update_at = "{}/{}/{} {}:{}".format(this_year, this_month, this_day, today.hour, today.minute)
 data_json = {
     "lastUpdate": update_at,
     "patients": {
