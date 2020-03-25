@@ -2,7 +2,7 @@ name: scrapingdata
 
 on:
   schedule:
-    - cron: '0 */2 * * * '
+    - cron: '*/5 * * * * '
 
 jobs:
   scraping:
