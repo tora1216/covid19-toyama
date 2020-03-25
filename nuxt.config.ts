@@ -37,8 +37,7 @@ const config: Configuration = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content:
-          'https://ishikawacorona.s3-ap-northeast-1.amazonaws.com/readmeishikawa.png'
+        content: 'https://ishikawa-covid19.netlify.com/ogp.png'
       },
       {
         hid: 'twitter:card',
