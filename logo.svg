@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="111" height="28" viewBox="0 0 111 28">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 22.917px;
+        fill: #898989;
+        text-anchor: middle;
+        font-family: HiraKakuProN-W3, "Hiragino Kaku Gothic ProN";
+        font-variant: small-caps;
+      }
+    </style>
+  </defs>
+<g transform="translate(0.000000,28.000000) scale(0.100000,-0.100000)"
+fill="#01A040" stroke="none">
+<path d="M149 218 c-24 -27 -108 -159 -109 -171 0 -18 19 6 68 87 l53 86 54 0
+c30 0 55 -4 55 -8 0 -16 -25 -32 -51 -32 -17 0 -34 -8 -43 -22 -20 -28 -20
+-38 -1 -38 24 0 28 -26 10 -54 -10 -14 -13 -26 -8 -26 9 0 53 70 53 84 0 3
+-11 6 -25 6 -47 0 -22 36 30 42 20 2 35 13 48 36 l19 32 -66 0 c-56 0 -70 -4
+-87 -22z"/>
+<path d="M252 80 c-12 -22 -19 -40 -14 -40 5 0 18 18 31 40 12 22 19 40 14 40
+-4 0 -18 -18 -31 -40z"/>
+<path d="M324 93 c-10 -15 -22 -34 -27 -40 -6 -8 -6 -13 1 -13 11 0 55 70 48
+77 -2 3 -12 -8 -22 -24z"/>
+</g>  <text id="石川県" class="cls-1" x="72.443" y="22.347"><tspan x="72.443">石川県</tspan></text>
+</svg>
