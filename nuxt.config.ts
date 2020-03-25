@@ -21,7 +21,13 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html'
+        content: 'https://ishikawa-covid19.netlify.com/'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content:
+          'https://ishikawacorona.s3-ap-northeast-1.amazonaws.com/readmeishikawa.png'
       },
       {
         hid: 'twitter:card',
