@@ -94,7 +94,7 @@ export default Vue.extend({
         {
           hid: 'author',
           name: 'author',
-          content: this.$tc('東京都')
+          content: this.$tc('石川県')
         },
         {
           hid: 'description',
