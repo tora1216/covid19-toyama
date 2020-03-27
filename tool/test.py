@@ -103,6 +103,7 @@ csv_files = glob.glob('/home/sakura/covid19-ishikawa/tool/downloads/each_data/*.
 each_csv = []
 for i in csv_files:
     each_csv.append(pd.read_csv(i))
-df = pd.concat(each_csv).reset_index(drop=True)
+df = pd.concat(each_csv).reset_index(drop=True).sort_values('日付')
 
-patients_summary_df = df
+patients_summary_df = df.reset_index(drop=True)
+print(patients_summary_df)
