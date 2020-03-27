@@ -105,8 +105,8 @@ for i in csv_files:
     each_csv.append(pd.read_csv(i))
 df = pd.concat(each_csv).reset_index(drop=True)
 
-patients_summary_df = df
-df.to_csv("/home/sakura/covid19-ishikawa/tool/downloads/final_data/total.csv", index=False)
+patients_summary_df = df.sort_values('日付')
+patients_summary_df.to_csv("/home/sakura/covid19-ishikawa/tool/downloads/final_data/total.csv", index=False)
 
 # patientsデータの作成
 patients_df_dict = patients_df.to_dict('index')
