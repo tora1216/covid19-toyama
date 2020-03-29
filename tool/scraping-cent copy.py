@@ -10,11 +10,13 @@ import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
 
+target_path = "/home/sakura/covid19-ishikawa/"
 
 url = 'https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html'
 res = requests.get(url)
 res.encoding = res.apparent_encoding
 soup = BeautifulSoup(res.text, 'html.parser')
+
 
 tmp_contents = soup.find(id='tmp_contents')
 h1_contents = tmp_contents.find_all('h1')
@@ -62,7 +64,7 @@ df['年代'] = age
 df['性別'] = sex
 
 patients_df = df.sort_values('date').reset_index(drop=True)
-patients_df.to_csv('./tool/downloads/patients_data/patients.csv', index=False)
+patients_df.to_csv(target_path + 'tool/downloads/patients_data/patients.csv', index=False)
 
 # 日付データの作成
 today = datetime.datetime.now()
@@ -88,17 +90,17 @@ for num, i in enumerate(df.iloc[0:, 0]):
             df.iloc[num, 1] = c[j]
             
 # csv化
-df.to_csv('./tool/downloads/each_data/{}_{}.csv'.format(this_year, this_month), index=False)
+df.to_csv(target_path + 'tool/downloads/each_data/{}_{}.csv'.format(this_year, this_month), index=False)
 
 # 各csvを連結
 csv_files = glob.glob('./tool/downloads/each_data/*.csv')
 each_csv = []
 for i in csv_files:
     each_csv.append(pd.read_csv(i))
-df = pd.concat(each_csv).reset_index(drop=True)
+df = pd.concat(each_csv).reset_index(drop=True).sort_values('日付')
 
-patients_summary_df = df
-df.to_csv("./tool/downloads/final_data/total.csv", index=False)
+patients_summary_df = df.reset_index(drop=True)
+patients_summary_df.to_csv(target_path + 'tool/downloads/final_data/total.csv', index=False)
 
 # patientsデータの作成
 patients_df_dict = patients_df.to_dict('index')
@@ -121,5 +123,5 @@ data_json = {
     }
 }
 
-with open('./data/data.json', 'w') as f:
+with open(target_path + 'data/data.json', 'w') as f:
     json.dump(data_json, f, indent=4, ensure_ascii=False)
