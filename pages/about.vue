@@ -182,7 +182,7 @@
         path="本サイトで公表しているデータは、{catalogWebsite}からテキストデータをスクレイピングしてきたものになります。"
       >
         <a
-          href="https://portal.data.metro.tokyo.lg.jp/"
+          href="https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html"
           target="_blank"
           rel="noopener"
           place="catalogWebsite"
