@@ -4,30 +4,10 @@
       :title="$t('検査実施人数')"
       :title-id="'number-of-inspection-persons'"
       :chart-id="'number-of-inspection-persons'"
-      :chart-data="graphData"
-      :date="data.date"
+      :chart-data="inspectionPersonsGraph"
+      :date="Data.inspection_persons.date"
       :unit="$t('人')"
-    >
-      <template v-slot:description>
-        <ul>
-          <li>
-            {{ $t('（注）医療機関が保険適用で行った検査は含まれていない') }}
-          </li>
-          <li>
-            {{
-              $t('（注）チャーター機帰国者、クルーズ船乗客等は含まれていない')
-            }}
-          </li>
-          <li>
-            {{
-              $t(
-                '（注）速報値として公開するものであり、後日確定データとして修正される場合あり'
-              )
-            }}
-          </li>
-        </ul>
-      </template>
-    </time-bar-chart>
+    />
   </v-col>
 </template>
 
@@ -41,20 +21,14 @@ export default {
     TimeBarChart
   },
   data() {
-    const formatData = Data.inspection_persons.labels.map((date, i) => {
-      return {
-        日付: date,
-        小計: Data.inspection_persons.datasets[0].data[i]
-      }
-    })
+    // 検査人数
+    const inspectionPersonsGraph = formatGraph(Data.inspection_persons.data)
 
-    // 検査実施人数グラフ
-    const graphData = formatGraph(formatData)
-
-    return {
-      data: Data.inspection_persons,
-      graphData
+    const data = {
+      Data,
+      inspectionPersonsGraph
     }
+    return data
   }
 }
 </script>
