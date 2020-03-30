@@ -82,7 +82,7 @@
             </picture>
           </a> -->
           <a
-            href="https://github.com/Retsuki/covid19-ishikawa"
+            href="https://github.com/Terachan0117/covid19-toyama"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
