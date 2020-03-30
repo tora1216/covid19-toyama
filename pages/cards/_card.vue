@@ -139,14 +139,14 @@ export default {
     return data
   },
   head() {
-    const url = 'https://ishikawa-covid19.netlify.com/'
+    const url = 'https://stopcovid19-toyama.netlify.com/'
     const timestamp = new Date().getTime()
     const ogpImage =
       this.$i18n.locale === 'ja'
         ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
         : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}`
     const description = `${this.updatedAt} | ${this.$t(
-      '当サイトは石川県新型コロナウイルス感染症 (COVID-19) に関する最新情報サイトです。'
+      '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報サイトです。'
     )}`
 
     return {
@@ -163,7 +163,7 @@ export default {
           content:
             this.title +
             ' | ' +
-            this.$t('東京都') +
+            this.$t('富山県') +
             ' ' +
             this.$t('新型コロナウイルス感染症') +
             this.$t('対策サイト')
@@ -182,7 +182,7 @@ export default {
           hid: 'og:image',
           property: 'og:image',
           content:
-            'https://ishikawacorona.s3-ap-northeast-1.amazonaws.com/readmeishikawa.png'
+            'https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png'
         },
         {
           hid: 'twitter:image',
