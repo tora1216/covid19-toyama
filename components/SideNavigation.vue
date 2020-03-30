@@ -13,7 +13,7 @@
           <img
             class="SideNavigation-HeaderLogo"
             src="/logo.png"
-            :alt="$t('富山都')"
+            :alt="$t('富山県')"
           />
           <div class="SideNavigation-HeaderText">
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
@@ -99,13 +99,21 @@
             :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
             target="_blank"
             rel="license"
-            class="SideNavigation-LicenseLink"
+            class="SideNavigation-Link"
           >
             {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
           </a>
           {{ $t('の下に提供されています。') }}
           <br />
-          2020 T
+          2020
+          <a
+            :href="$t('https://tera-chan.com')"
+            target="_blank"
+            class="SideNavigation-Link"
+          >
+            {{ $t('Terachan') }}
+          </a>
+          All Rights Reserved.
         </small>
       </footer>
     </div>
@@ -141,28 +149,38 @@ export default Vue.extend({
       return [
         {
           icon: 'mdi-chart-timeline-variant',
-          title: this.$t('石川県内の最新感染動向'),
-          link: this.localePath('/')
+          title: this.$t('県内の最新感染動向'),
+          link: this.localePath('/'),
+          divider: true
         },
         // {
         //   icon: 'CovidIcon',
         //   title: this.$t('新型コロナウイルス感染症が心配なときに'),
         //   link: this.localePath('/flow')
         // },
-        // {
-        //   icon: 'ParentIcon',
-        //   title: this.$t('お子様をお持ちの皆様へ'),
-        //   link: this.localePath('/parent')
-        // },
+        {
+          icon: 'ParentIcon',
+          title: this.$t('お子様をお持ちの皆様へ'),
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#2'
+        },
         {
           icon: 'mdi-account-multiple',
           title: this.$t('県民の皆様へ'),
-          link: 'https://www.pref.ishikawa.lg.jp/kansen/corona.html'
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#3'
         },
         {
           icon: 'mdi-domain',
-          title: this.$t('経営に影響を受けている事業者の皆様へ'),
-          link: 'https://www.pref.ishikawa.lg.jp/kinyuu/kinyuu/korona.html'
+          title: this.$t('企業の皆様・はたらく皆様へ'),
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#5',
+          divider: true
+        },
+        {
+          title: this.$t('富山県公式ホームページ'),
+          link: 'http://www.pref.toyama.jp/'
+        },
+        {
+          title: this.$t('知事からのメッセージ'),
+          link: 'http://www.pref.toyama.jp/cms_sec/1118/kj00020264-056-01.html'
         },
         // {
         //   title: this.$t('東京都新型コロナウイルス感染症対策本部報'),
@@ -170,26 +188,17 @@ export default Vue.extend({
         //     'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html'
         // },
         {
-          title: this.$t('石川県主催等 中止又は延期するイベント等'),
-          link: 'https://www.pref.ishikawa.lg.jp/kenmin/kouhou/eventcancel.html'
+          title: this.$t('富山県主催等 中止又は延期するイベント等'),
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#4'
         },
-        // {
-        //   title: this.$t('知事からのメッセージ'),
-        //   link:
-        //     'https://www.metro.tokyo.lg.jp/tosei/governor/governor/katsudo/2020/03/03_00.html'
-        // },
         {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
-        },
+        }
         // {
         //   title: this.$t('お問い合わせ先一覧'),
         //   link: this.localePath('/contacts')
-        // },
-        {
-          title: this.$t('石川県公式ホームページ'),
-          link: 'https://www.pref.ishikawa.lg.jp/index.html'
-        }
+        // }
       ]
     }
   },
@@ -410,7 +419,15 @@ export default Vue.extend({
   font-weight: bold;
 }
 
-.SideNavigation-LicenseLink {
+.SideNavigation-Link {
+  &:link,
+  &:hover,
+  &:visited,
+  &:active {
+    color: inherit;
+    text-decoration: none;
+  }
+
   &:focus {
     outline: 1px dotted $gray-3;
   }
