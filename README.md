@@ -1,8 +1,8 @@
-# 石川県 新型コロナウイルス感染症対策サイト（非公式）
+# 富山県 新型コロナウイルス感染症対策サイト
 
-![](https://ishikawacorona.s3-ap-northeast-1.amazonaws.com/readmeishikawa.png)
+![](https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png)
 
-[石川県 新型コロナウイルス感染症対策サイト](https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html)
+[富山県 新型コロナウイルス感染症対策サイト](https://stopcovid19-toyama.netlify.com/)
 
 ## 行動原則
 詳しくは[サイト構築にあたっての行動原則](./CODE_OF_CONDUCT.md)を御覧ください。
@@ -11,6 +11,5 @@
 本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。
 
 ## 翻訳者向け情報
-
 翻訳をお手伝いいただける方は、[こちらのドキュメント](./TRANSLATION.md)を御覧ください。
 
