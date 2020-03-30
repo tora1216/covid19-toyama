@@ -13,7 +13,7 @@ const config: Configuration = {
     htmlAttrs: {
       prefix: 'og: http://ogp.me/ns#'
     },
-    titleTemplate: '%s | 石川県 新型コロナウイルス感染症対策サイト',
+    titleTemplate: '%s | 富山県 新型コロナウイルス感染症対策サイト',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,23 +21,23 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://ishikawa-covid19.netlify.com/'
+        content: 'https://stopcovid19-toyama.netlify.com/'
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: '石川県 新型コロナウイルス感染症対策サイト'
+        content: '富山県 新型コロナウイルス感染症対策サイト'
       },
       {
         hid: 'og:description',
         property: 'og:description',
         content:
-          '当サイトは石川県新型コロナウイルス感染症（COVID-19）に関する最新情報サイトです。'
+          '当サイトは富山県新型コロナウイルス感染症（COVID-19）に関する最新情報サイトです。'
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://ishikawa-covid19.netlify.com/ogp.png'
+        content: 'https://stopcovid19-toyama.netlify.com/ogp.png'
       },
       {
         hid: 'twitter:card',
@@ -47,17 +47,12 @@ const config: Configuration = {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@tokyo_bousai'
+        content: '@terachan_0117'
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@tokyo_bousai'
-      },
-      {
-        hid: 'fb:app_id',
-        property: 'fb:app_id',
-        content: '2879625188795443'
+        content: '@terachan_0117'
       },
       {
         hid: 'note:card',
@@ -131,7 +126,7 @@ const config: Configuration = {
     }
   },
   googleAnalytics: {
-    id: 'UA-150971012-1'
+    id: 'UA-93021756-8'
   },
   build: {
     postcss: {
@@ -154,7 +149,7 @@ const config: Configuration = {
     // hardSource: process.env.NODE_ENV === 'development'
   },
   manifest: {
-    name: '石川県 新型コロナウイルス感染症対策サイト',
+    name: '富山県 新型コロナウイルス感染症対策サイト',
     theme_color: '#00a040',
     background_color: '#ffffff',
     display: 'standalone',
