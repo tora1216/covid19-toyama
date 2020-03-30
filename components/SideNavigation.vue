@@ -12,8 +12,8 @@
         <nuxt-link :to="localePath('/')" class="SideNavigation-HeaderLink">
           <img
             class="SideNavigation-HeaderLogo"
-            src="/logo.svg"
-            :alt="$t('東京都')"
+            src="/logo.png"
+            :alt="$t('富山都')"
           />
           <div class="SideNavigation-HeaderText">
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
@@ -93,7 +93,7 @@
             </picture>
           </a>
         </div>
-        <!-- <small class="SideNavigation-Copyright">
+        <small class="SideNavigation-Copyright">
           {{ $t('このサイトの内容物は') }}
           <a
             :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
@@ -105,8 +105,8 @@
           </a>
           {{ $t('の下に提供されています。') }}
           <br />
-          2020 Tokyo Metropolitan Government
-        </small> -->
+          2020 T
+        </small>
       </footer>
     </div>
   </div>
