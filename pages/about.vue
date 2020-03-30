@@ -6,20 +6,23 @@
     <StaticCard>
       <i18n
         tag="p"
-        path="当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、全国の猛者に乗っかって{duz_mk}が開発させていただきました。"
+        path="当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、富山県が提供しているデータを元に{authorWebsite}が開設したものです。"
       >
         <a
-          href="https://twitter.com/duz_mk"
+          href="https://tera-chan.com"
           target="_blank"
           rel="noopener"
-          place="duz_mk"
+          place="authorWebsite"
         >
-          {{ $t('@duz_mk') }}
+          {{ $t('Terachan') }}
         </a>
       </i18n>
       <br />
-      <br />
-      {{ $t('皆さんの健康を願っています。') }}
+      {{
+        $t(
+          '富山県による公式情報と客観的な数値をわかりやすく伝えることで、富山県にお住まいの方や、富山県内に拠点を持つ企業の方、富山県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
+        )
+      }}
     </StaticCard>
     <StaticCard>
       <h3>{{ $t('ブラウザ環境について') }}</h3>
@@ -156,7 +159,7 @@
       <p>
         {{
           $t(
-            '当サイトに掲載されている情報の正確性については万全を期していますが、東京都は利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。'
+            '当サイトに掲載されている情報の正確性については万全を期していますが、Terachanおよび富山県は利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。'
           )
         }}
       </p>
@@ -179,15 +182,15 @@
       <h3>{{ $t('データについて') }}</h3>
       <i18n
         tag="p"
-        path="本サイトで公表しているデータは、{catalogWebsite}からテキストデータをスクレイピングしてきたものになります。"
+        path="当サイトで公表しているデータは、富山県が{catalogWebsite}にて提供しているデータを元にしていますが、必ずしも正確・完全なものとは限りません。当サイトの表示内容について、富山県への直接の問合せは行わないでください。"
       >
         <a
-          href="https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html"
+          href="http://www.pref.toyama.jp/cms_sec/1205/kj00021629.html"
           target="_blank"
           rel="noopener"
           place="catalogWebsite"
         >
-          {{ $t('石川県新型コロナ患者発生状況サイト') }}
+          {{ $t('新型コロナウイルス感染症について（相談件数及び検査件数）') }}
         </a>
       </i18n>
     </StaticCard>
@@ -201,7 +204,7 @@
         }}
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <a
-            href="https://github.com/Retsuki/covid19-ishikawa"
+            href="https://github.com/Terachan0117/covid19-toyama"
             target="_blank"
             rel="noopener"
             place="githubRepo"
@@ -210,6 +213,22 @@
           </a>
         </i18n>
       </p>
+    </StaticCard>
+    <StaticCard>
+      <h3>{{ $t('お問合わせ') }}</h3>
+      <i18n
+        tag="p"
+        path="当サイトに関するお問合わせは{contactWebsite}にて受け付けています。"
+      >
+        <a
+          href="https://tera-chan.com/contact.html"
+          target="_blank"
+          rel="noopener"
+          place="contactWebsite"
+        >
+          {{ $t('Contact | Terachan Official Site') }}
+        </a>
+      </i18n>
     </StaticCard>
   </div>
 </template>
