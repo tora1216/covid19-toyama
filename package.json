@@ -1,8 +1,8 @@
 {
-  "name": "covid19",
+  "name": "stopcovid19-toyama",
   "version": "1.0.0",
-  "description": "石川県 新型コロナウイルス感染症対策サイト",
-  "author": "石川県",
+  "description": "富山県 新型コロナウイルス感染症対策サイト",
+  "author": "富山県",
   "private": true,
   "engines": {
     "node": ">=10.19.0"
