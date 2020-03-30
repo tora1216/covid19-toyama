@@ -7,7 +7,6 @@
       :chart-data="patientsGraph"
       :date="Data.patients.date"
       :unit="$t('人')"
-      :url="'https://www.pref.ishikawa.lg.jp/kansen/coronakennai.html'"
     />
   </v-col>
 </template>
