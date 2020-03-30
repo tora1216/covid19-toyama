@@ -20,14 +20,14 @@
       :btn-text="$t('相談の手順を見る')"
     /> -->
     <v-row class="DataBlock">
-      <!-- <confirmed-cases-details-card /> -->
+      <inspection-persons-number-card />
       <!-- <tested-cases-details-card /> -->
-      <confirmed-cases-attributes-card />
       <confirmed-cases-number-card />
-      <!-- <inspection-persons-number-card /> -->
+      <confirmed-cases-details-card />
+      <confirmed-cases-attributes-card />
       <!-- <tested-number-card /> -->
-      <!-- <telephone-advisory-reports-number-card /> -->
-      <!-- <consultation-desk-reports-number-card /> -->
+      <telephone-advisory-reports-number-card />
+      <consultation-desk-reports-number-card />
       <!-- <metro-card /> -->
       <!-- <agency-card /> -->
       <!-- <shinjuku-visitors-card /> -->
@@ -48,12 +48,12 @@ import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCar
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
-// import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 // import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-// import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-// import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
-// import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
+import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
+import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
 // import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
@@ -65,13 +65,13 @@ export default Vue.extend({
     WhatsNew,
     // StaticInfo,
     ConfirmedCasesNumberCard,
-    ConfirmedCasesAttributesCard
-    // ConfirmedCasesDetailsCard,
+    ConfirmedCasesAttributesCard,
+    ConfirmedCasesDetailsCard,
     // TestedCasesDetailsCard,
     // TestedNumberCard,
-    // InspectionPersonsNumberCard,
-    // TelephoneAdvisoryReportsNumberCard,
-    // ConsultationDeskReportsNumberCard,
+    InspectionPersonsNumberCard,
+    TelephoneAdvisoryReportsNumberCard,
+    ConsultationDeskReportsNumberCard
     // MetroCard,
     // AgencyCard,
     // ShinjukuVisitorsCard,
