@@ -94,7 +94,7 @@
           </a>
         </div>
         <small class="SideNavigation-Copyright">
-          {{ $t('このサイトの内容物は') }}
+          {{ $t('このサイトは富山県の公式サイトではありません。内容物は') }}
           <a
             :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
             target="_blank"
