@@ -174,14 +174,6 @@ export default Vue.extend({
           link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#5',
           divider: true
         },
-        {
-          title: this.$t('富山県公式ホームページ'),
-          link: 'http://www.pref.toyama.jp/'
-        },
-        {
-          title: this.$t('知事からのメッセージ'),
-          link: 'http://www.pref.toyama.jp/cms_sec/1118/kj00020264-056-01.html'
-        },
         // {
         //   title: this.$t('東京都新型コロナウイルス感染症対策本部報'),
         //   link:
@@ -192,13 +184,21 @@ export default Vue.extend({
           link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#4'
         },
         {
+          title: this.$t('知事からのメッセージ'),
+          link: 'http://www.pref.toyama.jp/cms_sec/1118/kj00020264-056-01.html'
+        },
+        {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
-        }
+        },
         // {
         //   title: this.$t('お問い合わせ先一覧'),
         //   link: this.localePath('/contacts')
         // }
+        {
+          title: this.$t('富山県公式ホームページ'),
+          link: 'http://www.pref.toyama.jp/'
+        }
       ]
     }
   },
