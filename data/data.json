@@ -1,36 +1,5 @@
 {
   "lastUpdate": "2020/3/31 17:50",
-  "main_summary": {
-    "date": "2020/3/31 8:30",
-    "attr": "検査実施人数",
-    "value": 83,
-    "children": [{
-      "attr": "陽性患者数",
-      "value": 1,
-      "children": [{
-          "attr": "入院中",
-          "value": 1,
-          "children": [{
-              "attr": "軽症・中等症",
-              "value": 1
-            },
-            {
-              "attr": "重症",
-              "value": 0
-            }
-          ]
-        },
-        {
-          "attr": "退院",
-          "value": 0
-        },
-        {
-          "attr": "死亡",
-          "value": 0
-        }
-      ]
-    }]
-  },
   "inspection_persons": {
     "date": "2020/3/31 17:50",
     "data": [{
