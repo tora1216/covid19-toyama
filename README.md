@@ -1,8 +1,9 @@
 # 富山県 新型コロナウイルス感染症対策サイト
 
-[富山県 新型コロナウイルス感染症対策サイト](https://stopcovid19-toyama.netlify.com/)
-
 ![](https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png)
+
+
+[富山県 新型コロナウイルス感染症対策サイト](https://stopcovid19-toyama.netlify.com/)
 （注）富山県の公式サイトではありません。
 
 ## 行動原則
