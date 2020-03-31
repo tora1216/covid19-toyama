@@ -1,11 +1,14 @@
 <template>
   <div :class="$style.container">
     <h4 id="consult" :class="[$style.heading, $style.fzXLarge]">
-      {{ $t('新型コロナ受診相談窓口') }}
+      {{ $t('新型コロナ受診相談窓口（日本語のみ）') }}
       <small :class="[$style.break, $style.fzRegular, $style.mt5]">{{
         $t('帰国者・接触者 電話相談センター')
       }}</small>
     </h4>
+    <p :class="[$style.open, $style.fzMedium]">
+      <span>{{ $t('24時間対応') }}</span>
+    </p>
     <dl>
       <div :class="$style.daytime">
         <dt :class="[$style.title, $style.fzMedium]">
@@ -13,11 +16,11 @@
         </dt>
         <dd :class="$style.link">
           <a
-            href="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html"
+            href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
             target="_blank"
             rel="noopener"
           >
-            {{ $t('帰国者・接触者相談センター電話番号は富山県厚生部健康課のHPへ') }}
+            {{ $t('各保健所の電話番号は福祉保健局HPへ') }}
             <v-icon size="16">
               mdi-open-in-new
             </v-icon>
@@ -31,10 +34,31 @@
               <span :class="[$style.fzMedium, $style.break, $style.mb10]">
                 {{ $t('平日（夜間）') }}
               </span>
-              {{ $t('夜間・休日は、平日（日中）の電話番号に電話していただくことで、メッセージにより緊急電話番号をご案内します。') }}
+              {{ $t('午後5時から翌朝午前9時') }}
+            </li>
+            <li>
+              <span :class="$style.fzMedium">
+                {{ $t('土日祝 終日') }}
+              </span>
             </li>
           </ul>
         </dt>
+        <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0353204592">03-5320-4592</a>
+          </div>
+          <div
+            v-if="!['ja', 'ja-basic'].includes($i18n.locale)"
+            :class="[$style.phone, $style.fzNumeric]"
+          >
+            <span :class="[$style.fzMedium, $style.break, $style.mb10]">
+              {{ $t('ひまわり') }}
+            </span>
+          </div>
+        </dd>
       </div>
     </dl>
   </div>
