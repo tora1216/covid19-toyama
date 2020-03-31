@@ -59,8 +59,8 @@
               <img src="/line.png" alt="LINE" />
             </picture>
           </a> -->
-          <!-- <a
-            href="https://twitter.com/tokyo_bousai"
+          <a
+            href="https://twitter.com/stopcovidtoyama"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
@@ -69,7 +69,7 @@
               <source srcset="/twitter.webp" type="image/webp" />
               <img src="/twitter.png" alt="Twitter" />
             </picture>
-          </a> -->
+          </a>
           <!-- <a
             href="https://www.facebook.com/tochokoho"
             target="_blank"
