@@ -150,14 +150,14 @@ export default Vue.extend({
         {
           icon: 'mdi-chart-timeline-variant',
           title: this.$t('県内の最新感染動向'),
-          link: this.localePath('/'),
+          link: this.localePath('/')
+        },
+        {
+          icon: 'CovidIcon',
+          title: this.$t('新型コロナウイルス感染症が心配なときは'),
+          link: 'http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html',
           divider: true
         },
-        // {
-        //   icon: 'CovidIcon',
-        //   title: this.$t('新型コロナウイルス感染症が心配なときに'),
-        //   link: this.localePath('/flow')
-        // },
         {
           icon: 'ParentIcon',
           title: this.$t('お子様をお持ちの皆様へ'),
