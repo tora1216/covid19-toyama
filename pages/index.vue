@@ -13,12 +13,14 @@
       </div>
     </div>
     <whats-new class="mb-4" :items="newsItems" />
+    <!--
     <static-info
       class="mb-4"
-      :url="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html"
+      :url="localePath('/flow')"
       :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
-      :btn-text="$t('相談の手順を見る')"
+      :btn-text="$t('詳細を見る')"
     />
+    -->
     <v-row class="DataBlock">
       <inspection-persons-number-card />
       <!-- <tested-cases-details-card /> -->
@@ -41,7 +43,7 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
-import StaticInfo from '@/components/StaticInfo.vue'
+// import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import News from '@/data/news.json'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
@@ -63,7 +65,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
-    StaticInfo,
+    // StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
     ConfirmedCasesDetailsCard,
