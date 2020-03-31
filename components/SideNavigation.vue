@@ -154,7 +154,7 @@ export default Vue.extend({
         },
         {
           icon: 'CovidIcon',
-          title: this.$t('新型コロナウイルス感染症が心配なときは'),
+          title: this.$t('新型コロナウイルス感染症が心配なときに'),
           link: 'http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html',
           divider: true
         },
