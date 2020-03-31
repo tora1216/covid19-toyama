@@ -25,7 +25,7 @@
       <inspection-persons-number-card />
       <!-- <tested-cases-details-card /> -->
       <confirmed-cases-number-card />
-      <confirmed-cases-details-card />
+      <!-- <confirmed-cases-details-card /> -->
       <confirmed-cases-attributes-card />
       <!-- <tested-number-card /> -->
       <telephone-advisory-reports-number-card />
@@ -50,7 +50,7 @@ import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCar
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+// import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 // import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
@@ -68,7 +68,7 @@ export default Vue.extend({
     // StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
-    ConfirmedCasesDetailsCard,
+    // ConfirmedCasesDetailsCard,
     // TestedCasesDetailsCard,
     // TestedNumberCard,
     InspectionPersonsNumberCard,
