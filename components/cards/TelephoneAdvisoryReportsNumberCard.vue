@@ -8,6 +8,9 @@
       :date="Data.contacts.date"
       :unit="$t('件.reports')"
     />
+    <div class="note">
+      {{ $t('※2/27には、2/26までの累計数を含む') }}
+    </div>
     <!-- 件.reports = 窓口相談件数 -->
   </v-col>
 </template>
