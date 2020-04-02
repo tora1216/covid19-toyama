@@ -7,7 +7,7 @@
       :chart-data="querentsGraph"
       :date="Data.querents.date"
       :unit="$t('件.reports')"
-      :description="$t('（注）2/27には、2/26までの累計数を含む')"
+      :description="$t('（注）2月27日には、2月26日までの累計数を含む')"
     />
     <!-- 件.reports = 窓口相談件数 -->
     </time-bar-chart>
