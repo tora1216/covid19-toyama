@@ -5,7 +5,7 @@
       :title-id="'number-of-inspection-persons'"
       :chart-id="'number-of-inspection-persons'"
       :chart-data="graphData"
-      :date="data.date"
+      :date="Data.inspection_persons.date"
       :unit="$t('人')"
     >
       <template v-slot:description>
