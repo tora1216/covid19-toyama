@@ -10,11 +10,7 @@
     />
     <!-- 件.reports = 窓口相談件数 -->
       <template v-slot:description>
-        <ul>
-          <li>
-            {{ $t('（注）2/27には、2/26までの累計数を含む') }}
-          </li>
-        </ul>
+        {{ $t('※（注）2月27日には、2月26日までの累計数を含む') }}
       </template>
     </time-stacked-bar-chart>
   </v-col>
