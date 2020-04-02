@@ -7,9 +7,14 @@
       :chart-data="querentsGraph"
       :date="Data.querents.date"
       :unit="$t('件.reports')"
-      :description="$t('（注）2月27日には、2月26日までの累計数を含む')"
-    />
-    <!-- 件.reports = 窓口相談件数 -->
+    >
+      <template v-slot:description>
+        <ul>
+          <li>
+            {{ $t('（注）2/27には、2/26までの累計数を含む') }}
+          </li>
+        </ul>
+      </template>
     </time-bar-chart>
   </v-col>
 </template>
@@ -18,7 +23,6 @@
 import Data from '@/data/data.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
-
 export default {
   components: {
     TimeBarChart
