@@ -1,4 +1,4 @@
-<template>
+ <template>
   <v-col cols="12" md="6" class="DataCard">
     <time-bar-chart
       :title="$t('新型コロナウイルス感染症に関する一般相談件数')"
@@ -7,10 +7,13 @@
       :chart-data="contactsGraph"
       :date="Data.contacts.date"
       :unit="$t('件.reports')"
-    />
-    <!-- 件.reports = 窓口相談件数 -->
+    >
       <template v-slot:description>
-        {{ $t('※（注）2月27日には、2月26日までの累計数を含む') }}
+        <ul>
+          <li>
+            {{ $t('（注）2/27には、2/26までの累計数を含む') }}
+          </li>
+        </ul>
       </template>
     </time-bar-chart>
   </v-col>
@@ -20,7 +23,6 @@
 import Data from '@/data/data.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
-
 export default {
   components: {
     TimeBarChart
