@@ -8,6 +8,14 @@
       :date="Data.inspection_persons.date"
       :unit="$t('人')"
     />
+      <template v-slot:description>
+        <ul>
+          <li>
+            {{ $t('（注）2/27には、2/26までの累計数を含む') }}
+          </li>
+        </ul>
+      </template>
+    </time-bar-chart>
   </v-col>
 </template>
 
