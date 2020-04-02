@@ -185,7 +185,7 @@ export default Vue.extend({
         },
         {
           title: this.$t('知事からのメッセージ'),
-          link: 'http://www.pref.toyama.jp/cms_sec/1118/kj00020264-056-01.html'
+          link: 'http://www.pref.toyama.jp/cms_sec/1118/kj00021812.html'
         },
         {
           title: this.$t('当サイトについて'),
