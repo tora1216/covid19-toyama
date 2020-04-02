@@ -12,7 +12,7 @@
       <template v-slot:description>
         {{ $t('※（注）2月27日には、2月26日までの累計数を含む') }}
       </template>
-    </time-stacked-bar-chart>
+    </time-bar-chart>
   </v-col>
 </template>
 
