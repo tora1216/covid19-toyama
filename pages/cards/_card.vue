@@ -92,7 +92,7 @@ export default {
         break
       case 'number-of-confirmed-cases':
         title = this.$t('陽性患者数')
-        updatedAt = Data.patients.date
+        updatedAt = Data.patients_summary.date
         break
       case 'attributes-of-confirmed-cases':
         title = this.$t('陽性患者の属性')
@@ -107,11 +107,11 @@ export default {
         updatedAt = Data.inspection_persons.date
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
-        title = this.$t('新型コロナコールセンター相談件数')
+        title = this.$t('新型コロナウイルス感染症に関する一般相談件数')
         updatedAt = Data.contacts.date
         break
       case 'number-of-reports-to-covid19-consultation-desk':
-        title = this.$t('新型コロナ受診相談窓口相談件数')
+        title = this.$t('帰国者・接触者相談センターへの相談件数')
         updatedAt = Data.querents.date
         break
       case 'predicted-number-of-toei-subway-passengers':
