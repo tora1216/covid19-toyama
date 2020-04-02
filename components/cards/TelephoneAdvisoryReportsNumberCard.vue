@@ -9,9 +9,13 @@
       :unit="$t('件.reports')"
     />
     <!-- 件.reports = 窓口相談件数 -->
-    <template v-if="$i18n.locale !== 'ja-basic'" v-slot:additionalNotes>
-      {{ $t('※2/27には、2/26までの累計数を含む') }}
-    </template>
+      <template v-slot:description>
+        <ul>
+          <li>
+            {{ $t('（注）2/27には、2/26までの累計数を含む') }}
+          </li>
+        </ul>
+      </template>
     </time-stacked-bar-chart>
   </v-col>
 </template>
