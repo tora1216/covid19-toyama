@@ -8,5 +8,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Get open data
-      run: curl -X GET -d {} 'http://opendata.pref.toyama.jp/api/3/action/package_show?id=covid19'
+    - name: Test
+      run: git clone 'https://github.com/Terachan0117/covid19-toyama.git'
