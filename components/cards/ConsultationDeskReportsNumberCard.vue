@@ -7,6 +7,7 @@
       :chart-data="querentsGraph"
       :date="Data.querents.date"
       :unit="$t('件.reports')"
+      :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
     >
       <template v-slot:description>
         <ul>
