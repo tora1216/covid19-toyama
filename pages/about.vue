@@ -24,7 +24,6 @@
         )
       }}
       <p class="StaticCard-Note">
-        <span>{{ $t('※') }}</span>
         <span>
           {{
             $t(
