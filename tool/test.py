@@ -22,7 +22,7 @@ data["patients"] = {"date": dt_now,
                     "data": df_patients.to_dict(orient="recodes")}
 
 # 集計データ読み込み
-df_counts = pd.read_csv(COUNTS_FILE, index_col= "年月日", parse_dates=True)
+df_counts = pd.read_csv(COUNTS_FILE)
 
 # 陽性患者数
 df_pats = df_counts.loc[:, ("年月日", "陽性人数")].copy()
