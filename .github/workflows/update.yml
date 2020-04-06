@@ -1,0 +1,12 @@
+name: UPDATE
+on:
+  schedule:
+    - cron: '15 * * * *'
+jobs:
+  my_cron_job:
+    name: update
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello My Cron Job Test
+      run: |
+        echo 'Hello, My Cron Job Test!'
