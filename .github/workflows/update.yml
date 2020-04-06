@@ -1,12 +1,12 @@
-name: UPDATE
+name: Update
+
 on:
   schedule:
-    - cron: '15 * * * *'
+    - cron:  '*/15 * * * *'
+
 jobs:
-  my_cron_job:
-    name: update
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Hello My Cron Job Test
-      run: |
-        echo 'Hello, My Cron Job Test!'
+    - name: Get open data
+      run: curl -X GET -d {} 'http://opendata.pref.toyama.jp/api/3/action/package_show?id=covid19'
