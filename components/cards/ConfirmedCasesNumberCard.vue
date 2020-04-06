@@ -7,6 +7,7 @@
       :chart-data="patientsGraph"
       :date="Data.patients.date"
       :unit="$t('人')"
+      :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
     />
   </v-col>
 </template>
