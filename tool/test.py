@@ -13,7 +13,7 @@ dt_now = datetime.now().strftime('%Y-%m-%d %H:%M')
 data = {"lastUpdate": dt_now}
 
 # 陽性患者の属性データ読み込み
-df_kanjya = pd.read_csv(PATIENTS_FILE, index_col="No", dtype={"年代": "object"})
+df_kanjya = pd.read_csv(PATIENTS_FILE)
 
 # 陽性患者の属性
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
