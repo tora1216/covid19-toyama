@@ -1,6 +1,6 @@
 # coding:utf-8
 
-import datetime
+from datetime import datetime
 import json
 
 import pandas as pd
@@ -15,11 +15,8 @@ def dumps_json(file_name, json_data):
     with open(file_name, "w") as fw:
         json.dump(json_data, fw, ensure_ascii=False, indent=4)
 
-
-JST = datetime.timezone(datetime.timedelta(hours=+9), "JST")
-
 # 現在の時刻
-dt_now = datetime.datetime.now(JST).strftime("%Y/%m/%d %H:%M")
+dt_now = datetime.now()
 
 data = {"lastUpdate": dt_now}
 
