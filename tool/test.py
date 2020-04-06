@@ -13,7 +13,7 @@ dt_now = datetime.now().strftime('%Y-%m-%d %H:%M')
 data = {"lastUpdate": dt_now}
 
 # 陽性患者の属性データ読み込み
-df_kanjya = pd.read_csv(PATIENTS_FILE)
+df_kanjya = pd.read_csv(PATIENTS_FILE, index_col="No", dtype={"年代": "object"})
 
 # 陽性患者の属性
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
@@ -22,7 +22,7 @@ data["patients"] = {"date": dt_now,
                     "data": df_patients.to_dict(orient="recodes")}
 
 # 集計データ読み込み
-df_counts = pd.read_csv(COUNTS_FILE)
+df_counts = pd.read_csv(COUNTS_FILE, index_col= "年月日", parse_dates=True)
 
 # 陽性患者数
 df_pats = df_counts.loc[:, ("年月日", "陽性人数")].copy()
