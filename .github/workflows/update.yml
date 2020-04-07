@@ -1,0 +1,39 @@
+name: Update Data
+
+on:
+  #schedule:
+   #- cron: '0 3 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas
+    - name: Update Data Script
+      run: |
+        TODAY=`date "+%Y%m%d"`
+        git config user.name ${NAME}
+        git config user.email ${EMAIL}
+        git remote set-url origin https://${NAME}:${PASSWORD}@github.com/${NAME}/covid19-toyama
+        git checkout development
+        cd tool
+        curl -O "http://opendata.pref.toyama.jp/files/covid19/${TODAY}/toyama_patients.csv"
+        curl -O "http://opendata.pref.toyama.jp/files/covid19/${TODAY}/toyama_counts.csv"
+        python test.py
+        git add .
+        git commit -m "Update Test ${TODAY}"
+        git push origin development
+      env:
+        NAME: Terachan0117
+        EMAIL: contact@tera-chan.com
+        PASSWORD: ${{ secrets.PASSWORD }}
