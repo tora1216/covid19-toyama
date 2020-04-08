@@ -25,7 +25,7 @@ export default {
     TestedCasesTable
   },
   data() {
-    // 検査陽性者の状況
+    // 検査実施状況
     const testedCases = formatTestedCases(Data.inspection_status_summary)
 
     const data = {

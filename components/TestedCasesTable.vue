@@ -1,32 +1,16 @@
 <template>
   <ul :class="$style.container">
-    <li :class="[$style.box, $style.tall, $style.tested]">
-      <div :class="[$style.pillar]">
-        <div :class="$style.content">
-          <!-- eslint-disable vue/no-v-html-->
-          <span>
-            {{ $t('検査実施人数') }}
-            <br />({{ $t('累計') }})
-          </span>
-          <!-- eslint-enable vue/no-v-html-->
-          <span>
-            <strong>{{ 累計人数 }}</strong>
-            <span :class="$style.unit">{{ $t('人') }}</span>
-          </span>
-        </div>
-      </div>
-    </li>
     <li :class="[$style.box, $style.tall, $style.parent, $style.cases]">
       <div :class="$style.title">
-        {{ $t('検査実施件数') }}
+        {{ $t('検査実施人数') }}
         ({{ $t('累計') }})
       </div>
       <div :class="$style.pillar">
         <div :class="$style.content">
           <span>{{ $t('合計') }}</span>
           <span>
-            <strong>{{ 合計件数 }}</strong>
-            <span :class="$style.unit">{{ $t('件.tested') }}</span>
+            <strong>{{ 累計人数 }}</strong>
+            <span :class="$style.unit">{{ $t('人.tested') }}</span>
           </span>
         </div>
       </div>
@@ -34,10 +18,10 @@
         <li :class="[$style.box, $style.inside]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('都内発生') }}</span>
+              <span>{{ $t('陽性') }}</span>
               <span>
-                <strong>{{ 都内発生件数 }}</strong>
-                <span :class="$style.unit">{{ $t('件.tested') }}</span>
+                <strong>{{ 陽性患者数 }}</strong>
+                <span :class="$style.unit">{{ $t('人.tested') }}</span>
               </span>
             </div>
           </div>
@@ -45,13 +29,10 @@
         <li :class="[$style.box, $style.others]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('その他.graph') }}</span>
-              <span :class="$style.small">{{
-                $t('（チャーター機・クルーズ船等）')
-              }}</span>
+              <span>{{ $t('陰性') }}</span>
               <span>
-                <strong>{{ その他件数 }}</strong>
-                <span :class="$style.unit">{{ $t('件.tested') }}</span>
+                <strong>{{ 陰性患者数 }}</strong>
+                <span :class="$style.unit">{{ $t('人.tested') }}</span>
               </span>
             </div>
           </div>
@@ -71,15 +52,11 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    合計件数: {
+    陽性患者数: {
       type: Number,
       required: true
     },
-    都内発生件数: {
-      type: Number,
-      required: true
-    },
-    その他件数: {
+    陰性患者数: {
       type: Number,
       required: true
     }
