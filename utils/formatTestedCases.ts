@@ -1,18 +1,12 @@
 type DataType = {
   children: [
     {
-      attr: '累計人数'
+      attr: '陽性患者数'
       value: number
-      children: [
-        {
-          attr: '陽性患者数'
-          value: number
-        },
-        {
-          attr: '陰性患者数'
-          value: number
-        }
-      ]
+    },
+    {
+      attr: '陰性患者数'
+      value: number
     }
   ]
 }
