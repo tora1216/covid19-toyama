@@ -23,7 +23,7 @@
       </div>
       <div :class="$style.pillar">
         <div :class="$style.content">
-          <span>{{ $t('合計') }}</span>
+          <span>{{ $t('合計人数') }}</span>
           <span>
             <strong>{{ 累計人数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
@@ -34,7 +34,7 @@
         <li :class="[$style.box, $style.inside]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('陽性') }}</span>
+              <span>{{ $t('陽性人数') }}</span>
               <span>
                 <strong>{{ 陽性人数 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -45,7 +45,7 @@
         <li :class="[$style.box, $style.others]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('陰性') }}</span>
+              <span>{{ $t('陰性人数') }}</span>
               <span>
                 <strong>{{ 陰性人数 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>

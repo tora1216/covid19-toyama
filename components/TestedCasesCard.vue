@@ -38,9 +38,10 @@ ul.notes {
 <script lang="ts">
 import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
+import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 
 export default Vue.extend({
-  components: { DataView },
+  components: { DataView, DataViewBasicInfoPanel },
   props: {
     title: {
       type: String,
@@ -51,6 +52,14 @@ export default Vue.extend({
       default: ''
     },
     date: {
+      type: String,
+      default: ''
+    },
+    info: {
+      type: Object,
+      default: () => {}
+    },
+    url: {
       type: String,
       default: ''
     }
