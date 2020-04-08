@@ -1,4 +1,4 @@
-name: data.json auto update
+name: Auto update
 
 on:
   schedule:
@@ -36,5 +36,5 @@ jobs:
         curl -O http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_counts.csv
         python update.py
         git add .
-        git commit -m "Auto update data.json ${TODAY}"
+        git commit -m "Auto update ${TODAY}"
         git push origin development

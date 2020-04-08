@@ -27,7 +27,7 @@ df_counts = pd.read_csv(COUNTS_FILE)
 
 # 陽性患者数
 df_pats = df_counts.loc[:, ("年月日", "陽性人数")].copy()
-df_pats.rename(columns={"年月日": "公表日", "陽性人数": "小計"}, inplace=True)
+df_pats.rename(columns={"年月日": "日付", "陽性人数": "小計"}, inplace=True)
 data["patients_summary"] = {"date": dt_now, "data": df_pats.to_dict(orient="recodes")}
 
 # 検査実施人数
