@@ -32,7 +32,9 @@
               target="_blank"
               rel="noopener"
             >
-              {{ $t('出典：[コロナウィルス関連データ]富山県ホームページ（{{ url }}）を加工して作成') }}
+              {{ $t('出典：[コロナウィルス関連データ]富山県ホームページ（')}}
+              {{ url }}
+              {{ $t('）を加工して作成') }}
               <v-icon
                 class="ExternalLinkIcon"
                 size="15"
