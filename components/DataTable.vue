@@ -14,9 +14,9 @@
       :mobile-breakpoint="0"
       class="cardTable"
     />
-    <!-- <div class="note">
-      {{ $t('※退院には、死亡退院を含む') }}
-    </div> -->
+    <div class="note">
+      {{ $t('※公表日が本日および前日のデータは、記者会見による速報として公開している') }}
+    </div>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="info.lText"
