@@ -1,8 +1,9 @@
 name: Update Data
 
 on:
-  #schedule:
-   #- cron: '0 3 * * *'
+  schedule:
+    - cron: '57 * * * *'
+  #- cron: '0 3 * * *'
 
 jobs:
   build:
@@ -27,8 +28,8 @@ jobs:
         git remote set-url origin https://${NAME}:${PASSWORD}@github.com/${NAME}/covid19-toyama
         git checkout development
         cd tool
-        curl -O "http://opendata.pref.toyama.jp/files/covid19/${TODAY}/toyama_patients.csv"
-        curl -O "http://opendata.pref.toyama.jp/files/covid19/${TODAY}/toyama_counts.csv"
+        curl -O http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_patients.csv
+        curl -O http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_counts.csv
         python test.py
         git add .
         git commit -m "Update Test ${TODAY}"
