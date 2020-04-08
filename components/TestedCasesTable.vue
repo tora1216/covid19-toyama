@@ -64,6 +64,10 @@ import Vue from 'vue'
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
   props: {
+    累計件数: {
+      type: Number,
+      required: true
+    },
     累計人数: {
       type: Number,
       required: true
