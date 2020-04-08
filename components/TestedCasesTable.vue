@@ -11,7 +11,7 @@
           <!-- eslint-enable vue/no-v-html-->
           <span>
             <strong>{{ 累計件数 }}</strong>
-            <span :class="$style.unit">{{ $t('件') }}</span>
+            <span :class="$style.unit">{{ $t('件.tested') }}</span>
           </span>
         </div>
       </div>
