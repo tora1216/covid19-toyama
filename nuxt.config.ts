@@ -37,7 +37,7 @@ const config: Configuration = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://stopcovid19-toyama.netlify.com/ogp.png'
+        content: 'https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png'
       },
       {
         hid: 'twitter:card',
