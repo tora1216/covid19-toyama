@@ -32,7 +32,7 @@
               target="_blank"
               rel="noopener"
             >
-              {{$t('[コロナウィルス関連データ]富山県HP(')}}{{url}}{{$t(')を加工して作成')}}
+              {{$t('[コロナウィルス関連データ]富山県HP(')}}{{url}}{{$t(')を加工し作成')}}
               <v-icon
                 class="ExternalLinkIcon"
                 size="15"
@@ -396,6 +396,8 @@ export default Vue.extend({
 
     .OpenDataLink {
       text-decoration: none;
+      max-width: 220px;
+      display: block;
 
       .ExternalLinkIcon {
         vertical-align: text-bottom;
