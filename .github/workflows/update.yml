@@ -26,7 +26,7 @@ jobs:
         EMAIL: contact@tera-chan.com
         PASSWORD: ${{ secrets.PASSWORD }}
       run: |
-        TODAY=`date "+%Y%m%d"`
+        TODAY=`date "+%Y-%m-%d %H:%M"`
         git config user.name ${NAME}
         git config user.email ${EMAIL}
         git remote set-url origin https://${NAME}:${PASSWORD}@github.com/${NAME}/covid19-toyama
