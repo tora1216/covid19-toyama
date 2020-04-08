@@ -15,7 +15,7 @@
       class="cardTable"
     />
     <div class="note">
-      {{ $t('※公表日が直近のデータには、記者会見による速報として公開しているものが含まれる') }}
+      {{ $t('※公表日が直近のデータには、記者会見による速報として公開しているものを含む') }}
     </div>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
