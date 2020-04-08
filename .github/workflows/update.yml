@@ -2,7 +2,7 @@ name: data.json auto update
 
 on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 3,9 * * *'
 
 jobs:
   build:
@@ -34,7 +34,7 @@ jobs:
         cd tool
         curl -O http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_patients.csv
         curl -O http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_counts.csv
-        python test.py
+        python update.py
         git add .
         git commit -m "Auto update data.json ${TODAY}"
         git push origin development
