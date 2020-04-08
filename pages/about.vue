@@ -194,12 +194,12 @@
         path="当サイトで公表しているデータは、富山県が{catalogWebsite}にて提供しているデータや記者会見等を元にしていますが、必ずしも正確・完全なものとは限りません。当サイトの表示内容について、富山県への直接の問合せは行わないでください。"
       >
         <a
-          href="http://www.pref.toyama.jp/cms_sec/1205/kj00021629.html"
+          href="http://opendata.pref.toyama.jp/dataset/covid19"
           target="_blank"
           rel="noopener"
           place="catalogWebsite"
         >
-          {{ $t('新型コロナウイルス感染症について（相談件数及び検査件数）') }}
+          {{ $t('富山県オープンデータポータルサイト') }}
         </a>
       </i18n>
     </StaticCard>
