@@ -7,7 +7,7 @@
       :chart-option="{}"
       :date="Data.patients.date"
       :info="sumInfoOfPatients"
-      :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
+      :url="'http://opendata.pref.toyama.jp/dataset/covid19/resource/f3cd8c90-bf77-4072-96a3-96bd5942ff20'"
     />
   </v-col>
 </template>
