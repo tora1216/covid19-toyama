@@ -5,7 +5,7 @@
         <div :class="$style.content">
           <!-- eslint-disable vue/no-v-html-->
           <span>
-            {{ $t('検査実施件数') }}
+            {{ $t('実施件数') }}
             <br />({{ $t('累計') }})
           </span>
           <!-- eslint-enable vue/no-v-html-->
@@ -18,7 +18,7 @@
     </li>
     <li :class="[$style.box, $style.tall, $style.parent, $style.cases]">
       <div :class="$style.title">
-        {{ $t('検査実施人数') }}
+        {{ $t('実施人数') }}
         ({{ $t('累計') }})
       </div>
       <div :class="$style.pillar">
@@ -36,7 +36,7 @@
             <div :class="$style.content">
               <span>{{ $t('陽性') }}</span>
               <span>
-                <strong>{{ 陽性患者数 }}</strong>
+                <strong>{{ 陽性人数 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -47,7 +47,7 @@
             <div :class="$style.content">
               <span>{{ $t('陰性') }}</span>
               <span>
-                <strong>{{ 陰性患者数 }}</strong>
+                <strong>{{ 陰性人数 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -72,11 +72,11 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    陽性患者数: {
+    陽性人数: {
       type: Number,
       required: true
     },
-    陰性患者数: {
+    陰性人数: {
       type: Number,
       required: true
     }

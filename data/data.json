@@ -3,11 +3,11 @@
     "inspection_status_summary": {
         "date": "2020-04-08 22:51",
         "children": [{
-            "attr": "陽性患者数",
+            "attr": "陽性人数",
             "value": 14
           },
           {
-            "attr": "陰性患者数",
+            "attr": "陰性人数",
             "value": 399
           }
         ]
