@@ -2,8 +2,7 @@ name: Update Data
 
 on:
   schedule:
-    - cron: '3 * * * *'
-  #- cron: '0 3 * * *'
+    - cron: '15 * * * *'
 
 jobs:
   build:
@@ -21,6 +20,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install pandas
     - name: Update Data Script
+      env:
+        TZ: Asia/Tokyo
+        NAME: Terachan0117
+        EMAIL: contact@tera-chan.com
+        PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         TODAY=`date "+%Y%m%d"`
         git config user.name ${NAME}
@@ -34,7 +38,3 @@ jobs:
         git add .
         git commit -m "Update Test ${TODAY}"
         git push origin development
-      env:
-        NAME: Terachan0117
-        EMAIL: contact@tera-chan.com
-        PASSWORD: ${{ secrets.PASSWORD }}
