@@ -5,8 +5,10 @@ import pandas as pd
 import codecs
 import json
 
-COUNTS_FILE = "toyama_counts.csv"
+# 陽性患者の属性データ
 PATIENTS_FILE = "toyama_patients.csv"
+# 集計データ
+COUNTS_FILE = "toyama_counts.csv"
 
 # 現在時刻
 dt_now = datetime.now().strftime('%Y-%m-%d %H:%M')
@@ -18,8 +20,7 @@ df_kanjya = pd.read_csv(PATIENTS_FILE)
 # 陽性患者の属性
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
 df_patients = df_kanjya.loc[:, ("公表日", "居住地", "年代", "性別", "職業")]
-data["patients"] = {"date": dt_now,
-                    "data": df_patients.to_dict(orient="recodes")}
+data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="recodes")}
 
 # 集計データ読み込み
 df_counts = pd.read_csv(COUNTS_FILE)
@@ -32,8 +33,7 @@ data["patients_summary"] = {"date": dt_now, "data": df_pats.to_dict(orient="reco
 # 検査実施人数
 df_insp = df_counts.loc[:, ("年月日", "検査実施人数")].copy()
 df_insp.rename(columns={"年月日": "日付", "検査実施人数": "小計"}, inplace=True)
-data["inspection_persons"] = {"date": dt_now,
-                              "data": df_insp.to_dict(orient="recodes")}
+data["inspection_persons"] = {"date": dt_now, "data": df_insp.to_dict(orient="recodes")}
 
 # 一般相談件数
 df_contacts = df_counts.loc[:, ("年月日", "一般相談件数")].copy()
@@ -46,5 +46,6 @@ df_querents.rename(columns={"年月日": "日付", "帰国者相談件数": "小
 data["querents"] = {"date": dt_now, "data": df_querents.to_dict(orient="recodes")}
 
 # data.json作成
-df_result = codecs.open('./data/data.json', 'w', 'utf-8')
+# df_result = codecs.open('./data/data.json', 'w', 'utf-8')
+df_result = codecs.open('data.json', 'w', 'utf-8')
 json.dump(data, df_result, ensure_ascii=False, indent=4)
