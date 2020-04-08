@@ -17,7 +17,6 @@
 
 <style lang="scss" module>
 ul.notes {
-  margin-top: 10px;
   margin-bottom: 0;
   padding-left: 0 !important;
   font-size: 12px;

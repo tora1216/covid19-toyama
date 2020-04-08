@@ -1,5 +1,21 @@
 <template>
   <ul :class="$style.container">
+    <li :class="[$style.box, $style.tall, $style.tested]">
+      <div :class="[$style.pillar]">
+        <div :class="$style.content">
+          <!-- eslint-disable vue/no-v-html-->
+          <span>
+            {{ $t('検査実施件数') }}
+            <br />({{ $t('累計') }})
+          </span>
+          <!-- eslint-enable vue/no-v-html-->
+          <span>
+            <strong>{{ 累計件数 }}</strong>
+            <span :class="$style.unit">{{ $t('件') }}</span>
+          </span>
+        </div>
+      </div>
+    </li>
     <li :class="[$style.box, $style.tall, $style.parent, $style.cases]">
       <div :class="$style.title">
         {{ $t('検査実施人数') }}
@@ -10,7 +26,7 @@
           <span>{{ $t('合計') }}</span>
           <span>
             <strong>{{ 累計人数 }}</strong>
-            <span :class="$style.unit">{{ $t('人.tested') }}</span>
+            <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
       </div>
@@ -21,7 +37,7 @@
               <span>{{ $t('陽性') }}</span>
               <span>
                 <strong>{{ 陽性患者数 }}</strong>
-                <span :class="$style.unit">{{ $t('人.tested') }}</span>
+                <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
           </div>
@@ -32,7 +48,7 @@
               <span>{{ $t('陰性') }}</span>
               <span>
                 <strong>{{ 陰性患者数 }}</strong>
-                <span :class="$style.unit">{{ $t('人.tested') }}</span>
+                <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
           </div>
