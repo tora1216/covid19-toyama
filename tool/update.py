@@ -14,6 +14,12 @@ COUNTS_FILE = "toyama_counts.csv"
 dt_now = datetime.now().strftime('%Y-%m-%d %H:%M')
 data = {"lastUpdate": dt_now}
 
+# 集計データ読み込み
+df_counts = pd.read_csv(COUNTS_FILE)
+
+# 検査実施状況
+data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())},{"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
+
 # 陽性患者の属性データ読み込み
 df_kanjya = pd.read_csv(PATIENTS_FILE)
 
@@ -21,9 +27,6 @@ df_kanjya = pd.read_csv(PATIENTS_FILE)
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
 df_patients = df_kanjya.loc[:, ("公表日", "居住地", "年代", "性別", "職業")]
 data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="recodes")}
-
-# 集計データ読み込み
-df_counts = pd.read_csv(COUNTS_FILE)
 
 # 陽性患者数
 df_pats = df_counts.loc[:, ("年月日", "陽性人数")].copy()
