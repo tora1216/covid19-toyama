@@ -32,7 +32,7 @@
               target="_blank"
               rel="noopener"
             >
-              {{ $t('出典：[コロナウィルス関連データ]富山県ホームページ（http://opendata.pref.toyama.jp/dataset/covid19）を加工して作成') }}
+              {{ $t('出典：[コロナウィルス関連データ]富山県ホームページ（{{ url }}）を加工して作成') }}
               <v-icon
                 class="ExternalLinkIcon"
                 size="15"
