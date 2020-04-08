@@ -1,11 +1,11 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date">
+  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <ul :class="$style.notes">
         <li>
           {{
             $t(
-              '（注）陰性患者数以外のデータには、記者会見による速報を情報元としているものを含む場合あり'
+              '（注）陰性人数以外のデータには、記者会見による速報を情報元としているものを含む場合あり'
             )
           }}
         </li>
