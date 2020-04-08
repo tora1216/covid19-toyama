@@ -20,14 +20,6 @@
       :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
       :btn-text="$t('相談の手順を見る')"
     />
-    <!--
-    <static-info
-      class="mb-4"
-      :url="localePath('/flow')"
-      :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
-      :btn-text="$t('詳細を見る')"
-    />
-    -->
     <v-row class="DataBlock">
       <!-- <tested-cases-details-card /> -->
       <confirmed-cases-attributes-card />
@@ -50,7 +42,7 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
-// import StaticInfo from '@/components/StaticInfo.vue'
+import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import News from '@/data/news.json'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
@@ -72,7 +64,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
-    // StaticInfo,
+    StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
     // ConfirmedCasesDetailsCard,
