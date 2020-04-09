@@ -3,7 +3,7 @@ name: Auto update
 on:
   schedule:
     #- cron: '0 1,3,9 * * *'
-    - cron: '17 * * * *'
+    - cron: '27 * * * *'
 
 jobs:
   build:
@@ -36,6 +36,7 @@ jobs:
         curl -O http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_patients.csv
         curl -O http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_counts.csv
         python update.py
-        git add *
+        cd ..
+        git add .
         git commit -m "Auto update ${TODAY}"
         git push origin development
