@@ -55,6 +55,11 @@ const config: Configuration = {
         content: '@terachan_0117'
       },
       {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png'
+      },
+      {
         hid: 'note:card',
         property: 'note:card',
         content: 'summary_large_image'
