@@ -25,7 +25,7 @@ df_kanjya = pd.read_csv(PATIENTS_FILE)
 
 # 陽性患者の属性
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
-df_patients = df_kanjya.loc[:, ("公表日", "居住地", "年代", "性別", "職業")]
+df_patients = df_kanjya.loc[:, ("公表日", "居住地", "年代", "性別", "職業")].fillna("-")
 data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="recodes")}
 
 # 陽性患者数
