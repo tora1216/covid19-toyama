@@ -2,8 +2,7 @@ name: Auto update
 
 on:
   schedule:
-    #- cron: '0 1,3,9 * * *'
-    - cron: '27 * * * *'
+    - cron: '0 1,3,9 * * 1-5'
 
 jobs:
   build:
