@@ -49,6 +49,5 @@ df_querents.rename(columns={"年月日": "日付", "帰国者相談件数": "小
 data["querents"] = {"date": dt_now, "data": df_querents.to_dict(orient="recodes")}
 
 # data.json作成
-# df_result = codecs.open('./data/data.json', 'w', 'utf-8')
-df_result = codecs.open('data.json', 'w', 'utf-8')
+df_result = codecs.open('../data/data.json', 'w', 'utf-8')
 json.dump(data, df_result, ensure_ascii=False, indent=4)
