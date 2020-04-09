@@ -17,11 +17,11 @@ data = {"lastUpdate": dt_now}
 # 集計データ読み込み
 df_counts = pd.read_csv(COUNTS_FILE)
 
-# 検査実施状況
-data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())},{"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
-
 # 陽性患者の属性データ読み込み
 df_kanjya = pd.read_csv(PATIENTS_FILE)
+
+# 検査実施状況
+data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(len(df_kanjya))},{"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
 
 # 陽性患者の属性
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
