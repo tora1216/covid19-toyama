@@ -14,11 +14,9 @@
       :mobile-breakpoint="0"
       class="cardTable"
     />
-    <!--
     <div class="note">
-      {{ $t('※公表日が直近数日のデータには、記者会見による速報を情報元としているものを含む場合あり') }}
+      {{ $t('※公表日が直近数日のデータには、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり') }}
     </div>
-    -->
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="info.lText"
