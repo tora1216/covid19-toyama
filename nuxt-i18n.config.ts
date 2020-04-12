@@ -21,19 +21,33 @@ export default {
       description: 'Japanese'
     },
     {
+      code: 'ja-basic',
+      name: 'やさしい にほんご',
+      iso: 'ja-JP',
+      file: 'ja-Hira.json',
+      description: 'Easy Japanese'
+    },
+    {
       code: 'en',
       name: 'English',
       iso: 'en-US',
       file: 'en.json',
       description: 'English'
     },
-    //{
-    //  code: 'zh-cn',
-    //  name: '简体中文',
-    //  iso: 'zh-CN',
-    //  file: 'zh_CN.json',
-    //  description: 'Simplified Chinese'
-    //},
+    {
+      code: 'zh-cn',
+      name: '简体中文',
+      iso: 'zh-CN',
+      file: 'zh_CN.json',
+      description: 'Simplified Chinese'
+    },
+    {
+      code: 'vi',
+      name: 'Tiếng Việt',
+      iso: 'vi',
+      file: 'vi.json',
+      description: 'Vietnamese'
+    }
     //{
     //  code: 'zh-tw',
     //  name: '繁體中文',
@@ -57,12 +71,5 @@ export default {
     //   file: 'pt_BR.json',
     //   description: 'Portuguese'
     // },
-    {
-      code: 'ja-basic',
-      name: 'やさしい にほんご',
-      iso: 'ja-JP',
-      file: 'ja-Hira.json',
-      description: 'Easy Japanese'
-    }
   ]
 }
