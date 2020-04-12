@@ -34,16 +34,18 @@
       </v-icon>
 
       <nav class="SideNavigation-Menu">
-        <MenuList :items="items" @click="$emit('closeNavi', $event)" />
-        <div
-          v-if="this.$i18n.locales.length > 1"
-          class="SideNavigation-Language"
-        >
-        <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
-            {{ $t('多言語対応選択メニュー') }}
-        </label>
-        <LanguageSelector />
+        <div class="SideNavigation-Language">
+          <div
+            v-if="this.$i18n.locales.length > 1"
+            class="SideNavigation-Language"
+          >
+            <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
+              {{ $t('多言語対応選択メニュー') }}
+            </label>
+            <LanguageSelector />
+          </div>
         </div>
+        <MenuList :items="items" @click="$emit('closeNavi', $event)" />
       </nav>
 
       <footer class="SideNavigation-Footer">
@@ -123,7 +125,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
-// import LanguageSelector from '@/components/LanguageSelector.vue'
+import LanguageSelector from '@/components/LanguageSelector.vue'
 import MenuList from '@/components/MenuList.vue'
 
 type Item = {
@@ -135,7 +137,7 @@ type Item = {
 
 export default Vue.extend({
   components: {
-    // LanguageSelector,
+    LanguageSelector,
     MenuList
   },
   props: {
@@ -174,11 +176,6 @@ export default Vue.extend({
           link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#6',
           divider: true
         },
-        // {
-        //   title: this.$t('東京都新型コロナウイルス感染症対策本部報'),
-        //   link:
-        //     'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html'
-        // },
         {
           title: this.$t('富山県主催等 中止又は延期するイベント等'),
           link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#5'
@@ -191,10 +188,6 @@ export default Vue.extend({
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
         },
-        // {
-        //   title: this.$t('お問い合わせ先一覧'),
-        //   link: this.localePath('/contacts')
-        // }
         {
           title: this.$t('富山県公式ホームページ'),
           link: 'http://www.pref.toyama.jp/'
@@ -365,10 +358,6 @@ export default Vue.extend({
   @include lessThan($small) {
     padding-top: 50px;
   }
-}
-
-.SideNavigation-Language {
-  padding-top: 20px;
 }
 
 .SideNavigation-LanguageLabel {
