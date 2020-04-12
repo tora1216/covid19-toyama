@@ -1,5 +1,5 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
+  <data-view :title="title" :title-id="titleId" :date="date">
     <template v-slot:button>
       <span />
     </template>
@@ -12,6 +12,7 @@
       :height="240"
       :fixed-header="true"
       :mobile-breakpoint="0"
+      :custom-sort="customSort"
       class="cardTable"
     />
     <div class="note">
@@ -30,6 +31,7 @@
 <style lang="scss">
 .cardTable {
   &.v-data-table {
+    box-shadow: 0 -20px 12px -12px #0003 inset;
     th {
       padding: 8px 10px;
       height: auto;
@@ -37,32 +39,26 @@
       white-space: nowrap;
       color: $gray-2;
       font-size: 12px;
-
       &.text-center {
         text-align: center;
       }
     }
-
     tbody {
       tr {
         color: $gray-1;
-
         td {
           padding: 8px 10px;
           height: auto;
           font-size: 12px;
-
           &.text-center {
             text-align: center;
           }
         }
-
         &:nth-child(odd) {
           td {
             background: rgba($gray-4, 0.3);
           }
         }
-
         &:not(:last-child) {
           td:not(.v-data-table__mobile-row) {
             border: none;
@@ -75,7 +71,6 @@
     }
   }
 }
-
 .note {
   padding: 8px;
   font-size: 12px;
@@ -87,7 +82,6 @@
 import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-
 export default Vue.extend({
   components: { DataView, DataViewBasicInfoPanel },
   props: {
@@ -114,13 +108,32 @@ export default Vue.extend({
     url: {
       type: String,
       default: ''
+    },
+    customSort: {
+      type: Function,
+      default(items: Object[], index: string[], isDesc: boolean[]) {
+        items.sort((a: any, b: any) => {
+          let comparison = 0
+          if (String(a[index[0]]) < String(b[index[0]])) {
+            comparison = -1
+          } else if (String(b[index[0]]) < String(a[index[0]])) {
+            comparison = 1
+          }
+          // a と b が等しい場合は上記のif文を両方とも通過するので 0 のままとなる
+          // 降順指定の場合は符号を反転
+          if (comparison !== 0) {
+            comparison = isDesc[0] ? comparison * -1 : comparison
+          }
+          return comparison
+        })
+        return items
+      }
     }
   },
   mounted() {
     const vTables = this.$refs.displayedTable as Vue
     const vTableElement = vTables.$el
     const tables = vTableElement.querySelectorAll('table')
-
     tables.forEach((table: HTMLElement) => {
       table.setAttribute('tabindex', '0')
     })

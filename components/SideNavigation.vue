@@ -16,7 +16,7 @@
             :alt="$t('富山県')"
           />
           <div class="SideNavigation-HeaderText">
-            {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
+            {{ $t('新型コロナウイルス感染症') }}<br />{{
               $t('対策サイト(富山県公認)')
             }}
           </div>
@@ -94,7 +94,7 @@
           </a>
         </div>
         <small class="SideNavigation-Copyright">
-          {{ $t('内容物は') }}
+          {{ $t('このサイトの内容物は') }}
           <a
             :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
             target="_blank"
