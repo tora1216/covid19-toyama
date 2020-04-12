@@ -12,7 +12,7 @@
   "富山県主催等 中止又は延期するイベント等": "Cancellation or postponement of events held by the Toyama Prefecture",
   "知事からのメッセージ": "Message from Governor on COVID-19",
   "富山県公式ホームページ": "Official website of the Toyama Prefecture",
-  "このサイトの内容物は": " Content on This Site is Licensed Under a",
+  "このサイトの内容物は": "Content on This Site is Licensed Under a",
   "クリエイティブ・コモンズ 表示 4.0 ライセンス": " Creative Commons Attribution 4.0 International License",
   "の下に提供されています。": " provided under ",
 
@@ -25,8 +25,8 @@
   "自分や家族の症状に不安や心配があればまずは電話相談をどうぞ": "Consult over the phone if you have any concerns",
   "相談の手順を見る": "Consultation flowchart",
 
-  "{date} 更新": " Last update: {date}",
-  "{date} までの累計": " Cumulative total as of {date}",
+  "{date} 更新": "Last update: {date}",
+  "{date} までの累計": "Cumulative total as of {date}",
   "人": " persons",
   "件": {
     "tested": "cases",
