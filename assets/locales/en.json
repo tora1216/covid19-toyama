@@ -63,6 +63,7 @@
   "性別": "Gender",
   "{age}代": "{age}s",
   "10歳未満": "Under 10 years old",
+  "90歳以上": "Over 90 years old",
   "男性": "Male",
   "女性": "Female",
   "北海道": "Hokkaido",
