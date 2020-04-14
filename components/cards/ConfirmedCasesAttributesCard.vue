@@ -52,7 +52,7 @@ export default {
         const age = row['年代'].substring(0, 2)
         row['年代'] = this.$t('{age}代', { age })
       } else {
-        row['年代'] = this.getTranslatedWording(row['年代'])
+        row['年代'] = this.$t(this.getTranslatedWording(row['年代']))
       }
     }
 
@@ -71,7 +71,7 @@ export default {
       if(value === '90代'){
         value='90歳以上'
       }
-      return this.$t(value)
+      return value
     },
     // '10歳未満' < '10代' となるようにソートする
     customSort(items, index, isDesc) {
