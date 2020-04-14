@@ -47,12 +47,20 @@ export default {
       row['居住地'] = this.$t(row['居住地'])
       row['性別'] = this.$t(row['性別'])
       // row['退院'] = this.$t(row['退院'])
+      
+      // 定義書準拠形式に変換
+      if(row['年代']  === '10代未満'){
+        row['年代'] ='10歳未満'
+      }
+      if(row['年代']  === '90代'){
+        row['年代'] ='90歳以上'
+      }
 
       if (row['年代'].substr(-1, 1) === '代') {
         const age = row['年代'].substring(0, 2)
         row['年代'] = this.$t('{age}代', { age })
       } else {
-        row['年代'] = this.$t(this.getTranslatedWording(row['年代']))
+        row['年代'] = this.$t(row['年代'])
       }
     }
 
@@ -64,15 +72,6 @@ export default {
     return data
   },
   methods: {
-    getTranslatedWording(value) {
-      if(value === '10代未満'){
-        value='10歳未満'
-      }
-      if(value === '90代'){
-        value='90歳以上'
-      }
-      return value
-    },
     // '10歳未満' < '10代' となるようにソートする
     customSort(items, index, isDesc) {
       const lt10 = this.$t('10歳未満').toString()

@@ -5,10 +5,11 @@
 
 | Name | GitHub | Twitter | Contribution |
 | --- | --- | --- | --- |
+| Retsuki | [@Retsuki](https://github.com/Retsuki) | [@duz_mk](https://twitter.com/duz_mk) | Project facilitation |
 | Hajime Mugishima | [@mugi-uno](https://github.com/mugi-uno) | [@mugi_uno](https://twitter.com/mugi_uno) | Project facilitation |
 | iga50storms | [@iga50storms](https://github.com/iga50storms) |  | API Layout |
 | imabari | [@imabari](https://github.com/imabari) |  | Coding |
-| Luonghenrygate | [@Luonghenrygate](https://github.com/Luonghenrygate) |  | Translation |
+| Luong Henry Gate | [@Luonghenrygate](https://github.com/Luonghenrygate) |  | Translation |
 
 
 ご協力に感謝です！！！
