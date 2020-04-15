@@ -31,9 +31,7 @@ export default {
 
     const sumInfoOfPatients = {
       lText: Data['patients']['data'].length,
-      sText: this.$t('{date} までの累計', {
-        date: Data['patients']['date']
-      }),
+      sText: '',
       unit: this.$t('人')
     }
 
