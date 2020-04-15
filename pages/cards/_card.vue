@@ -42,6 +42,14 @@
     <chiyoda-visitors-card
       v-else-if="this.$route.params.card == 'chiyoda-visitors'"
     />
+    <patients-by-residence-card
+      v-else-if="
+        this.$route.params.card == 'number-of-confirmed-cases-by-residence'
+      "
+    />
+    <patients-by-age-card
+      v-else-if="this.$route.params.card == 'number-of-confirmed-cases-by-age'"
+    />
   </div>
 </template>
 
@@ -63,6 +71,8 @@ import MetroCard from '@/components/cards/MetroCard.vue'
 import AgencyCard from '@/components/cards/AgencyCard.vue'
 import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
 import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
+import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
+import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 
 export default {
   components: {
@@ -77,7 +87,9 @@ export default {
     MetroCard,
     AgencyCard,
     ShinjukuVisitorsCard,
-    ChiyodaVisitorsCard
+    ChiyodaVisitorsCard,
+    PatientsByResidenceCard,
+    PatientsByAgeCard
   },
   data() {
     let title, updatedAt
@@ -129,6 +141,14 @@ export default {
       case 'chiyoda-visitors':
         title = this.$t('千代田区エリアの来訪者数の推移（参考値）')
         updatedAt = ChiyodaData.date
+        break
+      case 'patients-by-residence':
+        title = this.$t('居住地別陽性患者数')
+        updatedAt = Data.patients_by_residence.date
+        break
+      case 'patients-by-age':
+        title = this.$t('年代別陽性患者数')
+        updatedAt = Data.patients_by_age.date
         break
     }
 

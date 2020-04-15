@@ -23,6 +23,8 @@
     <v-row class="DataBlock">
       <tested-cases-details-card />
       <confirmed-cases-attributes-card />
+      <patients-by-residence-card />
+      <patients-by-age-card />
       <confirmed-cases-number-card />
       <!-- <confirmed-cases-details-card /> -->
       <inspection-persons-number-card />
@@ -59,6 +61,8 @@ import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDe
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
 // import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
 // import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
+import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
+import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 
 export default Vue.extend({
   components: {
@@ -72,11 +76,13 @@ export default Vue.extend({
     // TestedNumberCard,
     InspectionPersonsNumberCard,
     TelephoneAdvisoryReportsNumberCard,
-    ConsultationDeskReportsNumberCard
+    ConsultationDeskReportsNumberCard,
     // MetroCard,
     // AgencyCard,
     // ShinjukuVisitorsCard,
-    // ChiyodaVisitorsCard
+    // ChiyodaVisitorsCard,
+    PatientsByResidenceCard,
+    PatientsByAgeCard
   },
   data() {
     const data = {

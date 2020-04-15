@@ -3,7 +3,7 @@
     <template v-slot:description>
       <slot name="description" />
     </template>
-    <template v-slot:button>
+    <template v-if="showButton === true" v-slot:button>
       <data-selector
         v-model="dataKind"
         :target-id="chartId"
@@ -48,7 +48,6 @@ import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import { single as color } from '@/utils/colors'
-
 type Data = {
   dataKind: 'transition' | 'cumulative'
   canvas: boolean
@@ -105,8 +104,8 @@ type Props = {
   date: string
   unit: string
   url: string
+  showButton: boolean
 }
-
 const options: ThisTypedComponentOptionsWithRecordProps<
   Vue,
   Data,
@@ -146,6 +145,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     url: {
       type: String,
       default: ''
+    },
+    showButton: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   data: () => ({
@@ -166,10 +170,16 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayInfo() {
       if (this.dataKind === 'transition') {
         return {
-          lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
-          sText: `${this.$t('実績値')}（${this.$t('前日比')}: ${
-            this.displayTransitionRatio
-          } ${this.unit}）`,
+          lText: this.showButton
+            ? `${this.chartData.slice(-1)[0].transition.toLocaleString()}`
+            : this.chartData[
+                this.chartData.length - 1
+              ].cumulative.toLocaleString(),
+          sText: this.showButton
+            ? `${this.$t('実績値')}（${this.$t('前日比')}: ${
+                this.displayTransitionRatio
+              } ${this.unit}）`
+            : ``,
           unit: this.unit
         }
       }
@@ -255,7 +265,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 maxRotation: 0,
                 minRotation: 0,
                 callback: (label: string) => {
-                  return label.split('/')[1]
+                  return this.showButton ? label.split('/')[1] : label
                 }
               }
             },
@@ -370,6 +380,5 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     }
   }
 }
-
 export default Vue.extend(options)
 </script>
