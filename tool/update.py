@@ -25,7 +25,7 @@ data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽�
 
 # 陽性患者の属性
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
-df_patients = df_kanjya.loc[:, ("公表日", "居住地", "年代", "性別")].fillna("-")
+df_patients = df_kanjya.loc[:, ("No", "公表日", "居住地", "年代", "性別")].fillna("-")
 data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="recodes")}
 
 # 居住地別陽性患者数

@@ -45,6 +45,11 @@ export default {
       row['居住地'] = this.$t(row['居住地'])
       row['性別'] = this.$t(row['性別'])
       // row['退院'] = this.$t(row['退院'])
+
+      // 0埋め
+      if(String(row['No']).length  === 1){
+        row['No'] = ( '00' + String(row['No']) ).slice( -2 )
+      }
       
       // 定義書準拠形式に変換
       if(row['年代']  === '10代未満'){
