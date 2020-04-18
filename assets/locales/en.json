@@ -41,6 +41,7 @@
   "実績値": "Latest figure",
   "累計値": "Cumulative ",
   "前日比": "Day-over-day change",
+  "（注）症状は陽性公表時点のもの": "(Note) Symptoms are as of the time of positive announcement",
   "（注）陽性人数は、陽性患者の属性データを元に作成": "(Note) Number of positives is created based on attribute data of positive patients",
   "（注）実施件数および実施人数は、陽性人数と陰性人数の総数": "(Note) The number of cases tested and the number tested are the total number of positive and negative",
   "（注）速報値として公開するものであり、後日確定データとして修正される場合あり": "(Note) The number is published as preliminary figures and may be revised as confirmed data at a later date",
