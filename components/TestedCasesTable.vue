@@ -34,12 +34,12 @@
         <li :class="[$style.box, $style.inside]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('陽性人数') }}</span>
               <span>
-                <strong>
-                {{ 陽性人数 }}
-                <br />({{ $t('累計') }})
-                </strong>
+              {{ $t('陽性人数') }}
+              <br />({{ $t('累計') }})
+              </span>
+              <span>
+                <strong>{{ 陽性人数 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
