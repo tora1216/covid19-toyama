@@ -8,7 +8,7 @@
             <br />({{ $t('累計') }})
           </span>
           <span>
-            <strong>{{ 陽性物数 }}</strong>
+            <strong>{{ 陽性者数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -17,9 +17,12 @@
         <li :class="[$style.box, $style.parent, $style.hospitalized]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('入院中') }}</span>
               <span>
-                <strong>{{ 入院中 }}</strong>
+              {{ $t('入院') }}
+              <br />({{ $t('累計') }})
+              </span>
+              <span>
+                <strong>{{ 入院 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -28,11 +31,17 @@
             <li :class="[$style.box, $style.short, $style.minor]">
               <div :class="$style.pillar">
                 <div :class="$style.content">
-                  <!-- eslint-disable vue/no-v-html-->
-                  <span v-html="$t('軽症・<br />中等症')" />
-                  <!-- eslint-enable vue/no-v-html-->
                   <span>
-                    <strong>{{ 軽症中等症 }}</strong>
+                  {{ $t('無症状') }}
+                  <br />
+                  {{ $t('軽症') }}
+                  <br />
+                  {{ $t('中等症') }}
+                   <br />
+                   ({{ $t('累計') }})
+                  </span>
+                  <span>
+                    <strong>{{ 無症状軽症中等症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
                   </span>
                 </div>
@@ -41,7 +50,10 @@
             <li :class="[$style.box, $style.short, $style.severe]">
               <div :class="$style.pillar">
                 <div :class="$style.content">
-                  <span>{{ $t('重症') }}</span>
+                  <span>
+                  {{ $t('重症') }}
+                   <br />({{ $t('累計') }})
+                  </span>
                   <span>
                     <strong>{{ 重症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
@@ -54,7 +66,10 @@
         <li :class="[$style.box, $style.deceased]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('死亡') }}</span>
+              <span>
+              {{ $t('死亡') }}
+               <br />({{ $t('累計') }})
+               </span>
               <span>
                 <strong>{{ 死亡 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -65,7 +80,10 @@
         <li :class="[$style.box, $style.recovered]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('退院') }}</span>
+              <span>
+              {{ $t('退院') }}
+               <br />({{ $t('累計') }})
+              </span>
               <span>
                 <strong>{{ 退院 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -84,19 +102,15 @@ import Vue from 'vue'
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
   props: {
-    検査実施人数: {
+    陽性者数: {
       type: Number,
       required: true
     },
-    陽性物数: {
+    入院: {
       type: Number,
       required: true
     },
-    入院中: {
-      type: Number,
-      required: true
-    },
-    軽症中等症: {
+    無症状軽症中等症: {
       type: Number,
       required: true
     },

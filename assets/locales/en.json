@@ -50,6 +50,16 @@
   "埋め込み用コード": " Embed Code",
   "埋め込みコードをコピーしました": " Copied the embed code",
 
+  "検査陽性者の状況": "Details of people testing positive",
+  "陽性者数": "Total number of people testing positive",
+  "入院": "Hospitalized",
+  "無症状": "Asymptomatic",
+  "軽症": "Mild",
+  "中等症": "Moderate",
+  "重症": "Severe",
+  "死亡": "Deaths",
+  "退院": "Discharged",
+
   "検査実施状況": "Status of conducted tests",
   "実施件数": "Number of case tested",
   "実施人数": "Number of people tested",

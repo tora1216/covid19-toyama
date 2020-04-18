@@ -1,30 +1,5 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
-    <template v-slot:button>
-      <ul :class="$style.notes">
-        <li>
-          {{
-            $t(
-              '（注）陽性人数は、陽性患者の属性データを元に作成'
-            )
-          }}
-        </li>
-        <li>
-          {{
-            $t(
-              '（注）実施件数および実施人数は、陽性人数と陰性人数の総数'
-            )
-          }}
-        </li>
-        <li>
-          {{
-            $t(
-              '（注）速報値として公開するものであり、後日確定データとして修正される場合あり'
-            )
-          }}
-        </li>
-      </ul>
-    </template>
     <slot />
   </data-view>
 </template>

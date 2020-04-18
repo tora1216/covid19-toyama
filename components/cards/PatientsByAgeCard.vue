@@ -4,14 +4,26 @@
       :title="$t('年代別陽性患者数')"
       :title-id="'number-of-confirmed-cases-by-age'"
       :chart-id="'time-bar-chart-patients-by-age'"
-      :chart-data="patientsGraph"
+      :chart-data="ageGraph"
       :date="Data.patients_by_age.date"
       :unit="$t('人')"
       :url="
-        'http://opendata.pref.toyama.jp/dataset/covid19/resource/f3cd8c90-bf77-4072-96a3-96bd5942ff20'
+        'http://opendata.pref.toyama.jp/dataset/covid19'
       "
       :show-button="false"
-    />
+    >
+      <template v-slot:description>
+        <ul>
+          <li>
+            {{
+              $t(
+                '※公表日が直近数日のデータは、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり'
+              )
+            }}
+          </li>
+        </ul>
+      </template>
+    </time-bar-chart>
   </v-col>
 </template>
 
@@ -26,11 +38,11 @@ export default {
   },
   data() {
     // 年代別陽性患者数グラフ
-    const patientsGraph = formatGraph(Data.patients_by_age.data)
+    const ageGraph = formatGraph(Data.patients_by_age.data)
 
     const data = {
       Data,
-      patientsGraph
+      ageGraph
     }
     return data
   }

@@ -8,7 +8,7 @@
       :date="Data.patients_by_residence.date"
       :unit="$t('人')"
       :url="
-        'http://opendata.pref.toyama.jp/dataset/covid19/resource/f3cd8c90-bf77-4072-96a3-96bd5942ff20'
+        'http://opendata.pref.toyama.jp/dataset/covid19'
       "
       :show-button="false"
     >
@@ -18,6 +18,13 @@
             {{
               $t(
                 '（注）A：富山市，B：高岡市，C：射水市，D：南砺市，E：砺波市，F：氷見市，G：魚津市，H：黒部市，I：滑川市，J：小矢部市，K：立山町，L：入善町，M：上市町，N：朝日町，O：舟橋村，P：富山県以外 を示している'
+              )
+            }}
+          </li>
+          <li>
+            {{
+              $t(
+                '※公表日が直近数日のデータは、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり'
               )
             }}
           </li>

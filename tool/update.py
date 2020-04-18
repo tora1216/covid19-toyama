@@ -14,14 +14,40 @@ COUNTS_FILE = "toyama_counts.csv"
 dt_now = datetime.now().strftime('%Y-%m-%d %H:%M')
 data = {"lastUpdate": dt_now}
 
-# 集計データ読み込み
-df_counts = pd.read_csv(COUNTS_FILE)
-
 # 陽性患者の属性データ読み込み
 df_kanjya = pd.read_csv(PATIENTS_FILE)
 
+# 集計データ読み込み
+df_counts = pd.read_csv(COUNTS_FILE)
+
+#検査陽性者の状況
+data["main_summary"] = {
+    "date": dt_now,
+    "children": [{
+        "attr": "陽性患者数",
+        "value": int(len(df_kanjya)),
+        "children": [{
+            "attr": "入院",
+            "value": int((df_kanjya["状態"] == "入院中").sum()),
+            "children": [{
+                "attr": "無症状・軽症・中等症",
+                "value": int(((df_kanjya["状態"] == "入院中") & (df_kanjya["症状"] == "無症状")).sum())+int(((df_kanjya["状態"] == "入院中") & (df_kanjya["症状"] == "軽症・中等症")).sum())
+            },{
+                "attr": "重症",
+                "value": int(((df_kanjya["状態"] == "入院中") & (df_kanjya["症状"] == "重症")).sum())
+            }]
+        },{
+            "attr": "退院",
+            "value": int(df_counts["退院者数"].sum())
+        },{
+        "attr": "死亡",
+        "value": 0
+        }]
+    }]
+}
+
 # 検査実施状況
-data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(len(df_kanjya))},{"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
+data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())},{"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
 
 # 陽性患者の属性
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
@@ -47,8 +73,8 @@ data["patients_by_residence"] = {
         {"居住地": "L", "小計": int((df_patients["居住地"] == "入善町").sum())},
         {"居住地": "M", "小計": int((df_patients["居住地"] == "上市町").sum())},
         {"居住地": "N", "小計": int((df_patients["居住地"] == "朝日町").sum())},
-        {"居住地": "O", "小計": int((df_patients["居住地"] == "船橋村").sum())},
-        {"居住地": "P", "小計":  int(len(df_kanjya))-(int((df_patients["居住地"] == "富山市").sum())+int((df_patients["居住地"] == "高岡市").sum())+int((df_patients["居住地"] == "射水市").sum())+int((df_patients["居住地"] == "南砺市").sum())+int((df_patients["居住地"] == "砺波市").sum())+int((df_patients["居住地"] == "氷見市").sum())+int((df_patients["居住地"] == "魚津市").sum())+int((df_patients["居住地"] == "黒部市").sum())+int((df_patients["居住地"] == "滑川市").sum())+int((df_patients["居住地"] == "小矢部市").sum())+int((df_patients["居住地"] == "立山町").sum())+int((df_patients["居住地"] == "入善町").sum())+int((df_patients["居住地"] == "上市町").sum())+int((df_patients["居住地"] == "朝日町").sum())+int((df_patients["居住地"] == "船橋村").sum()))},
+        {"居住地": "O", "小計": int((df_patients["居住地"] == "舟橋村").sum())},
+        {"居住地": "P", "小計": int(len(df_kanjya))-(int((df_patients["居住地"] == "富山市").sum())+int((df_patients["居住地"] == "高岡市").sum())+int((df_patients["居住地"] == "射水市").sum())+int((df_patients["居住地"] == "南砺市").sum())+int((df_patients["居住地"] == "砺波市").sum())+int((df_patients["居住地"] == "氷見市").sum())+int((df_patients["居住地"] == "魚津市").sum())+int((df_patients["居住地"] == "黒部市").sum())+int((df_patients["居住地"] == "滑川市").sum())+int((df_patients["居住地"] == "小矢部市").sum())+int((df_patients["居住地"] == "立山町").sum())+int((df_patients["居住地"] == "入善町").sum())+int((df_patients["居住地"] == "上市町").sum())+int((df_patients["居住地"] == "朝日町").sum())+int((df_patients["居住地"] == "船橋村").sum()))},
 ]
 }
 
@@ -57,17 +83,17 @@ data["patients_by_age"] = {
     "date": dt_now,
     "data": [
         {"年代": "0~", "小計": int((df_patients["年代"].str[:2] == "10").sum())-int((df_patients["年代"] == "10代").sum())},
-         {"年代": "10~", "小計": int((df_patients["年代"] == "10代").sum())},
-         {"年代": "20~", "小計": int((df_patients["年代"] == "20代").sum())},
-         {"年代": "30~", "小計": int((df_patients["年代"] == "30代").sum())},
-         {"年代": "40~", "小計": int((df_patients["年代"] == "40代").sum())},
-         {"年代": "50~", "小計": int((df_patients["年代"] == "50代").sum())},
-         {"年代": "60~", "小計": int((df_patients["年代"] == "60代").sum())},
-         {"年代": "70~", "小計": int((df_patients["年代"] == "70代").sum())},
-         {"年代": "80~", "小計": int((df_patients["年代"] == "80代").sum())},
-         {"年代": "90~", "小計":  int(len(df_kanjya)) - ((int((df_patients["年代"].str[:2] == "10").sum())-int((df_patients["年代"] == "10代").sum()))+int((df_patients["年代"] == "10代").sum())+int((df_patients["年代"] == "20代").sum())+int(
-             (df_patients["年代"] == "30代").sum())+int((df_patients["年代"] == "40代").sum())+int((df_patients["年代"] == "50代").sum())+int((df_patients["年代"] == "60代").sum())+int((df_patients["年代"] == "70代").sum())+int((df_patients["年代"] == "80代").sum()))},
-]
+        {"年代": "10~", "小計": int((df_patients["年代"] == "10代").sum())},
+        {"年代": "20~", "小計": int((df_patients["年代"] == "20代").sum())},
+        {"年代": "30~", "小計": int((df_patients["年代"] == "30代").sum())},
+        {"年代": "40~", "小計": int((df_patients["年代"] == "40代").sum())},
+        {"年代": "50~", "小計": int((df_patients["年代"] == "50代").sum())},
+        {"年代": "60~", "小計": int((df_patients["年代"] == "60代").sum())},
+        {"年代": "70~", "小計": int((df_patients["年代"] == "70代").sum())},
+        {"年代": "80~", "小計": int((df_patients["年代"] == "80代").sum())},
+        {"年代": "90~", "小計":  int(len(df_kanjya)) - ((int((df_patients["年代"].str[:2] == "10").sum())-int((df_patients["年代"] == "10代").sum()))+int((df_patients["年代"] == "10代").sum())+int((df_patients["年代"] == "20代").sum())+int(
+             (df_patients["年代"] == "30代").sum()) + int((df_patients["年代"] == "40代").sum()) + int((df_patients["年代"] == "50代").sum()) + int((df_patients["年代"] == "60代").sum()) + int((df_patients["年代"] == "70代").sum()) + int((df_patients["年代"] == "80代").sum()))}
+             ]
 }
 
 # 陽性患者数

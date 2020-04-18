@@ -21,13 +21,13 @@
       :btn-text="$t('相談の手順を見る')"
     />
     <v-row class="DataBlock">
-      <tested-cases-details-card />
+      <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
       <patients-by-residence-card />
       <patients-by-age-card />
-      <confirmed-cases-number-card />
-      <!-- <confirmed-cases-details-card /> -->
+      <tested-cases-details-card />
       <inspection-persons-number-card />
+      <confirmed-cases-number-card />
       <!-- <tested-number-card /> -->
       <telephone-advisory-reports-number-card />
       <consultation-desk-reports-number-card />
@@ -51,7 +51,7 @@ import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCar
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
-// import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 // import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
@@ -71,7 +71,7 @@ export default Vue.extend({
     StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
-    // ConfirmedCasesDetailsCard,
+    ConfirmedCasesDetailsCard,
     TestedCasesDetailsCard,
     // TestedNumberCard,
     InspectionPersonsNumberCard,

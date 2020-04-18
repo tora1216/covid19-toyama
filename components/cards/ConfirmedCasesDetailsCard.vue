@@ -4,6 +4,7 @@
       :title="$t('検査陽性者の状況')"
       :title-id="'details-of-confirmed-cases'"
       :date="Data.main_summary.date"
+      :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
     >
       <confirmed-cases-table
         :aria-label="$t('検査陽性者の状況')"
