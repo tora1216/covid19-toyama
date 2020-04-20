@@ -157,7 +157,7 @@ export default Vue.extend({
     .EmergencyPosterImage {
       display: block;
       width: 50%;
-      margin: 20px auto 40px auto;
+      margin: auto;
       @include lessThan($small) {
         width: 100%;
       }
