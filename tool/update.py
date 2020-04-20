@@ -41,13 +41,10 @@ data["main_summary"] = {
             "value": int(df_counts["退院者数"].sum())
         },{
         "attr": "死亡",
-        "value": 0
+        "value": int(df_counts["死亡者数"].sum())
         }]
     }]
 }
-
-# 検査実施状況
-data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())},{"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
 
 # 陽性患者の属性
 df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
@@ -96,15 +93,20 @@ data["patients_by_age"] = {
              ]
 }
 
-# 陽性患者数
-df_pats = df_counts.loc[:, ("年月日", "陽性人数")].copy()
-df_pats.rename(columns={"年月日": "日付", "陽性人数": "小計"}, inplace=True)
-data["patients_summary"] = {"date": dt_now, "data": df_pats.to_dict(orient="recodes")}
+# 検査実施状況
+data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(
+    df_counts["陽性人数"].sum())}, {"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
 
 # 検査実施人数
 df_insp = df_counts.loc[:, ("年月日", "検査実施人数")].copy()
 df_insp.rename(columns={"年月日": "日付", "検査実施人数": "小計"}, inplace=True)
-data["inspection_persons"] = {"date": dt_now, "data": df_insp.to_dict(orient="recodes")}
+data["inspection_persons"] = {"date": dt_now,
+                              "data": df_insp.to_dict(orient="recodes")}
+
+# 陽性患者数
+df_pats = df_counts.loc[:, ("年月日", "陽性人数")].copy()
+df_pats.rename(columns={"年月日": "日付", "陽性人数": "小計"}, inplace=True)
+data["patients_summary"] = {"date": dt_now, "data": df_pats.to_dict(orient="recodes")}
 
 # 一般相談件数
 df_contacts = df_counts.loc[:, ("年月日", "一般相談件数")].copy()
