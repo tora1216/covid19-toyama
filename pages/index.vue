@@ -20,6 +20,12 @@
       :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
       :btn-text="$t('相談の手順を見る')"
     />
+    <div class="EmergencyPosterBlock mb-4">
+      <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-bullhorn theme--light" style="font-size: 24px;"></i>
+        {{ $t('緊急事態宣言発令') }} 
+      </h3>
+      <img class="EmergencyPosterImage" src="/emergency-poster.jpg" alt="" />
+    </div>
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
@@ -139,6 +145,25 @@ export default Vue.extend({
       margin: 0 0 0 auto;
     }
   }
+
+  .EmergencyPosterBlock {
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(112, 15, 15, 0.15);
+    border: 0.5px solid #d9d9d9 !important;
+    border-radius: 4px;
+    padding: 10px;
+
+    .EmergencyPosterImage {
+      display: block;
+      width: 85%;
+      margin: 20px auto 40px auto;
+      @include lessThan($small) {
+        width: 100%;
+      }
+    }
+  }
+
   .DataBlock {
     margin: 20px -8px;
 
