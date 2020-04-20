@@ -51,7 +51,7 @@ df_kanjya.rename(columns={"公表年月日": "公表日"}, inplace=True)
 df_patients = df_kanjya.loc[:, ("No", "公表日", "居住地", "年代", "性別")].fillna("-")
 data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="recodes")}
 
-# 居住地別陽性患者数
+# 陽性患者数(居住地別)
 data["patients_by_residence"] = {
     "date": dt_now,
     "data": [
@@ -75,7 +75,7 @@ data["patients_by_residence"] = {
 ]
 }
 
-# 年齢別陽性患者数
+# 陽性患者数(年代別)
 data["patients_by_age"] = {
     "date": dt_now,
     "data": [
@@ -91,6 +91,17 @@ data["patients_by_age"] = {
         {"年代": "90~", "小計":  int(len(df_kanjya)) - ((int((df_patients["年代"].str[:2] == "10").sum())-int((df_patients["年代"] == "10代").sum()))+int((df_patients["年代"] == "10代").sum())+int((df_patients["年代"] == "20代").sum())+int(
              (df_patients["年代"] == "30代").sum()) + int((df_patients["年代"] == "40代").sum()) + int((df_patients["年代"] == "50代").sum()) + int((df_patients["年代"] == "60代").sum()) + int((df_patients["年代"] == "70代").sum()) + int((df_patients["年代"] == "80代").sum()))}
              ]
+}
+
+# 陽性患者数(性別)
+data["patients_by_gender"] = {
+    "date": dt_now,
+    "data": [
+        {"性別": "M", "小計": int((df_patients["性別"] == "男性").sum())},
+        {"性別": "F", "小計": int((df_patients["性別"] == "女性").sum())},
+        {"性別": "O", "小計": int(len(df_kanjya)) - (int((df_patients["性別"] == "男性").sum()) + int((df_patients["性別"] == "女性").sum()))
+        }
+    ]
 }
 
 # 検査実施状況

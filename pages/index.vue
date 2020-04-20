@@ -25,6 +25,7 @@
       <confirmed-cases-attributes-card />
       <patients-by-residence-card />
       <patients-by-age-card />
+      <patients-by-gender-card />
       <tested-cases-details-card />
       <inspection-persons-number-card />
       <confirmed-cases-number-card />
@@ -63,6 +64,7 @@ import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDe
 // import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
 import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
 import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
+import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 
 export default Vue.extend({
   components: {
@@ -82,7 +84,8 @@ export default Vue.extend({
     // ShinjukuVisitorsCard,
     // ChiyodaVisitorsCard,
     PatientsByResidenceCard,
-    PatientsByAgeCard
+    PatientsByAgeCard,
+    PatientsByGenderCard
   },
   data() {
     const data = {

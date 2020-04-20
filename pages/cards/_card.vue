@@ -50,6 +50,9 @@
     <patients-by-age-card
       v-else-if="this.$route.params.card == 'number-of-confirmed-cases-by-age'"
     />
+    <patients-by-gender-card
+      v-else-if="this.$route.params.card == 'number-of-confirmed-cases-by-gender'"
+    />
   </div>
 </template>
 
@@ -73,6 +76,7 @@ import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
 import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
 import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
 import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
+import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 
 export default {
   components: {
@@ -89,7 +93,8 @@ export default {
     ShinjukuVisitorsCard,
     ChiyodaVisitorsCard,
     PatientsByResidenceCard,
-    PatientsByAgeCard
+    PatientsByAgeCard,
+    PatientsByGenderCard
   },
   data() {
     let title, updatedAt
@@ -143,12 +148,16 @@ export default {
         updatedAt = ChiyodaData.date
         break
       case 'patients-by-residence':
-        title = this.$t('居住地別陽性患者数')
+        title = this.$t('陽性患者数(居住地別)')
         updatedAt = Data.patients_by_residence.date
         break
       case 'patients-by-age':
-        title = this.$t('年代別陽性患者数')
+        title = this.$t('陽性患者数(年代別)')
         updatedAt = Data.patients_by_age.date
+        break
+      case 'patients-by-gender':
+        title = this.$t('陽性患者数(性別)')
+        updatedAt = Data.patients_by_gender.date
         break
     }
 

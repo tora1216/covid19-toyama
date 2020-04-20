@@ -47,6 +47,7 @@
   "（注）速報値として公開するものであり、後日確定データとして修正される場合あり": "(Note) The number is published as preliminary figures and may be revised as confirmed data at a later date",
   "※公表日が直近数日のデータは、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり": "* The data published on the last few days may be created based on the [Status of outbreaks of patients with COVID-19 in the prefecture] Toyama Prefecture Website (http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)",
   "（注）A：富山市，B：高岡市，C：射水市，D：南砺市，E：砺波市，F：氷見市，G：魚津市，H：黒部市，I：滑川市，J：小矢部市，K：立山町，L：入善町，M：上市町，N：朝日町，O：舟橋村，P：富山県以外 を示している": "(Note) The meaning of each alphabet is A: Toyama City, B: Takaoka City, C: Imizu City, D: Nanto City, E: Tonami City, F: Himi City, G: Uozu City, H: Kurobe City, I: Namerikawa City, J : Oyabe City, K: Tateyama Town, L: Nyūzen Town, M: Kamichi Town, N: Asahi Town, O: Funahashi Village, P: Outside Toyama Prefecture",
+  "（注）M：男性，F：女性，O：その他 を示している": "(Note) The meaning of each alphabet is M: Male, F: Female, O: Other",
   "（注）2/27には、2/26までの累計数を含む": "(Note) 2/27 includes cumulative numbers up to 2/26",
   "埋め込み用コード": " Embed Code",
   "埋め込みコードをコピーしました": " Copied the embed code",
@@ -144,10 +145,11 @@
   "金沢市": "Kanazawa City",
   "福井市": "Fukui City",
 
-  "居住地別陽性患者数": "Number of confirmed cases by residence",
-  "その他": "Other",
+  "陽性患者数(居住地別)": "Number of confirmed cases (by residence)",
 
-  "年代別陽性患者数": "Number of confirmed cases by age",
+  "陽性患者数(年代別)": "Number of confirmed cases (by age)",
+
+  "陽性患者数(性別)": "Number of confirmed cases (by gender)",
 
   "陽性患者数": "Number of confirmed cases",
 

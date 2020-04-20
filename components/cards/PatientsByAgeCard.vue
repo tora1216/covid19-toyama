@@ -1,7 +1,7 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <time-bar-chart
-      :title="$t('年代別陽性患者数')"
+      :title="$t('陽性患者数(年代別)')"
       :title-id="'number-of-confirmed-cases-by-age'"
       :chart-id="'time-bar-chart-patients-by-age'"
       :chart-data="ageGraph"
