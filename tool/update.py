@@ -41,7 +41,7 @@ data["main_summary"] = {
             "value": int(df_counts["退院者数"].sum())
         },{
         "attr": "死亡",
-        "value": int(df_counts["死亡者数"].sum())
+            "value": int((df_kanjya["状態"] == "死亡").sum())
         }]
     }]
 }
