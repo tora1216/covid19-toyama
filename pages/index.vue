@@ -13,6 +13,12 @@
       </div>
     </div>
     <whats-new class="mb-4" :items="newsItems" />
+    <div class="EmergencyPosterBlock mb-4">
+      <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-bullhorn theme--light" style="font-size: 24px;"></i>
+        {{ $t('緊急事態宣言 発令') }} 
+      </h3>
+      <img class="EmergencyPosterImage" src="/emergency-poster.jpg" alt="" />
+    </div>
     <static-info
       class="mb-4"
       url="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html"
@@ -20,12 +26,6 @@
       :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
       :btn-text="$t('相談の手順を見る')"
     />
-    <div class="EmergencyPosterBlock mb-4">
-      <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-bullhorn theme--light" style="font-size: 24px;"></i>
-        {{ $t('緊急事態宣言発令') }} 
-      </h3>
-      <img class="EmergencyPosterImage" src="/emergency-poster.jpg" alt="" />
-    </div>
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
       <confirmed-cases-attributes-card />
@@ -156,7 +156,7 @@ export default Vue.extend({
 
     .EmergencyPosterImage {
       display: block;
-      width: 85%;
+      width: 50%;
       margin: 20px auto 40px auto;
       @include lessThan($small) {
         width: 100%;
