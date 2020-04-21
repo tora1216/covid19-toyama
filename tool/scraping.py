@@ -28,15 +28,16 @@ link = file_list.find("a", text="富山県内における新型コロナウイ�
 df_kanjya = pd.read_excel(link, skiprows=2)
 
 # 定義書準拠形式に変換
-df_kanjya["検査結果判明日"] = df_kanjya["検査結果判明日"].apply(
+df_kanjya.rename(columns={"県番号": "No"}, inplace=True)
+df_kanjya.rename(columns={"検査結果判明日": "判明日"}, inplace=True)
+df_kanjya["判明日"] = df_kanjya["判明日"].apply(
     lambda date: pd.to_datetime(date, unit="D", origin=pd.Timestamp("1899/12/30")).strftime("%Y-%m-%d")
 )
-df_kanjya.rename(columns={"県番号": "No"}, inplace=True)
 df_kanjya['性別'] = df_kanjya["性別"].replace("男", "男性").replace("女", "女性")
 df_kanjya['年代'] = df_kanjya["年代"].replace("90代", "90歳以上")
 
 # 陽性患者の属性
-df_patients = df_kanjya.loc[:, ["No", "検査結果判明日", "居住地", "年代", "性別"]].fillna("-")
+df_patients = df_kanjya.loc[:, ["No", "判明日", "居住地", "年代", "性別"]].fillna("-")
 data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="records")}
 
 # 陽性患者数(居住地別)
