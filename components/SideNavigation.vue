@@ -50,8 +50,8 @@
 
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
-          <!-- <a
-            href="https://line.me/R/ti/p/%40822sysfc"
+          <a
+            href="https://line.me/R/ti/p/%40925tfblm"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
@@ -60,7 +60,7 @@
               <source srcset="/line.webp" type="image/webp" />
               <img src="/line.png" alt="LINE" />
             </picture>
-          </a> -->
+          </a>
           <a
             href="https://twitter.com/stopcovidtoyama"
             target="_blank"
