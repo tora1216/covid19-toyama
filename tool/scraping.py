@@ -28,7 +28,7 @@ soup = BeautifulSoup(r.content, "html.parser")
 # 要約テキストを取得
 main_list = soup.find("div", id="main")
 text = main_list.find("p").text
-summary_text = re.search(r"(.+)例（入院中.+(.+)例、退院(.+)例、死亡(.+)例）", text)
+summary_text = re.search(r"(.+)例（入院中\D+(.+)例、退院(.+)例、死亡(.+)例）", text)
 
 # 一覧エクセルを取得
 file_list = soup.find("div", id="file")
