@@ -163,22 +163,22 @@ export default Vue.extend({
         {
           icon: 'ParentIcon',
           title: this.$t('お子様をお持ちの皆様へ'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#5'
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#6'
         },
         {
           icon: 'mdi-account-multiple',
           title: this.$t('県民の皆様へ'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#6'
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#7'
         },
         {
           icon: 'mdi-domain',
           title: this.$t('企業の皆様・はたらく皆様へ'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#8',
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#9',
           divider: true
         },
         {
           title: this.$t('富山県主催等 中止又は延期するイベント等'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#7'
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#8'
         },
         {
           title: this.$t('知事からのメッセージ'),
