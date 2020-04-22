@@ -1,10 +1,10 @@
 # coding:utf-8
 
 import json
-import mojimoji
 import codecs
 import datetime
 import re
+import mojimoji
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -44,7 +44,7 @@ df_kanjya["判明日"] = df_kanjya["判明日"].apply(
 df_kanjya['性別'] = df_kanjya["性別"].replace("男", "男性").replace("女", "女性")
 df_kanjya['年代'] = df_kanjya["年代"].replace("90代", "90歳以上")
 
-#検査陽性者の状況
+# 検査陽性者の状況
 data["main_summary"] = {
     "date": dt_now,
     "children": [{
