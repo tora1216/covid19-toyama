@@ -28,13 +28,13 @@
     />
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
+      <confirmed-cases-number-card />
       <confirmed-cases-attributes-card />
       <patients-by-residence-card />
       <patients-by-age-card />
       <patients-by-gender-card />
       <tested-cases-details-card />
       <inspection-persons-number-card />
-      <confirmed-cases-number-card />
       <!-- <tested-number-card /> -->
       <telephone-advisory-reports-number-card />
       <consultation-desk-reports-number-card />

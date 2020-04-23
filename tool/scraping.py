@@ -70,6 +70,22 @@ data["main_summary"] = {
     }]
 }
 
+# 陽性患者数
+dt_start = datetime.datetime(2020, 3, 30)
+dt_end = datetime.datetime.now()
+patients_summary = []
+while True:
+    patients_summary.append({"日付": dt_start.strftime(
+        '%Y-%m-%d'), "小計": int((df_kanjya["判明日"] == dt_start.strftime('%Y-%m-%d')).sum())})
+    if(dt_start.strftime('%Y-%m-%d') == dt_end.strftime('%Y-%m-%d')):
+      break
+    dt_start += datetime.timedelta(days=1)
+
+data["patients_summary"] = {
+    "date": dt_now,
+    "data": patients_summary
+}
+
 # 陽性患者の属性
 df_patients = df_kanjya.loc[:, ["No", "判明日", "居住地", "年代", "性別"]].fillna("-")
 data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="records")}
