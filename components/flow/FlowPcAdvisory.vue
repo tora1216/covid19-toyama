@@ -3,10 +3,13 @@
     <div :class="$style.AdvisoryContainer">
       <div :class="$style.AdvisoryContents">
         <div>
-          <span :class="$style.AdvisoryContentsTitle">{{
+          <span :class="$style.AdvisoryContentsTitleSmall">{{
             $t('帰国者・接触者相談センター')
           }}</span>
         </div>
+        <!--<div :class="[$style.AdvisoryContentsColsSentense_17Ilp, 'mt-4']">
+          {{ $t('（新型コロナ受診相談窓口）') }}
+        </div>-->
         <div>
           <div :class="[$style.AdvisoryBoxContainer, $style.AdvisoryWhiteBox]">
             <span :class="$style.AdvisoryWhiteBoxSentense">
@@ -17,28 +20,23 @@
       </div>
 
       <div :class="$style.AdvisoryContents">
-        <div class="py-8">
-          <div :class="$style.AdvisoryContentsTitle2">
-            {{ $t('所管市町村ごとに連絡先が異なります。') }}
-          </div>
+        <div>
           <div
             :class="[
               $style.AdvisoryLink,
-              $style.AdvisoryBlockCentering,
-              'mt-4'
+              $style.AdvisoryBlockCentering
             ]"
           >
             <a
-              href="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html"
+              href="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html#page_list"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
-              <span>{{ $t('各センターの電話番号はこちら') }}</span>
+              <span>{{ $t('センターの電話番号はこちら') }}</span>
               <v-icon size="18">
                 mdi-open-in-new
               </v-icon>
             </a>
-            <span>{{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します。') }}</span>
           </div>
         </div>
       </div>
@@ -69,12 +67,15 @@
   }
   &Contents {
     font-weight: bold;
-    &:not(:first-child) {
-      border-top: 0.5px solid $gray-4;
-    }
+    // &:not(:first-child) {
+    //   border-top: 0.5px solid $gray-4;
+    // }
     &Title {
       font-size: 26px;
       line-height: 28px;
+      &Small {
+        font-size: 20px;
+      }
     }
     &Title2 {
       font-size: 18px;
@@ -94,7 +95,7 @@
     line-height: 22px;
     text-align: left;
     a {
-      color: rgba(0, 0, 0, 0.87);
+      // color: rgba(0, 0, 0, 0.87);
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -116,7 +117,15 @@
     &:focus {
       color: inherit;
       text-decoration: none;
-      outline: 1px dotted $gray-3;
+    }
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      @media screen {
+        // printだとoutlineが太くなってしまい読みにくいので、消す処理
+        outline: 1px dotted $gray-3;
+      }
     }
     &Icon {
       display: inline-block;
@@ -133,12 +142,17 @@
   }
   &WhiteBox {
     background-color: $white;
-    width: 160px;
-    padding: 10px;
+    max-width: 160px;
+    padding: 8px;
     &Sentense {
       color: $green-1;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: bold;
+    }
+  }
+  dl {
+    dt {
+      margin-top: 20px;
     }
   }
 }
