@@ -5,7 +5,7 @@
       :title-id="'number-of-confirmed-cases-by-age'"
       :chart-id="'time-bar-chart-patients-by-age'"
       :chart-data="ageGraph"
-      :date="Data.patients_by_age.date"
+      :date="ageData.patients_by_age.date"
       :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
       :unit="$t('人')"
     >
@@ -26,18 +26,18 @@ export default {
   },
   data() {
     // 年代別陽性患者数グラフ
-    const ageGraph = Data.patients_by_age
+    const ageData = Data.patients_by_age
 
     const labels = [
       this.$t('男性'),
       this.$t('女性'),
       this.$t('その他')
     ]
-    ageGraph.datasets.map(dataset => {
+    ageData.datasets.map(dataset => {
       dataset.label = this.$t(dataset.label)
     })
     return {
-      ageGraph,
+      ageData,
       labels
     }
   }
