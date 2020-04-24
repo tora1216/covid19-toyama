@@ -20,6 +20,13 @@
       </div>
 
       <div :class="$style.AdvisoryContents">
+
+        <div :class="[$style.Card, $style.CardLarge, $style.CardGray]">
+          <p>
+            {{ $t('症状、渡航歴、接触歴等を確認し、検査の該当性を判断') }}
+          </p>
+        </div>
+
         <div>
           <div
             :class="[
@@ -151,10 +158,28 @@
       font-weight: bold;
     }
   }
-  dl {
-    dt {
-      margin-top: 20px;
-    }
+.Card {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 10px;
+
+  p {
+    margin: 0 !important; // FIXME: IEだとv-applicationのmarginが優先される
   }
+}
+
+.CardLarge {
+  flex-basis: 100%;
+}
+
+.CardGray {
+  color: $white;
+  background-color: $gray-2;
+  border: 0.5px solid $gray-4 !important;
+}
 }
 </style>
