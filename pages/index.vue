@@ -21,8 +21,7 @@
     </div>
     <static-info
       class="mb-4"
-      url="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html"
-      target="_blank"
+      :url="localePath('/flow')"
       :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
       :btn-text="$t('相談の手順を見る')"
     />
