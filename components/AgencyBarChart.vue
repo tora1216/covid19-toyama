@@ -47,7 +47,7 @@ import Data from '@/data/data.json'
 import DataView from '@/components/DataView.vue'
 import { triple as colors } from '@/utils/colors'
 
-agencyData = Data.patients_by_age
+const agencyData = Data.patients_by_age
 
 interface HTMLElementEvent<T extends HTMLElement> extends MouseEvent {
   currentTarget: T
