@@ -169,12 +169,11 @@ data["patients_by_age"] = {
 # 陽性患者数(性別)
 data["patients_by_gender"] = {
     "date": dt_now,
-    "data": [
-        {"性別": "M", "小計": int((df_patients["性別"] == "男性").sum())},
-        {"性別": "F", "小計": int((df_patients["性別"] == "女性").sum())},
-        {"性別": "O", "小計": int(len(df_kanjya)) - (int((df_patients["性別"] == "男性").sum()) + int((df_patients["性別"] == "女性").sum()))
-        }
-    ]
+    "data": {
+        "男性": int((df_patients["性別"] == "男性").sum()),
+        "女性": int((df_patients["性別"] == "女性").sum()),
+        "その他": int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性")).sum())
+    }
 }
 
 # data.json上書き
