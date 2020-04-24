@@ -21,8 +21,6 @@
         <span :class="[$style.fzLarge, $style.break]">{{
           $t('医師による判断')
         }}</span>
-      </template>
-      </template>
     </p>
     <div :class="[$style.rectContainer, $style.double]">
       <a
