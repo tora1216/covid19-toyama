@@ -43,9 +43,11 @@ import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import { ChartOptions } from 'chart.js'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
-import agencyData from '@/data/agency.json'
+import Data from '@/data/data.json'
 import DataView from '@/components/DataView.vue'
 import { triple as colors } from '@/utils/colors'
+
+agencyData = Data.patients_by_age
 
 interface HTMLElementEvent<T extends HTMLElement> extends MouseEvent {
   currentTarget: T
@@ -125,9 +127,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   },
   data() {
     const agencies = [
-      this.$t('第一庁舎計'),
-      this.$t('第二庁舎計'),
-      this.$t('議事堂計')
+      this.$t('男性'),
+      this.$t('女性'),
+      this.$t('その他')
     ]
     agencyData.datasets.map(dataset => {
       dataset.label = this.$t(dataset.label) as string
@@ -168,7 +170,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           callbacks: {
             title(tooltipItem) {
               const dateString = tooltipItem[0].label
-              return self.$t('期間: {duration}', {
+              return self.$t('年代 {duration}', {
                 duration: dateString!
               }) as string
             },
@@ -177,7 +179,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               const title = self.$t(data.datasets![index].label!)
               const num = parseInt(tooltipItem.value!).toLocaleString()
               const unit = self.$t(self.unit)
-              return `${title}: ${num} ${unit}`
+              return `${title} ${num} ${unit}`
             }
           }
         },
