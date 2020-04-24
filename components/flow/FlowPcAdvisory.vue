@@ -39,6 +39,7 @@
             </a>
           </div>
         </div>
+        <span>{{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}</span>
       </div>
 
       <div :class="$style.AdvisoryContents">
