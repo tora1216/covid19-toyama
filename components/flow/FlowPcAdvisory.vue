@@ -10,6 +10,9 @@
       </div>
 
       <div :class="$style.AdvisoryContents">
+          <div :class="$style.AdvisoryContentsTitle2">
+            {{ $t('平日(8:30～17:15)') }}
+          </div>
         <dl>
           <dt>{{ $t('富山市保健所(富山市)') }}</dt>
           <dd>076-428-1152</dd>
@@ -30,7 +33,7 @@
           <dt>{{ $t('中部厚生センター(滑川市、舟橋村、上市町、立山町)') }}</dt>
           <dd>076-472-0637</dd>
         </dl>
-        {{ $t('夜間・休日は、メッセージにより緊急電話番号をご案内します。') }}
+        {{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します。') }}
       </div>
 
       <div :class="$style.AdvisoryContents">
@@ -144,7 +147,8 @@
   }
   dl {
     dt {
-      margin-top: 20px;
+      font-size: 15px;
+      margin-top: 3px;
     }
   }
 }
