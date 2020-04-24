@@ -1,50 +1,42 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
-    <time-bar-chart
+    <agency-bar-chart
       :title="$t('陽性患者数(居住地別)')"
       :title-id="'number-of-confirmed-cases-by-residence'"
       :chart-id="'time-bar-chart-patients-by-residence'"
-      :chart-data="patientsGraph"
-      :date="Data.patients_by_residence.date"
+      :chart-data="residenceGraph"
+      :date="residenceData.date"
+      :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
       :unit="$t('人')"
-      :url="
-        'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'
-      "
-      :show-button="false"
     >
-      <template v-slot:description>
-        <ul>
-          <li>
-            {{
-              $t(
-                '（注）A：富山市，B：高岡市，C：射水市，D：南砺市，E：砺波市，F：氷見市，G：魚津市，H：黒部市，I：滑川市，J：小矢部市，K：立山町，L：入善町，M：上市町，N：朝日町，O：舟橋村，P：富山県以外 を示している'
-              )
-            }}
-          </li>
-        </ul>
-      </template>
-    </time-bar-chart>
+    </agency-bar-chart>
   </v-col>
 </template>
 
 <script>
 import Data from '@/data/data.json'
-import formatGraph from '@/utils/formatResidenceGraph'
-import TimeBarChart from '@/components/TimeBarChart.vue'
+import ResidenceBarChart from '@/components/ResidenceBarChart.vue'
 
 export default {
   components: {
-    TimeBarChart
+    ResidenceBarChart
   },
   data() {
     // 居住地別陽性患者数グラフ
-    const patientsGraph = formatGraph(Data.patients_by_residence.data)
+    const residenceData = Data.patients_by_residence
 
-    const data = {
-      Data,
-      patientsGraph
+    const labels = [
+      this.$t('男性'),
+      this.$t('女性'),
+      this.$t('その他')
+    ]
+    ageData.datasets.map(dataset => {
+      dataset.label = this.$t(dataset.label)
+    })
+    return {
+      residenceData,
+      labels
     }
-    return data
   }
 }
 </script>
