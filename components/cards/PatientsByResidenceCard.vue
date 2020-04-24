@@ -30,7 +30,7 @@ export default {
       this.$t('女性'),
       this.$t('その他')
     ]
-    ageData.datasets.map(dataset => {
+    residenceData.datasets.map(dataset => {
       dataset.label = this.$t(dataset.label)
     })
     return {
