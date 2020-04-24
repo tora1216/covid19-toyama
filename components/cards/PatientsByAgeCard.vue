@@ -5,7 +5,7 @@
       :title-id="'number-of-confirmed-cases-by-age'"
       :chart-id="'time-bar-chart-patients-by-age'"
       :chart-data="ageGraph"
-      :date="ageData.patients_by_age.date"
+      :date="ageData.date"
       :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
       :unit="$t('人')"
     >
