@@ -1,5 +1,20 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
+    <template v-slot:button>
+      <ul :class="$style.GraphDesc">
+        <i18n tag="li" path="（注）病床数は{data}の入院可能病床数">
+          <a
+            :class="$style.GraphLink"
+            href="http://www.pref.nara.jp/secure/224794/64_4.pdf"
+            target="_blank"
+            rel="noopener"
+            place="data"
+          >
+            「新型コロナウイルス感染症への県の対応について」
+          </a>
+        </i18n>
+      </ul>
+    </template>
     <pie-chart
       :style="{ display: canvas ? 'block' : 'none' }"
       :chart-id="chartId"
@@ -26,6 +41,9 @@
         :unit="displayInfo.unit"
       />
     </template>
+    <template v-slot:footer>
+      <open-data-link v-show="url" :url="url" />
+    </template>
   </data-view>
 </template>
 
@@ -35,7 +53,8 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatVariableGraph'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { triple as colors } from '@/utils/colors'
+import { doubleGray as colors } from '@/utils/colors'
+import OpenDataLink from '@/components/OpenDataLink.vue'
 interface HTMLElementEvent<T extends HTMLElement> extends Event {
   currentTarget: T
 }
@@ -102,7 +121,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   created() {
     this.canvas = process.browser
   },
-  components: { DataView, DataViewBasicInfoPanel },
+  components: { DataView, DataViewBasicInfoPanel, OpenDataLink },
   props: {
     title: {
       type: String,
@@ -183,14 +202,19 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
+              return 
+                  `${chartData[tooltipItem.index].transition} ${unit}`
+              )
               /* return (
                 parseInt(
                   chartData[tooltipItem.index].transition
                 ).toLocaleString() + unit
-              ) */
+              )
               return `${chartData[tooltipItem.index].transition} ${
                 tooltipItem.index === 1 ? unit : '人'
-              } `
+              } / ${chartData[0].transition +
+                chartData[1].transition}${unit}`
+               */
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]

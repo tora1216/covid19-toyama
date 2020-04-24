@@ -24,7 +24,7 @@ export default {
   data() {
     // 性別陽性患者数
     const genderGraph = formatVariableGraph(Data.patients_by_gender.data)
-    const genderSummary=Data.patients_by_gender
+    const genderSummary = Data.patients_by_gender
     const data = {
       genderSummary,
       genderGraph
