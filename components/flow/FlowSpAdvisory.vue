@@ -9,9 +9,6 @@
     <p :class="[$style.open, $style.fzSmall]">
       <span>{{ $t('24時間対応') }}</span>
     </p>
-    <p :class="[$style.decision, $style.fzLarge, $style.break]">
-     {{ $t('症状・渡航歴・接触歴等を確認し、検査の該当性を判断') }}
-    </p>
     <dl>
       <div :class="$style.daytime">
         <dd :class="$style.link">
@@ -62,15 +59,6 @@ export default {
     padding: px2vw(20) px2vw(40);
     border-radius: px2vw(6);
   }
-}
-.decision {
-  margin-top: px2vw(20);
-  padding: px2vw(20);
-  background-color: $gray-2;
-  border-radius: px2vw(6);
-  color: $white;
-  text-align: center;
-  line-height: 1.65;
 }
 .daytime {
   margin-top: px2vw(20);

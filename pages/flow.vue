@@ -15,12 +15,12 @@
       </div>
       <div class="Flow-Card-Button-Wrapper mt-6">
         <a
-          href="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html"
+          href="http://www.pref.toyama.jp/cms_sec/1205/kj00021363.html"
           target="_blank"
           rel="noopener"
           class="Flow-Card-Button"
         >
-          {{ $t('詳細を見る（帰国者・接触者相談センター）') }}
+          {{ $t('詳細を見る（新型コロナウイルス感染症について）') }}
           <v-icon class="Flow-Card-Button-ExternalLinkIcon" size="20">
             mdi-open-in-new
           </v-icon>

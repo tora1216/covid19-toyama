@@ -135,7 +135,7 @@
           <i18n path="{getWorse}{advisory}に相談">
             <i18n place="getWorse" path="症状が良くならない場合は" />
             <strong :class="$style.advisory" place="advisory">
-              {{ $t('帰国者接触者相談センター）') }}
+              {{ $t('帰国者接触者相談センター') }}
             </strong>
           </i18n>
         </p>
@@ -250,7 +250,7 @@ export default {
     }
 
     .advisory {
-      font-size: px2vw(38);
+      font-size: px2vw(32);
       display: block;
       margin-top: px2vw(10);
       margin-bottom: px2vw(10);
@@ -340,7 +340,7 @@ export default {
       }
 
       .advisory {
-        font-size: px2vw(38, $vw);
+        font-size: px2vw(32, $vw);
         margin-top: px2vw(10, $vw);
         margin-bottom: px2vw(10, $vw);
       }
