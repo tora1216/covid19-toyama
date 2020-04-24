@@ -4,7 +4,7 @@
       <div :class="$style.AdvisoryContents">
         <div>
           <span :class="$style.AdvisoryContentsTitle">{{
-            $t('新型コロナ受診相談窓口（日本語のみ）')
+            $t('帰国者・接触者相談センター')
           }}</span>
         </div>
         <div :class="[$style.AdvisoryContentsColsSentense, 'mt-4']">
@@ -22,7 +22,7 @@
       <div :class="$style.AdvisoryContents">
         <div class="py-8">
           <div :class="$style.AdvisoryContentsTitle2">
-            {{ $t('平日（日中）') }}
+            {{ $t('平日(8:30～17:15)') }}
           </div>
           <div
             :class="[
@@ -46,7 +46,9 @@
       </div>
 
       <div :class="$style.AdvisoryContents">
-
+        <div :class="$style.AdvisoryContentsTitle2">
+        {{ $t('平日(8:30～17:15)') }}
+        </div>
         <dl>
           <dt>{{ $t('富山市保健所(富山市)') }}</dt>
           <dd>076-428-1152</dd>
@@ -67,34 +69,7 @@
           <dt>{{ $t('中部厚生センター(滑川市、舟橋村、上市町、立山町)') }}</dt>
           <dd>076-472-0637</dd>
         </dl>
-
-        <div class="pt-8">
-          <div :class="$style.AdvisoryContentsTitle2">
-            {{ $t('平日（夜間）') }}
-          </div>
-          <span>{{ $t('午後5時から翌朝午前9時') }}</span>
-        </div>
-        <div class="mt-1">
-          <span :class="$style.AdvisoryContentsSubTitle">
-            {{ $t('土日祝 終日') }}
-          </span>
-        </div>
-        <div
-          :class="[
-            $style.AdvisoryTelephoneArea,
-            $style.AdvisoryBlockCentering,
-            'mt-1'
-          ]"
-        >
-          <a :class="$style.AdvisoryTelephone" href="tel:0353204592">
-            <img
-              :class="$style.AdvisoryTelephoneIcon"
-              src="/flow/phone-24px.svg"
-              aria-hidden="true"
-            />
-            03-5320-4592
-          </a>
-        </div>
+        {{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します。') }}
         <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="pt-8">
           <span>{{ $t('ひまわり') }}</span>
         </div>
