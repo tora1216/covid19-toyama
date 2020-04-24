@@ -3,8 +3,8 @@
     <div :class="$style.AdvisoryContainer">
       <div :class="$style.AdvisoryContents">
         <div>
-          <span :class="$style.AdvisoryContentsTitleSmall">{{
-            $t('帰国者・接触者相談センター')
+          <span :class="$style.AdvisoryContentsTitle">{{
+            $t('帰国者接触者相談センター')
           }}</span>
         </div>
         <!--<div :class="[$style.AdvisoryContentsColsSentense_17Ilp, 'mt-4']">
