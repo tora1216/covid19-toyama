@@ -3,7 +3,7 @@
     <div :class="$style.AdvisoryContainer">
       <div :class="$style.AdvisoryContents">
         <div>
-          <span :class="$style.AdvisoryContentsTitle">{{
+          <span :class="$style.AdvisoryContentsTitleSmall">{{
             $t('帰国者接触者相談センター')
           }}</span>
         </div>
@@ -17,15 +17,16 @@
             </span>
           </div>
         </div>
+        <div>
+          <div :class="[$style.Card, $style.CardLarge, $style.CardGray]">
+            <p>
+              {{ $t('症状・渡航歴・接触歴等を確認し、検査の該当性を判断') }}
+            </p>
+          </div>
+        </div>
       </div>
 
       <div :class="$style.AdvisoryContents">
-
-        <div :class="[$style.Card, $style.CardLarge, $style.CardGray]">
-          <p>
-            {{ $t('症状、渡航歴、接触歴等を確認し、検査の該当性を判断') }}
-          </p>
-        </div>
 
         <div>
           <div
@@ -166,6 +167,7 @@
   align-items: center;
   border-radius: 4px;
   padding: 10px;
+  font-weight: normal;
 
   p {
     margin: 0 !important; // FIXME: IEだとv-applicationのmarginが優先される

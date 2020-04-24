@@ -2,7 +2,7 @@
   <div :class="[$style.container, $style.according]">
     <i18n tag="div" :class="$style.heading" path="{advisory}による相談結果">
       <span :class="[$style.fzLarge, $style.break]" place="advisory">
-        {{ $t('新型コロナ受診相談窓口') }}
+        {{ $t('帰国者接触者相談センター') }}
       </span>
     </i18n>
     <i18n
@@ -71,7 +71,7 @@
         <!-- eslint-enable -->
       </span>
       <span :class="$style.break">
-        {{ $t('東京都健康安全研究センター等') }}
+        {{ $t('富山県衛生研究所等') }}
       </span>
       <small :class="[$style.note, $style.fzSmall, $style.break]">
         {{
@@ -135,7 +135,7 @@
           <i18n path="{getWorse}{advisory}に相談">
             <i18n place="getWorse" path="症状が良くならない場合は" />
             <strong :class="$style.advisory" place="advisory">
-              {{ $t('新型コロナ受診相談窓口（日本語のみ）') }}
+              {{ $t('帰国者接触者相談センター）') }}
             </strong>
           </i18n>
         </p>

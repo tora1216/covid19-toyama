@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.container">
-    <h4 id="consult" :class="[$style.heading, $style.fzXLarge]">
+    <h4 id="consult" :class="[$style.heading, $style.fzLarge]">
       {{ $t('帰国者接触者相談センター') }}
       <!--<small :class="[$style.break, $style.fzRegular, $style.mt5]">{{
         $t('（新型コロナ受診相談窓口）')
@@ -9,8 +9,8 @@
     <p :class="[$style.open, $style.fzSmall]">
       <span>{{ $t('24時間対応') }}</span>
     </p>
-    <p :class="$style.decision">
-     {{ $t('症状、渡航歴、接触歴等を確認し、検査の該当性を判断') }}
+    <p :class="[$style.decision, $style.fzLarge, $style.break]">
+     {{ $t('症状・渡航歴・接触歴等を確認し、検査の該当性を判断') }}
     </p>
     <dl>
       <div :class="$style.daytime">

@@ -25,7 +25,7 @@
         path="{advisory}による相談結果"
       >
         <span :class="$style.TitleLarge" place="advisory">
-          {{ $t('新型コロナ受診相談窓口') }}
+          {{ $t('帰国者接触者相談センター') }}
         </span>
       </i18n>
     </h3>
