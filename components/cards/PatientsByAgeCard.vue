@@ -6,12 +6,9 @@
       :chart-id="'time-bar-chart-patients-by-age'"
       :chart-data="ageGraph"
       :date="ageData.date"
-      :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
+      :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
       :unit="$t('人')"
     >
-      <template v-slot:description>
-        {{ $t('※公表日が直近数日のデータは、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり') }}
-      </template>
     </agency-bar-chart>
   </v-col>
 </template>

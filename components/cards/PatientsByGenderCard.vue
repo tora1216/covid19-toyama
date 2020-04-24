@@ -8,7 +8,7 @@
       :date="Data.patients_by_gender.date"
       :unit="$t('人')"
       :url="
-        'http://opendata.pref.toyama.jp/dataset/covid19'
+        'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'
       "
       :show-button="false"
     >
@@ -18,13 +18,6 @@
             {{
               $t(
                 '（注）M：男性，F：女性，O：その他 を示している'
-              )
-            }}
-          </li>
-          <li>
-            {{
-              $t(
-                '※公表日が直近数日のデータは、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり'
               )
             }}
           </li>

@@ -7,15 +7,8 @@
       :chart-data="patientsGraph"
       :date="Data.patients_summary.date"
       :unit="$t('人')"
-      :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
+      :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
     >
-      <template v-slot:description>
-        <ul>
-          <li>
-            {{ $t('※公表日が直近数日のデータは、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり') }}
-          </li>
-        </ul>
-      </template>
     </time-bar-chart>
   </v-col>
 </template>
