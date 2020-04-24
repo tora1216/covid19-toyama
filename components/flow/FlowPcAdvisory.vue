@@ -42,11 +42,6 @@
         <span>{{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}</span>
       </div>
 
-      <div :class="$style.AdvisoryContents">
-        <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="pt-8">
-          <span>{{ $t('ひまわり') }}</span>
-        </div>
-      </div>
     </div>
   </div>
 </template>

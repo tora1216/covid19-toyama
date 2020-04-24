@@ -44,7 +44,6 @@
         </template>
       </div>
       <div :class="$style.FlowItem">
-        <template v-if="!langsWithoutFlowTitle.includes($i18n.locale)">
           <strong :class="$style.FlowTitle">
             {{ $t('流行地域への渡航・居住歴がある方') }}
           </strong>
@@ -60,27 +59,6 @@
               {{ $t('濃厚接触') }}
             </em>
           </i18n>
-        </template>
-        <template v-else>
-          <i18n
-            tag="span"
-            :class="[$style.FlowPerson, $style.FlowPersonS]"
-            path="travel history from {area}"
-          >
-            <em :class="$style.FlowLine" place="area">
-              {{ $t('COVID-19 prevalent area') }}
-            </em>
-          </i18n>
-          <i18n
-            tag="span"
-            :class="[$style.FlowPerson, $style.FlowPersonS]"
-            path="been {inCloseContact} with returnees"
-          >
-            <em :class="$style.FlowLine" place="inCloseContact">
-              {{ $t('in close contact') }}
-            </em>
-          </i18n>
-        </template>
       </div>
       <div :class="$style.FlowCondition">
         <em :class="$style.FlowSymptom">

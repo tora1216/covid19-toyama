@@ -13,19 +13,12 @@
     </div>
     <div :class="$style.Row">
       <div :class="[$style.Card, $style.CardLarge, $style.CardGray]">
-        <template v-if="!langsWithoutOutpatient.includes($i18n.locale)">
           <p :class="$style.Outpatient">
             {{ $t('新型コロナ外来（帰国者・接触者外来）') }}
           </p>
           <p :class="$style.Judge">
             {{ $t('医師による判断') }}
           </p>
-        </template>
-        <template v-else>
-          <p :class="$style.Judge">
-            {{ $t('Diagnosis by a doctor at a COVID-19 outpatient facility') }}
-          </p>
-        </template>
       </div>
     </div>
     <div :class="$style.TwoRow">
