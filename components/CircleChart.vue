@@ -176,17 +176,15 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayOption() {
-      const unit = this.unit
       const chartData = this.chartData
       const options = {
         tooltips: {
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
-              return (
-                parseInt(
-                  chartData[tooltipItem.index].transition
-                ).toLocaleString() + unit
+              const num = parseInt(chartData[tooltipItem.index].transition).toLocaleString()
+              const unit = self.$t(self.unit)
+              return `${num} ${unit}`
               )
             },
             title(tooltipItem: any, data: any) {
