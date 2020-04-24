@@ -169,10 +169,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             title(tooltipItem) {
-              const dateString = tooltipItem[0].label
-              return self.$t('年代 {duration}', {
-                duration: dateString!
-              }) as string
+              const age = tooltipItem[0].label
+              return `${age}`
             },
             label(tooltipItem, data) {
               const index = tooltipItem.datasetIndex!
