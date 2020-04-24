@@ -53,8 +53,7 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatVariableGraph'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { doubleGray as colors } from '@/utils/colors'
-import OpenDataLink from '@/components/OpenDataLink.vue'
+import { triple as colors } from '@/utils/colors'
 interface HTMLElementEvent<T extends HTMLElement> extends Event {
   currentTarget: T
 }
@@ -121,7 +120,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   created() {
     this.canvas = process.browser
   },
-  components: { DataView, DataViewBasicInfoPanel, OpenDataLink },
+  components: { DataView, DataViewBasicInfoPanel },
   props: {
     title: {
       type: String,
@@ -202,19 +201,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
-              return 
-                  `${chartData[tooltipItem.index].transition} ${unit}`
-              )
-              /* return (
-                parseInt(
-                  chartData[tooltipItem.index].transition
-                ).toLocaleString() + unit
-              )
-              return `${chartData[tooltipItem.index].transition} ${
-                tooltipItem.index === 1 ? unit : '人'
-              } / ${chartData[0].transition +
-                chartData[1].transition}${unit}`
-               */
+              const labelText = `${parseInt(
+                tooltipItem.value
+              ).toLocaleString()} ${unit}`
+              return labelText
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
