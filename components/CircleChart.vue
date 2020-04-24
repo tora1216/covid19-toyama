@@ -182,10 +182,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
-              const num = parseInt(chartData[tooltipItem.index].transition).toLocaleString()
-              const unit = self.$t(self.unit)
-              return `${num} ${unit}`
-              )
+              /* return (
+                parseInt(
+                  chartData[tooltipItem.index].transition
+                ).toLocaleString() + unit
+              ) */
+              return `${chartData[tooltipItem.index].transition} ${
+                tooltipItem.index === 1 ? unit : '人'
+              } `
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
