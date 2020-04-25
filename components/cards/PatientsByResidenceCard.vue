@@ -29,7 +29,7 @@
 
 <script>
 import Data from '@/data/data.json'
-import formatGraph from '@/utils/formatGenderGraph'
+import formatGraph from '@/utils/formatResidenceGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 export default {
   components: {
