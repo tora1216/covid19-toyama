@@ -15,11 +15,11 @@
 
 <script>
 import Data from '@/data/data.json'
-import AgencyBarChart from '@/components/AgencyBarChart.vue'
+import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 
 export default {
   components: {
-    AgencyBarChart
+    TimeStackedBarChart
   },
   data() {
     // 年代別陽性患者数グラフ
