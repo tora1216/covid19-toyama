@@ -126,8 +126,7 @@ export default {
               }`
             },
             title(tooltipItem, data) {
-              const title = self.$t(data.labels[tooltipItem[0].index])
-              return `${title}`
+              return data.labels[tooltipItem[0].index]
             }
           }
         },
