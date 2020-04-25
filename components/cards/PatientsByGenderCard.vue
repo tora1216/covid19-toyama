@@ -24,7 +24,7 @@ export default {
   data() {
     const patientsGraph = formatVariableGraph(Data.patients_by_gender.data)
     const descriptions = [
-        '',
+        '（注）M：男性，F：女性，O：その他 を示している',
     ];
     const data = {
       Data,

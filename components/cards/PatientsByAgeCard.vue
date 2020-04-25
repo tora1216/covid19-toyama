@@ -9,6 +9,9 @@
       :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
       :unit="$t('人')"
     >
+      <template v-slot:description>
+        {{ $t('（注）M：男性，F：女性，O：その他 を示している') }}
+      </template>
     </agency-bar-chart>
   </v-col>
 </template>

@@ -121,7 +121,8 @@ export default {
           displayColors: false,
           callbacks: {
             label(tooltipItem) {
-              return `${chartData[tooltipItem.index].transition} ${unit}`
+              return `${chartData[tooltipItem.index].transition} ${unit} (${Math.round(chartData[tooltipItem.index].transition/(chartData[0].transition +
+                chartData[1].transition+chartData[2].transition)*100)} %)`
             },
             title(tooltipItem, data) {
               return data.labels[tooltipItem[0].index]
