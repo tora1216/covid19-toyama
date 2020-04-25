@@ -1,23 +1,18 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
+  <data-view :title="title" :title-id="titleId" :date="date" :url="url" :url-text="urlText">
+    <template v-slot:description>
+      <div v-if="descriptions && descriptions.length > 0">
+        <div v-for="text in descriptions">
+          {{ $t('※') }} {{ $t(text) }}
+        </div>
+      </div>
+    </template>
+
     <pie-chart
-      :style="{ display: canvas ? 'block' : 'none' }"
       :chart-id="chartId"
       :chart-data="displayData"
       :options="displayOption"
       :height="240"
-    />
-    <v-data-table
-      :style="{ top: '-9999px', position: canvas ? 'fixed' : 'static' }"
-      :headers="tableHeaders"
-      :items="tableData"
-      :items-per-page="-1"
-      :hide-default-footer="true"
-      :height="240"
-      :fixed-header="true"
-      :mobile-breakpoint="0"
-      class="cardTable"
-      item-key="name"
     />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
@@ -26,97 +21,28 @@
         :unit="displayInfo.unit"
       />
     </template>
-    <template v-slot:footer>
-      <open-data-link v-show="url" :url="url" />
-    </template>
   </data-view>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
-import { GraphDataType } from '@/utils/formatVariableGraph'
+<script>
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { triple as colors } from '@/utils/colors'
-interface HTMLElementEvent<T extends HTMLElement> extends Event {
-  currentTarget: T
-}
-type Data = {
-  dataKind: 'transition' | 'cumulative'
-  canvas: boolean
-}
-type Methods = {}
-type Computed = {
-  displayInfo: {
-    lText: string
-    sText: string
-    unit: string
-  }
-  displayData: {
-    labels: string[]
-    datasets: {
-      label: string[]
-      data: number[]
-      backgroundColor: string[]
-    }[]
-  }
-  displayOption: {
-    tooltips: {
-      displayColors: boolean
-      callbacks: {
-        label: (tooltipItem: any) => string
-        title: (tooltipItem: any, data: any) => string
-      }
-    }
-    responsive: boolean
-    maintainAspectRatio: boolean
-    legend: {
-      display: boolean
-      onHover: (e: HTMLElementEvent<HTMLElement>) => void
-      onLeave: (e: HTMLElementEvent<HTMLElement>) => void
-    }
-  }
-  tableHeaders: {
-    text: string
-    value: string
-  }[]
-  tableData: {
-    [key: number]: number
-  }[]
-}
-type Props = {
-  title: string
-  titleId: string
-  chartId: string
-  chartData: GraphDataType[]
-  date: string
-  unit: string
-  info: string
-  url: string
-}
-const options: ThisTypedComponentOptionsWithRecordProps<
-  Vue,
-  Data,
-  Methods,
-  Computed,
-  Props
-> = {
-  created() {
-    this.canvas = process.browser
-  },
+export default {
   components: { DataView, DataViewBasicInfoPanel },
   props: {
     title: {
       type: String,
+      required: false,
       default: ''
     },
     titleId: {
       type: String,
+      required: false,
       default: ''
     },
     chartId: {
       type: String,
+      required: false,
       default: 'pie-chart'
     },
     chartData: {
@@ -131,22 +57,30 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     unit: {
       type: String,
+      required: false,
       default: ''
     },
     info: {
       type: String,
+      required: false,
       default: ''
     },
     url: {
       type: String,
       required: false,
       default: ''
+    },
+    urlText: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    descriptions: {
+      type: Array,
+      required: false,
+      default: () => []
     }
   },
-  data: () => ({
-    dataKind: 'transition',
-    canvas: true
-  }),
   computed: {
     displayInfo() {
       return {
@@ -158,6 +92,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayData() {
+      const colorArray = ['#1b4d30', '#00a040', '#c5e2c6']
       return {
         labels: this.chartData.map(d => {
           return d.label
@@ -170,8 +105,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             data: this.chartData.map(d => {
               return d.transition
             }),
-            backgroundColor: this.chartData.map((_d, index) => {
-              return colors[index]
+            backgroundColor: this.chartData.map((d, index) => {
+              return colorArray[index]
             }),
             borderWidth: 0
           }
@@ -181,17 +116,22 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayOption() {
       const unit = this.unit
       const chartData = this.chartData
-      const options = {
+      return {
         tooltips: {
           displayColors: false,
           callbacks: {
-            label(tooltipItem: any) {
-              const labelText = `${parseInt(
-                tooltipItem.value
-              ).toLocaleString()} ${unit}`
-              return labelText
+            label(tooltipItem) {
+              /* return (
+                parseInt(
+                  chartData[tooltipItem.index].transition
+                ).toLocaleString() + unit
+              ) */
+              return `${chartData[tooltipItem.index].transition} ${
+                tooltipItem.index === 1 ? unit : '人'
+              } (総数: ${chartData[0].transition +
+                chartData[1].transition}${unit})`
             },
-            title(tooltipItem: any, data: any) {
+            title(tooltipItem, data) {
               return data.labels[tooltipItem[0].index]
             }
           }
@@ -199,54 +139,21 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         responsive: true,
         maintainAspectRatio: false,
         legend: {
-          display: true,
-          onHover: (e: HTMLElementEvent<HTMLElement>): void => {
-            e.currentTarget.style.cursor = 'pointer'
-          },
-          onLeave: (e: HTMLElementEvent<HTMLElement>): void => {
-            e.currentTarget.style.cursor = 'default'
-          }
+          display: true
         }
       }
-      if (this.$route.query.ogp === 'true') {
-        Object.assign(options, { animation: { duration: 0 } })
-      }
-      return options
-    },
-    tableHeaders() {
-      return [
-        { text: '', value: 'text' },
-        ...this.chartData.map((d, index) => {
-          return { text: d.label, value: String(index) }
-        })
-      ]
-    },
-    tableData() {
-      return this.chartData.map((_, i) => {
-        return Object.assign(
-          { text: this.chartData[i].label },
-          { [i]: this.chartData[i].transition }
-        )
-      })
     }
   }
 }
-export default Vue.extend(options)
 </script>
 
-<style module lang="scss">
-.Graph {
-  &Desc {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 0 !important;
-    padding-left: 0 !important;
-    font-size: 12px;
-    color: $gray-3;
-    list-style: none;
-  }
-  &Link {
-    text-decoration: none;
-  }
+<style lang="scss" scoped>
+.Graph-Desc {
+  margin: 10px 0;
+  font-size: 12px;
+  color: $gray-3;
+}
+.link {
+  text-decoration: none;
 }
 </style>
