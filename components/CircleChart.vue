@@ -121,9 +121,7 @@ export default {
           displayColors: false,
           callbacks: {
             label(tooltipItem) {
-              return `${chartData[tooltipItem.index].transition} ${
-                tooltipItem.index === 1 ? unit : '人'
-              }`
+              return `${chartData[tooltipItem.index].transition} ${unit}`
             },
             title(tooltipItem, data) {
               return data.labels[tooltipItem[0].index]
