@@ -100,8 +100,7 @@ export default {
         datasets: [
           {
             label: this.chartData.map(d => {
-              const label= self.$t(d.label)
-              return `${label}`
+              return d.label
             }),
             data: this.chartData.map(d => {
               return d.transition
@@ -122,12 +121,9 @@ export default {
           displayColors: false,
           callbacks: {
             label(tooltipItem) {
-              /* return (
-                parseInt(
-                  chartData[tooltipItem.index].transition
-                ).toLocaleString() + unit
-              ) */
-              return `${chartData[tooltipItem.index].transition} ${unit}`
+              return `${chartData[tooltipItem.index].transition} ${
+                tooltipItem.index === 1 ? unit : '人'
+              }`
             },
             title(tooltipItem, data) {
               const title = self.$t(data.labels[tooltipItem[0].index])
