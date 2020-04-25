@@ -119,7 +119,7 @@ data["patients_by_age"] = {
     "labels": ["0~", "10~", "20~", "30~", "40~", "50~", "60~", "70~", "80~", "90~"],
     "datasets": [
         {
-            "label": "男性",
+            "label": "M",
             "data": [
                 int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "10歳未満")).sum()),
                 int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "10代")).sum()),
@@ -134,7 +134,7 @@ data["patients_by_age"] = {
             ]
         },
         {
-            "label": "女性",
+            "label": "F",
             "data": [
                 int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "10歳未満")).sum()),
                 int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "10代")).sum()),
@@ -149,7 +149,7 @@ data["patients_by_age"] = {
             ]
         },
         {
-            "label": "その他",
+            "label": "O",
             "data": [
                 int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "10歳未満")).sum()),
                 int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "10代")).sum()),
@@ -169,20 +169,11 @@ data["patients_by_age"] = {
 # 陽性患者数(性別)
 data["patients_by_gender"] = {
     "date": dt_now,
-    "data": [
-        {
-            "性別": "M",
-            "小計": int((df_patients["性別"] == "男性").sum())
-        },
-        {
-            "性別": "F",
-            "小計": int((df_patients["性別"] == "女性").sum())
-        },
-        {
-            "性別": "O",
-            "小計": int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性")).sum())
-        }
-    ]
+    "data": {
+        "M": int((df_patients["性別"] == "男性").sum()),
+        "F": int((df_patients["性別"] == "女性").sum()),
+        "O": int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性")).sum())
+    }
 }
 
 # data.json上書き
