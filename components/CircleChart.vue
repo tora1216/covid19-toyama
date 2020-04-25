@@ -3,7 +3,7 @@
     <template v-slot:description>
       <div v-if="descriptions && descriptions.length > 0">
         <div v-for="text in descriptions">
-          {{ $t('※') }} {{ $t(text) }}
+         {{ $t(text) }}
         </div>
       </div>
     </template>

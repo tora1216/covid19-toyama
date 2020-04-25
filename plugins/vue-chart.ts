@@ -1,6 +1,6 @@
 import Vue, { PropType } from 'vue'
 import { ChartData, ChartOptions } from 'chart.js'
-import { Doughnut, Bar, mixins } from 'vue-chartjs'
+import { Doughnut, Pie, Bar, HorizontalBar, mixins } from 'vue-chartjs'
 import { Plugin } from '@nuxt/types'
 
 type ChartVCData = { chartData: ChartData }
@@ -21,7 +21,24 @@ const VueChartPlugin: Plugin = () => {
       props: {
         options: {
           type: Object as PropType<ChartOptions>,
-          default: () => {}
+          default: () => { }
+        }
+      },
+      mounted(): void {
+        this.renderChart(this.chartData, this.options)
+      }
+    }
+  )
+
+  Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
+    'pie-chart',
+    {
+      extends: Pie,
+      mixins: [reactiveProp],
+      props: {
+        options: {
+          type: Object as PropType<ChartOptions>,
+          default: () => { }
         }
       },
       mounted(): void {
@@ -38,7 +55,24 @@ const VueChartPlugin: Plugin = () => {
       props: {
         options: {
           type: Object,
-          default: () => {}
+          default: () => { }
+        }
+      },
+      mounted(): void {
+        this.renderChart(this.chartData, this.options)
+      }
+    }
+  )
+
+  Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
+    'horizontal-bar',
+    {
+      extends: HorizontalBar,
+      mixins: [reactiveProp],
+      props: {
+        options: {
+          type: Object,
+          default: () => { }
         }
       },
       mounted(): void {

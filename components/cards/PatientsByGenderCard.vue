@@ -1,7 +1,7 @@
 <template>
    <v-col cols="12" md="6" class="DataCard">
       <circle-chart
-        title="$t('陽性患者数(性別)')"
+        :title="$t('陽性患者数(性別)')"
         :title-id="'number-of-confirmed-cases-by-gender'"
         :chart-data="patientsGraph"
         :date="Data.patients_by_gender.date"
