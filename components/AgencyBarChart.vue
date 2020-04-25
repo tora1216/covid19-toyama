@@ -127,9 +127,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   },
   data() {
     const agencies = [
-      this.$t('男性'),
-      this.$t('女性'),
-      this.$t('その他')
+      this.$t('M'),
+      this.$t('F'),
+      this.$t('O')
     ]
     agencyData.datasets.map(dataset => {
       dataset.label = this.$t(dataset.label) as string

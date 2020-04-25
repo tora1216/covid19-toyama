@@ -29,9 +29,9 @@ export default {
     const ageData = Data.patients_by_age
 
     const labels = [
-      this.$t('男性'),
-      this.$t('女性'),
-      this.$t('その他')
+      this.$t('M'),
+      this.$t('F'),
+      this.$t('O')
     ]
     ageData.datasets.map(dataset => {
       dataset.label = this.$t(dataset.label)
