@@ -6,7 +6,7 @@
         :chart-data="patientsGraph"
         :date="Data.patients_by_gender.date"
         :unit="$t('人')"
-        :info="$t('陽性者数')"
+        :info="''"
         :descriptions="descriptions"
         :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
       />
