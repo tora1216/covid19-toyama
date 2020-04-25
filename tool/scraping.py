@@ -93,72 +93,24 @@ data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="records"
 # 陽性患者数(居住地別)
 data["patients_by_residence"] = {
     "date": dt_now,
-    "labels": ["富山市", "高岡市", "射水市", "南砺市", "砺波市", "氷見市", "魚津市", "黒部市", "滑川市", "小矢部市","立山町","入善町","上市町","朝日町","舟橋村","富山県外"],
-    "datasets": [
-        {
-            "label": "男性",
-            "data": [
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "富山市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "高岡市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "射水市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "南砺市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "砺波市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "氷見市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "魚津市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "黒部市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "滑川市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "小矢部市")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "立山町")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "入善町")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "上市町")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "朝日町")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] == "舟橋村")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["居住地"] != "富山市") & (df_patients["居住地"] != "高岡市") & (df_patients["居住地"] != "射水市") & (df_patients["居住地"] != "南砺市") & (df_patients["居住地"] != "砺波市") & (df_patients["居住地"] != "氷見市")  & (df_patients["居住地"] != "魚津市") & (df_patients["居住地"] != "黒部市") & (df_patients["居住地"] != "滑川市") & (df_patients["居住地"] != "小矢部市") & (df_patients["居住地"] != "立山町") & (df_patients["居住地"] != "入善町") & (df_patients["居住地"] != "上市町") & (df_patients["居住地"] != "朝日町") & (df_patients["居住地"] != "舟橋村")).sum()),
-            ]
-        },
-        {
-            "label": "女性",
-            "data": [
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "富山市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "高岡市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "射水市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "南砺市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "砺波市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "氷見市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "魚津市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "黒部市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "滑川市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "小矢部市")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "立山町")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "入善町")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "上市町")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "朝日町")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] == "舟橋村")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["居住地"] != "富山市") & (df_patients["居住地"] != "高岡市") & (df_patients["居住地"] != "射水市") & (df_patients["居住地"] != "南砺市") & (df_patients["居住地"] != "砺波市") & (df_patients["居住地"] != "氷見市")  & (df_patients["居住地"] != "魚津市") & (df_patients["居住地"] != "黒部市") & (df_patients["居住地"] != "滑川市") & (df_patients["居住地"] != "小矢部市") & (df_patients["居住地"] != "立山町") & (df_patients["居住地"] != "入善町") & (df_patients["居住地"] != "上市町") & (df_patients["居住地"] != "朝日町") & (df_patients["居住地"] != "舟橋村")).sum()),
-            ]
-        },
-        {
-            "label": "その他",
-            "data": [
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "富山市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "高岡市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "射水市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "南砺市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "砺波市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "氷見市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "魚津市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "黒部市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "滑川市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "小矢部市")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "立山町")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "入善町")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "上市町")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "朝日町")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] == "舟橋村")).sum()),
-                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (df_patients["居住地"] != "富山市") & (df_patients["居住地"] != "高岡市") & (df_patients["居住地"] != "射水市") & (df_patients["居住地"] != "南砺市") & (df_patients["居住地"] != "砺波市") & (df_patients["居住地"] != "氷見市")  & (df_patients["居住地"] != "魚津市") & (df_patients["居住地"] != "黒部市") & (df_patients["居住地"] != "滑川市") & (df_patients["居住地"] != "小矢部市") & (df_patients["居住地"] != "立山町") & (df_patients["居住地"] != "入善町") & (df_patients["居住地"] != "上市町") & (df_patients["居住地"] != "朝日町") & (df_patients["居住地"] != "舟橋村")).sum()),
-            ]
-        }
-    ]
+    "data": [
+        {"居住地": "A", "小計": int((df_patients["居住地"] == "富山市").sum())},
+        {"居住地": "B", "小計": int((df_patients["居住地"] == "高岡市").sum())},
+        {"居住地": "C", "小計": int((df_patients["居住地"] == "射水市").sum())},
+        {"居住地": "D", "小計": int((df_patients["居住地"] == "南砺市").sum())},
+        {"居住地": "E", "小計": int((df_patients["居住地"] == "砺波市").sum())},
+        {"居住地": "F", "小計": int((df_patients["居住地"] == "氷見市").sum())},
+        {"居住地": "G", "小計": int((df_patients["居住地"] == "魚津市").sum())},
+        {"居住地": "H", "小計": int((df_patients["居住地"] == "黒部市").sum())},
+        {"居住地": "I", "小計": int((df_patients["居住地"] == "滑川市").sum())},
+        {"居住地": "J", "小計": int((df_patients["居住地"] == "小矢部市").sum())},
+        {"居住地": "K", "小計": int((df_patients["居住地"] == "立山町").sum())},
+        {"居住地": "L", "小計": int((df_patients["居住地"] == "入善町").sum())},
+        {"居住地": "M", "小計": int((df_patients["居住地"] == "上市町").sum())},
+        {"居住地": "N", "小計": int((df_patients["居住地"] == "朝日町").sum())},
+        {"居住地": "O", "小計": int((df_patients["居住地"] == "舟橋村").sum())},
+        {"居住地": "P", "小計": int(len(df_kanjya))-(int((df_patients["居住地"] == "富山市").sum())+int((df_patients["居住地"] == "高岡市").sum())+int((df_patients["居住地"] == "射水市").sum())+int((df_patients["居住地"] == "南砺市").sum())+int((df_patients["居住地"] == "砺波市").sum())+int((df_patients["居住地"] == "氷見市").sum())+int((df_patients["居住地"] == "魚津市").sum())+int((df_patients["居住地"] == "黒部市").sum())+int((df_patients["居住地"] == "滑川市").sum())+int((df_patients["居住地"] == "小矢部市").sum())+int((df_patients["居住地"] == "立山町").sum())+int((df_patients["居住地"] == "入善町").sum())+int((df_patients["居住地"] == "上市町").sum())+int((df_patients["居住地"] == "朝日町").sum())+int((df_patients["居住地"] == "舟橋村").sum()))},
+]
 }
 
 # 陽性患者数(年代別)
