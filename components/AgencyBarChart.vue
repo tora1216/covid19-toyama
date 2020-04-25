@@ -24,6 +24,13 @@
       class="cardTable"
       item-key="name"
     />
+    <template v-slot:infoPanel>
+      <data-view-basic-info-panel
+        :l-text="displayInfo.lText"
+        :s-text="displayInfo.sText"
+        :unit="displayInfo.unit"
+      />
+    </template>
   </data-view>
 </template>
 
@@ -45,6 +52,7 @@ import { ChartOptions } from 'chart.js'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import Data from '@/data/data.json'
 import DataView from '@/components/DataView.vue'
+import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import { triple as colors } from '@/utils/colors'
 
 const agencyData = Data.patients_by_age
@@ -97,7 +105,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   created() {
     this.canvas = process.browser
   },
-  components: { DataView },
+  components: { DataView, DataViewBasicInfoPanel },
   props: {
     title: {
       type: String,
@@ -115,6 +123,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       default: 'agency-bar-chart'
     },
     unit: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    info: {
       type: String,
       required: false,
       default: ''
@@ -142,6 +155,15 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     }
   },
   computed: {
+    displayInfo() {
+      return {
+        lText: this.chartData[
+          this.chartData.length - 1
+        ].cumulative.toLocaleString(),
+        sText: this.info,
+        unit: this.unit
+      }
+    },
     displayData() {
       const borderColor = '#ffffff'
       const borderWidth = [
