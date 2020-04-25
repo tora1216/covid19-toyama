@@ -169,8 +169,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             title(tooltipItem) {
-              const residence = tooltipItem[0].label
-              return `${residence}`
+              const age = tooltipItem[0].label
+              return `${age}`
             },
             label(tooltipItem, data) {
               const index = tooltipItem.datasetIndex!

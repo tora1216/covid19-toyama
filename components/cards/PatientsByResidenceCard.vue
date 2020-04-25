@@ -4,8 +4,8 @@
       :title="$t('陽性患者数(居住地別)')"
       :title-id="'number-of-confirmed-cases-by-residence'"
       :chart-id="'time-bar-chart-patients-by-residence'"
-      :chart-data="ageGraph"
-      :date="ageData.date"
+      :chart-data="residenceData"
+      :date="residenceData.date"
       :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
       :unit="$t('人')"
     >
@@ -15,15 +15,15 @@
 
 <script>
 import Data from '@/data/data.json'
-import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
+import AgencyBarChart from '@/components/AgencyBarChart.vue'
 
 export default {
   components: {
-    TimeStackedBarChart
+    AgencyBarChart
   },
   data() {
-    // 年代別陽性患者数グラフ
-    const ageData = Data.patients_by_residence
+    // 居住地別陽性患者数グラフ
+    const residenceData = Data.patients_by_residence
 
     const labels = [
       this.$t('男性'),
@@ -34,7 +34,7 @@ export default {
       dataset.label = this.$t(dataset.label)
     })
     return {
-      ageData,
+      residenceData,
       labels
     }
   }
