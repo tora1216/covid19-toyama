@@ -169,7 +169,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             title(tooltipItem) {
-              const residence = self.$t(tooltipItem[0].label!)
+              const residence = tooltipItem[0].label
               return `${residence}`
             },
             label(tooltipItem, data) {
