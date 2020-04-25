@@ -19,7 +19,7 @@ import ResidenceBarChart from '@/components/ResidenceBarChart.vue'
 const agencyData=Data.patients_by_residence
 export default {
   components: {
-    AgencyBarChart
+    ResidenceBarChart
   },
   data() {
     const agencies = [
