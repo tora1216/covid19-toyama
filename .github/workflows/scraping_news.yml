@@ -1,8 +1,8 @@
-name: Auto update
+name: Scraping news
 
 on:
   schedule:
-    - cron: '15 * * * *'
+    - cron: '25 * * * *'
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
         git remote set-url origin https://${NAME}:${PASSWORD}@github.com/${NAME}/covid19-toyama
         git checkout development
         cd tool
-        python scraping_news.py
+        python3 scraping_news.py
         cd ..
         git add .
         git commit -m "[Bot] GitHub Actions - auto run (scraping_news.py)"
