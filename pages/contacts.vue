@@ -51,14 +51,9 @@
           <tr>
             <td class="content" role="heading" aria-level="3">
               {{ $t('帰国者接触者相談センター') }}
-              }}
             </td>
             <td class="bureau">{{ $t('24時間対応') }}</td>
             <td class="tel">
-              {{ $t('富山県新型コロナウイルス感染症対策本部事務局') }}<br /><a
-                href="tel:076-444-2176"
-                >076-444-2176</a
-              ><br />
               {{ $t('富山市保健所') }}<br /><a
                 href="tel:076-428-1152"
                 >076-428-1152</a
