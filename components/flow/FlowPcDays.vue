@@ -24,6 +24,7 @@
             </i18n>
           </i18n>
         </p>
+        <p>{{ $t('※強いだるさ（倦怠感）や息苦しさ（呼吸困難）がある方は継続日数に関わらずご相談ください') }}</p>
       </div>
     </div>
     <div :class="[$style.FlowRow, $style.FlowRowRowCheck]">
@@ -59,22 +60,6 @@
             </i18n>
           </i18n>
         </p>
-        <img
-          :class="$style.FlowRowConditionIcon"
-          src="/flow/check_circle-24px.svg"
-          aria-hidden="true"
-        />
-      </div>
-      <div :class="$style.FlowRowCondition">
-        <p>{{ $t('強いだるさ') }}</p>
-        <img
-          :class="$style.FlowRowConditionIcon"
-          src="/flow/check_circle-24px.svg"
-          aria-hidden="true"
-        />
-      </div>
-      <div :class="$style.FlowRowCondition">
-        <p>{{ $t('息苦しさ') }}</p>
         <img
           :class="$style.FlowRowConditionIcon"
           src="/flow/check_circle-24px.svg"
@@ -124,6 +109,7 @@
             </i18n>
           </i18n>
         </p>
+        <p>{{ $t('※強いだるさ（倦怠感）や息苦しさ（呼吸困難）がある方は継続日数に関わらずご相談ください') }}</p>
       </div>
     </div>
   </div>

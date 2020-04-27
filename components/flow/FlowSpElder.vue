@@ -42,12 +42,6 @@
           </i18n>
         </i18n>
       </li>
-      <li :class="$style.symptom">
-        {{ $t('強いだるさ') }}
-      </li>
-      <li :class="$style.symptom">
-        {{ $t('息苦しさ') }}
-      </li>
     </ul>
 
     <p :class="$style.duration">
@@ -62,6 +56,8 @@
         </i18n>
       </i18n>
     </p>
+    
+    <p>{{ $t('※強いだるさ（倦怠感）や息苦しさ（呼吸困難）がある方は継続日数に関わらずご相談ください') }}</p>
 
     <a
       v-scroll-to="{
