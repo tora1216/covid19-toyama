@@ -10,7 +10,7 @@
             <th class="text-center" scope="col">
               {{ $t('お問い合わせ内容') }}
             </th>
-            <th class="text-center" scope="col">{{ $t('局名') }}</th>
+            <th class="text-center" scope="col">{{ $t('日時') }}</th>
             <th class="text-center" scope="col">{{ $t('電話番号') }}</th>
           </tr>
         </thead>
@@ -24,12 +24,15 @@
           </tr>
           <tr>
             <td class="content" role="heading" aria-level="3">
-              {{ $t('サイトの技術面に関すること') }}<br />{{
-                $t('オープンデータ、オープンソースに関すること')
-              }}
+              {{ $t('オープンデータに関すること') }}
             </td>
-            <td class="bureau">{{ $t('戦略政策情報推進本部') }}</td>
-            <td class="tel"><a href="tel:03-5320-7930">03-5320-7930</a></td>
+            <td class="bureau">{{ $t('平日8:30～17:15') }}</td>
+            <td class="tel">
+                {{ $t('富山県 経営管理部 情報政策課') }}<br /><a
+                href="tel:076-444-3116"
+                >076-444-3116</a
+              >
+            </td>
           </tr>
           <tr>
             <td class="content" role="heading" aria-level="3">
