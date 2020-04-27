@@ -55,7 +55,6 @@
         <li>{{ $t('Opera Software ASA Opera 最新版') }}</li>
       </ul>
       <p class="StaticCard-Note">
-        <span>{{ $t('※') }}</span>
         <span>
           {{
             $t(
@@ -198,8 +197,16 @@
       <h3>{{ $t('データについて') }}</h3>
       <i18n
         tag="p"
-        path="当サイトで公表しているデータは、富山県が{catalogWebsite}にて提供しているデータを元にしていますが、必ずしも正確・完全なものとは限りません。当サイトの表示内容について、富山県への直接の問合せは行わないでください。"
+        path="当サイトで公表しているデータは、富山県が{officialWebsite}や{catalogWebsite}にて提供しているデータを元にしていますが、必ずしも正確・完全なものとは限りません。当サイトの表示内容について、富山県への直接の問合せは行わないでください。"
       >
+        <a
+          href="http://www.pref.toyama.jp/sections/1118/virus/index.html"
+          target="_blank"
+          rel="noopener"
+          place="officialWebsite"
+        >
+          {{ $t('富山県公式ホームページ') }}
+        </a>
         <a
           href="http://opendata.pref.toyama.jp/dataset/covid19"
           target="_blank"
