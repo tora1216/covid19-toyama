@@ -206,6 +206,7 @@
   "受診が必要": "is necessary",
   "新型コロナ外来（帰国者・接触者外来）": "At a COVID-19 outpatient facility",
   "医師による判断": "Diagnosis by a doctor",
+  "マスクをして公共交通機関をできるだけ使わずに受診をしてください。": "Wear a mask and avoid public transportation if possible.",
   "検査の必要{ifRequired}": "You are {ifRequired} to be tested",
   "あり": " required",
   "なし": " not required",

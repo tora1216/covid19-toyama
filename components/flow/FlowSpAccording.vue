@@ -21,6 +21,9 @@
         <span :class="[$style.fzLarge, $style.break]">{{
           $t('医師による判断')
         }}</span>
+        <span :class="$style.break">
+          {{ $t('マスクをして公共交通機関をできるだけ使わずに受診をしてください。') }}
+        </span>
     </p>
     <div :class="[$style.rectContainer, $style.double]">
       <a

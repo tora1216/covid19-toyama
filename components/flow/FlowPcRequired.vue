@@ -19,6 +19,9 @@
           <p :class="$style.Judge">
             {{ $t('医師による判断') }}
           </p>
+          <p>
+            {{ $t('マスクをして公共交通機関をできるだけ使わずに受診をしてください。') }}
+          </p>
       </div>
     </div>
     <div :class="$style.TwoRow">
