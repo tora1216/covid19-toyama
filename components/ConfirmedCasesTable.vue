@@ -19,7 +19,7 @@
             <div :class="$style.content">
               <span>
               {{ $t('入院中') }}・
-               <br />({{ $t('入院等調整中') }})
+               <br />{{ $t('入院等調整中') }}
               </span>
               <span>
                 <strong>{{ 入院中 }}</strong>
