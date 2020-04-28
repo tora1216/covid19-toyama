@@ -72,11 +72,11 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    退院: {
+    死亡: {
       type: Number,
       required: true
     },
-    死亡: {
+    退院: {
       type: Number,
       required: true
     }
