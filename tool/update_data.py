@@ -22,32 +22,6 @@ df_kanjya = pd.read_csv(PATIENTS_FILE)
 # 集計データ読み込み
 df_counts = pd.read_csv(COUNTS_FILE)
 
-# 検査陽性者の状況
-data["main_summary"] = {
-    "date": dt_now,
-    "children": [{
-        "attr": "陽性患者数",
-        "value": data["main_summary"]["children"][0]["value"],
-        "children": [{
-            "attr": "入院",
-            "value": data["main_summary"]["children"][0]["children"][0]["value"],
-            "children": [{
-                "attr": "無症状・軽症・中等症",
-                "value": int(((df_kanjya["状態"] == "入院中") & (df_kanjya["症状"] == "無症状")).sum())+int(((df_kanjya["状態"] == "入院中") & (df_kanjya["症状"] == "軽症・中等症")).sum())
-            },{
-                "attr": "重症",
-                "value": int(((df_kanjya["状態"] == "入院中") & (df_kanjya["症状"] == "重症")).sum())
-            }]
-        },{
-            "attr": "退院",
-            "value": data["main_summary"]["children"][0]["children"][1]["value"]
-        },{
-        "attr": "死亡",
-            "value": data["main_summary"]["children"][0]["children"][2]["value"]
-        }]
-    }]
-}
-
 # 検査実施状況
 data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())}, {"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
 

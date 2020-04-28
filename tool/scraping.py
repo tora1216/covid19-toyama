@@ -48,18 +48,12 @@ df_kanjya['年代'] = df_kanjya["年代"].replace("90代", "90歳以上").replac
 data["main_summary"] = {
     "date": dt_now,
     "children": [{
-        "attr": "陽性患者数",
+        "attr": "陽性者数",
         "value": int(mojimoji.zen_to_han(summary_text.group(1))),
-        "children": [{
-            "attr": "入院",
-            "value": int(mojimoji.zen_to_han(summary_text.group(2))),
-            "children": [{
-                "attr": "無症状・軽症・中等症",
-                "value": data["main_summary"]["children"][0]["children"][0]["children"][0]["value"]
-            }, {
-                "attr": "重症",
-                "value": data["main_summary"]["children"][0]["children"][0]["children"][1]["value"]
-            }]
+        "children": [
+        {
+            "attr": "入院中",
+            "value": int(mojimoji.zen_to_han(summary_text.group(2)))
         }, {
             "attr": "退院",
             "value": int(mojimoji.zen_to_han(summary_text.group(3)))
