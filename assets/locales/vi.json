@@ -55,7 +55,8 @@
 
   "検査陽性者の状況": "Thông tin chi tiết về các ca nhiễm",
   "陽性者数": "Số ca dương tính",
-  "入院": "Số ca nhập viện",
+  "入院中": "Số ca nhập viện",
+  "入院等調整中": "Điều chỉnh nhập viện",
   "無症状": "Không có triệu chứng",
   "軽症": "Nhẹ",
   "中等症": "Trung bình",

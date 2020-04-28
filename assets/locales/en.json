@@ -55,7 +55,8 @@
 
   "検査陽性者の状況": "Details of people testing positive",
   "陽性者数": "Total number of people testing positive",
-  "入院": "Hospitalized",
+  "入院中": "Hospitalized",
+  "入院等調整中": "Adjusting hospitalization",
   "無症状": "Asymptomatic",
   "軽症": "Mild",
   "中等症": "Moderate",
