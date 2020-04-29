@@ -2,6 +2,9 @@
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <ul :class="$style.notes">
+        <li>
+          {{ $t('（注）速報値として公開するものであり、後日確定データとして修正される場合あり') }}
+        </li>
       </ul>
     </template>
     <slot />
