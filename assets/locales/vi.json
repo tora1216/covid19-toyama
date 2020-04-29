@@ -42,7 +42,7 @@
   "実績値": "Giá trị thực",
   "累計値": "Giá trị tổng",
   "前日比": "So với hôm trước",
-  "（注）入院には、入院予定を含む": "(Lưu ý) Nhập viện bao gồm lịch nhập viện",
+  "（注）日付は検査結果判明日": "(Lưu ý) Ngày là ngày kết quả kiểm tra được tìm thấy",
   "（注）症状は陽性公表時点のもの": "(Lưu ý) Các triệu chứng là vào thời điểm thông báo tích cực",
   "（注）陽性人数は、陽性患者の属性データを元に作成": "(Lưu ý) Số lượng dương tính dựa trên dữ liệu thuộc tính của bệnh nhân dương tính",
   "（注）実施件数および実施人数は、陽性人数と陰性人数の総数": "(Lưu ý) Số lượng các trường hợp và số lượng người tham gia là tổng số dương và âm",

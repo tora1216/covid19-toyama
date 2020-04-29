@@ -9,6 +9,16 @@
       :unit="$t('人')"
       :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
     >
+      <template v-slot:description>
+        <ul>
+          <li>
+            {{ $t('（注）日付は検査結果判明日') }}
+          </li>
+          <li>
+            {{ $t('（注）速報値として公開するものであり、後日確定データとして修正される場合あり') }}
+          </li>
+        </ul>
+      </template>
     </time-bar-chart>
   </v-col>
 </template>
