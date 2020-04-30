@@ -162,7 +162,7 @@ export default Vue.extend({
         {
           icon: 'MaskTrashIcon',
           title: this.$t('ご家庭でのマスク等の捨て方'),
-          link: 'https://www.env.go.jp/saigai/novel_coronavirus_2020/flyer_on_disposal_of_contaminated_household_waste.pdf',
+          link: 'http://www.pref.toyama.jp/cms_sec/1705/kj00021782.html',
           divider: true
         },
         {
