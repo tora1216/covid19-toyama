@@ -182,8 +182,21 @@ export default Vue.extend({
           divider: true
         },
         {
-          title: this.$t('富山県主催等 中止又は延期するイベント等'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#502'
+          title: this.$t('休業要請等について'),
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#100'
+        },
+        {
+          title: this.$t('各種相談窓口について'),
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#200'
+        },
+        {
+          title: this.$t('各種手続きの猶予等について'),
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#400'
+        },
+        {
+          title: this.$t('県有施設の臨時休館について'),
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#502',
+          divider: true
         },
         {
           title: this.$t('当サイトについて'),
