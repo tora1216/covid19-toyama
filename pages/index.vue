@@ -12,7 +12,14 @@
         <span>{{ $t('注釈') }} </span>
       </div>
     </div>
-    <whats-new class="mb-4" :items="newsItems" />
+    <!--<whats-new class="mb-4" :items="newsItems" />-->
+    <div class="TwitterTimelineBlock mb-4">
+      <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-information theme--light" style="font-size: 24px;"></i>
+        {{ $t('最新のお知らせ') }} 
+      </h3>
+      <a class="twitter-timeline EmbeddedTwitterTimeline" data-height="300px" data-chrome="noheader nofooter" href="https://twitter.com/stopcovidtoyama?ref_src=twsrc%5Etfw">Loading...</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
     <div class="EmergencyPosterBlock mb-4">
       <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-bullhorn theme--light" style="font-size: 24px;"></i>
         {{ $t('緊急事態宣言 発令') }} 
@@ -49,7 +56,7 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
-import WhatsNew from '@/components/WhatsNew.vue'
+// import WhatsNew from '@/components/WhatsNew.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import News from '@/data/news.json'
@@ -74,7 +81,7 @@ import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 export default Vue.extend({
   components: {
     PageHeader,
-    WhatsNew,
+    // WhatsNew,
     StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
@@ -142,6 +149,27 @@ export default Vue.extend({
     color: $gray-3;
     @include largerThan($small) {
       margin: 0 0 0 auto;
+    }
+  }
+
+  .TwitterTimelineBlock {
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(112, 15, 15, 0.15);
+    border: 0.5px solid #d9d9d9 !important;
+    border-radius: 4px;
+    padding: 10px;
+
+    .EmbeddedTwitterTimeline {
+      display: block;
+      width: 50%;
+      margin: auto;
+      @include lessThan($medium) {
+        width: 75%;
+      }
+      @include lessThan($small) {
+        width: 100%;
+      }
     }
   }
 
