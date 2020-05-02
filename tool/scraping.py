@@ -39,10 +39,11 @@ df_kanjya = pd.read_excel(link, skiprows=2)
 df_kanjya.rename(columns={"県番号": "No"}, inplace=True)
 df_kanjya.rename(columns={"検査結果判明日": "判明日"}, inplace=True)
 df_kanjya["判明日"] = df_kanjya["判明日"].apply(
-    lambda date: pd.to_datetime(date, unit="D", origin=pd.Timestamp("1899/12/30")).strftime("%Y-%m-%d")
+    lambda date: pd.to_datetime(date).strftime("%Y-%m-%d")
 )
 df_kanjya['性別'] = df_kanjya["性別"].replace("男", "男性").replace("女", "女性")
 df_kanjya['年代'] = df_kanjya["年代"].replace("90以上", "90歳以上").replace("90代", "90歳以上").replace("90代以上", "90歳以上")
+
 
 # 検査陽性者の状況
 data["main_summary"] = {
