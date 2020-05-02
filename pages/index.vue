@@ -17,7 +17,9 @@
       <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-information theme--light" style="font-size: 24px;"></i>
         {{ $t('最新のお知らせ') }} 
       </h3>
-      <a class="twitter-timeline EmbeddedTwitterTimeline" data-height="300px" data-chrome="noheader nofooter" href="https://twitter.com/stopcovidtoyama?ref_src=twsrc%5Etfw">Loading...</a>
+      <div class="EmbeddedTwitterTimeline">
+        <a class="twitter-timeline" data-height="300px" data-chrome="noheader nofooter" href="https://twitter.com/stopcovidtoyama?ref_src=twsrc%5Etfw">Loading...</a>
+      </div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
     <div class="EmergencyPosterBlock mb-4">
