@@ -1,5 +1,12 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
+    <template v-slot:button>
+      <ul :class="$style.notes">
+        <li>
+          {{ $t('（注）陽性率(実施人数に占める陽性人数の割合)は、小数点第2位で四捨五入をしている') }}
+        </li>
+      </ul>
+    </template>
     <slot />
   </data-view>
 </template>

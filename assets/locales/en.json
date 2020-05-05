@@ -49,7 +49,7 @@
   "（注）日付は検査結果判明日": "(Note) Date is the date when the inspection result was found",
   "（注）症状は陽性公表時点のもの": "(Note) Symptoms are as of the time of positive announcement",
   "（注）陽性人数は、陽性患者の属性データを元に作成": "(Note) Number of positives is created based on attribute data of positive patients",
-  "（注）実施件数および実施人数は、陽性人数と陰性人数の総数": "(Note) The number of cases tested and the number tested are the total number of positive and negative",
+  "（注）陽性率(実施人数に占める陽性人数の割合)は、小数点第2位で四捨五入をしている": "(Note) The positive rate (ratio of positive people to the number of people tested) is rounded to the second decimal place",
   "（注）速報値として公開するものであり、後日確定データとして修正される場合あり": "(Note) The number is published as preliminary figures and may be revised as confirmed data at a later date",
   "※公表日が直近数日のデータは、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり": "* The data published on the last few days may be created based on the [Status of outbreaks of patients with COVID-19 in the prefecture] Toyama Prefecture Website (http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)",
   "（注）A：富山市，B：高岡市，C：射水市，D：南砺市，E：砺波市，F：氷見市，G：魚津市，H：黒部市，I：滑川市，J：小矢部市，K：立山町，L：入善町，M：上市町，N：朝日町，O：舟橋村，P：富山県以外 を示している": "(Note) The meaning of each alphabet is A: Toyama City, B: Takaoka City, C: Imizu City, D: Nanto City, E: Tonami City, F: Himi City, G: Uozu City, H: Kurobe City, I: Namerikawa City, J : Oyabe City, K: Tateyama Town, L: Nyūzen Town, M: Kamichi Town, N: Asahi Town, O: Funahashi Village, P: Outside Toyama Prefecture",

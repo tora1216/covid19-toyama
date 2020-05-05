@@ -5,13 +5,13 @@
         <div :class="$style.content">
           <!-- eslint-disable vue/no-v-html-->
           <span>
-            {{ $t('実施件数') }}
+            {{ $t('陽性率') }}
             <br />({{ $t('累計') }})
           </span>
           <!-- eslint-enable vue/no-v-html-->
           <span>
-            <strong>{{ 累計件数 }}</strong>
-            <span :class="$style.unit">{{ $t('件.tested') }}</span>
+            <strong>{{ 陽性率 }}</strong>
+            <span :class="$style.unit">{{ $t('%') }}</span>
           </span>
         </div>
       </div>
@@ -70,7 +70,7 @@ import Vue from 'vue'
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
   props: {
-    累計件数: {
+    陽性率: {
       type: Number,
       required: true
     },

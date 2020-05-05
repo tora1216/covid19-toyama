@@ -49,7 +49,7 @@
   "（注）日付は検査結果判明日": "(Lưu ý) Ngày là ngày kết quả kiểm tra được tìm thấy",
   "（注）症状は陽性公表時点のもの": "(Lưu ý) Các triệu chứng là vào thời điểm thông báo tích cực",
   "（注）陽性人数は、陽性患者の属性データを元に作成": "(Lưu ý) Số lượng dương tính dựa trên dữ liệu thuộc tính của bệnh nhân dương tính",
-  "（注）実施件数および実施人数は、陽性人数と陰性人数の総数": "(Lưu ý) Số lượng các trường hợp và số lượng người tham gia là tổng số dương và âm",
+  "（注）陽性率(実施人数に占める陽性人数の割合)は、小数点第2位で四捨五入をしている": "(Lưu ý) Tỷ lệ dương (tỷ lệ người dương tính với số người được kiểm tra) được làm tròn đến vị trí thập phân thứ hai",
   "（注）速報値として公開するものであり、後日確定データとして修正される場合あり": "(Lưu ý) Số người đã xét nghiệm chỉ là số liệu sơ bộ, sẽ được chỉnh sửa thành dữ liệu xác thực vào hôm sau",
   "※公表日が直近数日のデータは、[新型コロナウイルス感染症の県内の患者等発生状況]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)を元に作成している場合あり": "* Dữ liệu được công bố trong vài ngày qua dựa trên [Tình trạng dịch bệnh nhân nhiễm coronavirus mới ở quận] trên trang web tỉnh Toyama(http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html)",
   "（注）A：富山市，B：高岡市，C：射水市，D：南砺市，E：砺波市，F：氷見市，G：魚津市，H：黒部市，I：滑川市，J：小矢部市，K：立山町，L：入善町，M：上市町，N：朝日町，O：舟橋村，P：富山県以外 を示している": "(Lưu ý) Ý nghĩa của mỗi bảng chữ cái là A: Thành phố Toyama, B: Thành phố Takaoka, C: Thành phố Imizu, D: Thành phố Nanto, E: Thành phố Tonami, F: Thành phố Himi, Thành phố Uozu, H: Thành phố Kurobe, I : Thành phố Namerikawa, J: Thành phố Oyabe, K: Thị trấn Tateyama, L: Thị trấn Nyūzen, M: Thị trấn Kamichi, N: Thị trấn Asahi, O: Làng Funahashi, P: Bên ngoài tỉnh Toyama",
