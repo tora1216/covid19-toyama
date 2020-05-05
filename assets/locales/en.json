@@ -70,6 +70,7 @@
   "退院": "Discharged",
 
   "検査実施状況": "Status of conducted tests",
+  "陽性率": "Positive rate",
   "実施件数": "Number of case tested",
   "実施人数": "Number of people tested",
   "合計人数": "Total",
