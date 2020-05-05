@@ -6,7 +6,6 @@
           <!-- eslint-disable vue/no-v-html-->
           <span>
             {{ $t('陽性率') }}
-            <br />({{ $t('累計') }})
           </span>
           <!-- eslint-enable vue/no-v-html-->
           <span>
@@ -36,7 +35,6 @@
             <div :class="$style.content">
               <span>
               {{ $t('陽性人数') }}
-              <br />({{ $t('累計') }})
               </span>
               <span>
                 <strong>{{ 陽性人数 }}</strong>
@@ -50,7 +48,6 @@
             <div :class="$style.content">
               <span>
               {{ $t('陰性人数') }}
-              <br />({{ $t('累計') }})
               </span>
               <span>
                 <strong>{{ 陰性人数 }}</strong>
