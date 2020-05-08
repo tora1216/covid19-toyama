@@ -12,7 +12,7 @@
         </p>
       </div>
       <div>
-        <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
+        <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。発熱や咳など比較的軽い風邪の症状が続く場合も、御相談ください。（これらに該当しない場合の相談も可能です。）') }}
         <p>{{ $t('症状が４日以上続く場合は必ずご相談ください。症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。') }}</p>
       </div>
     </div>
@@ -20,7 +20,7 @@
       <div :class="$style.FlowRowCondition">
         <p>
           <span :class="$style.FlowRowConditionLarge">
-            {{ $t('息苦しさ（呼吸困難）') }}
+            {{ $t('息苦しさ(呼吸困難)') }}
           </span>
         </p>
         <img
@@ -32,7 +32,7 @@
       <div :class="$style.FlowRowCondition">
         <p>
           <span :class="$style.FlowRowConditionLarge">
-            {{ $t('強いだるさ（倦怠感）') }}
+            {{ $t('強いだるさ(倦怠感)') }}
           </span>
         </p>
         <img
@@ -46,24 +46,6 @@
           <span :class="$style.FlowRowConditionLarge">
             {{ $t('高熱') }}
           </span>
-        </p>
-        <img
-          :class="$style.FlowRowConditionIcon"
-          src="/flow/check_circle-24px.svg"
-          aria-hidden="true"
-        />
-      </div>
-      <div :class="$style.FlowRowCondition">
-        <p>
-          <i18n
-            tag="span"
-            path="{cold}のような症状"
-            :class="$style.FlowRowConditionSmall"
-          >
-            <span :class="$style.FlowRowConditionLarge" place="cold">
-              {{ $t('風邪') }}
-            </span>
-          </i18n>
         </p>
         <img
           :class="$style.FlowRowConditionIcon"
@@ -102,7 +84,7 @@
         </ul>
       </div>
       <div>
-        <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
+        <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。発熱や咳などの比較的軽い風邪の症状がある場合も、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
         <p>{{ $t('症状が４日以上続く場合は必ずご相談ください。症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。') }}</p>
       </div>
     </div>

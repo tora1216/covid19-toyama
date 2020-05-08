@@ -22,25 +22,16 @@
     </div>
     <ul :class="[$style.rectContainer, $style.double]">
       <li :class="$style.symptom">
-        <span>{{ $t('息苦しさ（呼吸困難）') }}</span>
+        <span>{{ $t('息苦しさ(呼吸困難)') }}</span>
       </li>
       <li :class="$style.symptom">
-        <span>{{ $t('強いだるさ（倦怠感）') }}</span>
+        <span>{{ $t('強いだるさ(倦怠感)') }}</span>
       </li>
       <li :class="$style.symptom">
         <span>{{ $t('高熱') }}</span>
       </li>
-      <li :class="$style.symptom">
-        <span>
-          <i18n path="{cold}のような症状">
-            <span :class="$style.ConditionsItemLarger" place="cold">{{
-              $t('風邪')
-            }}</span>
-          </i18n>
-        </span>
-      </li>
     </ul>
-    <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
+    <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。発熱や咳などの比較的軽い風邪の症状がある場合も、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
     <p>{{ $t('症状が４日以上続く場合は必ずご相談ください。症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。') }}</p>
     <a
       v-scroll-to="{
