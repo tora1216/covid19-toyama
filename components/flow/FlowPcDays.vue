@@ -12,33 +12,40 @@
         </p>
       </div>
       <div>
-        <p>
-          <i18n path="{duration}続いている">
-            <i18n
-              tag="span"
-              place="duration"
-              path="{day}日以上"
-              :class="$style.FlowRowEmphasis"
-            >
-              <span :class="$style.FlowRowEmphasisDay" place="day">4</span>
-            </i18n>
-          </i18n>
-        </p>
-        <p>{{ $t('※強いだるさ（倦怠感）や息苦しさ（呼吸困難）がある方は継続日数に関わらずご相談ください') }}</p>
+        <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
+        <p>{{ $t('症状が４日以上続く場合は必ずご相談ください。症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。') }}</p>
       </div>
     </div>
     <div :class="[$style.FlowRow, $style.FlowRowRowCheck]">
       <div :class="$style.FlowRowCondition">
         <p>
-          <i18n
-            tag="span"
-            path="{cold}のような症状"
-            :class="$style.FlowRowConditionSmall"
-          >
-            <span :class="$style.FlowRowConditionLarge" place="cold">
-              {{ $t('風邪') }}
-            </span>
-          </i18n>
+          <span :class="$style.FlowRowConditionLarge">
+            {{ $t('息苦しさ（呼吸困難）') }}
+          </span>
+        </p>
+        <img
+          :class="$style.FlowRowConditionIcon"
+          src="/flow/check_circle-24px.svg"
+          aria-hidden="true"
+        />
+      </div>
+      <div :class="$style.FlowRowCondition">
+        <p>
+          <span :class="$style.FlowRowConditionLarge">
+            {{ $t('強いだるさ（倦怠感）') }}
+          </span>
+        </p>
+        <img
+          :class="$style.FlowRowConditionIcon"
+          src="/flow/check_circle-24px.svg"
+          aria-hidden="true"
+        />
+      </div>
+      <div :class="$style.FlowRowCondition">
+        <p>
+          <span :class="$style.FlowRowConditionLarge">
+            {{ $t('高熱') }}
+          </span>
         </p>
         <img
           :class="$style.FlowRowConditionIcon"
@@ -50,14 +57,12 @@
         <p>
           <i18n
             tag="span"
+            path="{cold}のような症状"
             :class="$style.FlowRowConditionSmall"
-            path="発熱{temperature}"
           >
-            <i18n tag="span" place="temperature" path="{tempNum}以上">
-              <span :class="$style.FlowRowConditionLarge" place="tempNum">
-                {{ $t('37.5℃') }}
-              </span>
-            </i18n>
+            <span :class="$style.FlowRowConditionLarge" place="cold">
+              {{ $t('風邪') }}
+            </span>
           </i18n>
         </p>
         <img
@@ -97,19 +102,8 @@
         </ul>
       </div>
       <div>
-        <p>
-          <i18n path="{duration}続いている">
-            <i18n
-              tag="span"
-              place="duration"
-              path="{day}日程度"
-              :class="$style.FlowRowEmphasis"
-            >
-              <span :class="$style.FlowRowEmphasisDay" place="day">2</span>
-            </i18n>
-          </i18n>
-        </p>
-        <p>{{ $t('※強いだるさ（倦怠感）や息苦しさ（呼吸困難）がある方は継続日数に関わらずご相談ください') }}</p>
+        <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
+        <p>{{ $t('症状が４日以上続く場合は必ずご相談ください。症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。') }}</p>
       </div>
     </div>
   </div>

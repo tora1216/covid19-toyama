@@ -8,6 +8,15 @@
     </p>
     <ul :class="[$style.rectContainer, $style.double]">
       <li :class="$style.symptom">
+        <span>{{ $t('息苦しさ（呼吸困難）') }}</span>
+      </li>
+      <li :class="$style.symptom">
+        <span>{{ $t('強いだるさ（倦怠感）') }}</span>
+      </li>
+      <li :class="$style.symptom">
+        <span>{{ $t('高熱') }}</span>
+      </li>
+      <li :class="$style.symptom">
         <span>
           <i18n path="{cold}のような症状">
             <span :class="$style.ConditionsItemLarger" place="cold">{{
@@ -16,32 +25,9 @@
           </i18n>
         </span>
       </li>
-      <li :class="$style.symptom">
-        <i18n tag="span" path="発熱{temperature}" :class="$style.fzSmall">
-          <i18n
-            tag="span"
-            path="{tempNum}以上"
-            place="temperature"
-            :class="[$style.break, $style.fzRegular]"
-          >
-            <span :class="$style.temp" place="tempNum">{{ $t('37.5℃') }}</span>
-          </i18n>
-        </i18n>
-      </li>
     </ul>
-    <p :class="$style.duration">
-      <i18n path="{duration}続いている">
-        <i18n
-          :class="[$style.underline, $style.fzLarge]"
-          tag="span"
-          place="duration"
-          path="{day}日以上"
-        >
-          <strong :class="$style.fzNumeric" place="day">4</strong>
-        </i18n>
-      </i18n>
-    </p>
-    <p>{{ $t('※強いだるさ（倦怠感）や息苦しさ（呼吸困難）がある方は継続日数に関わらずご相談ください') }}</p>
+    <p>{{ $t('いずれかの症状に該当する場合には、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
+    <p>{{ $t('症状が４日以上続く場合は必ずご相談ください。症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。') }}</p>
     <a
       v-scroll-to="{
         el: '#consult',
