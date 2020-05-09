@@ -173,12 +173,12 @@ export default Vue.extend({
         {
           icon: 'mdi-account-multiple',
           title: this.$t('県民の皆様へ'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#601'
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#600'
         },
         {
           icon: 'mdi-domain',
           title: this.$t('企業の皆様・はたらく皆様へ'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#602',
+          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#603',
           divider: true
         },
         {
