@@ -11,7 +11,7 @@
     </p>
     <dl :class="$style.telCenter">
       <dt>{{ $t('富山市保健所(富山市)') }}</dt>
-      <dd><a href="tel:0764281152">076-428-1152</a></dd>
+      <dd><i aria-hidden="true" class="v-icon notranslate mdi mdi-call theme--light"></i><a href="tel:0764281152">076-428-1152</a></dd>
       <dt>{{ $t('高岡厚生センター(高岡市)') }}</dt>
       <dd><a href="tel:0766268414">0766-26-8414</a></dd>
       <dt>{{ $t('高岡厚生センター射水支所(射水市)') }}</dt>
