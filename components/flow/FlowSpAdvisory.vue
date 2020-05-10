@@ -3,7 +3,7 @@
     <h4 id="consult" :class="[$style.heading, $style.fzXLarge]">
       {{ $t('帰国者接触者相談センター') }}
     </h4>
-    <p :class="[$style.open, $style.fzRegular]">
+    <p :class="[$style.open, $style.fzMedium, $style.mb10]">
       <span>{{ $t('24時間対応') }}</span>
     </p>
     <p :class="$style.mt10">
