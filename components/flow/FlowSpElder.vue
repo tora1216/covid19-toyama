@@ -31,13 +31,13 @@
         {{ $t('高熱') }}
       </li>
     </ul>
-    <p :class="$style.heading">
-      <span :class="[$style.underline, $style.fzLarge]">
+    <p :class="[$style.heading, $style.mt10">
+      <span :class="[$style.underline, $style.fzXLarge]">
         {{ $t('いずれかに該当する') }}
       </span>
     </p>
     <p :class="$style.mt10">{{ $t('発熱や咳などの比較的軽い風邪の症状がある場合も、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
-    <p :class="$style.mt5">{{ $t('症状が４日以上続く場合は必ずご相談ください。症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。') }}</p>
+    <p :class="$style.mt10">{{ $t('症状が４日以上続く場合は必ずご相談ください。症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。') }}</p>
     <a
       v-scroll-to="{
         el: '#consult',
