@@ -20,15 +20,15 @@
         {{ $t('妊娠中の方') }}
       </span>
     </div>
-    <ul :class="[$style.rectContainer, $style.double]">
+    <ul :class="[$style.rectContainer, $style.triple]">
       <li :class="$style.symptom">
-        <span>{{ $t('息苦しさ(呼吸困難)') }}</span>
+        {{ $t('息苦しさ(呼吸困難)') }}
       </li>
       <li :class="$style.symptom">
-        <span>{{ $t('強いだるさ(倦怠感)') }}</span>
+        {{ $t('強いだるさ(倦怠感)') }}
       </li>
       <li :class="$style.symptom">
-        <span>{{ $t('高熱') }}</span>
+        {{ $t('高熱') }}
       </li>
     </ul>
     <p :class="$style.duration">
@@ -72,7 +72,19 @@ export default {
 
 <style module lang="scss">
 @import '@/components/flow/flow_sp.scss';
+.rectContainer {
+  // elder
+  &.triple {
+    margin-left: px2vw(-11);
+    margin-right: px2vw(-11);
 
+    > .symptom {
+      margin-left: px2vw(11);
+      margin-right: px2vw(11);
+      flex-grow: 10;
+    }
+  }
+}
 .heading {
   // elder
   &.multi {
