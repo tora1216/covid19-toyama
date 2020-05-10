@@ -3,11 +3,11 @@
     <h4 id="consult" :class="[$style.heading, $style.fzXLarge]">
       {{ $t('帰国者接触者相談センター') }}
     </h4>
-    <p :class="[$style.open, $style.fzSmall]">
+    <p :class="[$style.open, $style.fzRegular]">
       <span>{{ $t('24時間対応') }}</span>
     </p>
     <p :class="$style.mt10">
-      <small>{{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}</small>
+      {{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}
     </p>
     <dl :class="$style.telCenter">
       <dt>{{ $t('富山市保健所(富山市)') }}</dt>
