@@ -167,7 +167,7 @@
   &Telephone {
     display: flex;
     align-items: center;
-    font-size: 27px;
+    font-size: 20px;
     font-weight: bold;
 
     &Icon {
