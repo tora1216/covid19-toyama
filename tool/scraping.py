@@ -32,7 +32,8 @@ summary_text = re.search(r"(.+)例（入院中\D+(.+)例、退院(.+)例、死�
 
 # 一覧エクセルを取得
 file_list = soup.find("div", id="file")
-link = file_list.find("a", text="富山県内における新型コロナウイルス感染症の発生状況一覧（Excelファイル）").get("href")
+link = file_list.find(
+    "a", text="富山県内における新型コロナウイルス感染症の発生状況一覧（Excelファイル）").get("href")
 df_kanjya = pd.read_excel(link, skiprows=2)
 
 # エクセル内データを定義書準拠形式に変換
@@ -42,7 +43,8 @@ df_kanjya["判明日"] = df_kanjya["判明日"].apply(
     lambda date: pd.to_datetime(date).strftime("%Y-%m-%d")
 )
 df_kanjya['性別'] = df_kanjya["性別"].replace("男", "男性").replace("女", "女性")
-df_kanjya['年代'] = df_kanjya["年代"].replace("90以上", "90歳以上").replace("90代", "90歳以上").replace("90代以上", "90歳以上")
+df_kanjya['年代'] = df_kanjya["年代"].replace("90以上", "90歳以上").replace(
+    "90代", "90歳以上").replace("90代以上", "90歳以上")
 
 
 # 検査陽性者の状況
@@ -52,16 +54,16 @@ data["main_summary"] = {
         "attr": "陽性者数",
         "value": int(mojimoji.zen_to_han(summary_text.group(1))),
         "children": [
-        {
-            "attr": "入院中",
-            "value": int(mojimoji.zen_to_han(summary_text.group(2)))
-        }, {
-            "attr": "退院",
-            "value": int(mojimoji.zen_to_han(summary_text.group(3)))
-        }, {
-            "attr": "死亡",
-            "value": int(mojimoji.zen_to_han(summary_text.group(4)))
-        }]
+            {
+                "attr": "入院中",
+                "value": int(mojimoji.zen_to_han(summary_text.group(2)))
+            }, {
+                "attr": "退院",
+                "value": int(mojimoji.zen_to_han(summary_text.group(3)))
+            }, {
+                "attr": "死亡",
+                "value": int(mojimoji.zen_to_han(summary_text.group(4)))
+            }]
     }]
 }
 
@@ -83,7 +85,8 @@ data["patients_summary"] = {
 
 # 陽性患者の属性
 df_patients = df_kanjya.loc[:, ["No", "判明日", "居住地", "年代", "性別"]].fillna("-")
-data["patients"] = {"date": dt_now, "data": df_patients.to_dict(orient="records")}
+data["patients"] = {"date": dt_now,
+                    "data": df_patients.to_dict(orient="records")}
 
 # 陽性患者数(居住地別)
 data["patients_by_residence"] = {
@@ -104,8 +107,9 @@ data["patients_by_residence"] = {
         {"居住地": "M", "小計": int((df_patients["居住地"] == "上市町").sum())},
         {"居住地": "N", "小計": int((df_patients["居住地"] == "朝日町").sum())},
         {"居住地": "O", "小計": int((df_patients["居住地"] == "舟橋村").sum())},
-        {"居住地": "P", "小計": int(len(df_kanjya))-(int((df_patients["居住地"] == "富山市").sum())+int((df_patients["居住地"] == "高岡市").sum())+int((df_patients["居住地"] == "射水市").sum())+int((df_patients["居住地"] == "南砺市").sum())+int((df_patients["居住地"] == "砺波市").sum())+int((df_patients["居住地"] == "氷見市").sum())+int((df_patients["居住地"] == "魚津市").sum())+int((df_patients["居住地"] == "黒部市").sum())+int((df_patients["居住地"] == "滑川市").sum())+int((df_patients["居住地"] == "小矢部市").sum())+int((df_patients["居住地"] == "立山町").sum())+int((df_patients["居住地"] == "入善町").sum())+int((df_patients["居住地"] == "上市町").sum())+int((df_patients["居住地"] == "朝日町").sum())+int((df_patients["居住地"] == "舟橋村").sum()))},
-]
+        {"居住地": "P", "小計": int(len(df_kanjya))-(int((df_patients["居住地"] == "富山市").sum())+int((df_patients["居住地"] == "高岡市").sum())+int((df_patients["居住地"] == "射水市").sum())+int((df_patients["居住地"] == "南砺市").sum())+int((df_patients["居住地"] == "砺波市").sum())+int((df_patients["居住地"] == "氷見市").sum())+int((df_patients["居住地"] == "魚津市").sum())+int(
+            (df_patients["居住地"] == "黒部市").sum())+int((df_patients["居住地"] == "滑川市").sum())+int((df_patients["居住地"] == "小矢部市").sum())+int((df_patients["居住地"] == "立山町").sum())+int((df_patients["居住地"] == "入善町").sum())+int((df_patients["居住地"] == "上市町").sum())+int((df_patients["居住地"] == "朝日町").sum())+int((df_patients["居住地"] == "舟橋村").sum()))},
+    ]
 }
 
 # 陽性患者数(年代別)
@@ -116,46 +120,76 @@ data["patients_by_age"] = {
         {
             "label": "M",
             "data": [
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "10歳未満")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "10代")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "20代")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "30代")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "40代")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "50代")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "60代")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "70代")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "80代")).sum()),
-                int(((df_patients["性別"] == "男性") & (df_patients["年代"] == "90歳以上")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "10歳未満")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "10代")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "20代")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "30代")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "40代")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "50代")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "60代")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "70代")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "80代")).sum()),
+                int(((df_patients["性別"] == "男性") & (
+                    df_patients["年代"] == "90歳以上")).sum()),
             ]
         },
         {
             "label": "F",
             "data": [
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "10歳未満")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "10代")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "20代")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "30代")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "40代")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "50代")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "60代")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "70代")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "80代")).sum()),
-                int(((df_patients["性別"] == "女性") & (df_patients["年代"] == "90歳以上")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "10歳未満")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "10代")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "20代")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "30代")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "40代")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "50代")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "60代")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "70代")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "80代")).sum()),
+                int(((df_patients["性別"] == "女性") & (
+                    df_patients["年代"] == "90歳以上")).sum()),
             ]
         },
         {
             "label": "O",
             "data": [
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "10歳未満")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "10代")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "20代")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "30代")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "40代")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "50代")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "60代")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "70代")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "80代")).sum()),
-                int(((df_patients["性別"] != "男性") & ( df_patients["性別"] != "女性") & (df_patients["年代"] == "90歳以上")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "10歳未満")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "10代")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "20代")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "30代")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "40代")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "50代")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "60代")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "70代")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "80代")).sum()),
+                int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性") & (
+                    df_patients["年代"] == "90歳以上")).sum()),
             ]
         }
     ]
