@@ -11,23 +11,86 @@
     </p>
     <dl :class="$style.telCenter">
       <dt>{{ $t('富山市保健所(富山市)') }}</dt>
-      <dd><i aria-hidden="true" class="v-icon notranslate mdi mdi-call theme--light"></i><a href="tel:0764281152">076-428-1152</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0764281152">076-428-1152</a>
+          </div>
+      </dd>
       <dt>{{ $t('高岡厚生センター(高岡市)') }}</dt>
-      <dd><a href="tel:0766268414">0766-26-8414</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0766268414">0766-26-8414</a>
+          </div>
+      </dd>
       <dt>{{ $t('高岡厚生センター射水支所(射水市)') }}</dt>
-      <dd><a href="tel:0766562666">0766-56-2666</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0766562666">0766-56-2666</a>
+          </div>
+      </dd>
       <dt>{{ $t('高岡厚生センター氷見支所(氷見市)') }}</dt>
-      <dd><a href="tel:0766741780">0766-74-1780</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0766741780">0766-74-1780</a>
+          </div>
+      </dd>
       <dt>{{ $t('砺波厚生センター(砺波市、南砺市)') }}</dt>
-      <dd><a href="tel:0763223512">0763-22-3512</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0763223512">0763-22-3512</a>
+          </div>
+      </dd>
       <dt>{{ $t('砺波厚生センター小矢部支所(小矢部市)') }}</dt>
-      <dd><a href="tel:0766671070">0766-67-1070</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0766671070">0766-67-1070</a>
+          </div>
+      </dd>
       <dt>{{ $t('新川厚生センター(黒部市、入善町、朝日町)') }}</dt>
-      <dd><a href="tel:0765522647">0765-52-2647</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0765522647">0765-52-2647</a>
+          </div>
+      </dd>
       <dt>{{ $t('新川厚生センター魚津支所(魚津市)') }}</dt>
-      <dd><a href="tel:0765240359">0765-24-0359</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0765240359">0765-24-0359</a>
+          </div>
+      </dd>
       <dt>{{ $t('中部厚生センター(滑川市、舟橋村、上市町、立山町)') }}</dt>
-      <dd><a href="tel:0764720637">076-472-0637</a></dd>
+      <dd>
+          <div :class="[$style.phone, $style.fzNumeric]">
+            <span :class="$style.icon">
+              <PhoneIcon alt="Phone" />
+            </span>
+            <a href="tel:0764720637">076-472-0637</a>
+          </div>
+      </dd>
     </dl>
   </div>
 </template>
