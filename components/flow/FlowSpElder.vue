@@ -33,7 +33,7 @@
     </ul>
     <p :class="[$style.heading, $style.mt10]">
       <span :class="[$style.underline, $style.fzXLarge]">
-        {{ $t('いずれかに該当する') }}
+        {{ $t('いずれかに該当する方') }}
       </span>
     </p>
     <p :class="$style.mt10">{{ $t('発熱や咳などの比較的軽い風邪の症状がある場合も、すぐに御相談ください。（これらに該当しない場合の相談も可能です。）') }}
