@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.container">
-    <h4 id="consult" :class="[$style.heading, $style.fzXLarge]">
+    <h4 id="consult" :class="[$style.heading, $style.fzLarge]">
       {{ $t('帰国者接触者相談センター') }}
     </h4>
     <p :class="[$style.open, $style.fzMedium, $style.mb10]">
