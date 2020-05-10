@@ -17,7 +17,7 @@
         {{ $t('高熱') }}
       </li>
     </ul>
-    <p :class="[$style.heading, $style.mt10">
+    <p :class="[$style.heading, $style.mt10]">
       <span :class="[$style.underline, $style.fzXLarge]">
         {{ $t('いずれかに該当する') }}
       </span>
