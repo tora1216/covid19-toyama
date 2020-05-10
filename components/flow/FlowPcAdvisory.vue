@@ -14,8 +14,10 @@
             </span>
           </div>
         </div>
-        <div :class="[$style.AdvisoryContentsColsSentense_17Ilp, 'mt-4']">
-          {{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}
+        <div :class="$style.AdvisoryContentsColsSentense_17Ilp">
+          <small>
+            {{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}
+          </small>
         </div>
       </div>
 
@@ -23,7 +25,7 @@
         <dl :class="$style.telCenter">
           <dt>{{ $t('富山市保健所(富山市)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0764281152">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 076-428-1152
@@ -32,7 +34,7 @@
           </dd>
           <dt>{{ $t('高岡厚生センター(高岡市)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0766268414">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 0766-26-8414
@@ -41,7 +43,7 @@
           </dd>
           <dt>{{ $t('高岡厚生センター射水支所(射水市)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0766562666">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 0766-56-2666
@@ -50,7 +52,7 @@
           </dd>
           <dt>{{ $t('高岡厚生センター氷見支所(氷見市)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0766741780">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 0766-74-1780
@@ -59,7 +61,7 @@
           </dd>
           <dt>{{ $t('砺波厚生センター(砺波市、南砺市)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0763223512">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 0763-22-3512
@@ -68,7 +70,7 @@
           </dd>
           <dt>{{ $t('砺波厚生センター小矢部支所(小矢部市)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0766671070">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 0766-67-1070
@@ -77,7 +79,7 @@
           </dd>
           <dt>{{ $t('新川厚生センター(黒部市、入善町、朝日町)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0765522647">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 0765-52-2647
@@ -86,7 +88,7 @@
           </dd>
           <dt>{{ $t('新川厚生センター魚津支所(魚津市)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0765240359">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 0765-24-0359
@@ -95,7 +97,7 @@
           </dd>
           <dt>{{ $t('中部厚生センター(滑川市、舟橋村、上市町、立山町)') }}</dt>
           <dd>
-            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering,'mt-1']">
+            <div :class="[$style.AdvisoryTelephoneArea,$style.AdvisoryBlockCentering]">
               <a :class="$style.AdvisoryTelephone" href="tel:0764720637">
                 <img :class="$style.AdvisoryTelephoneIcon" src="/flow/phone-24px.svg" aria-hidden="true"/>
                 076-472-0637
@@ -196,7 +198,7 @@
   dl {
     dt {
       font-size: 15px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
   }
 }
