@@ -85,16 +85,6 @@
   align-items: center;
   font-weight: bold;
 
-  &:link,
-  &:visited,
-  &:hover,
-  &:active,
-  &:focus {
-    color: inherit;
-    text-decoration: none;
-    outline: 1px dotted $gray-3;
-  }
-
   &Icon {
     display: inline-block;
     margin-right: 5px;
