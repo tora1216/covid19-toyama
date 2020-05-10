@@ -183,7 +183,7 @@
     border-radius: 4px;
     text-align: center;
     padding: 20px 10px;
-    margin: 24px auto;
+    margin: 12px auto;
   }
   &WhiteBox {
     background-color: $white;
@@ -196,6 +196,7 @@
     }
   }
   dl {
+    margin-top: 20px;
     dt {
       font-size: 15px;
       margin-top: 10px;
