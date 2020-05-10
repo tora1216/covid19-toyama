@@ -7,15 +7,15 @@
             $t('帰国者接触者相談センター')
           }}</span>
         </div>
-        <!--<div :class="[$style.AdvisoryContentsColsSentense_17Ilp, 'mt-4']">
-          {{ $t('（新型コロナ受診相談窓口）') }}
-        </div>-->
         <div>
           <div :class="[$style.AdvisoryBoxContainer, $style.AdvisoryWhiteBox]">
             <span :class="$style.AdvisoryWhiteBoxSentense">
               {{ $t('24時間対応') }}
             </span>
           </div>
+        </div>
+        <div :class="[$style.AdvisoryContentsColsSentense_17Ilp, 'mt-4']">
+          {{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}
         </div>
       </div>
 
@@ -40,26 +40,6 @@
           <dt>中部厚生センター(滑川市、舟橋村、上市町、立山町)</dt>
           <dd>076-472-0637</dd>
         </dl>
-        <div :class="$style.AdvisoryContentsDiv">
-          <div
-            :class="[
-              $style.AdvisoryLink,
-              $style.AdvisoryBlockCentering
-            ]"
-          >
-            <a
-              href="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html#page_list"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>{{ $t('センターの電話番号はこちら') }}</span>
-              <v-icon size="18">
-                mdi-open-in-new
-              </v-icon>
-            </a>
-          </div>
-        </div>
-        <span>{{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}</span>
       </div>
 
     </div>

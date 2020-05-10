@@ -2,12 +2,12 @@
   <div :class="$style.container">
     <h4 id="consult" :class="[$style.heading, $style.fzXLarge]">
       {{ $t('帰国者接触者相談センター') }}
-      <!--<small :class="[$style.break, $style.fzRegular, $style.mt5]">{{
-        $t('（新型コロナ受診相談窓口）')
-      }}</small>-->
     </h4>
     <p :class="[$style.open, $style.fzSmall]">
       <span>{{ $t('24時間対応') }}</span>
+    </p>
+    <p>
+      <small>{{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}</small>
     </p>
     <dl :class="$style.telCenter">
       <dt>富山市保健所(富山市)</dt>
@@ -29,23 +29,6 @@
       <dt>中部厚生センター(滑川市、舟橋村、上市町、立山町)</dt>
       <dd>076-472-0637</dd>
     </dl>
-    <dl>
-      <div :class="$style.daytime">
-        <dd :class="$style.link">
-          <a
-            href="http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html#page_list"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('センターの電話番号はこちら') }}
-            <v-icon size="16">
-              mdi-open-in-new
-            </v-icon>
-          </a>
-        </dd>
-      </div>
-    </dl>
-    <span>{{ $t('※夜間・休日は、メッセージにより緊急電話番号をご案内します') }}</span>
   </div>
 </template>
 
