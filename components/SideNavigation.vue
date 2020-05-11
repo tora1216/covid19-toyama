@@ -166,39 +166,6 @@ export default Vue.extend({
           divider: true
         },
         {
-          icon: 'ParentIcon',
-          title: this.$t('お子様をお持ちの皆様へ'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#501'
-        },
-        {
-          icon: 'mdi-account-multiple',
-          title: this.$t('県民の皆様へ'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#600'
-        },
-        {
-          icon: 'mdi-domain',
-          title: this.$t('企業の皆様・はたらく皆様へ'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#603',
-          divider: true
-        },
-        {
-          title: this.$t('休業要請等について'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#100'
-        },
-        {
-          title: this.$t('各種相談窓口について'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#200'
-        },
-        {
-          title: this.$t('各種手続きの猶予等について'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#400'
-        },
-        {
-          title: this.$t('県有施設の臨時休館について'),
-          link: 'http://www.pref.toyama.jp/sections/1118/virus/index.html#502',
-          divider: true
-        },
-        {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
         },
