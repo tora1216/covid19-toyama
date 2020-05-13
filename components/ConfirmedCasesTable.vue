@@ -17,7 +17,7 @@
         <li :class="[$style.box, $style.parent, $style.hospitalized]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('入院') }}</span>
+              <span>{{ $t('入院中') }}</span>
               <span>
                 <strong>{{ 入院中 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -55,17 +55,6 @@
               <span>{{ $t('宿泊療養') }}</span>
               <span>
                 <strong>{{ 宿泊療養 }}</strong>
-                <span :class="$style.unit">{{ $t('人') }}</span>
-              </span>
-            </div>
-          </div>
-        </li>
-        <li :class="[$style.box, $style.deceased]">
-          <div :class="$style.pillar">
-            <div :class="$style.content">
-              <span>{{ $t('自宅療養') }}</span>
-              <span>
-                <strong>{{ 自宅療養 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -121,10 +110,6 @@ export default Vue.extend({
       required: true
     },
     宿泊療養: {
-      type: Number,
-      required: true
-    },
-    自宅療養: {
       type: Number,
       required: true
     },
@@ -216,13 +201,13 @@ $default-boxdiff: 35px;
     width: 100%;
 
     > .pillar {
-      // [6列] 1/6
-      width: calc((100% + #{$default-bdw} * 2) / 6 - #{$default-bdw} * 3);
+      // [7列] 1/7
+      width: calc((100% + #{$default-bdw} * 2) / 7 - #{$default-bdw} * 3);
     }
 
     > .group {
-      // [6列] 5/6
-      width: calc((100% + #{$default-bdw} * 2) / 6 * 5 + #{$default-bdw});
+      // [7列] 6/7
+      width: calc((100% + #{$default-bdw} * 2) / 7 * 6 + #{$default-bdw});
     }
   }
 
@@ -252,8 +237,8 @@ $default-boxdiff: 35px;
   &.deceased,
   &.recovered {
     margin-left: $default-bdw;
-    // [5列] 1/5
-    width: calc(100% / 5 - #{$default-bdw});
+    // [4列] 1/4
+    width: calc(100% / 4 - #{$default-bdw});
   }
 }
 

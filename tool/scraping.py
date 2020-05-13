@@ -75,10 +75,6 @@ data["main_summary"] = {
             "value":  int(mojimoji.zen_to_han(summary_text3.group(1)))
         },
         {
-            "attr": "自宅療養",
-            "value": 0
-        },
-        {
             "attr": "死亡",
             "value":  int(mojimoji.zen_to_han(summary_text.group(4)))
         },
