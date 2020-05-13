@@ -28,7 +28,10 @@ soup = BeautifulSoup(r.content, "html.parser")
 # 要約テキストを取得
 main_list = soup.find("div", id="main")
 text = main_list.find("p").text
-summary_text = re.search(r"(.+)例（入院中\D+(.+)例、退院(.+)例、死亡(.+)例）", text)
+summary_text = re.search(
+    r"(.+)例（入院中\D+(.+)例、退院(.+)例、死亡(.+)例", text)
+summary_text2 = re.search(r"重症者 (.+?)人", text)
+summary_text3 = re.search(r"宿泊療養施設入所者数 (.+?)人", text)
 
 # 一覧エクセルを取得
 file_list = soup.find("div", id="file")
@@ -47,24 +50,43 @@ df_kanjya['年代'] = df_kanjya["年代"].replace("90以上", "90歳以上").rep
     "90代", "90歳以上").replace("90代以上", "90歳以上")
 
 
-# 検査陽性者の状況
+# 検査陽性者の状況 
 data["main_summary"] = {
+    "attr": "陽性患者数",
     "date": dt_now,
-    "children": [{
-        "attr": "陽性者数",
-        "value": int(mojimoji.zen_to_han(summary_text.group(1))),
-        "children": [
-            {
-                "attr": "入院中",
-                "value": int(mojimoji.zen_to_han(summary_text.group(2)))
-            }, {
-                "attr": "退院",
-                "value": int(mojimoji.zen_to_han(summary_text.group(3)))
-            }, {
-                "attr": "死亡",
-                "value": int(mojimoji.zen_to_han(summary_text.group(4)))
-            }]
-    }]
+    "value": int(mojimoji.zen_to_han(summary_text.group(1))),
+    "children": [
+        {
+            "attr": "入院中",
+            "value": int(mojimoji.zen_to_han(summary_text.group(2))),
+            "children": [
+                {
+                    "attr": "無症状・軽症・中等症",
+                    "value":  int(mojimoji.zen_to_han(summary_text.group(2))) - int(mojimoji.zen_to_han(summary_text2.group(1)))
+                },
+                {
+                    "attr": "重症",
+                    "value":  int(mojimoji.zen_to_han(summary_text2.group(1)))
+                }
+            ]
+        },
+        {
+            "attr": "宿泊療養",
+            "value":  int(mojimoji.zen_to_han(summary_text3.group(1)))
+        },
+        {
+            "attr": "自宅療養",
+            "value": 0
+        },
+        {
+            "attr": "死亡",
+            "value":  int(mojimoji.zen_to_han(summary_text.group(4)))
+        },
+        {
+            "attr": "退院",
+            "value": int(mojimoji.zen_to_han(summary_text.group(3)))
+        }
+    ]
 }
 
 # 陽性患者数
