@@ -17,57 +17,23 @@ type DataType = {
           ]
         },
         {
-          attr: '宿泊療養'
+          attr: '死亡'
           value: number
         },
         {
           attr: '退院'
           value: number
-        },
-        {
-          attr: '死亡'
-          value: number
         }
-  ]
+      ]
 }
 
 type ConfirmedCasesType = {
-  陽性者数: number
+  陽性患者数: number
   入院中: number
   無症状軽症中等症: number
   重症: number
-  宿泊療養: number
   死亡: number
   退院: number
-}
-
-interface ChildData {
-  attr: string
-  value: number
-}
-
-type ChildDataType = {
-  attr: string
-  value: number
-  children?: ChildData[]
-}
-
-function getSelectedItem(data: DataType, key: string) {
-  let result: number | undefined
-  const recursiveSearch = (data: ChildDataType) => {
-    if (result) return
-    if (data.attr === key) {
-      result = data.value
-    } else if (data.children) {
-      data.children.forEach((child: ChildDataType) => {
-        if (result) return
-        recursiveSearch(child)
-      })
-    }
-  }
-  recursiveSearch(data)
-
-  return result || 0
 }
 
 /**
@@ -77,13 +43,12 @@ function getSelectedItem(data: DataType, key: string) {
  */
 export default (data: DataType) => {
   const formattedData: ConfirmedCasesType = {
-    陽性者数: getSelectedItem(data, '陽性患者数'),
-    入院中: getSelectedItem(data, '入院中'),
-    無症状軽症中等症: getSelectedItem(data, '無症状・軽症・中等症'),
-    重症: getSelectedItem(data, '重症'),
-    宿泊療養: getSelectedItem(data, '宿泊療養'),
-    死亡: getSelectedItem(data, '死亡'),
-    退院: getSelectedItem(data, '退院')
+    陽性患者数: data.value,
+    入院中: data.children[0].value,
+    無症状軽症中等症: data.children[0].children[0].value,
+    重症: data.children[0].children[1].value,
+    死亡: data.children[1].value,
+    退院: data.children[2].value
   }
   return formattedData
 }

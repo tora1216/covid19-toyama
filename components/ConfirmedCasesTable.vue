@@ -8,7 +8,7 @@
             <br />({{ $t('累計') }})
           </span>
           <span>
-            <strong>{{ 陽性者数 }}</strong>
+            <strong>{{ 陽性患者数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -17,7 +17,9 @@
         <li :class="[$style.box, $style.parent, $style.hospitalized]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('入院中') }}</span>
+              <span>
+              {{ $t('入院中') }}
+              </span>
               <span>
                 <strong>{{ 入院中 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -28,7 +30,13 @@
             <li :class="[$style.box, $style.short, $style.minor]">
               <div :class="$style.pillar">
                 <div :class="$style.content">
-                  <span>{{ $t('無症状') }}・{{ $t('軽症') }}・{{ $t('中等症') }}</span>
+                  <span>
+                  {{ $t('無症状') }}
+                  <br />
+                  {{ $t('軽症') }}
+                  <br />
+                  {{ $t('中等症') }}
+                  </span>
                   <span>
                     <strong>{{ 無症状軽症中等症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
@@ -39,7 +47,9 @@
             <li :class="[$style.box, $style.short, $style.severe]">
               <div :class="$style.pillar">
                 <div :class="$style.content">
-                  <span>{{ $t('重症') }}</span>
+                  <span>
+                  {{ $t('重症') }}
+                  </span>
                   <span>
                     <strong>{{ 重症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
@@ -52,18 +62,9 @@
         <li :class="[$style.box, $style.deceased]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('宿泊療養') }}</span>
               <span>
-                <strong>{{ 宿泊療養 }}</strong>
-                <span :class="$style.unit">{{ $t('人') }}</span>
-              </span>
-            </div>
-          </div>
-        </li>
-        <li :class="[$style.box, $style.deceased]">
-          <div :class="$style.pillar">
-            <div :class="$style.content">
-              <span>{{ $t('死亡') }}</span>
+              {{ $t('死亡') }}
+               </span>
               <span>
                 <strong>{{ 死亡 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -74,7 +75,9 @@
         <li :class="[$style.box, $style.recovered]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('退院等') }}</span>
+              <span>
+              {{ $t('退院') }}
+              </span>
               <span>
                 <strong>{{ 退院 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -93,7 +96,7 @@ import Vue from 'vue'
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
   props: {
-    陽性者数: {
+    陽性患者数: {
       type: Number,
       required: true
     },
@@ -109,10 +112,6 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    宿泊療養: {
-      type: Number,
-      required: true
-    },
     死亡: {
       type: Number,
       required: true
@@ -120,6 +119,29 @@ export default Vue.extend({
     退院: {
       type: Number,
       required: true
+    }
+  },
+  methods: {
+    /** 桁数に応じて位置の調整をする */
+    getAdjustX(input: number) {
+      const length = input.toString(10).length
+      switch (length) {
+        case 1: {
+          return 3
+        }
+        case 2: {
+          return 0
+        }
+        case 3: {
+          return -3
+        }
+        case 4: {
+          return -8
+        }
+        default: {
+          return 0
+        }
+      }
     }
   }
 })
@@ -201,13 +223,13 @@ $default-boxdiff: 35px;
     width: 100%;
 
     > .pillar {
-      // [7列] 1/7
-      width: calc((100% + #{$default-bdw} * 2) / 7 - #{$default-bdw} * 3);
+      // [6列] 1/6
+      width: calc((100% + #{$default-bdw} * 2) / 6 - #{$default-bdw} * 3);
     }
 
     > .group {
-      // [7列] 6/7
-      width: calc((100% + #{$default-bdw} * 2) / 7 * 6 + #{$default-bdw});
+      // [6列] 5/6
+      width: calc((100% + #{$default-bdw} * 2) / 6 * 5 + #{$default-bdw});
     }
   }
 
@@ -237,8 +259,8 @@ $default-boxdiff: 35px;
   &.deceased,
   &.recovered {
     margin-left: $default-bdw;
-    // [4列] 1/4
-    width: calc(100% / 4 - #{$default-bdw});
+    // [5列] 1/5
+    width: calc(100% / 5 - #{$default-bdw});
   }
 }
 
@@ -252,24 +274,23 @@ $default-boxdiff: 35px;
 
   > span {
     display: block;
-    width: 100%;
 
-    @include font-size(14);
+    @include font-size(16);
 
     &:last-child {
       margin-top: 0.1em;
     }
 
     &:not(:last-child) {
-      overflow-wrap: break-word;
+      word-break: break-all;
     }
   }
   span strong {
-    @include font-size(16);
+    @include font-size(18);
   }
 
   span.unit {
-    @include font-size(14);
+    @include font-size(16);
   }
 }
 
