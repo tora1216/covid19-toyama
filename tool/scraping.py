@@ -24,14 +24,51 @@ headers = {
 r = requests.get(url, headers=headers)
 r.raise_for_status()
 soup = BeautifulSoup(r.content, "html.parser")
+summary = soup.find("div", id="main").get_text(strip=True)
 
-# 要約テキストを取得
-main_list = soup.find("div", id="main")
-text = main_list.find("p").text
-summary_text = re.search(
-    r"(.+)例（入院中\D+(.+)例、退院(.+)例、死亡(.+)例", text)
-summary_text2 = re.search(r"重症者 (.+?)人", text)
-summary_text3 = re.search(r"宿泊療養施設入所者数 (.+?)人", text)
+# 陽性患者数
+total = int(mojimoji.zen_to_han(re.search(r"(.+?)例", summary).group(1)))
+# 入院中・入院等調整中
+hospitalized = int(mojimoji.zen_to_han(re.search(r"入院中又は入院等調整中(.+?)例", summary).group(1)))
+# 重症
+severe = int(mojimoji.zen_to_han(re.search(r"重症者 (.+?)人", summary).group(1)))
+# 無症状・軽症・中等症
+mild = hospitalized - severe
+# 死亡
+death = int(mojimoji.zen_to_han(re.search(r"死亡(.+?)例", summary).group(1)))
+# 退院
+discharged = int(mojimoji.zen_to_han(re.search(r"退院(.+?)例", summary).group(1)))
+
+# 検査陽性者の状況 
+data["main_summary"] = {
+    "attr": "陽性患者数",
+    "date": dt_now,
+    "value": total,
+    "children": [
+        {
+            "attr": "入院中・入院等調整中",
+            "value": hospitalized,
+            "children": [
+                {
+                    "attr": "無症状・軽症・中等症",
+                    "value":  mild
+                },
+                {
+                    "attr": "重症",
+                    "value":  severe
+                }
+            ]
+        },
+        {
+            "attr": "死亡",
+            "value":  death
+        },
+        {
+            "attr": "退院",
+            "value": discharged
+        }
+    ]
+}
 
 # 一覧エクセルを取得
 file_list = soup.find("div", id="file")
@@ -48,38 +85,6 @@ df_kanjya["判明日"] = df_kanjya["判明日"].apply(
 df_kanjya['性別'] = df_kanjya["性別"].replace("男", "男性").replace("女", "女性")
 df_kanjya['年代'] = df_kanjya["年代"].replace("90以上", "90歳以上").replace(
     "90代", "90歳以上").replace("90代以上", "90歳以上")
-
-
-# 検査陽性者の状況 
-data["main_summary"] = {
-    "attr": "陽性患者数",
-    "date": dt_now,
-    "value": int(mojimoji.zen_to_han(summary_text.group(1))),
-    "children": [
-        {
-            "attr": "入院中",
-            "value": int(mojimoji.zen_to_han(summary_text.group(2))),
-            "children": [
-                {
-                    "attr": "無症状・軽症・中等症",
-                    "value":  int(mojimoji.zen_to_han(summary_text.group(2))) - int(mojimoji.zen_to_han(summary_text2.group(1)))
-                },
-                {
-                    "attr": "重症",
-                    "value":  int(mojimoji.zen_to_han(summary_text2.group(1)))
-                }
-            ]
-        },
-        {
-            "attr": "死亡",
-            "value":  int(mojimoji.zen_to_han(summary_text.group(4)))
-        },
-        {
-            "attr": "退院",
-            "value": int(mojimoji.zen_to_han(summary_text.group(3)))
-        }
-    ]
-}
 
 # 陽性患者数
 dt_start = datetime.datetime(2020, 3, 30)

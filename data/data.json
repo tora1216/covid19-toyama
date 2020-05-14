@@ -6,7 +6,7 @@
         "value": 224,
         "children": [
             {
-                "attr": "入院中",
+                "attr": "入院中・入院等調整中",
                 "value": 80,
                 "children": [
                     {

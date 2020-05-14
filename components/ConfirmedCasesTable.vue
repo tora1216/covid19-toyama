@@ -4,7 +4,7 @@
       <div :class="$style.pillar">
         <div :class="$style.content">
           <span>
-            {{ $t('陽性者数') }}
+            {{ $t('陽性患者数') }}
             <br />({{ $t('累計') }})
           </span>
           <span>
@@ -23,7 +23,7 @@
               {{ $t('入院等調整中') }}
               </span>
               <span>
-                <strong>{{ 入院中 }}</strong>
+                <strong>{{ 入院中入院等調整中 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -102,7 +102,7 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    入院中: {
+    入院中入院等調整中: {
       type: Number,
       required: true
     },
