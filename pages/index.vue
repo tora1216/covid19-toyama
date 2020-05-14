@@ -22,12 +22,12 @@
       </div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    <div class="EmergencyPosterBlock mb-4">
+    <!--<div class="EmergencyPosterBlock mb-4">
       <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-bullhorn theme--light" style="font-size: 24px;"></i>
         {{ $t('緊急事態宣言 発令') }} 
       </h3>
       <img class="EmergencyPosterImage" src="/emergency-poster.jpg" alt="" />
-    </div>
+    </div>-->
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
