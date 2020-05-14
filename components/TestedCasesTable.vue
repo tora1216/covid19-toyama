@@ -17,12 +17,10 @@
     </li>
     <li :class="[$style.box, $style.tall, $style.parent, $style.cases]">
       <div :class="$style.title">
-        {{ $t('実施人数') }}
-        ({{ $t('累計') }})
       </div>
       <div :class="$style.pillar">
         <div :class="$style.content">
-          <span>{{ $t('合計人数') }}</span>
+          <span>{{ $t('実施人数') }}</span>
           <span>
             <strong>{{ 累計人数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>

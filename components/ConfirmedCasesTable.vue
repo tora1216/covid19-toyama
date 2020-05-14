@@ -5,7 +5,6 @@
         <div :class="$style.content">
           <span>
             {{ $t('陽性患者数') }}
-            <br />({{ $t('累計') }})
           </span>
           <span>
             <strong>{{ 陽性患者数 }}</strong>
