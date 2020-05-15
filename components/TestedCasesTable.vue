@@ -5,7 +5,7 @@
         <div :class="$style.content">
           <!-- eslint-disable vue/no-v-html-->
           <span>
-            {{ $t('陽性率') }}
+            {{ $t('検査陽性率') }}
           </span>
           <!-- eslint-enable vue/no-v-html-->
           <span>

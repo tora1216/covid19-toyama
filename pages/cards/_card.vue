@@ -129,7 +129,7 @@ export default {
         updatedAt = Data.inspection_persons.date
         break
       case 'rate-of-confirmed-cases':
-        title = this.$t('陽性率の推移')
+        title = this.$t('検査陽性率')
         updatedAt = Data.positive_rate.date
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':

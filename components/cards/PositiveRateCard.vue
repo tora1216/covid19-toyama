@@ -1,7 +1,7 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <time-bar-chart
-      :title="$t('陽性率の推移')"
+      :title="$t('検査陽性率')"
       :title-id="'rate-of-confirmed-cases'"
       :chart-id="'rate-of-confirmed-cases'"
       :chart-data="patientsGraph"
