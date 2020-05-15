@@ -216,9 +216,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
-              const labelText = `${parseInt(
-                tooltipItem.value
-              ).toLocaleString()} ${unit}`
+              const labelText = `${tooltipItem.value.toLocaleString()} ${unit}`
               return labelText
             },
             title(tooltipItem: any, data: any) {
