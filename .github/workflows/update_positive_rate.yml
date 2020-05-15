@@ -2,7 +2,7 @@ name: Update positive_rate.json
 
 on:
   schedule:
-    - cron: '5 13 * * *'
+    - cron: '10 13 * * *'
 
 jobs:
   build:
