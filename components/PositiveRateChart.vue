@@ -188,6 +188,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }),
               fill: false,
               lineTension: 0,
+              backgroundColor: color,
               borderColor:'rgba(00, 160, 64, 0.9)',
               borderWidth: 0
             }
@@ -204,6 +205,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             }),
             fill: false,
             lineTension: 0,
+            backgroundColor: color,
             borderColor:'rgba(00, 160, 64, 0.9)',
             borderWidth: 0
           }
