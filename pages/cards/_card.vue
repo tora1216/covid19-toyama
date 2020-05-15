@@ -18,6 +18,9 @@
     <inspection-persons-number-card
       v-else-if="this.$route.params.card == 'number-of-inspection-persons'"
     />
+    <positive-rate-card
+      v-else-if="this.$route.params.card == 'rate-of-confirmed-cases'"
+    />
     <telephone-advisory-reports-number-card
       v-else-if="
         this.$route.params.card ==
@@ -68,6 +71,7 @@ import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCar
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
+import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 import MetroCard from '@/components/cards/MetroCard.vue'
@@ -86,6 +90,7 @@ export default {
     ConfirmedCasesAttributesCard,
     TestedNumberCard,
     InspectionPersonsNumberCard,
+    PositiveRateCard,
     TelephoneAdvisoryReportsNumberCard,
     ConsultationDeskReportsNumberCard,
     MetroCard,
@@ -122,6 +127,10 @@ export default {
       case 'number-of-inspection-persons':
         title = this.$t('検査実施人数')
         updatedAt = Data.inspection_persons.date
+        break
+      case 'rate-of-confirmed-cases':
+        title = this.$t('陽性率の推移')
+        updatedAt = Data.positive_rate.date
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         title = this.$t('新型コロナウイルス感染症に関する一般相談件数')
