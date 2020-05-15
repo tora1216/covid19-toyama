@@ -20,7 +20,7 @@
       </div>
       <div :class="$style.pillar">
         <div :class="$style.content">
-          <span>{{ $t('実施人数') }}</span>
+          <span>{{ $t('検査実施人数') }}</span>
           <span>
             <strong>{{ 累計人数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>

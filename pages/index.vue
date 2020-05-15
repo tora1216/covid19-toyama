@@ -42,9 +42,9 @@
       <patients-by-age-card />
       <patients-by-gender-card />
       <tested-cases-details-card />
+      <positive-rate-card />
       <inspection-persons-number-card />
       <!-- <tested-number-card /> -->
-      <positive-rate-card />
       <telephone-advisory-reports-number-card />
       <consultation-desk-reports-number-card />
       <!-- <metro-card /> -->
