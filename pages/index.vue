@@ -22,12 +22,19 @@
       </div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    <!--<div class="EmergencyPosterBlock mb-4">
+    <div class="EmergencyBlock mb-4">
       <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-bullhorn theme--light" style="font-size: 24px;"></i>
-        {{ $t('緊急事態宣言 発令') }} 
+        {{ $t('富山県対策指針 策定') }} 
       </h3>
-      <img class="EmergencyPosterImage" src="/emergency-poster.jpg" alt="" />
-    </div>-->
+      <div style="border: 4px solid #ffd700;">
+      <p>富山県は現在「Stage２」の措置を実施しています。</p>
+      </div>
+      <p>富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。</p>
+      <p>直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。</p>
+      <img class="EmergencyImage" src="/roadmap1.jpg" alt="roadmap1" />
+      <img class="EmergencyImage" src="/roadmap2.jpg" alt="roadmap2" />
+      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022037.html" target="_blank">{{ $t('新型コロナウイルス感染拡大にかかる富山県対策指針について（令和2年5月14日策定）') }}</a>
+    </div>
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
@@ -178,7 +185,7 @@ export default Vue.extend({
     }
   }
 
-  .EmergencyPosterBlock {
+  .EmergencyBlock {
     margin: 20px 0;
     background-color: #fff;
     box-shadow: 0 0 2px rgba(112, 15, 15, 0.15);
@@ -186,7 +193,7 @@ export default Vue.extend({
     border-radius: 4px;
     padding: 10px;
 
-    .EmergencyPosterImage {
+    .EmergencyImage {
       display: block;
       width: 50%;
       margin: auto;
