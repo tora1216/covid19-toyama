@@ -3,34 +3,13 @@
     <template v-slot:description>
       <slot name="description" />
     </template>
-    <!--<template v-if="showButton === true" v-slot:button>
-      <data-selector
-        v-model="dataKind"
-        :target-id="chartId"
-        :style="{ display: canvas ? 'inline-block' : 'none' }"
-      />
-    </template>-->
-    <bar
-      :style="{ display: canvas ? 'block' : 'none' }"
+    <line-chart
       :chart-id="chartId"
       :chart-data="displayData"
       :options="displayOption"
       :height="240"
     />
-    <v-data-table
-      :style="{ top: '-9999px', position: canvas ? 'fixed' : 'static' }"
-      :headers="tableHeaders"
-      :items="tableData"
-      :items-per-page="-1"
-      :hide-default-footer="true"
-      :hide-default-header="true"
-      :height="240"
-      :fixed-header="true"
-      :mobile-breakpoint="0"
-      class="cardTable"
-      item-key="name"
-    />
-    <template v-if="showButton === true" v-slot:infoPanel>
+    <template  v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
