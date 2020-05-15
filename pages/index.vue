@@ -24,12 +24,12 @@
     </div>
     <div class="EmergencyBlock mb-4">
       <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-bullhorn theme--light" style="font-size: 24px;"></i>
-        {{ $t('富山県対策指針 策定') }} 
+        {{ $t('富山県の対策指針') }} 
       </h3>
       <div style="background-color: #ffe200; color: #4d4d4d; border-radius: 4px; padding: 4px 8px; font-weight: bold; margin: 16px 0px;">
-      現在「Stage２」の措置を実施しています
+        {{ $t('現在「Stage２」の措置を実施しています') }} 
       </div>
-      <p>富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。</p>
+      <p>{{ $t('富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
       <img class="EmergencyImage" src="/roadmap1.jpg" alt="roadmap1" />
       <img class="EmergencyImage" src="/roadmap2.jpg" alt="roadmap2" />
     </div>
