@@ -176,6 +176,7 @@ export default Vue.extend({
       display: block;
       width: 50%;
       margin: auto;
+      margin-top: 16px;
       @include lessThan($medium) {
         width: 75%;
       }
