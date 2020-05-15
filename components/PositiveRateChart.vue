@@ -187,6 +187,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 return d.transition
               }),
               backgroundColor: color,
+              fill: false,
               borderWidth: 0
             }
           ]
@@ -201,6 +202,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               return d.cumulative
             }),
             backgroundColor: color,
+            fill: false,
             borderWidth: 0
           }
         ]
