@@ -3,13 +3,13 @@
     <template v-slot:description>
       <slot name="description" />
     </template>
-    <template v-if="showButton === true" v-slot:button>
+    <!--<template v-if="showButton === true" v-slot:button>
       <data-selector
         v-model="dataKind"
         :target-id="chartId"
         :style="{ display: canvas ? 'inline-block' : 'none' }"
       />
-    </template>
+    </template>-->
     <bar
       :style="{ display: canvas ? 'block' : 'none' }"
       :chart-id="chartId"
