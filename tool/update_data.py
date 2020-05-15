@@ -35,6 +35,7 @@ data["inspection_persons"] = {"date": dt_now, "data": df_insp.to_dict(orient="re
 
 # 陽性率の推移
 df_rate = df_counts.loc[:, ("年月日", "陽性人数", "陰性人数")].copy()
+df_rate = df_rate.iloc[32:,:]
 df_rate = df_rate.to_dict(orient='recodes')
 positive_rate_data=[]
 # 陽性率を算出
