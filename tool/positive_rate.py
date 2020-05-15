@@ -24,10 +24,11 @@ for data in df:
         rate = (data['positive_count'] / (data['positive_count'] + data['negative_count'])) * 100
         # 小数第二位で四捨五入
         rate = float(Decimal(str(rate)).quantize(Decimal('0.1'), ROUND_HALF_UP))
+        data['positive_rate'] = rate
     except ZeroDivisionError:
         # ゼロ除算時の対応
         rate = 0.0
-    data['positive_rate'] = rate
+        data['positive_rate'] = rate
 
 
 # 現在時刻
