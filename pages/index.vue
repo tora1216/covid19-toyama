@@ -30,7 +30,7 @@
         {{ $t('現在「Stage２」の措置を実施中です') }} 
       </div>
       <p>{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
-      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022037.html" target="_blank">
+      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank">
         <img class="EmergencyImage" src="/roadmap1.jpg" alt="roadmap1" />
         <img class="EmergencyImage" src="/roadmap2.jpg" alt="roadmap2" />
       </a>
