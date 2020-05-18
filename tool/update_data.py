@@ -20,10 +20,20 @@ COUNTS_FILE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJuQThafLPC7OPqU
 df_counts = pd.read_csv(COUNTS_FILE)
 
 # 指定した列のいずれかに欠損値がある行をすべて削除
-df_counts = df_counts.dropna(subset=['年月日', '検査実施人数', '陰性人数', '陽性人数', '一般相談件数', '帰国者相談件数'])
+df_counts = df_counts.dropna(subset=['年月日', '検査実施人数', '陰性人数', '陽性人数', '一般相談件数', '帰国者相談件数','退院者数', '死亡者数'])
 
 # データ形式の指定
-df_counts = df_counts.astype({'年月日': str, '検査実施人数': int, '陰性人数': int, '陽性人数': int, '一般相談件数': int, '帰国者相談件数': int})
+df_counts = df_counts.astype({'年月日': str, '検査実施人数': int, '陰性人数': int, '陽性人数': int, '一般相談件数': int, '帰国者相談件数': int, '退院者数': int, '死亡者数': int})
+
+# 死亡者数
+df_dead = df_counts.loc[:, ("年月日", "死亡者数")].copy()
+df_dead.rename(columns={"年月日": "日付", "死亡者数": "小計"}, inplace=True)
+data["dead_persons"] = {"date": dt_now, "data": df_dead.to_dict(orient="recodes")}
+
+# 退院者数
+df_disc = df_counts.loc[:, ("年月日", "退院者数")].copy()
+df_disc.rename(columns={"年月日": "日付", "退院者数": "小計"}, inplace=True)
+data["discharged_persons"] = {"date": dt_now, "data": df_disc.to_dict(orient="recodes")}
 
 # 検査実施状況
 data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())}, {"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}

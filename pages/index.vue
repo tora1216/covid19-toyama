@@ -48,6 +48,8 @@
       <patients-by-residence-card />
       <patients-by-age-card />
       <patients-by-gender-card />
+      <dead-persons-number-card />
+      <discharged-persons-number-card />
       <tested-cases-details-card />
       <positive-rate-card />
       <inspection-persons-number-card />
@@ -88,6 +90,8 @@ import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDe
 import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
 import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
+import DeadPersonsNumberCard from '@/components/cards/DeadPersonsNumberCard.vue'
+import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNumberCard.vue'
 
 export default Vue.extend({
   components: {
@@ -109,7 +113,9 @@ export default Vue.extend({
     // ChiyodaVisitorsCard,
     PatientsByResidenceCard,
     PatientsByAgeCard,
-    PatientsByGenderCard
+    PatientsByGenderCard,
+    DeadPersonsNumberCard,
+    DischargedPersonsNumberCard
   },
   data() {
     const data = {
