@@ -49,7 +49,7 @@
   "実績値": "Latest figure",
   "累計値": "Cumulative ",
   "前日比": "Day-over-day change",
-  "（注）「重症」は、集中治療室（ICU）等での管理又は人工呼吸器管理が必要な患者数を計上": "(Note) \"Severe symptoms\" is the number of patients who need management in an ICU or ventilator",
+  "（注）重症：集中治療室（ICU）等での管理又は人工呼吸器管理が必要な患者": "(Note) Severe symptoms: Patients who need management in an ICU or ventilator",
   "（注）日付は検査結果判明日を基準にしている": "(Note) The date is based on the date when the test result was found",
   "（注）症状は陽性公表時点のもの": "(Note) Symptoms are as of the time of positive announcement",
   "（注）陽性人数は、陽性患者の属性データを元に作成": "(Note) Number of positives is created based on attribute data of positive patients",

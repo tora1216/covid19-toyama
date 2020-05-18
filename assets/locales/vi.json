@@ -49,7 +49,7 @@
   "実績値": "Giá trị thực",
   "累計値": "Giá trị tổng",
   "前日比": "So với hôm trước",
-  "（注）「重症」は、集中治療室（ICU）等での管理又は人工呼吸器管理が必要な患者数を計上": "(Lưu ý) \"Triệu chứng nặng\" là số bệnh nhân cần quản lý trong ICU hoặc máy thở",
+  "（注）重症：集中治療室（ICU）等での管理又は人工呼吸器管理が必要な患者": "(Lưu ý) Triệu chứng nặng: Bệnh nhân cần quản lý trong một đơn vị chăm sóc đặc biệt (ICU) hoặc quản lý máy thở",
   "（注）日付は検査結果判明日を基準にしている": "(Lưu ý) Ngày dựa trên ngày kết quả kiểm tra được tìm thấy",
   "（注）症状は陽性公表時点のもの": "(Lưu ý) Các triệu chứng là vào thời điểm thông báo tích cực",
   "（注）陽性人数は、陽性患者の属性データを元に作成": "(Lưu ý) Số lượng dương tính dựa trên dữ liệu thuộc tính của bệnh nhân dương tính",
