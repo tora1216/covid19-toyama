@@ -20,13 +20,13 @@ export default {
       file: 'ja.json',
       description: 'Japanese'
     },
-    {
-      code: 'ja-basic',
-      name: 'やさしい にほんご',
-      iso: 'ja-JP',
-      file: 'ja-Hira.json',
-      description: 'Easy Japanese'
-    },
+    //{
+    //  code: 'ja-basic',
+    //  name: 'やさしい にほんご',
+    //  iso: 'ja-JP',
+    //  file: 'ja-Hira.json',
+    //  description: 'Easy Japanese'
+    //},
     {
       code: 'en',
       name: 'English',

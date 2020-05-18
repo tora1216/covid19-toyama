@@ -59,6 +59,10 @@
   "（注）A：富山市，B：高岡市，C：射水市，D：南砺市，E：砺波市，F：氷見市，G：魚津市，H：黒部市，I：滑川市，J：小矢部市，K：立山町，L：入善町，M：上市町，N：朝日町，O：舟橋村，P：富山県以外 を示している": "(Lưu ý) Ý nghĩa của mỗi bảng chữ cái là A: Thành phố Toyama, B: Thành phố Takaoka, C: Thành phố Imizu, D: Thành phố Nanto, E: Thành phố Tonami, F: Thành phố Himi, Thành phố Uozu, H: Thành phố Kurobe, I : Thành phố Namerikawa, J: Thành phố Oyabe, K: Thị trấn Tateyama, L: Thị trấn Nyūzen, M: Thị trấn Kamichi, N: Thị trấn Asahi, O: Làng Funahashi, P: Bên ngoài tỉnh Toyama",
   "（注）M：男性，F：女性，O：その他 を示している": "(Lưu ý) Ý nghĩa của mỗi bảng chữ cái là M: Nam, F: Nữ, O: Khác",
   "（注）2/27には、2/26までの累計数を含む": "(Lưu ý) 27/2 bao gồm số liệu tích lũy lên tới 2/26",
+  "（注）陽性率：陽性人数／（陽性人数＋陰性人数）": "(Lưu ý) Tỷ lệ tích cực: Số người tích cực / (Số người tích cực + Số người tiêu cực)",
+  "（注）陽性率：陽性人数の移動平均／（陽性人数＋陰性人数）の移動平均": "(Lưu ý) Tỷ lệ dương: Trung bình di chuyển của số người tích cực / Trung bình di chuyển của (số người tích cực + số người tiêu cực)",
+  "（注）集団感染発生や曜日による件数のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を陽性率として算出（例えば、5月7日の陽性率は、5月1日から5月7日までの実績平均を用いて算出）": "(Lưu ý) Kết quả hàng ngày dao động do bùng phát do dịch và sự thay đổi số lượng ca bệnh tùy thuộc vào ngày trong tuần. Với mục đích san bằng các biến thể này và xem xu hướng chung, giá trị trung bình di chuyển trong 7 ngày qua là được tính là tỷ lệ dương (ví dụ: (Tỷ lệ dương vào ngày 7 tháng 5 được tính bằng cách sử dụng trung bình kết quả thực tế từ ngày 1 tháng 5 đến ngày 7 tháng 5)",
+  "（注）把握には一定の期間を要しており、更新日の情報とは異なる場合あり": "(Lưu ý) Phải mất một khoảng thời gian nhất định để thu thập thông tin, có thể khác với thông tin vào ngày cập nhật",
   "埋め込み用コード": "Mã nhúng",
   "埋め込みコードをコピーしました": "Đã sao chép mã nhúng",
 

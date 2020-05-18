@@ -59,6 +59,10 @@
   "（注）A：富山市，B：高岡市，C：射水市，D：南砺市，E：砺波市，F：氷見市，G：魚津市，H：黒部市，I：滑川市，J：小矢部市，K：立山町，L：入善町，M：上市町，N：朝日町，O：舟橋村，P：富山県以外 を示している": "(Note) The meaning of each alphabet is A: Toyama City, B: Takaoka City, C: Imizu City, D: Nanto City, E: Tonami City, F: Himi City, G: Uozu City, H: Kurobe City, I: Namerikawa City, J : Oyabe City, K: Tateyama Town, L: Nyūzen Town, M: Kamichi Town, N: Asahi Town, O: Funahashi Village, P: Outside Toyama Prefecture",
   "（注）M：男性，F：女性，O：その他 を示している": "(Note) The meaning of each alphabet is M: Male, F: Female, O: Other",
   "（注）2/27には、2/26までの累計数を含む": "(Note) 2/27 includes cumulative numbers up to 2/26",
+  "（注）陽性率：陽性人数／（陽性人数＋陰性人数）": "(Note) Positive rate: Number of positive people / (Number of positive people + Number of negative people)",
+  "（注）陽性率：陽性人数の移動平均／（陽性人数＋陰性人数）の移動平均": "(Note) Positive rate: Moving average of the number of positive people / Moving average of (the number of positive people + the number of negative people)",
+  "（注）集団感染発生や曜日による件数のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を陽性率として算出（例えば、5月7日の陽性率は、5月1日から5月7日までの実績平均を用いて算出）": "(Note) Daily results fluctuate due to outbreaks due to outbreaks and variations in the number of cases depending on the day of the week.For the purpose of leveling these variations and seeing the overall trend, a moving average value for the past 7 days was calculated as the positive rate (for example, (The positive rate on May 7 is calculated using the average of actual results from May 1 to May 7.)",
+  "（注）把握には一定の期間を要しており、更新日の情報とは異なる場合あり": "(Note) It takes a certain period of time to collect information, which may differ from the information on the update date",
   "埋め込み用コード": " Embed Code",
   "埋め込みコードをコピーしました": " Copied the embed code",
 
