@@ -33,17 +33,18 @@ df_insp = df_counts.loc[:, ("年月日", "検査実施人数")].copy()
 df_insp.rename(columns={"年月日": "日付", "検査実施人数": "小計"}, inplace=True)
 data["inspection_persons"] = {"date": dt_now, "data": df_insp.to_dict(orient="recodes")}
 
-# 陽性率の推移
+# 陽性率
 df_rate = df_counts.loc[:, ("年月日", "陽性人数", "陰性人数")].copy()
-df_rate = df_rate.iloc[32:,:]
+df_rate = df_rate.iloc[32:, :]
 df_rate = df_rate.to_dict(orient='recodes')
-positive_rate_data=[]
-# 陽性率を算出
+positive_rate_data = []
 for rate_data in df_rate:
     try:
-        rate = (rate_data['陽性人数'] / (rate_data['陽性人数'] + rate_data['陰性人数'])) * 100
+        rate = (rate_data['陽性人数'] /
+                (rate_data['陽性人数'] + rate_data['陰性人数'])) * 100
         # 小数第二位で四捨五入
-        rate = float(Decimal(str(rate)).quantize(Decimal('0.1'), ROUND_HALF_UP))
+        rate = float(Decimal(str(rate)).quantize(
+            Decimal('0.1'), ROUND_HALF_UP))
     except ZeroDivisionError:
         # ゼロ除算時の対応
         rate = 0.0
