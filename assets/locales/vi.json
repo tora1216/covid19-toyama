@@ -38,7 +38,7 @@
   "相談の手順を見る": "Xem chi tiết",
 
   "{date} 更新": "Cập nhật {date}",
-  "{date} までの累計": "Tổng cho đến ngày {date} ",
+  "{date} 累計値": "{date} Giá trị tổng",
   "人": "người",
   "件": {
     "tested": "ca",
