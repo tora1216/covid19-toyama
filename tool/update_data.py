@@ -34,6 +34,7 @@ df_insp.rename(columns={"年月日": "日付", "検査実施人数": "小計"}, 
 data["inspection_persons"] = {"date": dt_now, "data": df_insp.to_dict(orient="recodes")}
 
 # 陽性率
+"""
 df_rate = df_counts.loc[:, ("年月日", "陽性人数", "陰性人数")].copy()
 df_rate = df_rate.iloc[32:, :]
 df_rate = df_rate.to_dict(orient='recodes')
@@ -50,6 +51,14 @@ for rate_data in df_rate:
         rate = 0.0
     positive_rate_data.append({"日付": rate_data["年月日"], "小計": rate})
 data["positive_rate"] = {"date": dt_now, "data": positive_rate_data}
+"""
+
+df_rate = df_counts.loc[:, ["年月日", "検査実施人数", "陽性人数"]].set_index("年月日").copy()
+df_positive_7d = df_rate.rolling(window=7).mean()
+df_positive_7d["陽性率"] = df_positive_7d["陽性人数"] / df_positive_7d["検査実施人数"] * 100
+positive_rate_data = df_positive_7d["陽性率"].fillna(0).round(2).reset_index()
+positive_rate_data.rename(columns={"年月日": "日付", "陽性率": "小計"}, inplace=True)
+data["positive_rate"] = {"date": dt_now, "data": positive_rate_data.to_dict(orient="recodes")}
 
 # 一般相談件数
 df_contacts = df_counts.loc[:, ("年月日", "一般相談件数")].copy()
