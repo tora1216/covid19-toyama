@@ -155,7 +155,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 this.chartData.length - 1
               ].cumulative.toLocaleString(),
           sText: this.showButton
-            ? `${this.$t('実績値')}（${this.$t('前日比')}: ${
+            ? `${this.chartData.slice(-1)[0].label} ${this.$t('実績値')}（${this.$t('前日比')}: ${
                 this.displayTransitionRatio
               } ${this.unit}）`
             : ``,
