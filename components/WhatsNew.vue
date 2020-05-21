@@ -12,7 +12,7 @@
     <p style="color:#4d4d4d;">{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
     
     <div class="Data-Card">
-    <p>ステージと要請基準</p>
+    <p>ステージと要請内容</p>
     <table class="mapTable">
       <thead>
         <tr>
@@ -22,9 +22,6 @@
           <th>{{ $t('休業要請') }}</th>
         </tr>
       </thead>
-    </table>
-    <div style="max-height:200px;overflow-y:auto;">
-    <table class="mapTable">
       <tbody>
         <tr>
           <td>{{ $t('Stage3') }}</td>
@@ -47,10 +44,9 @@
       </tbody>
     </table>
     </div>
-    </div>
 
     <div class="Data-Card">
-    <p>{{ $t('ステージ変更基準') }}</p>
+    <p>{{ $t('ステージの変更基準') }}</p>
     <ul class="mapNote">
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
