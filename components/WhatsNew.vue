@@ -21,6 +21,9 @@
           <th>{{ $t('休業要請') }}</th>
         </tr>
       </thead>
+    </table>
+    <div style="max-height:200px;overflow-y:auto;">
+    <table class="mapTable">
       <tbody>
         <tr>
           <td>{{ $t('Stage3') }}</td>
@@ -42,6 +45,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <p>{{ $t('強化・緩和の基準') }}</p>
     <ul class="mapNote">
@@ -87,6 +91,9 @@
           <th>{{ $t('達成状況') }}</th>
         </tr>
       </thead>
+    </table>
+    <div style="max-height:200px;overflow-y:auto;">
+    <table class="mapTable">
       <tbody>
         <tr v-for="(item, i) in items" :key="i">
           <td>{{ item['日付'] }}</td>
@@ -99,6 +106,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <!--<ul class="WhatsNew-list">
       <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
@@ -223,7 +231,6 @@ export default Vue.extend({
   width: 100%;
   text-align: center;
   font-size: 12px;
-  margin: 16px 0;
   border-spacing: 0;
   box-shadow: 0 -20px 12px -12px #0003 inset;
 
@@ -256,5 +263,9 @@ export default Vue.extend({
   padding: 0!important;
   font-size: 12px;
   color: #707070;
+}
+
+p {
+  margin-top: 16px;
 }
 </style>
