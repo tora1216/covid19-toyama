@@ -2,7 +2,7 @@
   <div class="WhatsNew">
     <h3 class="WhatsNew-heading">
       <v-icon size="24" class="WhatsNew-heading-icon">
-        mdi-information
+        mdi-bullhorn
       </v-icon>
       {{ $t('富山県の対策指針') }}
     </h3>
@@ -138,6 +138,7 @@
         </a>
       </li>
     </ul>-->
+    <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" style="font-size:12px;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
   </div>
 </template>
 
