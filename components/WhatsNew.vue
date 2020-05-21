@@ -13,8 +13,7 @@
     
     <div class="Data-Card">
     <p>ステージと要請内容</p>
-    <div style="overflow-y:scroll;max-height:240px;box-shadow: 0 -20px 12px -12px #0003 inset;">
-    <table class="mapTable">
+    <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
       <thead>
         <tr>
           <th>{{ $t('ステージ') }}</th>
@@ -45,7 +44,6 @@
       </tbody>
     </table>
     </div>
-    </div>
 
     <div class="Data-Card">
     <p>{{ $t('ステージの変更基準') }}</p>
@@ -53,7 +51,7 @@
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
-    <div style="overflow-y:scroll;max-height:240px;box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <div style="overflow-y:scroll;max-height:400px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
         <tr>
@@ -83,7 +81,7 @@
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
-    <div style="overflow-y:scroll;max-height:240px;box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <div style="overflow-y:scroll;max-height:400px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
         <tr>
@@ -109,6 +107,11 @@
       </tbody>
     </table>
     </div>
+
+    <div style="max-width:220px;">
+      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
+    </div>
+
     </div>
 
     <!--<ul class="WhatsNew-list">
@@ -138,9 +141,6 @@
         </a>
       </li>
     </ul>-->
-    <div style="max-width:220px;">
-      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
-    </div>
   </div>
 </template>
 
