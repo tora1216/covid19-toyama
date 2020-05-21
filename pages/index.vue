@@ -71,7 +71,7 @@ import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
-import News from '@/data/news.json'
+import Status from '@/data/status.json'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
@@ -124,7 +124,7 @@ export default Vue.extend({
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('県内の最新感染動向')
       },
-      newsItems: News.newsItems
+      newsItems: Status.statusItems
     }
     return data
   },

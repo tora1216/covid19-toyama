@@ -37,7 +37,7 @@ for status in df_status:
     result.append(data)
 
 data = {
-    "newsItems": result}
+    "statusItems": result}
 
 # data.json上書き
 df_result = open('../data/status.json', 'w', encoding="utf-8")
