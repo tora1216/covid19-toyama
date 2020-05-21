@@ -11,14 +11,14 @@
     </div>
     <p>{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
     
-    <p>各ステージと要請基準</p>
+    <p>ステージと要請基準</p>
     <table class="mapTable">
       <thead>
         <tr>
           <th>{{ $t('ステージ') }}</th>
-          <th>{{ $t('外出の自粛') }}</th>
-          <th>{{ $t('イベント等の開催') }}</th>
-          <th>{{ $t('休業要請等') }}</th>
+          <th>{{ $t('外出自粛') }}</th>
+          <th>{{ $t('イベント開催') }}</th>
+          <th>{{ $t('休業要請') }}</th>
         </tr>
       </thead>
       <tbody>
@@ -234,7 +234,7 @@ export default Vue.extend({
 
 .mapNote {
   list-style-type: none;
-  padding: 0;
+  padding: 0!important;
   font-size: 12px;
   color: #707070;
 }
