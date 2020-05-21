@@ -6,7 +6,11 @@
       </v-icon>
       {{ $t('最新の状況') }}
     </h3>
-    <p>{{ $t('活動再開へのロードマップにおける規制の強化・緩和の判断指標は以下の通りです。') }}</p>
+    <p>{{ $t('　活動再開へのロードマップにおける、規制の強化・緩和の判断指標は以下の通りです。') }}</p>
+    <ul class="note">
+      <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
+      <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
+    </ul>
     <table class="mapTable">
       <thead>
         <tr>
@@ -58,7 +62,6 @@
         </a>
       </li>
     </ul>
-    <p>{{ $t('各指標は、直近1週間の平均値です。新規陽性者数と感染経路不明者数は人口100万人当たりの値です。') }}</p>
   </div>
 </template>
 
@@ -155,6 +158,8 @@ export default Vue.extend({
   width: 100%;
   text-align: center;
   font-size: 12px;
+  margin: 16px 0;
+  border-spacing: 0;
 
   thead th {
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
@@ -167,5 +172,18 @@ export default Vue.extend({
   tbody tr {
     color: #333;
   }
+
+  tbody tr:nth-child(odd) {
+    td{
+      background: rgba(217, 217, 217, 0.3);
+    }
+  }
+}
+
+.note {
+  list-style-type: none;
+  padding: 0;
+  font-size: 12px;
+  color: #707070;
 }
 </style>
