@@ -51,7 +51,7 @@
     <table class="mapTable">
       <thead>
         <tr>
-          <th>{{ $t('日付') }</th>
+          <th>{{ $t('日付') }}</th>
           <th>{{ $t('入院者数') }}</th>
           <th>{{ $t('重症病床稼働率') }}</th>
           <th>{{ $t('新規陽性者数') }}</th>
@@ -208,6 +208,10 @@ export default Vue.extend({
   margin: 16px 0;
   border-spacing: 0;
 
+  thead {
+    display: block;
+  }
+
   thead th {
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
   }
@@ -215,6 +219,12 @@ export default Vue.extend({
   thead tr th {
     color: rgba(0, 0, 0, 0.6);
     padding: 8px 10px;
+  }
+
+  tbody {
+    display: block;
+    max-height:200px;
+    overflow-y: scroll;
   }
 
   tbody tr {
