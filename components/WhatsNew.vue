@@ -13,6 +13,7 @@
     
     <div class="Data-Card">
     <p>ステージと要請内容</p>
+    <div style="overflow-y:scroll;max-height:200px;">
     <table class="mapTable">
       <thead>
         <tr>
@@ -43,6 +44,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     </div>
 
     <div class="Data-Card">
@@ -79,7 +81,7 @@
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
-    <div style="overflow:scroll;max-height:200px;">
+    <div style="overflow-y:scroll;max-height:200px;">
     <table class="mapTable">
       <thead>
         <tr>
@@ -231,6 +233,7 @@ export default Vue.extend({
   text-align: center;
   font-size: 12px;
   border-spacing: 0;
+  box-shadow: 0 -20px 12px -12px #0003 inset;
 
   thead th {
     position: -webkit-sticky;
@@ -243,10 +246,7 @@ export default Vue.extend({
   thead tr th {
     color: rgba(0, 0, 0, 0.6);
     padding: 8px 10px;
-  }
-
-  tbody {
-    box-shadow: 0 -20px 12px -12px #0003 inset;
+    background: #fff;
   }
 
   tbody tr {
