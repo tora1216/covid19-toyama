@@ -13,7 +13,7 @@
     
     <div class="Data-Card">
     <p>ステージと要請内容</p>
-    <div style="overflow-y:scroll;max-height:200px;box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <div style="overflow-y:scroll;max-height:240px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
         <tr>
@@ -53,7 +53,7 @@
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
-    <div style="overflow-y:scroll;max-height:200px;box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <div style="overflow-y:scroll;max-height:240px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
         <tr>
@@ -83,7 +83,7 @@
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
-    <div style="overflow-y:scroll;max-height:200px;box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <div style="overflow-y:scroll;max-height:240px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
         <tr>
@@ -138,7 +138,9 @@
         </a>
       </li>
     </ul>-->
-    <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" style="font-size:12px;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
+    <div style="max-width:220px;">
+      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" style="font-size:12px;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
+    </div>
   </div>
 </template>
 
