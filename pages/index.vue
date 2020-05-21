@@ -21,7 +21,7 @@
       </div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    <div class="EmergencyBlock mb-4">
+    <!--<div class="EmergencyBlock mb-4">
       <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-bullhorn theme--light" style="font-size: 24px;"></i>
         {{ $t('富山県の対策指針') }} 
       </h3>
@@ -33,7 +33,7 @@
         <img class="EmergencyImage" src="/roadmap1.jpg" alt="roadmap1" />
         <img class="EmergencyImage" src="/roadmap2.jpg" alt="roadmap2" />
       </a>
-    </div>
+    </div>-->
     <whats-new class="mb-4" :items="newsItems" />
     <static-info
       class="mb-4"
