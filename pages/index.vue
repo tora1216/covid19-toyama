@@ -12,7 +12,6 @@
         <span>{{ $t('注釈') }} </span>
       </div>
     </div>
-    <!--<whats-new class="mb-4" :items="newsItems" />-->
     <div class="TwitterTimelineBlock mb-4">
       <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-information theme--light" style="font-size: 24px;"></i>
         {{ $t('最新のお知らせ') }} 
@@ -35,6 +34,7 @@
         <img class="EmergencyImage" src="/roadmap2.jpg" alt="roadmap2" />
       </a>
     </div>
+    <whats-new class="mb-4" :items="newsItems" />
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
@@ -68,7 +68,7 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
-// import WhatsNew from '@/components/WhatsNew.vue'
+import WhatsNew from '@/components/WhatsNew.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import News from '@/data/news.json'
@@ -96,7 +96,7 @@ import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNum
 export default Vue.extend({
   components: {
     PageHeader,
-    // WhatsNew,
+    WhatsNew,
     StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
