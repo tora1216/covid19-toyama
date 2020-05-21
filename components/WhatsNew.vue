@@ -47,7 +47,7 @@
     </table>
     </div>
 
-    <p>{{ $t('強化・緩和の基準') }}</p>
+    <p>{{ $t('ステージ変更基準') }}</p>
     <ul class="mapNote">
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
@@ -232,7 +232,6 @@ export default Vue.extend({
   text-align: center;
   font-size: 12px;
   border-spacing: 0;
-  box-shadow: 0 -20px 12px -12px #0003 inset;
 
   thead th {
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
@@ -241,6 +240,10 @@ export default Vue.extend({
   thead tr th {
     color: rgba(0, 0, 0, 0.6);
     padding: 8px 10px;
+  }
+
+  tbody {
+    box-shadow: 0 -20px 12px -12px #0003 inset;
   }
 
   tbody tr {
