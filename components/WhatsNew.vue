@@ -13,7 +13,8 @@
     
     <div class="Data-Card">
     <p>ステージと要請内容</p>
-    <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <div style="overflow-y:scroll;max-height:400px;box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <table class="mapTable">
       <thead>
         <tr>
           <th>{{ $t('ステージ') }}</th>
@@ -43,6 +44,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     </div>
 
     <div class="Data-Card">
