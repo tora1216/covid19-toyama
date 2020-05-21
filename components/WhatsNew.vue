@@ -79,6 +79,7 @@
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
+    <div style="overflow:scroll;max-height:200px;">
     <table class="mapTable">
       <thead>
         <tr>
@@ -91,9 +92,6 @@
           <th>{{ $t('達成状況') }}</th>
         </tr>
       </thead>
-    </table>
-    <div style="max-height:200px;overflow-y:auto;">
-    <table class="mapTable">
       <tbody>
         <tr v-for="(item, i) in items" :key="i">
           <td>{{ item['日付'] }}</td>
@@ -235,6 +233,10 @@ export default Vue.extend({
   border-spacing: 0;
 
   thead th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
   }
 
