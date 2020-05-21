@@ -14,28 +14,28 @@
     <table class="mapTable">
       <thead>
         <tr>
-          <th>{{ $t('日付') }}</th>
-          <th>{{ $t('入院者数') }}</th>
-          <th>{{ $t('重症病床稼働率') }}</th>
-          <th>{{ $t('新規陽性者数') }}</th>
-          <th>{{ $t('感染経路不明者数') }}</th>
-          <th>{{ $t('陽性率') }}</th>
-          <th>{{ $t('達成状況') }}</th>
+          <th>{{ $t('日付') }}<br>({{ $t('基準') }})</th>
+          <th>{{ $t('入院者数') }}<br>({{ $t('100人未満') }})</th>
+          <th>{{ $t('重症病床稼働率') }}<br>({{ $t('30%未満') }})</th>
+          <th>{{ $t('新規陽性者数') }}<br>({{ $t('2.5人未満') }})</th>
+          <th>{{ $t('感染経路不明者数') }}<br>({{ $t('1人未満') }})</th>
+          <th>{{ $t('陽性率') }}<br>({{ $t('7%未満') }})</th>
+          <th>{{ $t('達成状況') }}<br></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{{ $t('基準') }}</td>
-          <td>{{ $t('100人未満') }}</td>
-          <td>{{ $t('30%未満') }}</td>
-          <td>{{ $t('2.5人未満') }}</td>
-          <td>{{ $t('1人未満') }}</td>
-          <td>{{ $t('7%未満') }}</td>
-          <td></td>
+        <tr v-for="(item, i) in items" :key="i">
+          <td>{{ item['日付'] }}</td>
+          <td>{{ item['入院者数'] }}</td>
+          <td>{{ item['重症病床稼働率'] }}</td>
+          <td>{{ item['新規陽性者数'] }}</td>
+          <td>{{ item['感染経路不明者数'] }}</td>
+          <td>{{ item['陽性率'] }}</td>
+          <td>{{ item['達成状況'] }}</td>
         </tr>
       </tbody>
     </table>
-    <ul class="WhatsNew-list">
+    <!--<ul class="WhatsNew-list">
       <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
         <a
           class="WhatsNew-list-item-anchor"
@@ -61,7 +61,7 @@
           </span>
         </a>
       </li>
-    </ul>
+    </ul>-->
   </div>
 </template>
 
