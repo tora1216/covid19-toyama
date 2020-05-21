@@ -9,8 +9,9 @@
     <div style="background-color: #ffe200; color: #4d4d4d; border-radius: 4px; padding: 4px 8px; font-weight: bold; margin: 16px 0px;">
       {{ $t('現在「Stage2」の措置を実施中です') }} 
     </div>
-    <p>{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
+    <p style="color:#4d4d4d;">{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
     
+    <div class="Data-Card">
     <p>ステージと要請基準</p>
     <table class="mapTable">
       <thead>
@@ -46,7 +47,9 @@
       </tbody>
     </table>
     </div>
+    </div>
 
+    <div class="Data-Card">
     <p>{{ $t('ステージ変更基準') }}</p>
     <ul class="mapNote">
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
@@ -72,8 +75,9 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
-    
+    <div class="Data-Card">
     <p>{{ $t('現在の状況') }}</p>
     <ul class="mapNote">
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
@@ -106,6 +110,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     </div>
 
     <!--<ul class="WhatsNew-list">
@@ -268,7 +273,7 @@ export default Vue.extend({
   color: #707070;
 }
 
-p {
-  margin-top: 16px;
+.Data-Card{
+  padding:12px;
 }
 </style>
