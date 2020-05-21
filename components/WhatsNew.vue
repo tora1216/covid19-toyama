@@ -7,7 +7,7 @@
       {{ $t('最新の状況') }}
     </h3>
     <p>{{ $t('活動再開へのロードマップにおける規制の強化・緩和の判断指標は以下の通りです。') }}</p>
-    <table class="cardTable">
+    <table class="mapTable">
       <thead>
         <tr>
           <th>{{ $t('日付') }}</th>
@@ -151,46 +151,21 @@ export default Vue.extend({
   }
 }
 
-.cardTable {
-  &.v-data-table {
-    box-shadow: 0 -20px 12px -12px #0003 inset;
-    th {
-      padding: 8px 10px;
-      height: auto;
-      border-bottom: 1px solid $gray-4;
-      white-space: nowrap;
-      color: $gray-2;
-      font-size: 12px;
-      &.text-center {
-        text-align: center;
-      }
-    }
-    tbody {
-      tr {
-        color: $gray-1;
-        td {
-          padding: 8px 10px;
-          height: auto;
-          font-size: 12px;
-          &.text-center {
-            text-align: center;
-          }
-        }
-        &:nth-child(odd) {
-          td {
-            background: rgba($gray-4, 0.3);
-          }
-        }
-        &:not(:last-child) {
-          td:not(.v-data-table__mobile-row) {
-            border: none;
-          }
-        }
-      }
-    }
-    &:focus {
-      outline: dotted $gray-3 1px;
-    }
+.mapTable {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+
+  thead th {
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  thead tr th {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  tbody tr {
+    color: #333;
   }
 }
 </style>
