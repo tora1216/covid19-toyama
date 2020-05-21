@@ -225,6 +225,7 @@ export default Vue.extend({
   font-size: 12px;
   margin: 16px 0;
   border-spacing: 0;
+  box-shadow: 0 -20px 12px -12px #0003 inset;
 
   thead {
     display: block;
