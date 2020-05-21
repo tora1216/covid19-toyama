@@ -227,10 +227,6 @@ export default Vue.extend({
   border-spacing: 0;
   box-shadow: 0 -20px 12px -12px #0003 inset;
 
-  thead {
-    display: block;
-  }
-
   thead th {
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
   }
@@ -238,12 +234,6 @@ export default Vue.extend({
   thead tr th {
     color: rgba(0, 0, 0, 0.6);
     padding: 8px 10px;
-  }
-
-  tbody {
-    display: block;
-    max-height:200px;
-    overflow-y: scroll;
   }
 
   tbody tr {
