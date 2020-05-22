@@ -50,7 +50,7 @@
 
       <footer class="SideNavigation-Footer">
         <a href="http://www.pref.toyama.lg.jp/" target="_blank">
-          <img src="/bnr_pref_toyama.gif" :alt="$t('富山県公式ホームページ')">
+          <img src="/bnr-pref-toyama.png" :alt="$t('富山県公式ホームページ')">
         </a>
         <div class="SideNavigation-Social">
           <a
