@@ -49,6 +49,9 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
+        <a href="http://www.pref.toyama.lg.jp/" target="_blank">
+          <img src="http://www.pref.toyama.lg.jp/bnr_pref_toyama_b.gif" alt="富山県ホームページへ">
+        </a>
         <div class="SideNavigation-Social">
           <a
             href="https://line.me/R/ti/p/%40925tfblm"
@@ -168,10 +171,6 @@ export default Vue.extend({
         {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
-        },
-        {
-          title: this.$t('富山県公式ホームページ'),
-          link: 'http://www.pref.toyama.jp/'
         }
       ]
     }
@@ -353,6 +352,7 @@ export default Vue.extend({
 
 .SideNavigation-Social {
   display: flex;
+  margin-top: 15px;
 }
 
 .SideNavigation-SocialLink {
