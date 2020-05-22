@@ -76,6 +76,16 @@
             </picture>
           </a>
           <a
+            href="https://www.instagram.com/pref_toyama/"
+            target="_blank"
+            rel="noopener"
+            class="SideNavigation-SocialLink"
+          >
+            <picture>
+              <img src="/instagram.png" alt="Instagram" />
+            </picture>
+          </a>
+          <a
             href="https://www.youtube.com/user/PrefToyama"
             target="_blank"
             rel="noopener"
@@ -84,16 +94,6 @@
             <picture>
               <source srcset="/youtube.webp" type="image/webp" />
               <img src="/youtube.png" alt="YouTube" />
-            </picture>
-          </a>
-          <a
-            href="https://www.instagram.com/pref_toyama/"
-            target="_blank"
-            rel="noopener"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <img src="/instagram.png" alt="Instagram" />
             </picture>
           </a>
           <a
