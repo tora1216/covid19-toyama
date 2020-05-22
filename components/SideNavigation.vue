@@ -50,7 +50,7 @@
 
       <footer class="SideNavigation-Footer">
         <a href="http://www.pref.toyama.lg.jp/" target="_blank">
-          <img src="http://www.pref.toyama.lg.jp/bnr_pref_toyama_b.gif" alt="富山県ホームページへ">
+          <img src="/bnr_pref_toyama.gif" :alt="$t('富山県公式ホームページ')">
         </a>
         <div class="SideNavigation-Social">
           <a
@@ -75,17 +75,17 @@
               <img src="/twitter.png" alt="Twitter" />
             </picture>
           </a>
-          <!-- <a
-            href="https://www.facebook.com/tochokoho"
+          <a
+            href="https://www.youtube.com/channel/UCUrndnXKc_CNLGxsgr4VlUQ"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
           >
             <picture>
-              <source srcset="/facebook.webp" type="image/webp" />
-              <img src="/facebook.png" alt="Facebook" />
+              <source srcset="/youtube.webp" type="image/webp" />
+              <img src="/youtube.png" alt="YouTube" />
             </picture>
-          </a> -->
+          </a>
           <a
             href="https://github.com/Terachan0117/covid19-toyama"
             target="_blank"
