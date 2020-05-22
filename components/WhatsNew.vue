@@ -53,6 +53,7 @@
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
+    <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
       <thead>
         <tr>
@@ -73,6 +74,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     </div>
 
     <div class="Data-Card">
