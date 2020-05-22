@@ -12,7 +12,7 @@
     <p style="color:#4d4d4d;">{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
     
     <div class="Data-Card">
-    <p>ステージと要請内容</p>
+    <p>{{ $t('ステージと要請内容') }}</p>
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
@@ -97,11 +97,11 @@
       <tbody>
         <tr v-for="(item, i) in items" :key="i">
           <td>{{ item['日付'] }}</td>
-          <td>{{ item['入院者数'] }}</td>
-          <td>{{ item['重症病床稼働率'] }}</td>
-          <td>{{ item['新規陽性者数'] }}</td>
-          <td>{{ item['感染経路不明者数'] }}</td>
-          <td>{{ item['陽性率'] }}</td>
+          <td>{{ item['入院者数'] }} {{ $t('人') }}</td>
+          <td>{{ item['重症病床稼働率'] }} %</td>
+          <td>{{ item['新規陽性者数'] }} {{ $t('人') }}</td>
+          <td>{{ item['感染経路不明者数'] }} {{ $t('人') }}</td>
+          <td>{{ item['陽性率'] }} %</td>
           <td>{{ item['達成状況'] }}</td>
         </tr>
       </tbody>

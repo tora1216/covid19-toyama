@@ -28,11 +28,11 @@ result = []
 for status in df_status:
     data = {}
     data["日付"] = re.search(r'\d{1,2}\/\d{1,2}', status[2])[0]
-    data["入院者数"] = mojimoji.zen_to_han(status[3])
-    data["重症病床稼働率"] = str(round(status[4]*100,2))+'%'
-    data["新規陽性者数"] = mojimoji.zen_to_han(status[5])
-    data["感染経路不明者数"] = mojimoji.zen_to_han(status[6])
-    data["陽性率"] = str(round(status[7]*100,2))+'%'
+    data["入院者数"] = float(mojimoji.zen_to_han(status[3][:-1]))
+    data["重症病床稼働率"] = round(status[4]*100,2)
+    data["新規陽性者数"] = float(mojimoji.zen_to_han(status[5][:-1]))
+    data["感染経路不明者数"] = float(mojimoji.zen_to_han(status[6][:-1]))
+    data["陽性率"] = round(status[7]*100,2)
     data["達成状況"] = status[8]
     result.append(data)
 
