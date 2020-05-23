@@ -49,8 +49,11 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
-        <a href="http://www.pref.toyama.lg.jp/" target="_blank">
+        <a href="http://www.pref.toyama.lg.jp/" target="_blank" style="width:50px;">
           <img src="/bnr-pref-toyama.png" :alt="$t('富山県公式ホームページ')">
+        </a>
+        <a href="http://opendata.pref.toyama.jp/" target="_blank" style="width:50px;">
+          <img src="/bnr-toyama-opendata.png" :alt="$t('富山県オープンデータポータルサイト')">
         </a>
         <div class="SideNavigation-Social">
           <a
