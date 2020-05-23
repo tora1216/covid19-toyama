@@ -50,10 +50,10 @@
 
       <footer class="SideNavigation-Footer">
         <a href="http://www.pref.toyama.lg.jp/" target="_blank">
-          <img src="/bnr-pref-toyama.png" :alt="$t('富山県公式ホームページ')" style="width:50px;">
+          <img src="/bnr-pref-toyama.png" :alt="$t('富山県公式ホームページ')" style="height:50px;">
         </a>
         <a href="http://opendata.pref.toyama.jp/" target="_blank">
-          <img src="/bnr-toyama-opendata.png" :alt="$t('富山県オープンデータポータルサイト')" style="width:50px;">
+          <img src="/bnr-toyama-opendata.png" :alt="$t('富山県オープンデータポータルサイト')" style="height:50px;">
         </a>
         <div class="SideNavigation-Social">
           <a
