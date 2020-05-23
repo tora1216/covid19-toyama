@@ -120,7 +120,7 @@
           </a>
           {{ $t('の下に提供されています。') }}
           <br />
-          2020
+          &copy; 2020
           <a
             :href="$t('https://tera-chan.com')"
             target="_blank"
