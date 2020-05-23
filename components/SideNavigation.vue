@@ -50,10 +50,10 @@
 
       <footer class="SideNavigation-Footer">
         <a href="http://www.pref.toyama.lg.jp/" target="_blank">
-          <img src="/bnr-pref-toyama.png" :alt="$t('富山県公式ホームページ')" style="height:50px;">
+          <img class="SideNavigation-Baner" src="/bnr-pref-toyama.png" :alt="$t('富山県公式ホームページ')">
         </a>
         <a href="http://opendata.pref.toyama.jp/" target="_blank">
-          <img src="/bnr-toyama-opendata.png" :alt="$t('富山県オープンデータポータルサイト')" style="height:50px;">
+          <img class="SideNavigation-Baner" src="/bnr-toyama-opendata.png" :alt="$t('富山県オープンデータポータルサイト')">
         </a>
         <div class="SideNavigation-Social">
           <a
@@ -361,6 +361,10 @@ export default Vue.extend({
 
 .SideNavigation-Footer {
   padding-top: 20px;
+}
+
+.SideNavigation-Baner {
+  width: 200px;
 }
 
 .SideNavigation-Social {
