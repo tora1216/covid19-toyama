@@ -4,7 +4,6 @@ import json
 import codecs
 import datetime
 import pandas as pd
-from decimal import Decimal, ROUND_HALF_UP
 
 # 現時点のデータを取得
 data = json.load(codecs.open('../data/data.json', 'r', 'utf-8'))

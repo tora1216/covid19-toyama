@@ -35,7 +35,7 @@ jobs:
         git remote set-url origin https://${NAME}:${PASSWORD}@github.com/${NAME}/covid19-toyama
         git checkout development
         cd tool
-        python scraping.py
+        python scraping_data.py
         python scraping_status.py
         cd ..
         git add .
