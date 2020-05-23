@@ -49,10 +49,12 @@
 
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの変更基準') }}</h3></div>
-    <ul class="mapNote">
+    <div class="DataView-Description">
+    <ul>
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
+    </div>
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
       <thead>
@@ -79,10 +81,12 @@
 
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('現在の状況') }}</h3></div>
-    <ul class="mapNote">
+    <div class="DataView-Description">
+    <ul>
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
+    </div>
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
@@ -268,13 +272,6 @@ export default Vue.extend({
       background: rgba(217, 217, 217, 0.3);
     }
   }
-}
-
-.mapNote {
-  list-style-type: none;
-  padding: 0!important;
-  font-size: 12px;
-  color: #707070;
 }
 
 .Data-Card{
