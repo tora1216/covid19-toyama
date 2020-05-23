@@ -12,7 +12,7 @@
     <p style="color:#4d4d4d;">{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
     
     <div class="Data-Card">
-    <p>{{ $t('ステージと要請内容') }}</p>
+    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージと要請内容') }}</h3></div>
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="Data-Card">
-    <p>{{ $t('ステージの変更基準') }}</p>
+    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの変更基準') }}</h3></div>
     <ul class="mapNote">
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="Data-Card">
-    <p>{{ $t('現在の状況') }}</p>
+    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('現在の状況') }}</h3></div>
     <ul class="mapNote">
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
