@@ -364,12 +364,12 @@ export default Vue.extend({
 }
 
 .SideNavigation-Baner {
-  width: 200px;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .SideNavigation-Social {
   display: flex;
-  margin-top: 15px;
 }
 
 .SideNavigation-SocialLink {
