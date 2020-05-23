@@ -119,7 +119,6 @@
     </table>
     </div>
     </div>
-    </div>
 
     <div style="max-width:220px;">
       <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
