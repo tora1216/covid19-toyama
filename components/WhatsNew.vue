@@ -13,6 +13,7 @@
     
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージと要請内容') }}</h3></div>
+    <div class="DataView-CardText">
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
@@ -46,6 +47,7 @@
     </table>
     </div>
     </div>
+    </div>
 
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの変更基準') }}</h3></div>
@@ -55,6 +57,7 @@
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
     </div>
+    <div class="DataView-CardText">
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
       <thead>
@@ -78,6 +81,7 @@
     </table>
     </div>
     </div>
+    </div>
 
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('現在の状況') }}</h3></div>
@@ -87,6 +91,7 @@
       <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
     </ul>
     </div>
+    <div class="DataView-CardText">
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
@@ -113,8 +118,10 @@
       </tbody>
     </table>
     </div>
+    </div>
+    </div>
 
-    <div style="max-width:220px;margin-top:16px;">
+    <div style="max-width:220px;">
       <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
     </div>
 
