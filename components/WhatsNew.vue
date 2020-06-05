@@ -9,15 +9,15 @@
     <!--<div style="background-color: #ffe200; color: #4d4d4d; border-radius: 4px; padding: 4px 8px; font-weight: bold; margin: 16px 0px;">
       {{ $t('現在「Stage2」の措置を実施中です') }} 
     </div>-->
-    <!--<div style="background-color: #008830; color: #fff; border-radius: 4px; padding: 4px 8px; font-weight: bold; margin: 16px 0px;">
-      {{ $t('現在「Stage1」の措置を実施中です') }} 
-    </div>-->
     <p style="color:#4d4d4d;">{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
     
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージと要請内容') }}</h3></div>
     <div class="DataView-CardText">
-    <div class="RelaxationStep-block RelaxationStep-block-steps">
+    <div style="background-color: #008830; color: #fff; border-radius: 4px; padding: 4px 8px; font-weight: bold; margin: 16px 0px;">
+      {{ $t('現在「Stage1」の措置を実施中です') }} 
+    </div>
+    <!--<div class="RelaxationStep-block RelaxationStep-block-steps">
       <ul class="RelaxationStep-steps-list">
         <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
             {{ $t('ステージ') }} 3
@@ -32,7 +32,7 @@
       <p class="RelaxationStep-changed-text">
         {{ $t('現在「Stage1」の措置を実施中です') }} 
       </p>
-    </div>
+    </div>-->
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
