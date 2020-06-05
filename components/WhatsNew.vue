@@ -328,9 +328,53 @@ export default Vue.extend({
     color: #fff;
     background-color: #008830;
 }
+.RelaxationStep-steps-on::before {
+    left: 1.55rem;
+    border-left-color: #fff;
+    border-width: 1.55rem 0 1.55rem 1.55rem;
+    border-style: solid;
+    border-color: transparent;
+    position: absolute;
+    content: "";
+    top: 0;
+    transform: translateX(-100%);
+}
+.RelaxationStep-steps-on::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 1px;
+    transform: translateX(100%);
+    border-left-color: #008830;
+    border-width: 1.55rem 0 1.55rem 1.55rem;
+    border-style: solid;
+    border-color: transparent;
+}
 .RelaxationStep-steps-off {
     color: #4d4d4d;
     background-color: #d9d9d9;
+}
+.RelaxationStep-steps-off::before {
+    left: 1.55rem;
+    border-left-color: #fff;
+    border-width: 1.55rem 0 1.55rem 1.55rem;
+    border-style: solid;
+    border-color: transparent;
+    position: absolute;
+    content: "";
+    top: 0;
+    transform: translateX(-100%);
+}
+.RelaxationStep-steps-off::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 1px;
+    transform: translateX(100%);
+    border-left-color: #d9d9d9;
+    border-width: 1.55rem 0 1.55rem 1.55rem;
+    border-style: solid;
+    border-color: transparent;
 }
 .RelaxationStep-changed-text {
     text-align: center;
