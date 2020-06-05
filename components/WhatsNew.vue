@@ -88,6 +88,22 @@
 
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('現在の状況') }}</h3></div>
+    <div class="RelaxationStep-block RelaxationStep-block-steps">
+      <ul class="RelaxationStep-steps-list">
+        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
+            {{ $t('ステージ') }} 3
+          </span></li>
+        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
+            {{ $t('ステージ') }} 2
+          </span></li>
+        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-on">
+            {{ $t('ステージ') }} 1
+          </span></li>
+      </ul>
+      <p class="RelaxationStep-changed-text">
+        {{ $t('現在「Stage1」の措置を実施中です') }} 
+      </p>
+    </div>
     <div class="DataView-Description">
     <ul>
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
@@ -285,5 +301,41 @@ export default Vue.extend({
 
 .Data-Card{
   padding:12px;
+}
+
+.RelaxationStep-steps-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    font-weight: 700;
+    white-space: nowrap;
+    width: 100%;
+}
+.RelaxationStep-steps-item {
+    flex: 1 1 auto;
+    margin-bottom: 12px;
+}
+.RelaxationStep-steps {
+    border-radius: 5px 0 0 5px;
+    margin-left: 0;
+    font-size: 1.4rem;
+    margin-left: 1.6rem;
+    padding: .5rem .5rem .5rem 2rem;
+}
+.RelaxationStep-steps-on {
+    color: #fff;
+    background-color: #008830;
+}
+.RelaxationStep-steps-off {
+    color: #4d4d4d;
+    background-color: #d9d9d9;
+}
+.RelaxationStep-changed-text {
+    text-align: center;
+    font-weight: 700;
+    color: #008830;
+    font-size: 1.6rem;
 }
 </style>
