@@ -17,6 +17,22 @@
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージと要請内容') }}</h3></div>
     <div class="DataView-CardText">
+    <div class="RelaxationStep-block RelaxationStep-block-steps">
+      <ul class="RelaxationStep-steps-list">
+        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
+            {{ $t('ステージ') }} 3
+          </span></li>
+        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
+            {{ $t('ステージ') }} 2
+          </span></li>
+        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-on">
+            {{ $t('ステージ') }} 1
+          </span></li>
+      </ul>
+      <p class="RelaxationStep-changed-text">
+        {{ $t('現在「Stage1」の措置を実施中です') }} 
+      </p>
+    </div>
     <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable">
       <thead>
@@ -88,22 +104,6 @@
 
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('現在の状況') }}</h3></div>
-    <div class="RelaxationStep-block RelaxationStep-block-steps">
-      <ul class="RelaxationStep-steps-list">
-        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
-            {{ $t('ステージ') }} 3
-          </span></li>
-        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
-            {{ $t('ステージ') }} 2
-          </span></li>
-        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-on">
-            {{ $t('ステージ') }} 1
-          </span></li>
-      </ul>
-      <p class="RelaxationStep-changed-text">
-        {{ $t('現在「Stage1」の措置を実施中です') }} 
-      </p>
-    </div>
     <div class="DataView-Description">
     <ul>
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
