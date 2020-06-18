@@ -40,7 +40,7 @@ data = {
     "statusItems": result}
 
 # data.json上書き
-df_result = open('../data/status_.json', 'w', encoding="utf-8")
+df_result = open('../data/status.json', 'w', encoding="utf-8")
 json.dump(data, df_result, ensure_ascii=False, indent=4)
 
 
