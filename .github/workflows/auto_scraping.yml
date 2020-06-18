@@ -36,6 +36,7 @@ jobs:
         git checkout development
         cd tool
         python scraping_data.py
+        python scraping_status.py
         cd ..
         git add .
         git commit -m "[Bot] GitHub Actions - auto run (PM 16:00)"
