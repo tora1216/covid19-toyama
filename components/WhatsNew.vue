@@ -17,6 +17,7 @@
     <div style="background-color: #008830; color: #fff; border-radius: 4px; padding: 4px 8px; font-weight: bold; margin: 16px 0px;">
       {{ $t('現在「Stage1」の措置を実施中です') }} 
     </div>
+    <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022225.html" target="_blank">{{ $t('6月19日以降の都道府県をまたいだ往来について') }}</a>
     <!--<div class="RelaxationStep-block RelaxationStep-block-steps">
       <ul class="RelaxationStep-steps-list">
         <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
