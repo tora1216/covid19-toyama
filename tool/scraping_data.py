@@ -27,7 +27,7 @@ soup = BeautifulSoup(r.content, "html.parser")
 summary = soup.find("div", id="main").get_text(strip=True)
 
 # 陽性患者数
-total = int(mojimoji.zen_to_han(re.search(r"(.+?)例", summary).group(1)))
+total = int(mojimoji.zen_to_han(re.search(r"(\d+?)例", summary).group(1)))
 # 入院中・入院等調整中
 hospitalized = int(mojimoji.zen_to_han(re.search(r"入院中又は入院等調整中(.+?)例", summary).group(1)))
 # 重症
