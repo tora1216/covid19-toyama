@@ -1,8 +1,8 @@
-name: GitHub Actions - auto run (PM 16:00)
+name: GitHub Actions - auto run (PM 16:30)
 
 on:
   schedule:
-    - cron: '0 7 * * *'
+    - cron: '30 7 * * *'
 
 jobs:
   build:
