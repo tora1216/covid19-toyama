@@ -26,6 +26,19 @@
           </v-icon>
         </a>
       </div>
+      <div class="Flow-Card-Button-Wrapper mt-6">
+        <a
+          href="https://drive.google.com/drive/folders/1qTHLvpfZ4XIxeCF99UwKlAoPxDHrKI4I?usp=sharing"
+          target="_blank"
+          rel="noopener"
+          class="Flow-Card-Button"
+        >
+          {{ $t('このページの印刷用ファイルをダウンロードする') }}
+          <v-icon class="Flow-Card-Button-ExternalLinkIcon" size="20">
+            mdi-open-in-new
+          </v-icon>
+        </a>
+      </div>
     </div>
   </div>
 </template>
