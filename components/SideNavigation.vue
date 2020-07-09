@@ -49,6 +49,7 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
+        <img class="SideNavigation-Baner" src="/bnr-make-toyama-style.png" :alt="$t('MAKE TOYAMA STYLE')">
         <a href="http://www.pref.toyama.lg.jp/" target="_blank">
           <img class="SideNavigation-Baner" src="/bnr-pref-toyama.png" :alt="$t('富山県公式ホームページ')">
         </a>
