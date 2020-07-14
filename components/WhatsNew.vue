@@ -12,16 +12,16 @@
     <p style="color:#4d4d4d;">{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
     <ul style="margin-bottom:16px;">
       <li>
-        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022120.html" target="_blank">{{ $t('（事業者向け）感染拡大予防チェックリスト') }}</a>
+        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022120.html" target="_blank" rel="noopener">{{ $t('（事業者向け）感染拡大予防チェックリスト') }}</a>
       </li>
       <li>
-        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022225.html" target="_blank">{{ $t('6月19日以降の都道府県をまたいだ往来について') }}</a>
+        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022225.html" target="_blank" rel="noopener">{{ $t('6月19日以降の都道府県をまたいだ往来について') }}</a>
       </li>
       <li>
-        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022344.html" target="_blank">{{ $t('7月10日以降のイベント等の開催について') }}</a>
+        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022344.html" target="_blank" rel="noopener">{{ $t('7月10日以降のイベント等の開催について') }}</a>
       </li>
       <li>
-        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022248.html" target="_blank">{{ $t('「新しい生活様式」における熱中症予防について') }}</a>
+        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022248.html" target="_blank" rel="noopener">{{ $t('「新しい生活様式」における熱中症予防について') }}</a>
       </li>
     </ul>
     <div class="Data-Card">
@@ -153,7 +153,7 @@
     </div>
 
     <div style="max-width:220px;">
-      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
+      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" rel="noopener" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
     </div>
 
     </div>
@@ -395,7 +395,10 @@ export default Vue.extend({
     color: #008830;
     font-size: 1.6rem;
 }
-  a[target='_blank']::after {
+  .WhatsNew a[target='_blank']{
+    text-decoration: none;
+  }
+  .WhatsNew a[target='_blank']::after {
     content: '\F03CC';
     margin-left: 0.1em;
     margin-right: 0.2em;

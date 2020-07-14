@@ -14,7 +14,7 @@
           rel="noopener"
           place="authorWebsite"
         >
-          {{ $t('Terachan') }}
+          {{ $t('Terachan(Issei Terada)') }}
         </a>
       </i18n>
       <br />

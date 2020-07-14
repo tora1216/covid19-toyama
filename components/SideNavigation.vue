@@ -49,13 +49,13 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
-        <a class="SideNavigation-BanerLink" href="http://www.pref.toyama.jp/cms_sec/1118/kj00022311.html" target="_blank">
+        <a class="SideNavigation-BanerLink" href="http://www.pref.toyama.jp/cms_sec/1118/kj00022311.html" target="_blank" rel="noopener">
           <img src="/bnr-make-toyama-style.png" :alt="$t('MAKE TOYAMA STYLE')">
         </a>
-        <a class="SideNavigation-BanerLink" href="http://www.pref.toyama.lg.jp/" target="_blank">
+        <a class="SideNavigation-BanerLink" href="http://www.pref.toyama.lg.jp/" target="_blank" rel="noopener">
           <img src="/bnr-pref-toyama.png" :alt="$t('富山県公式ホームページ')">
         </a>
-        <a class="SideNavigation-BanerLink" href="http://opendata.pref.toyama.jp/" target="_blank">
+        <a class="SideNavigation-BanerLink" href="http://opendata.pref.toyama.jp/" target="_blank" rel="noopener">
           <img src="/bnr-toyama-opendata.png" :alt="$t('富山県オープンデータポータルサイト')">
         </a>
         <div class="SideNavigation-Social">
