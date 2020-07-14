@@ -395,4 +395,18 @@ export default Vue.extend({
     color: #008830;
     font-size: 1.6rem;
 }
+  a[target='_blank']::after {
+    content: '\F03CC';
+    margin-left: 0.1em;
+    margin-right: 0.2em;
+    display: inline-block;
+    text-decoration: none;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font: normal normal normal 24px/1 'Material Design Icons';
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 </style>
