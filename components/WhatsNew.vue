@@ -10,10 +10,20 @@
       {{ $t('現在「Stage2」の措置を実施中です') }} 
     </div>-->
     <p style="color:#4d4d4d;">{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
-    <p><a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022120.html" target="_blank">{{ $t('（事業者向け）感染拡大予防チェックリスト') }}</a></p>
-    <p><a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022225.html" target="_blank">{{ $t('6月19日以降の都道府県をまたいだ往来について') }}</a></p>
-    <p><a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022344.html" target="_blank">{{ $t('7月10日以降のイベント等の開催について') }}</a></p>
-    <p><a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022248.html" target="_blank">{{ $t('「新しい生活様式」における熱中症予防について') }}</a></p>
+    <ul style="margin-bottom:16px;">
+      <li>
+        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022120.html" target="_blank">{{ $t('（事業者向け）感染拡大予防チェックリスト') }}</a>
+      </li>
+      <li>
+        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022225.html" target="_blank">{{ $t('6月19日以降の都道府県をまたいだ往来について') }}</a>
+      </li>
+      <li>
+        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022344.html" target="_blank">{{ $t('7月10日以降のイベント等の開催について') }}</a>
+      </li>
+      <li>
+        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022248.html" target="_blank">{{ $t('「新しい生活様式」における熱中症予防について') }}</a>
+      </li>
+    </ul>
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージと要請内容') }}</h3></div>
     <div class="DataView-CardText">
