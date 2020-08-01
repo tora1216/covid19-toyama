@@ -78,6 +78,7 @@ df_kanjya = pd.read_excel(link, skiprows=2)
 
 # エクセル内データを定義書準拠形式に変換
 df_kanjya.rename(columns={"県番号": "No"}, inplace=True)
+df_kanjya["No"] = df_kanjya.index+1
 df_kanjya.rename(columns={"検査結果判明日": "判明日"}, inplace=True)
 df_kanjya["判明日"] = df_kanjya["判明日"].apply(
     lambda date: pd.to_datetime(date).strftime("%Y-%m-%d")
