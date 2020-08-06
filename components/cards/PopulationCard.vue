@@ -1,7 +1,7 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <population-bar-chart
-      :title="$t('富山駅付近の人口の推移（参考値）')"
+      :title="$t('富山駅周辺の人口の推移（参考値）')"
       :title-id="'changes-of-population-around-toyama-station'"
       :chart-id="'population-bar-chart'"
       :chart-data="populationGraph"
@@ -62,7 +62,7 @@ export default {
 
     // populationGraph ツールチップ title文字列
     // this.$t を使うため populationGraphOption の外側へ
-    const populationGraphTooltipTitle = (tooltipItems, data) => {
+    const populationGraphTooltipTitle = (tooltipItem, data) => {
       const currentData = data.datasets[tooltipItem.datasetIndex]
       const label = `${currentData.label}`
       return this.$t('{label}', {

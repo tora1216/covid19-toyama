@@ -27,7 +27,7 @@ data = {
         "前年同月比",
         "前日比"
     ],
-    "base_period": "1月18日~2月14日"
+    "base_period": "2020年1月18日~2020年2月14日"
 }
 
 f = open('../data/population.json', 'w', encoding='utf-8')
