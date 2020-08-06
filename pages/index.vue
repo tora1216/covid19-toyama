@@ -59,6 +59,7 @@
       <!-- <tested-number-card /> -->
       <telephone-advisory-reports-number-card />
       <consultation-desk-reports-number-card />
+      <population-card />
       <!-- <metro-card /> -->
       <!-- <agency-card /> -->
       <!-- <shinjuku-visitors-card /> -->
@@ -94,6 +95,7 @@ import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 import DeadPersonsNumberCard from '@/components/cards/DeadPersonsNumberCard.vue'
 import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNumberCard.vue'
+import PopulationCard from '@/components/cards/PopulationCard.vue'
 export default Vue.extend({
   components: {
     PageHeader,
@@ -116,7 +118,8 @@ export default Vue.extend({
     PatientsByAgeCard,
     PatientsByGenderCard,
     DeadPersonsNumberCard,
-    DischargedPersonsNumberCard
+    DischargedPersonsNumberCard,
+    PopulationCard
   },
   data() {
     const data = {
