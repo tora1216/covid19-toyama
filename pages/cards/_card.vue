@@ -163,7 +163,7 @@ export default {
         updatedAt = MetroData.date
         break
       case 'changes-of-population-around-toyama-station':
-        title = this.$t('富山駅周辺の人口の推移')
+        title = this.$t('富山駅周辺の人口の推移（参考値）')
         updatedAt = PopulationData.date
         break
       case 'agency':
