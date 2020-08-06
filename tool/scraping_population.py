@@ -1,9 +1,14 @@
+import json
 import datetime
 import pandas as pd
-import json
 
-# 現在日時
-dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+# 最終更新時間上書き
+f = open('../data/data.json', 'r', encoding='utf-8')
+data = json.load(f)
+dt_now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+data["lastUpdate"] = dt_now
+f = open('../data/data.json', 'w', encoding='utf-8')
+json.dump(data, f, ensure_ascii=False, indent=4)
 
 # モバイル空間統計より最新データ取得
 url = 'https://mobaku.jp/covid-19/download/%E5%A2%97%E6%B8%9B%E7%8E%87%E4%B8%80%E8%A6%A7.csv'
@@ -19,7 +24,7 @@ for key, value in df.items():
     })
 
 data = {
-    "date": dt,
+    "date": dt_now,
     "datasets": datasets,
     "labels": [
         "感染拡大前比",
