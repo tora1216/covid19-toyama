@@ -10,7 +10,7 @@
       :url="'http://opendata.pref.toyama.jp/dataset/covid19'"
     >
       <template v-slot:description>
-        <ul>
+        <ul style="">
           <li>
             {{ $t('（注）日付は検査結果判明日を基準にしている') }}
           </li>

@@ -1,10 +1,15 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
+    <template v-slot:description>
+      <slot name="description" />
+    </template>
+    /*
     <template v-slot:infoPanel>
       <small :class="$style.DataViewDesc">
         <slot name="description" />
       </small>
     </template>
+    */
     <bar
       :style="{ display: canvas ? 'block' : 'none' }"
       :chart-id="chartId"
@@ -25,9 +30,6 @@
       item-key="name"
     />
     <template v-slot:footer-description>
-      <p>
-        {{ $t('※現在試行中です。') }}
-      </p>
       <p>
         {{ $t('出典') }}：
         <a
