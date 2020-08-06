@@ -53,6 +53,9 @@ export default {
     // populationGraph ツールチップ title文字列
     // this.$t を使うため populationGraphOption の外側へ
     const populationGraphTooltipTitle = (tooltipItems, data) => {
+      console.log(tooltipItems);
+      console.log(data.labels);
+      console.log(data.datasets);
       const label = data.labels[tooltipItems[0].index]
       return this.$t('{duration}', {
         duration: this.$t(label)
@@ -61,6 +64,9 @@ export default {
     // populationGraph ツールチップ label文字列
     // this.$t を使うため populationGraphOption の外側へ
     const populationGraphTooltipLabel = (tooltipItem, data) => {
+      console.log(tooltipItem);
+      console.log(data.labels);
+      console.log(data.datasets);
       const currentData = data.datasets[tooltipItem.datasetIndex]
       const label = `${data.labels[tooltipItem.index]}`
       const percentage = `${currentData.data[tooltipItem.index]}`
