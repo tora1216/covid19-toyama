@@ -49,6 +49,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import VueI18n from 'vue-i18n'
 import { ChartOptions, ChartData } from 'chart.js'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import DataView from '@/components/DataView.vue'
@@ -60,6 +61,7 @@ interface HTMLElementEvent<T extends HTMLElement> extends Event {
 
 type Data = {
   canvas: boolean
+  i18nlabels: VueI18n.TranslateResult[]
 }
 type Methods = {}
 type Computed = {
@@ -159,14 +161,23 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       required: true
     }
   },
-  data: () => ({
-    canvas: true
-  }),
+  data() {
+    const i18nlabels = [
+      this.$t('感染拡大前比'),
+      this.$t('緊急事態宣言前比'),
+      this.$t('議事堂計'),
+      this.$t('前年同月比'),
+    ]
+    return {
+      canvas: true,
+      i18nlabels,
+    }
+  },
   computed: {
     displayData() {
       const datasets = this.chartData.labels!.map((label, i) => {
         return {
-          label: label as string,
+          label: i18nlabels[i] as string,
           data: this.chartData.datasets!.map(d => d.data![i]) as number[],
           backgroundColor: colors[i],
           borderWidth: 0
