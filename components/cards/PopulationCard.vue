@@ -59,13 +59,14 @@ export default {
   data() {
     // 人口の推移
     const populationGraph = PopulationData
+
     // populationGraph ツールチップ title文字列
     // this.$t を使うため populationGraphOption の外側へ
     const populationGraphTooltipTitle = (tooltipItems, data) => {
       const currentData = data.datasets[tooltipItem.datasetIndex]
       const label = `${currentData.label}`
       return this.$t('{label}', {
-        label: this.$t(label)
+        label
       })
     }
     // populationGraph ツールチップ label文字列

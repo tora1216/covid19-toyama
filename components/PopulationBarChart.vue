@@ -3,13 +3,6 @@
     <template v-slot:description>
       <slot name="description" />
     </template>
-    /*
-    <template v-slot:infoPanel>
-      <small :class="$style.DataViewDesc">
-        <slot name="description" />
-      </small>
-    </template>
-    */
     <bar
       :style="{ display: canvas ? 'block' : 'none' }"
       :chart-id="chartId"
