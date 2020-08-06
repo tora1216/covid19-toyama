@@ -23,11 +23,7 @@
             {{ $t('（注）エリアの中の人口の増減を見るもので、接触量を見るものではない') }}
           </li>     
           <li>
-            {{
-              $t('（注）感染拡大前比：{range}における平日の平均との比較', {
-                range: $t(populationGraph.base_period)
-              })
-            }}
+            {{ $t('（注）感染拡大前比：2020年1月18日~2020年2月14日における平日の平均との比較') }}
           </li>
           <li>
             {{ $t('（注）緊急事態宣言前比：2020年4月6日~2020年4月7日との比較') }}
@@ -69,6 +65,7 @@ export default {
       const label = `${data.labels[tooltipItem.index]}`
       const percentage = `${currentData.data[tooltipItem.index]}`
       return this.$t('{label} {percentage} %', {
+        label,
         percentage
       })
     }
