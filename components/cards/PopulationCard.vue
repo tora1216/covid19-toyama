@@ -14,20 +14,14 @@
       <template v-slot:description>
         <ul>
            <li>
-            {{ $t('（注）ドコモの携帯電話ネットワークのしくみを使用して作成される、人口の統計情報を元にした直近1週間の増減率') }}
+            {{ $t('（注）NTTドコモの携帯電話ネットワークのしくみを使用して作成される、人口の統計情報を元にした直近1週間の増減率') }}
           </li>
           <li>
             {{ $t('（注）前日比のデータについては、休日と平日のデータの比較となる際に非常に大きな数値となる場合あり') }}
           </li> 
           <li>
             {{ $t('（注）エリアの中の人口の増減を見るもので、接触量を見るものではない') }}
-          </li> 
-          <li>
-            {{ $t('（注）在住者を含むデータのため、人口減少幅が少なくなっている可能性あり') }}
-          </li> 
-          <li>
-            {{ $t('（注）訪日外国人（ローミングインの利用者）は含まれない') }}
-          </li>      
+          </li>     
           <li>
             {{
               $t('（注）感染拡大前比：{range}における平日の平均との比較', {
@@ -72,8 +66,9 @@ export default {
     // this.$t を使うため populationGraphOption の外側へ
     const populationGraphTooltipLabel = (tooltipItem, data) => {
       const currentData = data.datasets[tooltipItem.datasetIndex]
+      const label = `${data.labels[tooltipItem.index]}`
       const percentage = `${currentData.data[tooltipItem.index]}`
-      return this.$t('{percentage} %', {
+      return this.$t('{label} {percentage} %', {
         percentage
       })
     }

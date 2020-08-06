@@ -216,6 +216,15 @@
 
   "帰国者・接触者相談センターへの相談件数": "Number of calls to the consultation center for returnees and those in close contact with them",
 
+  "富山駅周辺の人口の推移（参考値）": "Changes of population around Toyama Station (Reference value)",
+  "（注）NTTドコモの携帯電話ネットワークのしくみを使用して作成される、人口の統計情報を元にした直近1週間の増減率": "(Note) Rate of increase/decrease for the most recent week based on demographic information created using the NTT docomo mobile phone network mechanism",
+  "（注）前日比のデータについては、休日と平日のデータの比較となる際に非常に大きな数値となる場合あり": "(Note) The data for the day-to-day comparison may be very large when comparing data for holidays and weekdays.",
+  "（注）エリアの中の人口の増減を見るもので、接触量を見るものではない": "(Note) It only looks at the change in population in the area, not the amount of contact.",
+  "（注）感染拡大前比：2020年1月18日~2020年2月14日における平日の平均との比較": "(Note) Comparison with before infection spread: Comparison with the average of weekdays from January 18, 2020 to February 14, 2020",
+  "（注）緊急事態宣言前比：2020年4月6日~2020年4月7日との比較": "(Note) Comparison with before declaration of emergency: Comparison with April 6, 2020 to April 7, 2020",
+  "（注）前年同月比：前年同月における平日の平均との比較": "(Note) Comparison with the same month last year: Comparison with the average of weekdays in the same month last year",
+  "出典: {source}": "Source: {source}",
+
   "新型コロナウイルス感染症にかかる相談窓口について": "Consultation desks for COVID-19",
   "発症前{two}週間以内": "If the following conditions apply to you in the {two} weeks",
   "{past}の出来ごとと症状": "{past}: prior to the development of symptoms",
