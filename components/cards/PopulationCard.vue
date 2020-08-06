@@ -55,7 +55,7 @@ export default {
     const populationGraphTooltipTitle = (tooltipItems, data) => {
       console.log(tooltipItems);
       console.log(data);
-      const label = tooltipItems[0].label
+      const label = data.labels[tooltipItems[0].index]
       return this.$t('{duration}', {
         duration: this.$t(label)
       })
