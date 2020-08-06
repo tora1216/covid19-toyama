@@ -177,7 +177,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayData() {
       const datasets = this.chartData.labels!.map((label, i) => {
         return {
-          label: i18nlabels[i] as string,
+          label: this.i18nlabels[i] as string,
           data: this.chartData.datasets!.map(d => d.data![i]) as number[],
           backgroundColor: colors[i],
           borderWidth: 0
