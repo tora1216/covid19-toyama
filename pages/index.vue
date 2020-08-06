@@ -78,7 +78,6 @@ import Status from '@/data/status.json'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 // import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
-
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 // import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
@@ -95,7 +94,6 @@ import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 import DeadPersonsNumberCard from '@/components/cards/DeadPersonsNumberCard.vue'
 import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNumberCard.vue'
-
 export default Vue.extend({
   components: {
     PageHeader,
@@ -150,29 +148,23 @@ export default Vue.extend({
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-
     @include lessThan($small) {
       flex-direction: column;
       align-items: baseline;
     }
   }
-
   .UpdatedAt {
     @include font-size(14);
-
     color: $gray-3;
     margin-bottom: 0.2rem;
   }
-
   .Annotation {
     @include font-size(12);
-
     color: $gray-3;
     @include largerThan($small) {
       margin: 0 0 0 auto;
     }
   }
-
   .TwitterTimelineBlock {
     margin: 20px 0;
     background-color: #fff;
@@ -180,7 +172,6 @@ export default Vue.extend({
     border: 0.5px solid #d9d9d9 !important;
     border-radius: 4px;
     padding: 10px;
-
     .EmbeddedTwitterTimeline {
       display: block;
       width: 50%;
@@ -194,7 +185,6 @@ export default Vue.extend({
       }
     }
   }
-
   .EmergencyBlock {
     margin: 20px 0;
     background-color: #fff;
@@ -202,7 +192,6 @@ export default Vue.extend({
     border: 0.5px solid #d9d9d9 !important;
     border-radius: 4px;
     padding: 10px;
-
     .EmergencyImage {
       display: block;
       width: 50%;
@@ -215,15 +204,12 @@ export default Vue.extend({
       }
     }
   }
-
   .DataBlock {
     margin: 20px -8px;
-
     .DataCard {
       @include largerThan($medium) {
         padding: 10px;
       }
-
       @include lessThan($small) {
         padding: 4px 8px;
       }

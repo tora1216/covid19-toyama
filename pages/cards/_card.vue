@@ -38,6 +38,11 @@
         this.$route.params.card == 'predicted-number-of-toei-subway-passengers'
       "
     />
+    <population-card
+      v-else-if="
+        this.$route.params.card == 'changes-of-population-around-toyama-station'
+      "
+    />
     <agency-card v-else-if="this.$route.params.card == 'agency'" />
     <shinjuku-visitors-card
       v-else-if="this.$route.params.card == 'shinjuku-visitors'"
@@ -67,6 +72,7 @@
 
 <script>
 import Data from '@/data/data.json'
+import PopulationData from '@/data/population.json'
 import MetroData from '@/data/metro.json'
 import agencyData from '@/data/agency.json'
 import ShinjukuData from '@/data/13104_daily_visitors.json'
@@ -81,6 +87,7 @@ import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 import MetroCard from '@/components/cards/MetroCard.vue'
+import PopulationCard from '@/components/cards/PopulationCard.vue'
 import AgencyCard from '@/components/cards/AgencyCard.vue'
 import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
 import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
@@ -102,6 +109,7 @@ export default {
     TelephoneAdvisoryReportsNumberCard,
     ConsultationDeskReportsNumberCard,
     MetroCard,
+    PopulationCard,
     AgencyCard,
     ShinjukuVisitorsCard,
     ChiyodaVisitorsCard,
@@ -154,6 +162,10 @@ export default {
         title = this.$t('都営地下鉄の利用者数の推移')
         updatedAt = MetroData.date
         break
+      case 'changes-of-population-around-toyama-station':
+        title = this.$t('富山駅周辺の人口の推移')
+        updatedAt = PopulationData.date
+        break
       case 'agency':
         title = this.$t('都庁来庁者数の推移')
         updatedAt = agencyData.date
@@ -195,7 +207,7 @@ export default {
     return data
   },
   head() {
-    const url = 'https://stopcovid19-toyama.netlify.com/'
+    const url = 'https://stopcovid19-toyama.netlify.app/'
     const timestamp = new Date().getTime()
     const ogpImage =
       this.$i18n.locale === 'ja'
