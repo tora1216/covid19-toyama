@@ -62,13 +62,10 @@ export default {
 
     // populationGraph ツールチップ title文字列
     // this.$t を使うため populationGraphOption の外側へ
-    const populationGraphTooltipTitle = (tooltipItem, data) => {
-      console.log(tooltipItem);
-      console.log(data);
-      const currentData = data.datasets[tooltipItem.datasetIndex]
-      const label = `${currentData.label}`
-      return this.$t('{label}', {
-        label
+    const populationGraphTooltipTitle = (tooltipItems, _) => {
+      const label = tooltipItems[0].label
+      return this.$t('{duration}', {
+        duration: this.$t(label)
       })
     }
     // populationGraph ツールチップ label文字列
