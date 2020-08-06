@@ -165,8 +165,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     const i18nlabels = [
       this.$t('感染拡大前比'),
       this.$t('緊急事態宣言前比'),
-      this.$t('議事堂計'),
       this.$t('前年同月比'),
+      this.$t('前日比'),
     ]
     return {
       canvas: true,
