@@ -29,7 +29,8 @@ summary = soup.find("div", id="main").get_text(strip=True)
 # 陽性患者数
 total = int(mojimoji.zen_to_han(re.search(r"(\d+?)例", summary).group(1)))
 # 入院中・入院等調整中
-hospitalized = int(mojimoji.zen_to_han(re.search(r"入院中又は入院等調整中(.+?)例", summary).group(1)))
+hospitalized = int(mojimoji.zen_to_han(
+    re.search(r"入院中又は入院等調整中(.+?)例", summary).group(1)))
 # 重症
 severe = int(mojimoji.zen_to_han(re.search(r"重症者 (.+?)人", summary).group(1)))
 # 無症状・軽症・中等症
@@ -39,7 +40,7 @@ death = int(mojimoji.zen_to_han(re.search(r"死亡(.+?)例", summary).group(1)))
 # 退院
 discharged = int(mojimoji.zen_to_han(re.search(r"退院(.+?)例", summary).group(1)))
 
-# 検査陽性者の状況 
+# 検査陽性者の状況
 data["main_summary"] = {
     "attr": "陽性患者数",
     "date": dt_now,
@@ -78,11 +79,19 @@ df_kanjya = pd.read_excel(link, skiprows=2)
 
 # エクセル内データを定義書準拠形式に変換
 df_kanjya.rename(columns={"県番号": "No"}, inplace=True)
-df_kanjya["No"] = df_kanjya.index+1
-df_kanjya.rename(columns={"検査結果判明日": "判明日"}, inplace=True)
-df_kanjya["判明日"] = df_kanjya["判明日"].apply(
-    lambda date: pd.to_datetime(date).strftime("%Y-%m-%d")
+df_kanjya["No"] = df_kanjya.index + 1
+flg_is_serial = df_kanjya["検査結果判明日"].astype("str").str.isdigit()
+fromSerial = pd.to_datetime(
+    df_kanjya.loc[flg_is_serial, "検査結果判明日"].astype(float),
+    unit="D",
+    origin=pd.Timestamp("1899/12/30"),
 )
+fromString = pd.to_datetime(
+    df_kanjya.loc[~flg_is_serial, "検査結果判明日"])
+df_kanjya["検査結果判明日"] = pd.concat(
+    [fromString, fromSerial])
+df_kanjya.rename(columns={"検査結果判明日": "判明日"}, inplace=True)
+df_kanjya["判明日"] = df_kanjya["判明日"].dt.strftime("%Y-%m-%d")
 df_kanjya['性別'] = df_kanjya["性別"].replace("男", "男性").replace("女", "女性")
 df_kanjya['年代'] = df_kanjya["年代"].replace("90以上", "90歳以上").replace(
     "90代", "90歳以上").replace("90代以上", "90歳以上")
@@ -224,6 +233,8 @@ data["patients_by_gender"] = {
         "O": int(((df_patients["性別"] != "男性") & (df_patients["性別"] != "女性")).sum())
     }
 }
+
+print(data)
 
 # data.json上書き
 df_result = codecs.open('../data/data.json', 'w', 'utf-8')
