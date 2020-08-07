@@ -19,7 +19,7 @@ file_list = soup.find("div", id="file")
 link = file_list.find(
     "a", text="強化・緩和の判断指標（直近１週間平均）の推移").get("href")
 df_status = pd.read_excel(link, header=None , index_col=None)
-df_status = df_status.iloc[2:9, 3:]
+df_status = df_status.iloc[2:9, 3:].fillna("-")
 df_status = df_status.T
 df_status = df_status.sort_index(ascending=False)
 df_status = df_status.to_dict(orient="records")
