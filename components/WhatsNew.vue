@@ -376,9 +376,11 @@ export default Vue.extend({
   }
 
         .RoadMap-stage-label {
-            color: #00a040;
-            font-size: 20px;
-            font-weight: 600;
+          color: #00a040;
+          font-size: 20px;
+          font-weight: 600;
+          border-bottom: 3px solid #00a040;
+          padding: 4px 8px;
         }
 
         .RoadMap-stages {
@@ -459,7 +461,6 @@ export default Vue.extend({
             border: 1px solid #00a040;
             color: #00a040 !important;
             cursor: pointer;
-            font-weight: bold;
             text-decoration: none;
             float: right;
         }
@@ -472,7 +473,7 @@ export default Vue.extend({
         table.RoadMap-stage-content{
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
         }
 
         table.RoadMap-stage-content tr{
