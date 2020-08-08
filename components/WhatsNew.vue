@@ -6,9 +6,9 @@
       </v-icon>
       {{ $t('富山県の対策指針') }}
     </h3>
+    <p>富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。</p>
     <div class="row" style="margin-bottom:16px;">
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
-        <p>富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。</p>
         <div class="RoadMap-stage">
           <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を発令中です') }}</p>
           <ul class="RoadMap-stages">
