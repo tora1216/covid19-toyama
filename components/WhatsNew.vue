@@ -31,7 +31,6 @@
               <td>休業要請等は行わない</td>
             </tr>
           </table>
-          <p>7月以降の県内外での感染拡大を踏まえ改訂されました。</p>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
@@ -512,6 +511,6 @@ export default Vue.extend({
         width: 70%;
         text-align: center;
         background-color: #eee;
-        padding: 10px 0;
+        padding: 10px;
       }
 </style>
