@@ -23,6 +23,11 @@
             <li>Stage3</li>
           </ul>
           <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を発令中です') }}</p>
+          <ul style="margin-bottom:16px;">
+            <li>外出の自粛：基本的な感染防止対策等が徹底されていない施設への出入りは控えるよう要請</li>
+            <li>催物の開催：大規模イベント等についても段階的に緩和</li>
+            <li>休業要請等：休業要請等は行わない</li>
+          </ul>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
@@ -356,11 +361,8 @@ export default Vue.extend({
     -moz-osx-font-smoothing: grayscale;
   }
 
-        .RoadMap-stage {
-            text-align: center;
-        }
-
         .RoadMap-stage-label {
+            text-align: center;
             color: #00a040;
             font-size: 18px;
             font-weight: 600;
@@ -431,6 +433,11 @@ export default Vue.extend({
             border-color: transparent transparent transparent #00a040;
         }
 
+        .RoadMap-stages li.RoadMap-stages-next {
+            background: linear-gradient(to right, #00a040, #4d4d4d);
+            font-weight: bold;
+        }
+
         .RoadMap-stage-button {
             padding: 4px 8px;
             display: inline-block;
@@ -441,6 +448,7 @@ export default Vue.extend({
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
+            float: right;
         }
 
         .RoadMap-stage-button:hover {
