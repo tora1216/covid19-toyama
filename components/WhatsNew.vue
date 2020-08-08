@@ -78,7 +78,7 @@
       </div>
     </div>
 
-    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの指標状況') }}</h3></div>
+    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('モニタリング指標の状況') }}</h3></div>
     <div class="DataView-Description">
     <ul>
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
