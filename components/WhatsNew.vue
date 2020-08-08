@@ -490,7 +490,7 @@ export default Vue.extend({
           background-color: #00a040;
           color: white;
           text-align: center;
-          padding: 10px;
+          padding: 10px 0;
           border-radius: 4px;
         }
         
