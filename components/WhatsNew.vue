@@ -20,15 +20,15 @@
           <table class="RoadMap-stage-content">
             <tr>
               <th>外出の自粛</th>
-              <td>基本的な感染防止対策等が徹底されていない施設への出入りは控えるよう要請</td>
+              <td>基本的な感染防止対策等が徹底されていない施設への出入りは控えるよう要請<br>(新しい生活様式の徹底)</td>
             </tr>
             <tr>
               <th>催物の開催</th>
-              <td>大規模イベント等について段階的に緩和</td>
+              <td>大規模イベント等について段階的に緩和<br>(感染防止対策の徹底)</td>
             </tr>
             <tr>
               <th>休業要請等</th>
-              <td>休業要請等は行わない</td>
+              <td>休業要請等は行わない<br>(感染防止対策の徹底)</td>
             </tr>
           </table>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
