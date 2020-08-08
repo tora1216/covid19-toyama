@@ -16,7 +16,7 @@
             <li>Stage2</li>
             <li>Stage3</li>
           </ul>
-          <p>「Stage1」では以下の措置が行われます。</p>
+          <p>以下の措置を行っています。</p>
           <table class="RoadMap-stage-content">
             <tr>
               <th>外出の自粛</th>
@@ -24,7 +24,7 @@
             </tr>
             <tr>
               <th>催物の開催</th>
-              <td>大規模イベント等についても段階的に緩和</td>
+              <td>大規模イベント等について段階的に緩和</td>
             </tr>
             <tr>
               <th>休業要請等</th>
