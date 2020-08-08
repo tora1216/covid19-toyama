@@ -16,12 +16,22 @@
             <li>Stage2</li>
             <li>Stage3</li>
           </ul>
-          <p>「Stage1」では、以下の措置が行われます。</p>
-          <ul style="margin-bottom:16px;">
-            <li>外出の自粛：基本的な感染防止対策等が徹底されていない施設への出入りは控えるよう要請</li>
-            <li>催物の開催：大規模イベント等についても段階的に緩和</li>
-            <li>休業要請等：休業要請等は行わない</li>
-          </ul>
+          <p>「Stage1」では以下の措置が行われます。</p>
+          <table class="RoadMap-stage-content">
+            <tr>
+              <th>外出の自粛</th>
+              <td>基本的な感染防止対策等が徹底されていない施設への出入りは控えるよう要請</td>
+            </tr>
+            <tr>
+              <th>催物の開催</th>
+              <td>大規模イベント等についても段階的に緩和</td>
+            </tr>
+            <tr>
+              <th>休業要請等</th>
+              <td>休業要請等は行わない</td>
+            </tr>
+          </table>
+          <p>7月以降の県内外での感染拡大を踏まえ改訂されました。</p>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
@@ -458,4 +468,49 @@ export default Vue.extend({
             color: #fff !important;
             background-color: #00a040;
         }
+
+        table.RoadMap-stage-content{
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 8px;
+        }
+
+        table.RoadMap-stage-content tr{
+            border-bottom: solid 3px #fff;
+        }
+
+        table.RoadMap-stage-content tr:last-child{
+            border-bottom: none;
+        }
+
+        table.RoadMap-stage-content th{
+          position: relative;
+          text-align: left;
+          width: 30%;
+          background-color: #00a040;
+          color: white;
+          text-align: center;
+          padding: 10px;
+        }
+        
+       table.RoadMap-stage-content th:after{
+         display: block;
+         content: "";
+         width: 0px;
+         height: 0px;
+         position: absolute;
+         top:calc(50% - 10px);
+         right:-10px;
+         border-left: 10px solid #00a040;
+         border-top: 10px solid transparent;
+         border-bottom: 10px solid transparent;
+       }
+
+      table.RoadMap-stage-content td{
+        text-align: left;
+        width: 70%;
+        text-align: center;
+        background-color: #eee;
+        padding: 10px 0;
+      }
 </style>
