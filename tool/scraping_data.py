@@ -234,8 +234,6 @@ data["patients_by_gender"] = {
     }
 }
 
-print(data)
-
 # data.json上書き
 df_result = codecs.open('../data/data.json', 'w', 'utf-8')
 json.dump(data, df_result, ensure_ascii=False, indent=4)
