@@ -4,7 +4,7 @@
       <v-icon size="24" class="WhatsNew-heading-icon">
         mdi-bullhorn
       </v-icon>
-      {{ $t('感染状況・医療提供体制の分析') }}
+      {{ $t('富山県の対策指針') }}
     </h3>
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
@@ -335,7 +335,7 @@ export default Vue.extend({
             list-style-type: none;
             display: table;
             width: 100%;
-            padding: 0;
+            padding: 0 !important;
             margin: 0;
             margin-bottom: 16px;
             overflow: hidden;
