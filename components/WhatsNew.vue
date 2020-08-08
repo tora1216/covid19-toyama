@@ -8,14 +8,15 @@
     </h3>
     <div class="row" style="margin-bottom:16px;">
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
-        <p>富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。</p>
+        <p>富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。</p>
         <div class="RoadMap-stage">
+          <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を発令中です') }}</p>
           <ul class="RoadMap-stages">
             <li class="RoadMap-stages-current">Stage1</li>
             <li>Stage2</li>
             <li>Stage3</li>
           </ul>
-          <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を発令中です') }}</p>
+          <p>「Stage1」では、以下の措置が行われます。</p>
           <ul style="margin-bottom:16px;">
             <li>外出の自粛：基本的な感染防止対策等が徹底されていない施設への出入りは控えるよう要請</li>
             <li>催物の開催：大規模イベント等についても段階的に緩和</li>
@@ -34,7 +35,7 @@
     </ul>
     </div>
     <div class="DataView-CardText">
-    <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <div style="box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
       <thead>
         <tr>
@@ -60,8 +61,8 @@
 
         <p>ステージの強化は、以下の通り決定します。</p>
         <ul style="margin-bottom:16px;">
-          <li>警戒情報：指標3と4のいずれも基準に到達し、指標1または2が一定程度上昇した際に発令</li>
-          <li>Stage2：指標3と4のいずれも基準に到達し、指標1または2が基準の50%に到達し数日継続した際に発令</li>
+          <li>警戒情報：指標3と4のいずれもが基準に到達し、指標1または2が一定程度上昇した際に発令</li>
+          <li>Stage2：指標3と4のいずれもが基準に到達し、指標1または2が基準の50%に到達し数日継続した際に発令</li>
           <li>Stage3：指標1～4のすべてが基準に到達し、数日継続した際に発令</li>
         </ul>
         <p>ステージの緩和は、全ての基準が下回る状況が1～2週間続く場合に専門家の意見を踏まえ決定します。</p>
@@ -365,9 +366,8 @@ export default Vue.extend({
   }
 
         .RoadMap-stage-label {
-            text-align: center;
             color: #00a040;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
         }
 
