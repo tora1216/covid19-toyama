@@ -8,7 +8,12 @@
     </h3>
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
-        <p>富山県では、5月13日に「新型コロナウイルス感染症に打ち克つためのロードマップ」を策定し、医療体制や感染状況等の判断指標を踏まえ、外出自粛や休業要請を定めた３段階のステージを設定しています。</p>
+        <p>富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。ステージの緩和は、全ての基準が下回る状況が1～2週間続く場合に専門家の意見を踏まえ決定します。ステージの強化は、以下の通り決定します。</p>
+        <ul>
+          <li>警戒情報：指標3と4いずれも基準に到達し、指標1または2が一定程度上昇した際に発令</li>
+          <li>Stage2：指標3と4のいずれも基準に到達し、指標1または2が基準の50%に到達し数日継続した際に発令</li>
+          <li>Stage3：指標1～4のすべてが基準に到達し、数日継続した際に発令</li>
+        </ul>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
         <div class="RoadMap-stage">
@@ -17,14 +22,47 @@
             <li>Stage2</li>
             <li>Stage3</li>
           </ul>
-          <p class="RoadMap-stage-label">現在「Stage1」の措置を実施中です</p>
-          <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">詳細を見る</a>
+          <p class="RoadMap-stage-label">{{ $t('現在「Stage1」の措置を実施中です') }}</p>
+          <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
     </div>
 
     <div class="Data-Card">
-    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('モニタリング指標の状況') }}</h3></div>
+    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの変更基準') }}</h3></div>
+    <div class="DataView-Description">
+    <ul>
+      <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
+      <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
+    </ul>
+    </div>
+    <div class="DataView-CardText">
+    <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
+      <thead>
+        <tr>
+          <th>1.{{ $t('入院者数') }}</th>
+          <th>2.{{ $t('重症病床稼働率') }}</th>
+          <th>3.{{ $t('新規陽性者数') }}</th>
+          <th>4.{{ $t('感染経路不明者数') }}</th>
+          <th>5.{{ $t('検査陽性率') }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>100 {{ $t('人') }}<br>({{ $t('未満') }})</td>
+          <td>30 %<br>({{ $t('未満') }})</td>
+          <td>2.5 {{ $t('人') }}<br>({{ $t('未満') }})</td>
+          <td>1 {{ $t('人') }}<br>({{ $t('未満') }})</td>
+          <td>7 %<br>({{ $t('未満') }})</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+
+    <div class="Data-Card">
+    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの指標状況') }}</h3></div>
     <div class="DataView-Description">
     <ul>
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
@@ -37,11 +75,11 @@
       <thead>
         <tr>
           <th>{{ $t('日付') }}</th>
-          <th>{{ $t('入院者数') }}</th>
-          <th>{{ $t('重症病床稼働率') }}</th>
-          <th>{{ $t('新規陽性者数') }}</th>
-          <th>{{ $t('感染経路不明者数') }}</th>
-          <th>{{ $t('検査陽性率') }}</th>
+          <th>1.{{ $t('入院者数') }}</th>
+          <th>2.{{ $t('重症病床稼働率') }}</th>
+          <th>3.{{ $t('新規陽性者数') }}</th>
+          <th>4.{{ $t('感染経路不明者数') }}</th>
+          <th>5.{{ $t('検査陽性率') }}</th>
           <th>{{ $t('達成状況') }}</th>
         </tr>
       </thead>
@@ -61,7 +99,7 @@
     </div>
 
     <div style="max-width:220px;">
-      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" rel="noopener" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[活動再開へのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
+      <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" rel="noopener" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[新型コロナウイルス感染症に打ち克つためのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
     </div>
 
     </div>
