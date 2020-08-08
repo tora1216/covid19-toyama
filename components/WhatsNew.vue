@@ -486,11 +486,12 @@ export default Vue.extend({
         table.RoadMap-stage-content th{
           position: relative;
           text-align: left;
-          width: 30%;
+          width: 35%;
           background-color: #00a040;
           color: white;
           text-align: center;
           padding: 10px;
+          border-radius: 4px;
         }
         
        table.RoadMap-stage-content th:after{
@@ -508,9 +509,10 @@ export default Vue.extend({
 
       table.RoadMap-stage-content td{
         text-align: left;
-        width: 70%;
+        width: 65%;
         text-align: center;
         background-color: #eee;
         padding: 10px;
+        border-radius: 4px;
       }
 </style>
