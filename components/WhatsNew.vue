@@ -6,7 +6,7 @@
       </v-icon>
       {{ $t('富山県の対策指針') }}
     </h3>
-    <div class="row">
+    <div class="row" style="margin-bottom:16px;">
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
         <p>富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。ステージの緩和は、全ての基準が下回る状況が1～2週間続く場合に専門家の意見を踏まえ決定します。ステージの強化は、以下の通り決定します。</p>
         <ul>
@@ -22,13 +22,12 @@
             <li>Stage2</li>
             <li>Stage3</li>
           </ul>
-          <p class="RoadMap-stage-label">{{ $t('現在「Stage1」の措置を実施中です') }}</p>
+          <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を発令中です') }}</p>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
     </div>
 
-    <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの変更基準') }}</h3></div>
     <div class="DataView-Description">
     <ul>
@@ -60,9 +59,7 @@
     </table>
     </div>
     </div>
-    </div>
 
-    <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの指標状況') }}</h3></div>
     <div class="DataView-Description">
     <ul>
@@ -103,7 +100,6 @@
       <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" rel="noopener" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[新型コロナウイルス感染症に打ち克つためのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
     </div>
 
-    </div>
 
     <!--<ul class="WhatsNew-list">
       <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
@@ -413,7 +409,7 @@ export default Vue.extend({
             right: -1em;
             border-style: solid;
             border-color: transparent transparent transparent #fff;
-            border-width: 40px 0 40px 1em;
+            border-width: 35px 0 35px 1em;
             z-index: 10;
         }
 
@@ -422,7 +418,7 @@ export default Vue.extend({
             right: -.8em;
             border-style: solid;
             border-color: transparent transparent transparent #4d4d4d;
-            border-width: 40px 0 40px 1em;
+            border-width: 35px 0 35px 1em;
             z-index: 10;
         }
 
