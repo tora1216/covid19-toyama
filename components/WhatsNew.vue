@@ -8,14 +8,7 @@
     </h3>
     <div class="row" style="margin-bottom:16px;">
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
-        <p>富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。ステージの緩和は、全ての基準が下回る状況が1～2週間続く場合に専門家の意見を踏まえ決定します。ステージの強化は、以下の通り決定します。</p>
-        <ul>
-          <li>警戒情報：指標3と4のいずれも基準に到達し、指標1または2が一定程度上昇した際に発令</li>
-          <li>Stage2：指標3と4のいずれも基準に到達し、指標1または2が基準の50%に到達し数日継続した際に発令</li>
-          <li>Stage3：指標1～4のすべてが基準に到達し、数日継続した際に発令</li>
-        </ul>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+        <p>富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。</p>
         <div class="RoadMap-stage">
           <ul class="RoadMap-stages">
             <li class="RoadMap-stages-current">Stage1</li>
@@ -31,7 +24,7 @@
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
-    </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 col-12">
 
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの変更基準') }}</h3></div>
     <div class="DataView-Description">
@@ -63,6 +56,16 @@
       </tbody>
     </table>
     </div>
+    </div>
+
+        <p>ステージの強化は、以下の通り決定します。</p>
+        <ul style="margin-bottom:16px;">
+          <li>警戒情報：指標3と4のいずれも基準に到達し、指標1または2が一定程度上昇した際に発令</li>
+          <li>Stage2：指標3と4のいずれも基準に到達し、指標1または2が基準の50%に到達し数日継続した際に発令</li>
+          <li>Stage3：指標1～4のすべてが基準に到達し、数日継続した際に発令</li>
+        </ul>
+        <p>ステージの緩和は、全ての基準が下回る状況が1～2週間続く場合に専門家の意見を踏まえ決定します。</p>
+      </div>
     </div>
 
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの指標状況') }}</h3></div>
