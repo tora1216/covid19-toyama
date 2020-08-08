@@ -1,122 +1,27 @@
 <template>
   <div class="WhatsNew">
     <h3 class="WhatsNew-heading">
-      <v-icon size="24" class="WhatsNew-heading-icon">
-        mdi-bullhorn
-      </v-icon>
-      {{ $t('富山県の対策指針') }}
+      {{ $t('感染状況・医療提供体制の分析') }}
     </h3>
-    <!--<div style="background-color: #ffe200; color: #4d4d4d; border-radius: 4px; padding: 4px 8px; font-weight: bold; margin: 16px 0px;">
-      {{ $t('現在「Stage2」の措置を実施中です') }} 
-    </div>-->
-    <p style="color:#4d4d4d;">{{ $t('　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。') }} </p>
-    <ul style="margin-bottom:16px;">
-      <li>
-        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022120.html" target="_blank" rel="noopener">{{ $t('（事業者向け）感染拡大予防チェックリスト') }}</a>
-      </li>
-      <li>
-        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022225.html" target="_blank" rel="noopener">{{ $t('6月19日以降の都道府県をまたいだ往来について') }}</a>
-      </li>
-      <li>
-        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022344.html" target="_blank" rel="noopener">{{ $t('7月10日以降のイベント等の開催について') }}</a>
-      </li>
-      <li>
-        <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022248.html" target="_blank" rel="noopener">{{ $t('「新しい生活様式」における熱中症予防について') }}</a>
-      </li>
-    </ul>
-    <div class="Data-Card">
-    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージと要請内容') }}</h3></div>
-    <div class="DataView-CardText">
-    <div style="background-color: #008830; color: #fff; border-radius: 4px; padding: 4px 8px; font-weight: bold; margin: 16px 0px;">
-      {{ $t('現在「Stage1」の措置を実施中です') }} 
-    </div>
-    <!--<div class="RelaxationStep-block RelaxationStep-block-steps">
-      <ul class="RelaxationStep-steps-list">
-        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
-            {{ $t('ステージ') }} 3
-          </span></li>
-        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
-            {{ $t('ステージ') }} 2
-          </span></li>
-        <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-on">
-            {{ $t('ステージ') }} 1
-          </span></li>
-      </ul>
-      <p class="RelaxationStep-changed-text">
-        {{ $t('現在「Stage1」の措置を実施中です') }} 
-      </p>
-    </div>-->
-    <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
-    <table class="mapTable">
-      <thead>
-        <tr>
-          <th>{{ $t('ステージ') }}</th>
-          <th>{{ $t('外出') }}</th>
-          <th>{{ $t('イベント開催') }}</th>
-          <th>{{ $t('休業要請') }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>3</td>
-          <td>×:{{ $t('昼間') }}<br>×:{{ $t('夜間') }}<br>×:{{ $t('県外') }}<br>×:{{ $t('繁華街の接待を伴う飲食店') }}</td>
-          <td>×:{{ $t('大規模イベント等') }}<br>〇:{{ $t('一定の要件を満たす小規模イベント') }}</td>
-          <td>{{ $t('特措法に基づく施設に限定') }}<br>{{ $t('食事提供施設は酒類の提供のみ短縮を依頼') }} (~20:00)</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>〇:{{ $t('昼間') }}<br>×:{{ $t('夜間') }}<br>×:{{ $t('県外') }}<br>×:{{ $t('繁華街の接待を伴う飲食店') }}<br>({{ $t('新たな生活様式の徹底') }})</td>
-          <td>×:{{ $t('大規模イベント等') }}<br>〇:{{ $t('一定の要件を満たす小規模イベント') }}</td>
-          <td>{{ $t('クラスターが発生した施設に限定（キャバレー、カラオケ、ライブハウスなど）') }}<br>{{ $t('食事提供施設は酒類の提供のみ短縮を依頼') }} (~22:00)</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>〇:{{ $t('昼間') }}<br>〇:{{ $t('夜間') }}<br>〇:{{ $t('県外') }} <small>({{ $t('段階的に緩和') }})</small><br>〇:{{ $t('繁華街の接待を伴う飲食店') }}<br>({{ $t('新たな生活様式の徹底') }})</td>
-          <td>〇:{{ $t('大規模イベント等') }} <small>({{ $t('段階的に緩和') }})</small><br>〇{{ $t('一定の要件を満たす小規模イベント') }}<br>({{ $t('感染防止策の徹底') }})</td>
-          <td>{{ $t('休業要請等は行わない') }}<br>({{ $t('感染防止策の徹底') }})</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+        <p>富山県では、5月13日に「新型コロナウイルス感染症に打ち克つためのロードマップ」を策定し、医療体制や感染状況等の判断指標を踏まえ、外出自粛や休業要請を定めた３段階のステージを設定しています。</p>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+        <div class="RoadMap-stage">
+          <ul class="RoadMap-stages">
+            <li class="RoadMap-stages-current">Stage1</li>
+            <li>Stage2</li>
+            <li>Stage3</li>
+          </ul>
+          <p class="RoadMap-stage-label">現在「Stage1」の措置を実施中です</p>
+          <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">詳細を見る</a>
+        </div>
+      </div>
     </div>
 
     <div class="Data-Card">
-    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの変更基準') }}</h3></div>
-    <div class="DataView-Description">
-    <ul>
-      <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
-      <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
-    </ul>
-    </div>
-    <div class="DataView-CardText">
-    <div style="overflow-y:scroll;max-height:300px;box-shadow: 0 -20px 12px -12px #0003 inset;">
-    <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
-      <thead>
-        <tr>
-          <th>{{ $t('入院者数') }}</th>
-          <th>{{ $t('重症病床稼働率') }}</th>
-          <th>{{ $t('新規陽性者数') }}</th>
-          <th>{{ $t('感染経路不明者数') }}</th>
-          <th>{{ $t('検査陽性率') }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>100 {{ $t('人') }}<br>({{ $t('未満') }})</td>
-          <td>30 %<br>({{ $t('未満') }})</td>
-          <td>2.5 {{ $t('人') }}<br>({{ $t('未満') }})</td>
-          <td>1 {{ $t('人') }}<br>({{ $t('未満') }})</td>
-          <td>7 %<br>({{ $t('未満') }})</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    </div>
-    </div>
-
-    <div class="Data-Card">
-    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('現在の状況') }}</h3></div>
+    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('モニタリング指標の状況') }}</h3></div>
     <div class="DataView-Description">
     <ul>
       <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
@@ -412,4 +317,95 @@ export default Vue.extend({
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+        .RoadMap-stage {
+            text-align: center;
+        }
+
+        .RoadMap-stage-label {
+            color: #00a040;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .RoadMap-stages {
+            list-style-type: none;
+            display: table;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .RoadMap-stages li {
+            display: table-cell;
+            position: relative;
+            background: #4d4d4d;
+            padding: 0.5em 0.5em 0.5em 2em;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .RoadMap-stages li:last-child {
+            padding-right: 1em;
+        }
+
+        .RoadMap-stages li:last-child:before,
+        .RoadMap-stages li:last-child:after {
+            display: none;
+        }
+
+        .RoadMap-stages li:before,
+        .RoadMap-stages li:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            margin: auto;
+        }
+
+        .RoadMap-stages li:before {
+            top: -15px;
+            right: -1em;
+            border-style: solid;
+            border-color: transparent transparent transparent #fff;
+            border-width: 40px 0 40px 1em;
+            z-index: 10;
+        }
+
+        .RoadMap-stages li:after {
+            top: -15px;
+            right: -.8em;
+            border-style: solid;
+            border-color: transparent transparent transparent #4d4d4d;
+            border-width: 40px 0 40px 1em;
+            z-index: 10;
+        }
+
+        .RoadMap-stages li.RoadMap-stages-current {
+            background: #00a040;
+            font-weight: bold;
+        }
+
+        .RoadMap-stages li.RoadMap-stages-current:after {
+            border-color: transparent transparent transparent #00a040;
+        }
+
+        .RoadMap-stage-button {
+            padding: 12px 18px;
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #fff;
+            border: 1px solid #00a040;
+            color: #00a040;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .RoadMap-stage-button:hover {
+            color: #fff;
+            background-color: #00a040;
+        }
 </style>
