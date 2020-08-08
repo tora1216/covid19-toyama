@@ -1,6 +1,9 @@
 <template>
   <div class="WhatsNew">
     <h3 class="WhatsNew-heading">
+      <v-icon size="24" class="WhatsNew-heading-icon">
+        mdi-bullhorn
+      </v-icon>
       {{ $t('感染状況・医療提供体制の分析') }}
     </h3>
     <div class="row">
@@ -119,7 +122,7 @@ export default Vue.extend({
 .WhatsNew {
   @include card-container();
 
-  padding: 10px;
+  padding: 22px;
   margin-bottom: 20px;
 }
 
@@ -334,6 +337,7 @@ export default Vue.extend({
             width: 100%;
             padding: 0;
             margin: 0;
+            margin-bottom: 16px;
             overflow: hidden;
         }
 
@@ -393,19 +397,19 @@ export default Vue.extend({
         }
 
         .RoadMap-stage-button {
-            padding: 12px 18px;
+            padding: 4px 8px;
             display: inline-block;
             border-radius: 4px;
             background-color: #fff;
             border: 1px solid #00a040;
-            color: #00a040;
+            color: #00a040 !important;
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
         }
 
         .RoadMap-stage-button:hover {
-            color: #fff;
+            color: #fff !important;
             background-color: #00a040;
         }
 </style>
