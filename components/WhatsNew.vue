@@ -60,6 +60,7 @@
     </table>
     </div>
     </div>
+    </div>
 
     <div class="Data-Card">
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの指標状況') }}</h3></div>
