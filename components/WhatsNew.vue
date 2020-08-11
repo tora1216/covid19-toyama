@@ -8,7 +8,7 @@
     </h3>
     <p>{{ $t('富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。') }}</p>
     <div class="RoadMap-stage-alert">
-      <h4>{{ $t('「新型コロナウイルス感染拡大警報(富山アラート)」が発令されています') }}</h4>
+      <h4>{{ $t('「富山アラート」発令中') }}</h4>
       <p>
         {{ $t('今後さらに感染が拡大すると、「Stage2」に移行となり、夜間の外出自粛や感染拡大地域への移動自粛などをお願いせざるを得ない状況となります。以下、改めてのお願いです。') }}
       </p>
@@ -23,7 +23,7 @@
     <div class="row" style="margin-bottom:16px;">
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
         <div class="RoadMap-stage">
-          <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を発令中です') }}</p>
+          <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を適用中です') }}</p>
           <ul class="RoadMap-stages">
             <li class="RoadMap-stages-stage1">Stage1</li>
             <li class="RoadMap-stages-stage2-prep">Stage2</li>
@@ -541,7 +541,7 @@ export default Vue.extend({
           font-size: 20px;
           font-weight: 600;
           border-bottom: 3px solid #fa1629;
-          padding: 4px 8px;
+          margin-bottom: 16px;
         }
 
         table.RoadMap-stage-content{
