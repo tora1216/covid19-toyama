@@ -32,9 +32,9 @@
             <thead>
               <tr>
                 <th></th>
-                <th class="RoadMap-stages-stage1">1</th>
-                <th class="RoadMap-stages-stage2">2</th>
-                <th class="RoadMap-stages-stage3">3</th>
+                <th class="RoadMap-stages-stage1">Stage1</th>
+                <th class="RoadMap-stages-stage2">Stage2</th>
+                <th class="RoadMap-stages-stage3">Stage3</th>
               </tr>
             </thead>
             <tbody>
@@ -479,7 +479,8 @@ export default Vue.extend({
         }
 
         .RoadMap-stages-stage1 {
-            background: #00a040;
+            color: #fff !important;
+            background: #00a040 !important;
             font-weight: bold;
         }
         
@@ -493,7 +494,8 @@ export default Vue.extend({
         }
 
         .RoadMap-stages-stage2 {
-            background: #fdbe40;
+            color: #fff !important;
+            background: #fdbe40 !important;
             font-weight: bold;
         }
 
@@ -502,7 +504,8 @@ export default Vue.extend({
         }
 
         .RoadMap-stages-stage3 {
-            background: #fa1629;
+            color: #fff !important;
+            background: #fa1629 !important;
             font-weight: bold;
         }
 
@@ -540,6 +543,7 @@ export default Vue.extend({
         table.RoadMap-stage-content{
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 8px;
         }
 
         table.RoadMap-stage-content tr{
