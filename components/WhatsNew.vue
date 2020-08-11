@@ -16,7 +16,17 @@
             <li class="RoadMap-stages-stage2-prep">Stage2</li>
             <li>Stage3</li>
           </ul>
-          <p>以下の措置を行っています。</p>
+          <p class="RoadMap-stage-alert">8月11日に<strong>「新型コロナウイルス感染拡大警報(富山アラート)」</strong>が発令されました。今後さらに感染が拡大すると、「Stage2」に移行となり、<strong>夜間の外出自粛</strong>や<strong>感染拡大地域への移動自粛</strong>をお願いせざるを得ない状況となります。以下、改めてのお願いです。
+            <ul>
+              <li>3密の徹底的な回避、手洗いやマスクの着用など<strong>「新しい生活様式」</strong>の徹底</li>
+              <li>感染者が多く発生している地域との往来は<strong>特に緊要度の高いものを除き</strong>自粛</li>
+              <li><strong>親族や友人が集まり会食する機会等</strong>における感染防止対策の徹底</li>
+              <li>業種ごとの<strong>感染拡大防止ガイドライン</strong>の遵守</li>
+              <li>重症化しやすい<strong>高齢者への感染予防行動</strong>の徹底、<strong>大声をあげる環境</strong>の徹底的な回避</li>
+            </ul>
+          </p>
+          <!--
+          <p>現在以下の措置を行っています。</p>
           <table class="RoadMap-stage-content">
             <tr>
               <th>外出の自粛</th>
@@ -32,6 +42,7 @@
             </tr>
           </table>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
+          -->
         </div>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
@@ -442,6 +453,10 @@ export default Vue.extend({
             background: #00a040;
             font-weight: bold;
         }
+        
+        .RoadMap-stages li.RoadMap-stages-stage1:after {
+            border-color: transparent transparent transparent #00a040;
+        }
 
         .RoadMap-stages li.RoadMap-stages-stage2-prep {
             background: linear-gradient(to right, #fdbe40, #4d4d4d);
@@ -453,9 +468,17 @@ export default Vue.extend({
             font-weight: bold;
         }
 
+        .RoadMap-stages li.RoadMap-stages-stage2:after {
+            border-color: transparent transparent transparent #fdbe40;
+        }
+
         .RoadMap-stages li.RoadMap-stages-stage3 {
             background: #fa1629;
             font-weight: bold;
+        }
+
+        .RoadMap-stages li.RoadMap-stages-stage3:after {
+            border-color: transparent transparent transparent #fa1629;
         }
 
         .RoadMap-stage-button {
@@ -473,6 +496,15 @@ export default Vue.extend({
         .RoadMap-stage-button:hover {
             color: #fff !important;
             background-color: #00a040;
+        }
+
+        .RoadMap-stage-alert{
+          border: 3px solid #fdbe40;
+          padding: 10px;
+        }
+
+        .RoadMap-stage-alert strong{
+          color: #fa1629;
         }
 
         table.RoadMap-stage-content{
