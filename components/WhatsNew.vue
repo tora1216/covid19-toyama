@@ -7,6 +7,18 @@
       {{ $t('富山県の対策指針') }}
     </h3>
     <p>{{ $t('富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。') }}</p>
+    <div class="RoadMap-stage-alert">
+      <p>
+        <strong>{{ $t('「新型コロナウイルス感染拡大警報(富山アラート)」') }}</strong>{{ $t('が発令されました。今後さらに感染が拡大すると、「Stage2」に移行となり、') }}<strong>{{ $t('夜間の外出自粛・感染拡大地域への移動自粛') }}</strong>{{ $t('などをお願いせざるを得ない状況となります。以下、改めてのお願いです。') }}
+      </p>
+      <ul>
+        <li>{{ $t('3密の徹底的な回避、手洗いやマスクの着用など「新しい生活様式」の徹底') }}</li>
+        <li>{{ $t('感染者が多く発生している地域との往来は特に緊要度の高いものを除き自粛') }}</li>
+        <li>{{ $t('親族や友人が集まり会食する機会等における感染防止対策の徹底') }}</li>
+        <li>{{ $t('業種ごとの感染拡大防止ガイドラインの遵守') }}</li>
+        <li>{{ $t('重症化しやすい高齢者への感染予防行動の徹底、大声をあげる環境の徹底的な回避') }}</li>
+      </ul>
+    </div>
     <div class="row" style="margin-bottom:16px;">
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
         <div class="RoadMap-stage">
@@ -16,36 +28,40 @@
             <li class="RoadMap-stages-stage2-prep">Stage2</li>
             <li>Stage3</li>
           </ul>
-          <div class="RoadMap-stage-alert">
-            <p>
-              <strong>{{ $t('「新型コロナウイルス感染拡大警報(富山アラート)」') }}</strong>{{ $t('が発令されました。今後さらに感染が拡大すると、「Stage2」に移行となり、') }}<strong>{{ $t('夜間の外出自粛・感染拡大地域への移動自粛') }}</strong>{{ $t('などをお願いせざるを得ない状況となります。以下、改めてのお願いです。') }}
-            </p>
-            <ul>
-              <li>{{ $t('3密の徹底的な回避、手洗いやマスクの着用など「新しい生活様式」の徹底') }}</li>
-              <li>{{ $t('感染者が多く発生している地域との往来は特に緊要度の高いものを除き自粛') }}</li>
-              <li>{{ $t('親族や友人が集まり会食する機会等における感染防止対策の徹底') }}</li>
-              <li>{{ $t('業種ごとの感染拡大防止ガイドラインの遵守') }}</li>
-              <li>{{ $t('重症化しやすい高齢者への感染予防行動の徹底、大声をあげる環境の徹底的な回避') }}</li>
-            </ul>
-          </div>
-          <!--
-          <p>現在以下の措置を行っています。</p>
           <table class="RoadMap-stage-content">
             <tr>
-              <th>外出の自粛</th>
-              <td>基本的な感染防止対策等が徹底されていない施設への出入りは控えるよう要請<br>(新しい生活様式の徹底)</td>
+              <th>外出</th>
+              <td>〇</td>
+              <td>△</td>
+              <td>×</td>
             </tr>
             <tr>
-              <th>催物の開催</th>
-              <td>大規模イベント等について段階的に緩和<br>(感染防止対策の徹底)</td>
+              <th>県外への移動</th>
+              <td>〇</td>
+              <td>△</td>
+              <td>×</td>
             </tr>
             <tr>
-              <th>休業要請等</th>
-              <td>休業要請等は行わない<br>(感染防止対策の徹底)</td>
+              <th>接待を伴う飲食店の利用</th>
+              <td>〇</td>
+              <td>×</td>
+              <td>×</td>
+            </tr>
+            <tr>
+              <th>大規模催物の開催</th>
+              <td>△</td>
+              <td>△</td>
+              <td>×</td>
+            </tr>
+            <tr>
+              <th>店舗の営業</th>
+              <td>〇</td>
+              <td>〇</td>
+              <td>△</td>
             </tr>
           </table>
+          <small>〇:自粛または制限なし、△:制限、×:自粛</small>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
-          -->
         </div>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-6 col-12">
@@ -514,7 +530,6 @@ export default Vue.extend({
         table.RoadMap-stage-content{
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 16px;
         }
 
         table.RoadMap-stage-content tr{
@@ -550,8 +565,6 @@ export default Vue.extend({
        }
 
       table.RoadMap-stage-content td{
-        text-align: left;
-        width: 65%;
         text-align: center;
         background-color: #eee;
         padding: 10px;
