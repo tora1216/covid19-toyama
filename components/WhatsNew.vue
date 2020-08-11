@@ -29,6 +29,15 @@
             <li>Stage3</li>
           </ul>
           <table class="RoadMap-stage-content">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="RoadMap-stages-stage1">1</th>
+                <th class="RoadMap-stages-stage2">2</th>
+                <th class="RoadMap-stages-stage3">3</th>
+              </tr>
+            </thead>
+            <tbody>
             <tr>
               <th>外出</th>
               <td>〇</td>
@@ -59,8 +68,9 @@
               <td>〇</td>
               <td>△</td>
             </tr>
+            </tbody>
           </table>
-          <small>〇:自粛または制限なし、△:制限、×:自粛</small>
+          <small>（注）〇:自粛または制限なし、△:制限、×:自粛</small>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
@@ -468,7 +478,7 @@ export default Vue.extend({
             z-index: 10;
         }
 
-        .RoadMap-stages li.RoadMap-stages-stage1 {
+        .RoadMap-stages-stage1 {
             background: #00a040;
             font-weight: bold;
         }
@@ -482,7 +492,7 @@ export default Vue.extend({
             font-weight: bold;
         }
 
-        .RoadMap-stages li.RoadMap-stages-stage2 {
+        .RoadMap-stages-stage2 {
             background: #fdbe40;
             font-weight: bold;
         }
@@ -491,7 +501,7 @@ export default Vue.extend({
             border-color: transparent transparent transparent #fdbe40;
         }
 
-        .RoadMap-stages li.RoadMap-stages-stage3 {
+        .RoadMap-stages-stage3 {
             background: #fa1629;
             font-weight: bold;
         }
@@ -536,11 +546,11 @@ export default Vue.extend({
             border-bottom: solid 3px #fff;
         }
 
-        table.RoadMap-stage-content tr:last-child{
+        table.RoadMap-stage-content tbody tr:last-child{
             border-bottom: none;
         }
 
-        table.RoadMap-stage-content th{
+        table.RoadMap-stage-content tbody th{
           position: relative;
           text-align: left;
           width: 35%;
@@ -551,7 +561,7 @@ export default Vue.extend({
           border-radius: 4px;
         }
         
-       table.RoadMap-stage-content th:after{
+       table.RoadMap-stage-content tbody th:after{
          display: block;
          content: "";
          width: 0px;
@@ -564,7 +574,7 @@ export default Vue.extend({
          border-bottom: 10px solid transparent;
        }
 
-      table.RoadMap-stage-content td{
+      table.RoadMap-stage-content tbody td{
         text-align: center;
         background-color: #eee;
         padding: 10px;
