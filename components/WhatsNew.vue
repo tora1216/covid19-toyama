@@ -8,8 +8,9 @@
     </h3>
     <p>{{ $t('富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。') }}</p>
     <div class="RoadMap-stage-alert">
+      <h4>{{ $t('「新型コロナウイルス感染拡大警報(富山アラート)」が発令されています') }}</h4>
       <p>
-        <strong>{{ $t('「新型コロナウイルス感染拡大警報(富山アラート)」') }}</strong>{{ $t('が発令されました。今後さらに感染が拡大すると、「Stage2」に移行となり、') }}<strong>{{ $t('夜間の外出自粛・感染拡大地域への移動自粛') }}</strong>{{ $t('などをお願いせざるを得ない状況となります。以下、改めてのお願いです。') }}
+        {{ $t('今後さらに感染が拡大すると、「Stage2」に移行となり、夜間の外出自粛や感染拡大地域への移動自粛などをお願いせざるを得ない状況となります。以下、改めてのお願いです。') }}
       </p>
       <ul>
         <li>{{ $t('3密の徹底的な回避、手洗いやマスクの着用など「新しい生活様式」の徹底') }}</li>
@@ -439,7 +440,6 @@ export default Vue.extend({
             padding: 0.5em 0.5em 0.5em 2em;
             color: #fff;
             text-align: center;
-            border-radius: 4px;
         }
 
         .RoadMap-stages li:last-child {
@@ -536,14 +536,22 @@ export default Vue.extend({
           margin-bottom: 16px;
         }
 
-        .RoadMap-stage-alert strong{
+        .RoadMap-stage-alert h4{
           color: #fa1629;
+          font-size: 20px;
+          font-weight: 600;
+          border-bottom: 3px solid #fa1629;
+          padding: 4px 8px;
         }
 
         table.RoadMap-stage-content{
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 8px;
+        }
+
+        table.RoadMap-stage-content thead th{
+          padding: 10px 0;
         }
 
         table.RoadMap-stage-content tr{
@@ -556,13 +564,11 @@ export default Vue.extend({
 
         table.RoadMap-stage-content tbody th{
           position: relative;
-          text-align: left;
           width: 35%;
-          background-color: #00a040;
+          background-color: #4d4d4d;
           color: white;
           text-align: center;
           padding: 10px 0;
-          border-radius: 4px;
         }
         
        table.RoadMap-stage-content tbody th:after{
@@ -573,7 +579,7 @@ export default Vue.extend({
          position: absolute;
          top:calc(50% - 10px);
          right:-10px;
-         border-left: 10px solid #00a040;
+         border-left: 10px solid #4d4d4d;
          border-top: 10px solid transparent;
          border-bottom: 10px solid transparent;
        }
@@ -582,6 +588,5 @@ export default Vue.extend({
         text-align: center;
         background-color: #eee;
         padding: 10px;
-        border-radius: 4px;
       }
 </style>
