@@ -32,8 +32,15 @@
   "最新のお知らせ": "What's new",
 
   "富山県の対策指針": "Guidelines of Toyama",
-  "現在「Stage1」の措置を実施中です": "Currently applying \"Stage 1\"",
-  "　富山県では、外出自粛や休業要請を定めた３段階のステージを設定しています。直近１週間の新規感染者数など５項目の指標を設けており、全ての指標が基準を下回る状況が続けば、政府の方針も踏まえつつ、ステージを段階的に変えていきます。": " In Toyama Prefecture, we have set up three stages, which include refraining from going out and requesting leave. We have set five indicators such as the number of new infections in the last week, and if all indicators continue to fall below the standard, we will gradually change the stage while also taking into account the government policy.",
+  "富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。": "Toyama Prefecture has 3 stages.",
+  "現在「Stage1」を発令中です": "Currently applying \"Stage 1\"",
+  "ステージの強化は、以下の通り決定します。":"Stage enhancements will be decided as follows.",
+  "警戒情報：指標3と4のいずれもが基準に到達し、指標1または2が一定程度上昇した際に発令":"Warning information: Issued when both indicators 3 and 4 have reached the criteria and indicator 1 or 2 has risen to a certain degree",
+  "Stage2：指標3と4のいずれもが基準に到達し、指標1または2が基準の50%に到達し数日継続した際に発令":"Stage2: Issued when both indicators 3 and 4 have reached the criteria, and indicator 1 or 2 have reached 50% of the criteria and continued for several days",
+  "Stage3：指標1～4のすべてが基準に到達し、数日継続した際に発令":"Stage3: Issued when all of indicators 1 to 4 have reached the criteria and continued for several days",
+  "ステージの緩和は、全ての基準が下回る状況が1～2週間続く場合に専門家の意見を踏まえ決定します。":"Stage mitigation will be decided based on expert opinion when all criteria fall below 1-2 weeks.",
+  "モニタリング指標の状況": "Status of monitoring indicators",
+
   "（事業者向け）感染拡大予防チェックリスト": "(For businesses) infection spread prevention checklist",
   "6月19日以降の都道府県をまたいだ往来について": "About movement between prefectures after June 19",
   "7月10日以降のイベント等の開催について": "About holding events after July 10",
