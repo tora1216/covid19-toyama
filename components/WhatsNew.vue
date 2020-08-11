@@ -16,7 +16,10 @@
             <li class="RoadMap-stages-stage2-prep">Stage2</li>
             <li>Stage3</li>
           </ul>
-          <p class="RoadMap-stage-alert">8月11日に<strong>「新型コロナウイルス感染拡大警報(富山アラート)」</strong>が発令されました。今後さらに感染が拡大すると、「Stage2」に移行となり、<strong>夜間の外出自粛</strong>や<strong>感染拡大地域への移動自粛</strong>をお願いせざるを得ない状況となります。以下、改めてのお願いです。
+          <div class="RoadMap-stage-alert">
+            <p>
+              8月11日に<strong>「新型コロナウイルス感染拡大警報(富山アラート)」</strong>が発令されました。今後さらに感染が拡大すると、「Stage2」に移行となり、<strong>夜間の外出自粛</strong>や<strong>感染拡大地域への移動自粛</strong>などをお願いせざるを得ない状況となります。以下、改めてのお願いです。
+            </p>
             <ul>
               <li>3密の徹底的な回避、手洗いやマスクの着用など<strong>「新しい生活様式」</strong>の徹底</li>
               <li>感染者が多く発生している地域との往来は<strong>特に緊要度の高いものを除き</strong>自粛</li>
@@ -24,7 +27,7 @@
               <li>業種ごとの<strong>感染拡大防止ガイドライン</strong>の遵守</li>
               <li>重症化しやすい<strong>高齢者への感染予防行動</strong>の徹底、<strong>大声をあげる環境</strong>の徹底的な回避</li>
             </ul>
-          </p>
+          </div>
           <!--
           <p>現在以下の措置を行っています。</p>
           <table class="RoadMap-stage-content">
@@ -501,6 +504,7 @@ export default Vue.extend({
         .RoadMap-stage-alert{
           border: 3px solid #fdbe40;
           padding: 10px;
+          margin-bottom: 16px;
         }
 
         .RoadMap-stage-alert strong{
