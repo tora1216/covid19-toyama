@@ -85,7 +85,7 @@
     </ul>
     </div>
     <div class="DataView-CardText">
-    <div style="box-shadow: 0 -20px 12px -12px #0003 inset;">
+    <div style="overflow-y:scroll;box-shadow: 0 -20px 12px -12px #0003 inset;">
     <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
       <thead>
         <tr>
@@ -551,7 +551,7 @@ export default Vue.extend({
         }
 
         table.RoadMap-stage-content thead th{
-          padding: 10px 0;
+            padding: 10px 0;
         }
 
         table.RoadMap-stage-content tr{
