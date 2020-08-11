@@ -12,8 +12,8 @@
         <div class="RoadMap-stage">
           <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を発令中です') }}</p>
           <ul class="RoadMap-stages">
-            <li class="RoadMap-stages-current">Stage1</li>
-            <li>Stage2</li>
+            <li class="RoadMap-stages-stage1">Stage1</li>
+            <li class="RoadMap-stages-stage2-prep">Stage2</li>
             <li>Stage3</li>
           </ul>
           <p>以下の措置を行っています。</p>
@@ -438,17 +438,23 @@ export default Vue.extend({
             z-index: 10;
         }
 
-        .RoadMap-stages li.RoadMap-stages-current {
+        .RoadMap-stages li.RoadMap-stages-stage1 {
             background: #00a040;
             font-weight: bold;
         }
 
-        .RoadMap-stages li.RoadMap-stages-current:after {
-            border-color: transparent transparent transparent #00a040;
+        .RoadMap-stages li.RoadMap-stages-stage2-prep {
+            background: linear-gradient(to right, #fdbe40, #4d4d4d);
+            font-weight: bold;
         }
 
-        .RoadMap-stages li.RoadMap-stages-next {
-            background: linear-gradient(to right, #00a040, #4d4d4d);
+        .RoadMap-stages li.RoadMap-stages-stage2 {
+            background: #fdbe40;
+            font-weight: bold;
+        }
+
+        .RoadMap-stages li.RoadMap-stages-stage3 {
+            background: #fa1629;
             font-weight: bold;
         }
 
