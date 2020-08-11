@@ -47,7 +47,7 @@
             </tr>
             <tr>
               <th>県外への移動</th>
-              <td>〇</td>
+              <td>△</td>
               <td>△</td>
               <td>×</td>
             </tr>
