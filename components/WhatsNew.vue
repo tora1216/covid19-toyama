@@ -71,7 +71,7 @@
             </tr>
             </tbody>
           </table>
-          <small>（注）〇:自粛または制限なし、△:制限、×:自粛</small>
+          <small>（注）〇:自粛または制限なし(「新しい生活様式」や感染防止対策が前提)、△:制限、×:自粛</small>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
