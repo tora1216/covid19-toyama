@@ -19,10 +19,13 @@ COUNTS_FILE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJuQThafLPC7OPqU
 df_counts = pd.read_csv(COUNTS_FILE)
 
 # 指定した列のいずれかに欠損値がある行をすべて削除
-df_counts = df_counts.dropna(subset=['年月日', '検査実施人数', '陰性人数', '陽性人数', '一般相談件数', '帰国者相談件数','退院者数', '死亡者数'])
+df_counts = df_counts.dropna(subset=['年月日', '陰性人数', '陽性人数', '一般相談件数', '帰国者相談件数', '退院者数', '死亡者数'])
+
+# 欠損値を0埋め
+df_counts = df_counts.fillna(0)
 
 # データ形式の指定
-df_counts = df_counts.astype({'年月日': str, '検査実施人数': int, '陰性人数': int, '陽性人数': int, '一般相談件数': int, '帰国者相談件数': int, '退院者数': int, '死亡者数': int})
+df_counts = df_counts.astype({'年月日': str, '県_PCR検査数': int, '医療機関_PCR検査数': int, '医療機関_抗原検査数': int, '陰性人数': int, '陽性人数': int, '一般相談件数': int, '帰国者相談件数': int, '退院者数': int, '死亡者数': int})
 
 # 死亡者数
 df_dead = df_counts.loc[:, ("年月日", "死亡者数")].copy()
@@ -38,33 +41,14 @@ data["discharged_persons"] = {"date": dt_now, "data": df_disc.to_dict(orient="re
 data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())}, {"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
 
 # 検査実施人数
-df_insp = df_counts.loc[:, ("年月日", "検査実施人数")].copy()
-df_insp.rename(columns={"年月日": "日付", "検査実施人数": "小計"}, inplace=True)
+df_insp = df_counts.loc[:, ("年月日", "県_PCR検査数")].copy()
+df_insp.rename(columns={"年月日": "日付", "県_PCR検査数": "小計"}, inplace=True)
 data["inspection_persons"] = {"date": dt_now, "data": df_insp.to_dict(orient="recodes")}
 
 # 陽性率
-"""
-df_rate = df_counts.loc[:, ("年月日", "陽性人数", "陰性人数")].copy()
-df_rate = df_rate.iloc[32:, :]
-df_rate = df_rate.to_dict(orient='recodes')
-positive_rate_data = []
-for rate_data in df_rate:
-    try:
-        rate = (rate_data['陽性人数'] /
-                (rate_data['陽性人数'] + rate_data['陰性人数'])) * 100
-        # 小数第二位で四捨五入
-        rate = float(Decimal(str(rate)).quantize(
-            Decimal('0.1'), ROUND_HALF_UP))
-    except ZeroDivisionError:
-        # ゼロ除算時の対応
-        rate = 0.0
-    positive_rate_data.append({"日付": rate_data["年月日"], "小計": rate})
-data["positive_rate"] = {"date": dt_now, "data": positive_rate_data}
-"""
-
-df_rate = df_counts.loc[:, ["年月日", "検査実施人数", "陽性人数"]].set_index("年月日").copy()
+df_rate = df_counts.loc[:, ["年月日", "県_PCR検査数", "医療機関_PCR検査数", "陽性人数"]].set_index("年月日").copy()
 df_positive_7d = df_rate.rolling(window=7).mean()
-df_positive_7d["陽性率"] = df_positive_7d["陽性人数"] / df_positive_7d["検査実施人数"] * 100
+df_positive_7d["陽性率"] = df_positive_7d["陽性人数"] / (df_positive_7d["県_PCR検査数"] + df_positive_7d["医療機関_PCR検査数"]) * 100
 positive_rate_data = df_positive_7d["陽性率"].fillna(0).round(2).reset_index()
 positive_rate_data.rename(columns={"年月日": "日付", "陽性率": "小計"}, inplace=True)
 data["positive_rate"] = {"date": dt_now, "data": positive_rate_data.to_dict(orient="recodes")}
