@@ -40,38 +40,38 @@
             </thead>
             <tbody>
             <tr>
-              <th>外出</th>
+              <th>{{ $t('外出') }}</th>
               <td>〇</td>
               <td>△</td>
               <td>×</td>
             </tr>
             <tr>
-              <th>県外への移動</th>
+              <th>{{ $t('県外への移動') }}</th>
               <td>△</td>
               <td>△</td>
               <td>×</td>
             </tr>
             <tr>
-              <th>接待を伴う飲食店の利用</th>
+              <th>{{ $t('接待を伴う飲食店の利用') }}</th>
               <td>〇</td>
               <td>×</td>
               <td>×</td>
             </tr>
             <tr>
-              <th>大規模催物の開催</th>
+              <th>{{ $t('大規模催物の開催') }}</th>
               <td>△</td>
               <td>△</td>
               <td>×</td>
             </tr>
             <tr>
-              <th>店舗等の営業</th>
+              <th>{{ $t('店舗等の営業') }}</th>
               <td>〇</td>
               <td>〇</td>
               <td>△</td>
             </tr>
             </tbody>
           </table>
-          <small>（注）〇:自粛または制限なし(「新しい生活様式」や感染防止対策が前提)、△:制限、×:自粛</small>
+          <small>{{ $t('（注）〇:自粛または制限なし(「新しい生活様式」や感染防止対策が前提)、△:制限、×:自粛') }}</small>
           <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
         </div>
       </div>
