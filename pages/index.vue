@@ -17,7 +17,7 @@
         {{ $t('最新のお知らせ') }} 
       </h3>
       <div class="EmbeddedTwitterTimeline">
-        <a class="twitter-timeline" data-height="300px" data-chrome="noheader nofooter" href="https://twitter.com/stopcovidtoyama?ref_src=twsrc%5Etfw">Loading...</a>
+        <a class="twitter-timeline" data-height="300px" data-chrome="noheader nofooter" href="https://twitter.com/covid19_toyama?ref_src=twsrc%5Etfw">Loading...</a>
       </div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
