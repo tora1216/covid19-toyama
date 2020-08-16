@@ -71,7 +71,7 @@
             </picture>
           </a>
           <a
-            href="https://twitter.com/stopcovidtoyama"
+            href="https://twitter.com/covid19_toyama"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
