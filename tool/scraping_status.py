@@ -19,7 +19,7 @@ file_list = soup.find("div", id="file")
 link = file_list.find(
     "a", text="強化・緩和の判断指標（直近１週間平均）の推移").get("href")
 df_status = pd.read_excel(link, header=None , index_col=None)
-df_status = df_status.iloc[2:9, 3:].fillna("-")
+df_status = df_status.iloc[2:10, 3:].fillna("-")
 df_status = df_status.T
 df_status = df_status.sort_index(ascending=False)
 df_status = df_status.to_dict(orient="records")
@@ -32,8 +32,7 @@ for status in df_status:
     data["重症病床稼働率"] = round(status[4]*100,2)
     data["新規陽性者数"] = float(mojimoji.zen_to_han(status[5][:-1]))
     data["感染経路不明者数"] = float(mojimoji.zen_to_han(status[6][:-1]))
-    data["陽性率"] = round(status[7]*100,2)
-    data["達成状況"] = status[8]
+    data["達成状況"] = status[9]
     result.append(data)
 
 data = {
