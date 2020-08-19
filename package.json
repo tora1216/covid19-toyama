@@ -1,8 +1,8 @@
 {
-  "name": "stopcovid19-toyama",
+  "name": "covid19-toyama",
   "version": "1.0.0",
-  "description": "富山県 新型コロナウイルス感染症対策サイト",
-  "author": "富山県",
+  "description": "富山県公認 新型コロナウイルス感染症対策サイト",
+  "author": "Terachan(Issei Terada)",
   "private": true,
   "engines": {
     "node": ">=10.19.0"

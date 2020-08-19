@@ -94,23 +94,22 @@ export default Vue.extend({
         {
           hid: 'author',
           name: 'author',
-          content: this.$tc('富山県')
+          content: this.$tc('Terachan(Issei Terada)')
         },
         {
           hid: 'description',
           name: 'description',
           content: this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報サイトです。'
+            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、有志が開設したものです。'
           )
         },
         {
           hid: 'og:site_name',
           property: 'og:site_name',
           content:
-            this.$t('富山県') +
+            this.$t('富山県公認') +
             ' ' +
             this.$t('新型コロナウイルス感染症') +
-            ' ' +
             this.$t('対策サイト')
         },
         {
@@ -127,17 +126,16 @@ export default Vue.extend({
           hid: 'og:title',
           property: 'og:title',
           content:
-            this.$t('富山県') +
+            this.$t('富山県公認') +
             ' ' +
             this.$t('新型コロナウイルス感染症') +
-            ' ' +
             this.$t('対策サイト')
         },
         {
           hid: 'og:description',
           property: 'og:description',
           content: this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報サイトです。'
+            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、有志が開設したものです。'
           )
         },
         {
@@ -149,10 +147,9 @@ export default Vue.extend({
           hid: 'apple-mobile-web-app-title',
           name: 'apple-mobile-web-app-title',
           content:
-            this.$t('富山県') +
+            this.$t('富山県公認') +
             ' ' +
             this.$t('新型コロナウイルス感染症') +
-            ' ' +
             this.$t('対策サイト')
         },
         {
