@@ -1,10 +1,11 @@
-import { Configuration } from '@nuxt/types'
+import purgecss from '@fullhuman/postcss-purgecss'
+import autoprefixer from 'autoprefixer'
+// import { Configuration } from '@nuxt/types'
 import i18n from './nuxt-i18n.config'
-const purgecss = require('@fullhuman/postcss-purgecss')
-const autoprefixer = require('autoprefixer')
-const environment = process.env.NODE_ENV || 'development'
+// const environment = process.env.NODE_ENV || 'development'
 
-const config: Configuration = {
+/* eslint-disable */
+const config = {
   mode: 'universal',
   /*
    ** Headers of the page
@@ -17,11 +18,21 @@ const config: Configuration = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: '当サイトは新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために、有志が開設したものです。'
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: '富山県 新型コロナウイルス感染症対策サイト'
+      },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19-toyama.netlify.com/'
+        content: 'https://stopcovid19-toyama.netlify.app/'
       },
       {
         hid: 'og:title',
@@ -31,13 +42,12 @@ const config: Configuration = {
       {
         hid: 'og:description',
         property: 'og:description',
-        content:
-          '当サイトは富山県新型コロナウイルス感染症（COVID-19）に関する最新情報サイトです。'
+        content: '当サイトは新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために、有志が開設したものです。'
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png'
+        content: 'https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.pn'
       },
       {
         hid: 'twitter:card',
@@ -48,30 +58,11 @@ const config: Configuration = {
         hid: 'twitter:site',
         name: 'twitter:site',
         content: '@terachan_0117'
-      },
-      {
-        hid: 'twitter:creator',
-        name: 'twitter:creator',
-        content: '@terachan_0117'
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png'
-      },
-      {
-        hid: 'note:card',
-        property: 'note:card',
-        content: 'summary_large_image'
       }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'apple-touch-icon', href: '/apple-touch-icon-precomposed.png' },
-      {
-        rel: 'stylesheet',
-        href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css'
-      }
+      { rel: 'apple-touch-icon', href: '/apple-touch-icon-precomposed.png' }
     ]
   },
   /*
@@ -85,54 +76,61 @@ const config: Configuration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    {
-      src: '@/plugins/vue-chart.ts',
-      ssr: true
-    },
-    {
-      src: '@/plugins/axe',
-      ssr: true
-    },
-    {
-      src: '@/plugins/vuetify.ts',
-      ssr: true
-    }
-  ],
+  plugins: [{
+    src: '@/plugins/vue-chart.js',
+    ssr: true
+  }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
     '@nuxtjs/google-analytics'
   ],
+  typescript: {
+    typeCheck: true,
+    ignoreNotFoundWarnings: true
+  },
   /*
    ** Nuxt.js modules
    */
   modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
+    // ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
     ['nuxt-i18n', i18n],
     'nuxt-svg-loader',
-    'nuxt-purgecss',
-    ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }]
+    'nuxt-purgecss'
   ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    defaultAssets: {
-      icons: false
-    }
+    theme: {}
   },
   googleAnalytics: {
     id: 'UA-93021756-8'
   },
+  // /*
+  // ** Build configuration
+  // */
+  // build: {
+  //   /*
+  //   ** You can extend webpack config here
+  //   */
+  //   extend (config, ctx) {
+  //   }
+  // },
   build: {
     postcss: {
       plugins: [
@@ -150,8 +148,6 @@ const config: Configuration = {
         })
       ]
     }
-    // https://ja.nuxtjs.org/api/configuration-build/#hardsource
-    // hardSource: process.env.NODE_ENV === 'development'
   },
   manifest: {
     name: '富山県 新型コロナウイルス感染症対策サイト',
@@ -165,23 +161,19 @@ const config: Configuration = {
   generate: {
     fallback: true,
     routes() {
-      const locales = ['ja', 'en', 'zh-cn', 'zh-tw', 'ko', 'ja-basic']
+      const locales = ['ja', 'en', 'ja-basic']
       const pages = [
         '/cards/details-of-confirmed-cases',
-        '/cards/details-of-tested-cases',
         '/cards/number-of-confirmed-cases',
         '/cards/attributes-of-confirmed-cases',
         '/cards/number-of-tested',
-        '/cards/number-of-inspection-persons',
         '/cards/number-of-reports-to-covid19-telephone-advisory-center',
         '/cards/number-of-reports-to-covid19-consultation-desk',
         '/cards/predicted-number-of-toei-subway-passengers',
-        '/cards/agency',
-        '/cards/shinjuku-visitors',
-        '/cards/chiyoda-visitors'
+        '/cards/agency'
       ]
 
-      const routes: string[] = []
+      const routes = []
       locales.forEach(locale => {
         pages.forEach(page => {
           if (locale === 'ja') {
