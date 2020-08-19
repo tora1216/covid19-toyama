@@ -257,13 +257,15 @@ export default Vue.extend({
         'https://twitter.com/intent/tweet?text=' +
         this.title +
         ' / ' +
-        this.$t('富山県') +
+        this.$t('富山県公認') +
+        ' ' +
         this.$t('新型コロナウイルス感染症') +
+        ' ' +
         this.$t('対策サイト') +
         '&url=' +
         this.permalink(true) +
         '&' +
-        'hashtags=StopCovid19JP'
+        'hashtags=StopCovid19JP,StopCovid19Toyama'
       window.open(url)
     },
     facebook() {

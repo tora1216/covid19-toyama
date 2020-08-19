@@ -154,7 +154,7 @@ const config: Configuration = {
     // hardSource: process.env.NODE_ENV === 'development'
   },
   manifest: {
-    name: '富山県公認 新型コロナウイルス感染症対策サイト',
+    name: '富山県公認 新型コロナウイルス感染症 対策サイト',
     theme_color: '#00a040',
     background_color: '#ffffff',
     display: 'standalone',
