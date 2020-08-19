@@ -110,6 +110,7 @@ export default Vue.extend({
             this.$t('富山県公認') +
             ' ' +
             this.$t('新型コロナウイルス感染症') +
+            ' ' +
             this.$t('対策サイト')
         },
         {
@@ -129,6 +130,7 @@ export default Vue.extend({
             this.$t('富山県公認') +
             ' ' +
             this.$t('新型コロナウイルス感染症') +
+            ' ' +
             this.$t('対策サイト')
         },
         {
@@ -150,6 +152,7 @@ export default Vue.extend({
             this.$t('富山県公認') +
             ' ' +
             this.$t('新型コロナウイルス感染症') +
+            ' ' +
             this.$t('対策サイト')
         },
         {
