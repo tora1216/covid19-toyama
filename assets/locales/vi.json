@@ -1,6 +1,7 @@
 {
-  "新型コロナウイルス感染症": "Dịch bệnh COVID-19",
-  "対策サイト(富山県公認)": "Trang web biện pháp đối phó tỉnh Toyama",
+  "富山県公認": "Tỉnh Toyama",
+  "新型コロナウイルス感染症": "COVID-19",
+  "対策サイト": "Trang mạng",
 
   "ogp": {
     "og:image": "https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png"

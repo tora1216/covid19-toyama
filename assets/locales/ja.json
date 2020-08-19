@@ -1,6 +1,7 @@
 {
+  "富山県公認": "富山県公認",
   "新型コロナウイルス感染症": "新型コロナウイルス感染症",
-  "対策サイト(富山県公認)": "対策サイト(富山県公認)",
+  "対策サイト": "対策サイト",
 
   "ogp": {
     "og:image": "https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png"

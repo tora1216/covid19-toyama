@@ -1,6 +1,7 @@
 {
-  "新型コロナウイルス感染症": "Toyama Prefectural Certified COVID-19",
-  "対策サイト(富山県公認)": "Task Force Website",
+  "富山県公認":"Toyama Prefecture",
+  "新型コロナウイルス感染症": "COVID-19",
+  "対策サイト": "Task Force Website",
 
   "ogp": {
     "og:image": "https://raw.githubusercontent.com/Terachan0117/covid19-toyama/development/static/ogp.png"
