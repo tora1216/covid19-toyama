@@ -1,8 +1,8 @@
-name: GitHub Actions - auto run (PM 16:30)
+name: GitHub Actions - auto run (PM 18:00)
 
 on:
   schedule:
-    - cron: '30 7 * * *'
+    - cron: '0 9 * * *'
 
 jobs:
   build:
@@ -39,5 +39,5 @@ jobs:
         python scraping_status.py
         cd ..
         git add .
-        git commit -m "[Bot] GitHub Actions - auto run (PM 16:30)"
+        git commit -m "[Bot] GitHub Actions - auto run (PM 18:00)"
         git push origin development
