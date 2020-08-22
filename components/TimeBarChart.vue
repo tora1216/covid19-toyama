@@ -292,29 +292,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 max: this.chartData[this.graphRange[1]].label,
                 min: this.chartData[this.graphRange[0]].label
               }
-            },
-            {
-              id: 'month',
-              stacked: true,
-              gridLines: {
-                drawOnChartArea: false,
-                drawTicks: true,
-                drawBorder: false,
-                tickMarkLength: 10
-              },
-              ticks: {
-                fontSize: 11,
-                fontColor: '#808080',
-                padding: 3,
-                fontStyle: 'bold',
-                gridLines: {
-                  display: true
-                }
-              },
-              type: 'time',
-              time: {
-                unit: 'day'
-              }
             }
           ],
           yAxes: [
