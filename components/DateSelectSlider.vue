@@ -57,7 +57,7 @@ export default {
       rules: [
         v =>
           Math.abs(v[0] - v[1]) >= 13 ||
-          this.$t('表示期間の最小範囲は14日間です')
+          this.$t('表示期間の最小範囲は14日間です。')
       ]
     }
   },

@@ -106,6 +106,8 @@
   "実績値": "Latest figure",
   "累計値": "Cumulative ",
   "前日比": "Day-over-day change",
+  "表示期間": "Display period",
+  "表示期間の最小範囲は14日間です。": "The minimum display period is 14 days.",
   "（注）重症：集中治療室（ICU）等での管理又は人工呼吸器管理が必要な患者": "(Note) Severe symptoms: Patients who need management in an ICU or ventilator",
   "（注）日付は検査結果判明日を基準にしている": "(Note) The date is based on the date when the test result was found",
   "（注）症状は陽性公表時点のもの": "(Note) Symptoms are as of the time of positive announcement",
