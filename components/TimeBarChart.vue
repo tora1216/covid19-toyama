@@ -80,7 +80,7 @@ type Computed = {
     datasets: {
       label: 'transition' | 'cumulative'
       data: number[]
-      backgroundColor: string[]
+      backgroundColor: string
       borderWidth: number
     }[]
   }
