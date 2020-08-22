@@ -18,12 +18,14 @@
       :options="displayOption"
       :height="240"
     />
-    <date-select-slider v-if="showButton"
-      :chart-data="chartData"
-      :value="[0, sliderMax]"
-      :slider-max="sliderMax"
-      @sliderInput="sliderUpdate"
-    />
+    <template  v-if="showButton">
+      <date-select-slider
+        :chart-data="chartData"
+        :value="[0, sliderMax]"
+        :slider-max="sliderMax"
+        @sliderInput="sliderUpdate"
+      />
+    </template>
     <v-data-table
       :style="{ top: '-9999px', position: canvas ? 'fixed' : 'static' }"
       :headers="tableHeaders"
@@ -55,7 +57,7 @@ import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { single as color } from '@/utils/colors'
+import { double as color } from '@/utils/colors'
 type Data = {
   dataKind: 'transition' | 'cumulative'
   canvas: boolean
@@ -229,7 +231,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               data: this.chartData.map(d => {
                 return d.transition
               }),
-              backgroundColor: color,
+              backgroundColor: this.chartData.map(d => {
+                return d.transition >= 0 ? color[0] : color[1]
+              }),
               borderWidth: 0
             }
           ]
@@ -243,7 +247,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             data: this.chartData.map(d => {
               return d.cumulative
             }),
-            backgroundColor: color,
+            backgroundColor: this.chartData.map(d => {
+              return d.cumulative >= 0 ? color[0] : color[1]
+            }),
             borderWidth: 0
           }
         ]
