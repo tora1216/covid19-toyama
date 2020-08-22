@@ -195,25 +195,20 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayInfo() {
+      if (this.forceDataKind !== '')
+        this.dataKind =
+          this.forceDataKind === 'transition' ? 'transition' : 'cumulative'
       if (this.dataKind === 'transition') {
         return {
-          lText: this.showButton
-            ? `${this.chartData.slice(-1)[0].transition.toLocaleString()}`
-            : this.chartData[
-                this.chartData.length - 1
-              ].cumulative.toLocaleString(),
-          sText: this.showButton
-            ? `${this.chartData.slice(-1)[0].label} ${this.$t('実績値')}（${this.$t('前日比')}: ${
-                this.displayTransitionRatio
-              } ${this.unit}）`
-            : ``,
+          lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
+          sText: `${this.$t('実績値')}（${this.$t('前日比')}: ${
+            this.displayTransitionRatio
+          } ${this.unit}）`,
           unit: this.unit
         }
       }
       return {
-        lText: this.chartData[
-          this.chartData.length - 1
-        ].cumulative.toLocaleString(),
+        lText: `${this.chartData.slice(-1)[0].cumulative.toLocaleString()}`,
         sText: `${this.chartData.slice(-1)[0].label} ${this.$t(
           '累計値'
         )}（${this.$t('前日比')}: ${this.displayCumulativeRatio} ${
