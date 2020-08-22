@@ -7,7 +7,7 @@
     :max="sliderMax"
     :min="0"
     thumb-label="always"
-    style="padding-top: 45px;"
+    style="padding-top: 50px;"
     color="#00a040"
     track-color="#c9eace"
     :thumb-size="45"
