@@ -308,15 +308,15 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 padding: 3,
                 fontStyle: 'bold',
                 gridLines: {
-                  display: false
+                  display: true
                 }
               },
               type: 'time',
               time: {
-                unit: 'month',
+                unit: 'day',
                 parser: 'M/D',
                 displayFormats: {
-                  month: 'MMM'
+                  day: 'M/D'
                 }
               }
             }
