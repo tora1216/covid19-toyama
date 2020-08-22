@@ -278,27 +278,42 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         scales: {
           xAxes: [
             {
-              type: 'time',
-              offset: true,
-              time: {
-                tooltipFormat: 'MM/DD',
-                unit: 'day',
-                unitStepSize: 1,
-                displayFormats: {
-                  day: 'M/D'
-                },
-                round: 'day'
-              },
+              id: 'day',
               stacked: true,
               gridLines: {
                 display: false
               },
               ticks: {
-                max: this.chartData[this.graphRange[1]].label,
-                min: this.chartData[this.graphRange[0]].label,
-                fontSize: 10,
+                fontSize: 9,
                 maxTicksLimit: 20,
-                fontColor: '#808080'
+                fontColor: '#808080',
+                maxRotation: 60,
+                minRotation: 0,
+                max: this.chartData[this.graphRange[1]].label,
+                min: this.chartData[this.graphRange[0]].label
+              }
+            },
+            {
+              id: 'month',
+              stacked: true,
+              gridLines: {
+                drawOnChartArea: false,
+                drawTicks: true,
+                drawBorder: false,
+                tickMarkLength: 10
+              },
+              ticks: {
+                fontSize: 11,
+                fontColor: '#808080',
+                padding: 3,
+                fontStyle: 'bold',
+                gridLines: {
+                  display: true
+                }
+              },
+              type: 'time',
+              time: {
+                unit: 'day'
               }
             }
           ],
