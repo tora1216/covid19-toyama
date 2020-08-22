@@ -278,13 +278,13 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         scales: {
           xAxes: [
             {
-              id: 'day',
-              stacked: true,
+              position: 'bottom',
+              stacked: false,
               gridLines: {
-                display: false
+                display: true
               },
               ticks: {
-                fontSize: 9,
+                fontSize: 10,
                 maxTicksLimit: 20,
                 fontColor: '#808080',
                 maxRotation: 60,
