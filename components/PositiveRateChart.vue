@@ -106,7 +106,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     this.canvas = process.browser
     this.sliderUpdate([0, this.sliderMax])
   },
-  components: { DataView, DataSelector, DataViewBasicInfoPanel },
+  components: { DataView, DataSelector, DateSelectSlider, DataViewBasicInfoPanel },
   props: {
     title: {
       type: String,
@@ -257,11 +257,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontSize: 9,
                 maxTicksLimit: 20,
                 fontColor: '#808080',
-                maxRotation: 0,
+                maxRotation: 60,
                 minRotation: 0,
-                callback: (label: string) => {
-                  return this.showButton ? label.split('/')[1] : label
-                }
+                max: this.chartData[this.graphRange[1]].label,
+                min: this.chartData[this.graphRange[0]].label
               }
             }
           ],
