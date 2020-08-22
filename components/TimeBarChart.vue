@@ -308,7 +308,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 padding: 3,
                 fontStyle: 'bold',
                 gridLines: {
-                  display: true
+                  display: false
                 }
               },
               type: 'time',
