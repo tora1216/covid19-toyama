@@ -9,6 +9,12 @@
       :options="displayOption"
       :height="240"
     />
+    <date-select-slider
+      :chart-data="chartData"
+      :value="[0, sliderMax]"
+      :slider-max="sliderMax"
+      @sliderInput="sliderUpdate"
+    />
     <template  v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
@@ -25,14 +31,17 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
+import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import { single as color } from '@/utils/colors'
 type Data = {
   dataKind: 'transition' | 'cumulative'
   canvas: boolean
+  graphRange: number[]
 }
 type Methods = {
   formatDayBeforeRatio: (dayBeforeRatio: number) => string
+  sliderUpdate: (sliderValue: number[]) => void
 }
 type Computed = {
   displayCumulativeRatio: string
@@ -74,6 +83,7 @@ type Computed = {
   tableData: {
     [key: number]: number
   }[]
+  sliderMax: number
 }
 type Props = {
   title: string
@@ -94,6 +104,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   created() {
     this.canvas = process.browser
+    this.sliderUpdate([0, this.sliderMax])
   },
   components: { DataView, DataSelector, DataViewBasicInfoPanel },
   props: {
@@ -133,7 +144,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   },
   data: () => ({
     dataKind: 'transition',
-    canvas: true
+    canvas: true,
+    graphRange: [0, 1]
   }),
   computed: {
     displayCumulativeRatio() {
@@ -251,57 +263,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                   return this.showButton ? label.split('/')[1] : label
                 }
               }
-            },
-            {
-              id: 'month',
-              stacked: true,
-              gridLines: {
-                drawOnChartArea: false,
-                drawTicks: true,
-                drawBorder: false,
-                tickMarkLength: 10
-              },
-              ticks: {
-                fontSize: 11,
-                fontColor: '#808080',
-                padding: 3,
-                fontStyle: 'bold',
-                gridLines: {
-                  display: true
-                },
-                callback: (label: string) => {
-                  const monthStringArry = [
-                    'Jan',
-                    'Feb',
-                    'Mar',
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec'
-                  ]
-                  const mm = monthStringArry.indexOf(label.split(' ')[0]) + 1
-                  const year = new Date().getFullYear()
-                  const mdate = new Date(year + '-' + mm + '-1')
-                  let localString
-                  if (this.$root.$i18n.locale === 'ja-basic') {
-                    localString = 'ja'
-                  } else {
-                    localString = this.$root.$i18n.locale
-                  }
-                  return mdate.toLocaleString(localString, {
-                    month: 'short'
-                  })
-                }
-              },
-              type: 'time',
-              time: {
-                unit: 'month'
-              }
             }
           ],
           yAxes: [
@@ -347,6 +308,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           { '0': this.displayData.datasets[0].data[i] }
         )
       })
+    },
+    sliderMax() {
+      if (!this.chartData || this.chartData.length === 0) {
+        return 1
+      }
+      return this.chartData.length - 1
     }
   },
   methods: {
@@ -360,6 +327,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         default:
           return `${dayBeforeRatioLocaleString}`
       }
+    },
+    sliderUpdate(sliderValue) {
+      this.graphRange = sliderValue
     }
   }
 }
