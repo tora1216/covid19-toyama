@@ -55,7 +55,7 @@ import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { plusMinus as color } from '@/utils/colors'
+import { double as color } from '@/utils/colors'
 type Data = {
   dataKind: 'transition' | 'cumulative'
   canvas: boolean
@@ -195,20 +195,25 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayInfo() {
-      if (this.forceDataKind !== '')
-        this.dataKind =
-          this.forceDataKind === 'transition' ? 'transition' : 'cumulative'
       if (this.dataKind === 'transition') {
         return {
-          lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
-          sText: `${this.$t('実績値')}（${this.$t('前日比')}: ${
-            this.displayTransitionRatio
-          } ${this.unit}）`,
+          lText: this.showButton
+            ? `${this.chartData.slice(-1)[0].transition.toLocaleString()}`
+            : this.chartData[
+                this.chartData.length - 1
+              ].cumulative.toLocaleString(),
+          sText: this.showButton
+            ? `${this.chartData.slice(-1)[0].label} ${this.$t('実績値')}（${this.$t('前日比')}: ${
+                this.displayTransitionRatio
+              } ${this.unit}）`
+            : ``,
           unit: this.unit
         }
       }
       return {
-        lText: `${this.chartData.slice(-1)[0].cumulative.toLocaleString()}`,
+        lText: this.chartData[
+          this.chartData.length - 1
+        ].cumulative.toLocaleString(),
         sText: `${this.chartData.slice(-1)[0].label} ${this.$t(
           '累計値'
         )}（${this.$t('前日比')}: ${this.displayCumulativeRatio} ${
