@@ -312,13 +312,16 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 }
               },
               type: 'time',
+              offset: true,
               time: {
+                tooltipFormat: 'MM/DD',
                 unit: 'day',
-                parser: 'M/D',
+                unitStepSize: 1,
                 displayFormats: {
                   day: 'M/D'
-                }
-              }
+                },
+                round: 'day'
+              },
             }
           ],
           yAxes: [
