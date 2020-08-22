@@ -3,10 +3,11 @@
     <template v-slot:description>
       <slot name="description" />
     </template>
-    <template v-if="showButton === true" v-slot:button>
+    <template v-if="showButton" v-slot:button>
       <data-selector
         v-model="dataKind"
         :target-id="chartId"
+        :transition-type="transitionType"
         :style="{ display: canvas ? 'inline-block' : 'none' }"
       />
     </template>
@@ -16,6 +17,12 @@
       :chart-data="displayData"
       :options="displayOption"
       :height="240"
+    />
+    <date-select-slider
+      :chart-data="chartData"
+      :value="[0, sliderMax]"
+      :slider-max="sliderMax"
+      @sliderInput="sliderUpdate"
     />
     <v-data-table
       :style="{ top: '-9999px', position: canvas ? 'fixed' : 'static' }"
@@ -30,7 +37,7 @@
       class="cardTable"
       item-key="name"
     />
-    <template v-if="showButton === true" v-slot:infoPanel>
+    <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
@@ -46,14 +53,17 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
+import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { single as color } from '@/utils/colors'
+import { plusMinus as color } from '@/utils/colors'
 type Data = {
   dataKind: 'transition' | 'cumulative'
   canvas: boolean
+  graphRange: number[]
 }
 type Methods = {
   formatDayBeforeRatio: (dayBeforeRatio: number) => string
+  sliderUpdate: (sliderValue: number[]) => void
 }
 type Computed = {
   displayCumulativeRatio: string
@@ -68,7 +78,7 @@ type Computed = {
     datasets: {
       label: 'transition' | 'cumulative'
       data: number[]
-      backgroundColor: string
+      backgroundColor: string[]
       borderWidth: number
     }[]
   }
@@ -95,16 +105,19 @@ type Computed = {
   tableData: {
     [key: number]: number
   }[]
+  sliderMax: number
 }
 type Props = {
   title: string
   titleId: string
   chartId: string
   chartData: GraphDataType[]
+  transitionType: string
+  showButton: boolean
+  forceDataKind: string
   date: string
   unit: string
   url: string
-  showButton: boolean
 }
 const options: ThisTypedComponentOptionsWithRecordProps<
   Vue,
@@ -115,8 +128,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   created() {
     this.canvas = process.browser
+    this.sliderUpdate([0, this.sliderMax])
   },
-  components: { DataView, DataSelector, DataViewBasicInfoPanel },
+  components: {
+    DataView,
+    DataSelector,
+    DateSelectSlider,
+    DataViewBasicInfoPanel
+  },
   props: {
     title: {
       type: String,
@@ -134,6 +153,18 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       type: Array,
       default: () => []
     },
+    showButton: {
+      type: Boolean,
+      default: true
+    },
+    forceDataKind: {
+      type: String,
+      default: ''
+    },
+    transitionType: {
+      type: String,
+      default: 'daily'
+    },
     date: {
       type: String,
       required: true
@@ -145,16 +176,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     url: {
       type: String,
       default: ''
-    },
-    showButton: {
-      type: Boolean,
-      required: false,
-      default: true
     }
   },
   data: () => ({
     dataKind: 'transition',
-    canvas: true
+    canvas: true,
+    graphRange: [0, 1]
   }),
   computed: {
     displayCumulativeRatio() {
@@ -168,25 +195,20 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayInfo() {
+      if (this.forceDataKind !== '')
+        this.dataKind =
+          this.forceDataKind === 'transition' ? 'transition' : 'cumulative'
       if (this.dataKind === 'transition') {
         return {
-          lText: this.showButton
-            ? `${this.chartData.slice(-1)[0].transition.toLocaleString()}`
-            : this.chartData[
-                this.chartData.length - 1
-              ].cumulative.toLocaleString(),
-          sText: this.showButton
-            ? `${this.chartData.slice(-1)[0].label} ${this.$t('実績値')}（${this.$t('前日比')}: ${
-                this.displayTransitionRatio
-              } ${this.unit}）`
-            : ``,
+          lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
+          sText: `${this.$t('実績値')}（${this.$t('前日比')}: ${
+            this.displayTransitionRatio
+          } ${this.unit}）`,
           unit: this.unit
         }
       }
       return {
-        lText: this.chartData[
-          this.chartData.length - 1
-        ].cumulative.toLocaleString(),
+        lText: `${this.chartData.slice(-1)[0].cumulative.toLocaleString()}`,
         sText: `${this.chartData.slice(-1)[0].label} ${this.$t(
           '累計値'
         )}（${this.$t('前日比')}: ${this.displayCumulativeRatio} ${
@@ -207,7 +229,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               data: this.chartData.map(d => {
                 return d.transition
               }),
-              backgroundColor: color,
+              backgroundColor: this.chartData.map(d => {
+                return d.transition >= 0 ? color[0] : color[1]
+              }),
               borderWidth: 0
             }
           ]
@@ -221,7 +245,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             data: this.chartData.map(d => {
               return d.cumulative
             }),
-            backgroundColor: color,
+            backgroundColor: this.chartData.map(d => {
+              return d.cumulative >= 0 ? color[0] : color[1]
+            }),
             borderWidth: 0
           }
         ]
@@ -231,6 +257,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const unit = this.unit
       const scaledTicksYAxisMax = this.scaledTicksYAxisMax
       const options = {
+        animation: false,
         tooltips: {
           displayColors: false,
           callbacks: {
@@ -262,11 +289,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontSize: 9,
                 maxTicksLimit: 20,
                 fontColor: '#808080',
-                maxRotation: 0,
+                maxRotation: 60,
                 minRotation: 0,
-                callback: (label: string) => {
-                  return this.showButton ? label.split('/')[1] : label
-                }
+                max: this.chartData[this.graphRange[1]].label,
+                min: this.chartData[this.graphRange[0]].label
               }
             },
             {
@@ -285,39 +311,15 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontStyle: 'bold',
                 gridLines: {
                   display: true
-                },
-                callback: (label: string) => {
-                  const monthStringArry = [
-                    'Jan',
-                    'Feb',
-                    'Mar',
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec'
-                  ]
-                  const mm = monthStringArry.indexOf(label.split(' ')[0]) + 1
-                  const year = new Date().getFullYear()
-                  const mdate = new Date(year + '-' + mm + '-1')
-                  let localString
-                  if (this.$root.$i18n.locale === 'ja-basic') {
-                    localString = 'ja'
-                  } else {
-                    localString = this.$root.$i18n.locale
-                  }
-                  return mdate.toLocaleString(localString, {
-                    month: 'short'
-                  })
                 }
               },
               type: 'time',
               time: {
-                unit: 'month'
+                unit: 'month',
+                parser: 'M/D',
+                displayFormats: {
+                  month: 'MMM'
+                }
               }
             }
           ],
@@ -364,6 +366,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           { '0': this.displayData.datasets[0].data[i] }
         )
       })
+    },
+    sliderMax() {
+      if (!this.chartData || this.chartData.length === 0) {
+        return 1
+      }
+      return this.chartData.length - 1
     }
   },
   methods: {
@@ -377,6 +385,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         default:
           return `${dayBeforeRatioLocaleString}`
       }
+    },
+    sliderUpdate(sliderValue) {
+      this.graphRange = sliderValue
     }
   }
 }
