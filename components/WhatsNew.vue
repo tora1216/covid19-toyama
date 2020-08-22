@@ -26,7 +26,7 @@
           <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を適用中です') }}</p>
           <ul class="RoadMap-stages">
             <li class="RoadMap-stages-stage1">Stage1</li>
-            <li class="RoadMap-stages-stage2-prep">Stage2</li>
+            <li>Stage2</li>
             <li>Stage3</li>
           </ul>
           <table class="RoadMap-stage-content">
@@ -432,9 +432,10 @@ export default Vue.extend({
         .RoadMap-stages li {
             display: table-cell;
             position: relative;
-            background: #4d4d4d;
+            background: #d9d9d9;
             padding: 0.5em 0.5em 0.5em 2em;
-            color: #fff;
+            color: #4d4d4d;
+            font-weight: bold;
             text-align: center;
         }
 
@@ -469,7 +470,7 @@ export default Vue.extend({
             top: -15px;
             right: -.8em;
             border-style: solid;
-            border-color: transparent transparent transparent #4d4d4d;
+            border-color: transparent transparent transparent #d9d9d9;
             border-width: 35px 0 35px 1em;
             z-index: 10;
         }
@@ -477,22 +478,15 @@ export default Vue.extend({
         .RoadMap-stages-stage1 {
             color: #fff !important;
             background: #00a040 !important;
-            font-weight: bold;
         }
         
         .RoadMap-stages li.RoadMap-stages-stage1:after {
             border-color: transparent transparent transparent #00a040;
         }
 
-        .RoadMap-stages li.RoadMap-stages-stage2-prep {
-            background: linear-gradient(to right, #fdbe40, #4d4d4d);
-            font-weight: bold;
-        }
-
         .RoadMap-stages-stage2 {
             color: #fff !important;
             background: #fdbe40 !important;
-            font-weight: bold;
         }
 
         .RoadMap-stages li.RoadMap-stages-stage2:after {
@@ -502,7 +496,6 @@ export default Vue.extend({
         .RoadMap-stages-stage3 {
             color: #fff !important;
             background: #fa1629 !important;
-            font-weight: bold;
         }
 
         .RoadMap-stages li.RoadMap-stages-stage3:after {
