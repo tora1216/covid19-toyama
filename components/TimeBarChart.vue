@@ -387,6 +387,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     sliderUpdate(sliderValue) {
+      console.log(sliderValue);
       this.graphRange = sliderValue
     }
   }
