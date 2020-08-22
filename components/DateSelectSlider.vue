@@ -7,10 +7,10 @@
     :max="sliderMax"
     :min="0"
     thumb-label="always"
-    style="padding-top: 35px;"
+    style="padding-top: 45px;"
     color="#00a040"
     track-color="#c9eace"
-    :thumb-size="34"
+    :thumb-size="45"
   >
     <template v-slot:thumb-label="props">
       {{ getSliderLabels(props.value) }}
@@ -21,6 +21,9 @@
 <style>
 .v-slider__thumb-label {
   font-size: 0.8rem !important;
+  word-break: break-all;
+  text-align: center;
+  padding: 3px;
 }
 </style>
 

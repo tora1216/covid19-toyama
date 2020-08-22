@@ -280,8 +280,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             {
               position: 'bottom',
               stacked: false,
+              gridLines: {
+                display: false
+              },
               ticks: {
-                fontSize: 10,
                 fontColor: '#808080',
                 maxRotation: 60,
                 minRotation: 0,
