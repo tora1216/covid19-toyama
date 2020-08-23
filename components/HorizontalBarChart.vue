@@ -5,7 +5,7 @@
       :chart-id="chartId"
       :chart-data="displayData"
       :options="displayOption"
-      :height="300"
+      :height="240"
     />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
@@ -236,7 +236,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           ],
           yAxes: [
             {
-              stacked: true
+              stacked: true,
+              ticks: {
+                autoSkip: false
+              }
             }
           ]
         }
