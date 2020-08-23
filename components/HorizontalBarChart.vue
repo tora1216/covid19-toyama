@@ -209,7 +209,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayOption() {
-      // const unit = this.unit
+      const unit = this.unit
       const valueOfEach = this.valueOfEach
       const _this = this
       const options = {
@@ -217,7 +217,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
-              return `${valueOfEach[tooltipItem.index]} ${this.unit}`
+              return `${valueOfEach[tooltipItem.index]} ${unit}`
             },
             title(tooltipItem: any, data: any) {
               return `${data.labels[tooltipItem[0].index]}`
