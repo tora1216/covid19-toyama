@@ -14,11 +14,18 @@
 </template>
 
 <style lang="scss">
-.ExternalLink {
-  text-decoration: none;
-  .ExternalLinkIcon {
-    vertical-align: text-bottom;
-  }
+  .ExternalLink {
+    padding: 4px 8px;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #00a040;
+    color: #00a040 !important;
+    cursor: pointer;
+    text-decoration: none;
+    .ExternalLinkIcon {
+      vertical-align: text-bottom;
+    }
 }
 </style>
 <script lang="ts">

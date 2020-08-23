@@ -20,15 +20,15 @@
       </div>
       <div class="RelaxationStep-block RelaxationStep-block-steps">
         <ul class="RelaxationStep-steps-list">
-          <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-on">
+          <li class="RelaxationStep-steps-item active">
             Stage1
-          </span></li>
-          <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
+          </li>
+          <li class="RelaxationStep-steps-item">
             Stage2
-          </span></li>
-          <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
+          </li>
+          <li class="RelaxationStep-steps-item">
             Stage3
-          </span></li>
+          </li>
         </ul>
         <p class="RelaxationStep-changed-text">
           {{ $t('現在 Stage1 を適用中です') }}
@@ -192,38 +192,72 @@ $tinySmall: 420;
         }
       }
     }
-    .RelaxationStep-steps-list {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      width: 100%;
-      padding: 0;
-      font-weight: bold;
-      white-space: nowrap;
-      list-style: none;
-      @include lessThan($tiny) {
-        margin-left: -6px;
-      }
-      .RelaxationStep-steps-item {
-        flex: 0 1 20%;
-        margin-bottom: 12px;
-        @include largerThan($large) {
-          flex: 1 1 auto;
+
+        .RelaxationStep-steps-list {
+            list-style-type: none;
+            display: table;
+            width: 100%;
+            padding: 0 !important;
+            margin: 0;
+            margin-bottom: 16px;
+            overflow: hidden;
         }
-        @include lessThan($tinySmall) {
-          flex: 0 1 25%;
+
+        .RelaxationStep-steps-list li {
+            display: table-cell;
+            position: relative;
+            background: #d9d9d9;
+            padding: 0.5em 0.5em 0.5em 2em;
+            color: #4d4d4d;
+            font-weight: bold;
+            text-align: center;
         }
-      }
-      .RelaxationStep-steps-item:first-child {
-        .RelaxationStep-steps {
-          margin-left: 0;
-          border-radius: 5px 0 0 5px;
-          &::before {
+
+        .RelaxationStep-steps-list li:last-child {
+            padding-right: 1em;
+        }
+
+        .RelaxationStep-steps-list li:last-child:before,
+        .RelaxationStep-steps-list li:last-child:after {
             display: none;
-          }
         }
-      }
-    }
+
+        .RelaxationStep-steps-list li:before,
+        .RelaxationStep-steps-list li:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            margin: auto;
+        }
+
+        .RelaxationStep-steps-list li:before {
+            top: -15px;
+            right: -1em;
+            border-style: solid;
+            border-color: transparent transparent transparent #fff;
+            border-width: 35px 0 35px 1em;
+            z-index: 10;
+        }
+
+        .RelaxationStep-steps-list li:after {
+            top: -15px;
+            right: -.8em;
+            border-style: solid;
+            border-color: transparent transparent transparent #d9d9d9;
+            border-width: 35px 0 35px 1em;
+            z-index: 10;
+        }
+
+        .RelaxationStep-steps-list li .active {
+            color: #fff !important;
+            background: #00a040 !important;
+        }
+        
+        .RelaxationStep-steps-list li .active:after {
+            border-color: transparent transparent transparent #00a040;
+        }
+
     .RelaxationStep-changed-text {
       font-weight: bold;
       color: $green-1;

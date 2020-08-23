@@ -1,7 +1,6 @@
 <template>
   <span :class="$style.linkButton">
     <external-link
-      :class="$style.TextLink"
       url="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html"
     >
       {{ $t('ロードマップについて') }}
@@ -23,12 +22,6 @@ export default Vue.extend({
   flex: 0 1 auto;
   @include lessThan($medium) {
     margin-top: 8px;
-  }
-}
-.TextLink {
-  color: $green-1 !important;
-  &:hover {
-    color: $white !important;
   }
 }
 </style>
