@@ -2,7 +2,7 @@
   <div class="RelaxationStep">
     <div class="RelaxationStep-heading">
       <h3 class="RelaxationStep-title">
-        {{ $t('富山県対策指針') }}
+        {{ $t('新型コロナウイルス感染症に打ち克つためのロードマップ') }}
       </h3>
       <div class="RelaxationStep-link">
         <link-to-information-about-roadmap />
@@ -13,7 +13,7 @@
         <p>
           {{
             $t(
-              '富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。'
+              '富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。ステージの強化や緩和は、医療体制や感染状況等の判断指標を踏まえて行います。'
             )
           }}
         </p>
