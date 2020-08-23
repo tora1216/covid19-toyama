@@ -2,7 +2,7 @@
   <span :class="$style.linkButton">
     <external-link
       :class="$style.textLink"
-      url="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html"
+      url="http://www.pref.toyama.jp/cms_sec/1205/kj00022481.html"
     >
       <antenna-icon aria-hidden="true" :class="$style.svgIcon" />
       <span :class="$style.text">
@@ -19,30 +19,50 @@ import AntennaIcon from '@/static/antenna.svg'
 export default Vue.extend({
   components: {
     ExternalLink,
-    AntennaIcon
-  }
+    AntennaIcon,
+  },
 })
 </script>
 
 <style lang="scss" module>
-  .ExternalLink {
-    background-color: #fff;
-    border: 1px solid $alert;
-    color: $alert !important;
-  }
-  .ExternalLink:hover {
-    color: #fff !important;
-    background-color: $alert;
-  }
-
 .linkButton {
+  background-color: $alert;
+  border: 2px solid $alert;
+  color: $white;
+  border-radius: 3em;
+  padding: 4px 8px;
+  margin-right: 8px;
+  display: inline-flex;
+  font-weight: bold;
+  @include font-size(14);
   .svgIcon path {
-    fill: $alert;
+    fill: $white;
   }
   &:hover {
+    background-color: $white;
     .svgIcon path {
-      fill: $white;
+      fill: $alert;
     }
+  }
+  .textLink {
+    display: flex;
+    align-items: center;
+    color: $white !important;
+    text-decoration: none;
+    margin: -10px;
+    padding: 10px;
+    i {
+      color: inherit;
+    }
+    &:hover {
+      color: $alert !important;
+    }
+  }
+  .text {
+    margin: 0 4px;
+  }
+  @include lessThan($medium) {
+    margin-top: 8px;
   }
 }
 </style>

@@ -14,23 +14,12 @@
 </template>
 
 <style lang="scss">
-  .ExternalLink {
-    padding: 4px 8px;
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #fff;
-    border: 1px solid #00a040;
-    color: #00a040 !important;
-    cursor: pointer;
-    text-decoration: none;
-    .ExternalLinkIcon {
-      vertical-align: text-bottom;
-    }
+.ExternalLink {
+  text-decoration: none;
+  .ExternalLinkIcon {
+    vertical-align: text-bottom;
   }
-  .ExternalLink:hover {
-    color: #fff !important;
-    background-color: #00a040;
-  }
+}
 </style>
 <script lang="ts">
 import Vue from 'vue'
