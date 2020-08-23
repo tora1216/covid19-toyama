@@ -232,7 +232,7 @@ $tinySmall: 420;
         }
 
         .RelaxationStep-steps-list li:before {
-            top: -15px;
+            top: -16px;
             right: -1em;
             border-style: solid;
             border-color: transparent transparent transparent #fff;
@@ -241,7 +241,7 @@ $tinySmall: 420;
         }
 
         .RelaxationStep-steps-list li:after {
-            top: -15px;
+            top: -16px;
             right: -.8em;
             border-style: solid;
             border-color: transparent transparent transparent #d9d9d9;

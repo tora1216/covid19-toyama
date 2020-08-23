@@ -27,13 +27,12 @@ export default Vue.extend({
 <style lang="scss" module>
 .linkButton {
   background-color: $alert;
-  border: 2px solid $alert;
+  border: 1px solid $alert;
   color: $white;
   border-radius: 3em;
   padding: 4px 8px;
   margin-right: 8px;
   display: inline-flex;
-  font-weight: bold;
   @include font-size(14);
   .svgIcon path {
     fill: $white;

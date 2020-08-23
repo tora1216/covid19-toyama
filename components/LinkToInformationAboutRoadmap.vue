@@ -24,13 +24,12 @@ export default Vue.extend({
 <style lang="scss" module>
 .linkButton {
   background-color: $white;
-  border: 2px solid $green-1;
+  border: 1px solid $green-1;
   color: $green-1;
   border-radius: 4px;
   padding: 4px 8px;
   margin-right: 8px;
   display: inline-flex;
-  font-weight: bold;
   @include font-size(14);
   &:hover {
     background-color: $green-1;
