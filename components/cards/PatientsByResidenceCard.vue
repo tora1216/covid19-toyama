@@ -16,7 +16,6 @@
 <script>
 import Data from '@/data/data.json'
 import formatGraph from '@/utils/formatGraph'
-import { getCommonStyleDateString } from '@/utils/formatDate'
 import HorizontalBarChart from '@/components/HorizontalBarChart.vue'
 export default {
   components: {
@@ -43,7 +42,7 @@ export default {
       this.$t('富山県外')
     ]
     return {
-      updatedAt: getCommonStyleDateString(Data.patients.date),
+      updatedAt: Data.patients.date,
       graphLabels,
       // 陽性患者の詳細
       patientsGraph: Data.patients.data
