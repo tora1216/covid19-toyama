@@ -13,7 +13,7 @@
         <p>
           {{
             $t(
-              '富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。ステージの強化や緩和は、医療体制や感染状況等の判断指標を踏まえて行います。'
+              '富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。ステージの強化や緩和は、医療提供体制や感染状況等の判断指標を踏まえて行います。'
             )
           }}
         </p>
@@ -41,91 +41,91 @@
     <thead>
         <tr>
             <td colspan="3">
-                判断指標
+                {{ $t('判断指標') }}
             </td>
             <td>
-                基準
+                {{ $t('基準') }}
             </td>
             <td>
-                {{ items[0]['日付'] }}現状
+                {{ items[0]['日付'] }}{{ $t('現状') }}
             </td>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td rowspan="2" class="rowTitleSub">
-                医療提供体制
+                {{ $t('医療提供体制') }}
             </td>
             <td class="rowTitleNumber">
                 ①
             </td>
             <td class="rowTitle">
-                入院者数
+                {{ $t('入院者数') }}
             </td>
             <td class="rowItem">
-                100<span class="unit">人</span><span class="range">未満</span></td>
+                100<span class="unit">{{ $t('人') }}</span><span class="range">{{ $t('未満') }}</span></td>
             <td class="rowItem cellToday">
-                {{ items[0]['入院者数'] }}<span class="unit">人</span></td>
+                {{ items[0]['入院者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
         <tr class="border">
             <td class="rowTitleNumber">
                 ②
             </td>
             <td class="rowTitle">
-                重症病床稼働率
+                {{ $t('重症病床稼働率') }}
             </td>
             <td class="rowItem">
-                30<span class="unit">%</span><span class="range">未満</span></td>
+                30<span class="unit">%</span><span class="range">{{ $t('未満') }}</span></td>
             <td class="rowItem cellToday">
                 {{ items[0]['重症病床稼働率'] }}<span class="unit">%</span></td>
         </tr>
         <tr class="border">
             <td rowspan="2" class="rowTitleSub">
-                感染状況
+                {{ $t('感染状況') }}
             </td>
             <td class="rowTitleNumber">
                 ③
             </td>
             <td class="rowTitle">
-                新規陽性者数
+                {{ $t('新規陽性者数') }}
             </td>
             <td class="rowItem">
-                2.5<span class="unit">人</span><span class="range">未満</span></td>
+                2.5<span class="unit">{{ $t('人') }}</span><span class="range">{{ $t('未満') }}</span></td>
             <td class="rowItem cellToday">
-                {{ items[0]['新規陽性者数'] }}<span class="unit">人</span></td>
+                {{ items[0]['新規陽性者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
         <tr class="border">
             <td class="rowTitleNumber">
                 ④
             </td>
             <td class="rowTitle">
-                感染経路不明者数
+                {{ $t('感染経路不明者数') }}
             </td>
             <td class="rowItem">
-                1<span class="unit">人</span><span class="range">未満</span></td>
+                1<span class="unit">{{ $t('人') }}</span><span class="range">{{ $t('未満') }}</span></td>
             <td class="rowItem cellToday">
-                {{ items[0]['感染経路不明者数'] }}<span class="unit">人</span></td>
+                {{ items[0]['感染経路不明者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
         <tr class="border">
             <td rowspan="2" class="rowTitleSub">
-                (参考指標)
+                ({{ $t('参考指標') }})
             </td>
             <td class="rowTitleNumber">
                 ⑤
             </td>
             <td class="rowTitle">
-                陽性率
+                {{ $t('陽性率') }}
             </td>
             <td class="rowItem">
-                7<span class="unit">%</span><span class="range">未満</span></td>
+                7<span class="unit">%</span><span class="range">{{ $t('未満') }}</span></td>
             <td class="rowItem cellToday">
                 {{ items[0]['陽性率'] }}<span class="unit">%</span></td>
         </tr>
     </tbody>
 </table>
 <ul class="note">
-<li>（注）各指標は、直近1週間1日当たりの平均値</li>
-<li>（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値</li>
+<li>{{ $t('（注）各指標は、直近1週間1日当たりの平均値') }}</li>
+<li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
 </ul>
       </div>
 
@@ -429,9 +429,10 @@ $tinySmall: 420;
     }
 
     .note{
+      text-align: left;
       list-style-type: none;
       padding: 0;
-       margin: 10px 0 0;
+      margin: 10px 0 0;
       font-size: 12px;
       color: #707070;
     }
