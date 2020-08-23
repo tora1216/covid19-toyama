@@ -38,6 +38,7 @@
       </a>
     </div>-->
     <whats-new class="mb-4" :items="newsItems" />
+    <relax-step-card />
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
@@ -73,6 +74,7 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
+import RelaxStepCard from '@/components/cards/RelaxStepCard.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import Status from '@/data/status.json'
@@ -100,6 +102,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
+    RelaxStepCard,
     StaticInfo,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
