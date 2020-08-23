@@ -13,7 +13,7 @@
 import Vue from 'vue'
 import ExternalLink from '@/components/ExternalLink.vue'
 export default Vue.extend({
-  components: { ExternalLink },
+  components: { ExternalLink }
 })
 </script>
 
@@ -26,7 +26,6 @@ export default Vue.extend({
   }
 }
 .TextLink {
-  @include button-text('sm', 16);
   color: $green-1 !important;
   &:hover {
     color: $white !important;
