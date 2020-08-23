@@ -58,6 +58,9 @@ type Computed = {
         title(tooltipItem: any[], data: any): string | undefined
       }
     }
+    legend: {
+      display: boolean
+    }
     scales: object
   }
 }
@@ -214,16 +217,15 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
-              return `${_this.$t('陽性者数')}: ${
-                valueOfEach[tooltipItem.index]
-              }`
+              return `${valueOfEach[tooltipItem.index]} ${this.unit}`
             },
             title(tooltipItem: any, data: any) {
-              return `${data.labels[tooltipItem[0].index]} ${_this.$t(
-                '陽性者数'
-              )}`
+              return `${data.labels[tooltipItem[0].index]}`
             }
           }
+        },
+        legend: {
+          display: false
         },
         scales: {
           xAxes: [
