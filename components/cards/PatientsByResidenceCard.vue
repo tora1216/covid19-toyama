@@ -5,7 +5,7 @@
       :title-id="'number-of-confirmed-cases-by-residence'"
       :chart-id="'time-bar-chart-patients-by-residence'"
       :chart-data="patientsGraph"
-      :date="Data.patients.date"
+      :date="updatedAt"
       :labels="graphLabels"
       :unit="$t('人')"
       :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
