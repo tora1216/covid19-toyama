@@ -18,7 +18,7 @@
           }}
         </p>
       </div>
-      <div class="RelaxationStep-block RelaxationStep-block-steps">
+      <div class="RelaxationStep-block RelaxationStep-block-detail">
         <ul class="RelaxationStep-steps-list">
           <li class="RelaxationStep-steps-item active">
             Stage1
@@ -182,12 +182,12 @@ $tinySmall: 420;
         &-description {
           flex-basis: 40%;
         }
-        &-steps {
+        &-detail {
           flex-basis: auto;
         }
       }
       @include lessThan($tinySmall) {
-        &-steps {
+        &-detail {
           margin: 0 -8px;
         }
       }

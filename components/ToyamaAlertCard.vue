@@ -9,16 +9,16 @@
       </div>
     </div>
     <div class="ToyamaAlert-content">
-      <div class="ToyamaAlert-block">
+      <div class="ToyamaAlert-block ToyamaAlert-block-description">
         <p>
           {{
             $t(
-              '今後さらに感染が拡大すると、夜間の外出自粛や感染拡大地域への移動自粛などをお願いせざるを得ない状況となります。以下、改めてお願いいたします。'
+              '今後さらに感染が拡大すると、夜間の外出自粛や感染拡大地域への移動自粛などをお願いせざるを得ない状況となります。'
             )
           }}
         </p>
       </div>
-      <div class="ToyamaAlert-block">
+      <div class="ToyamaAlert-block ToyamaAlert-block-detail">
         <ul>
           <li>{{ $t('3密の徹底的な回避、手洗いやマスクの着用など「新しい生活様式」の徹底') }}</li>
           <li>{{ $t('感染者が多く発生している地域との往来は特に緊要度の高いものを除き自粛') }}</li>
@@ -86,7 +86,10 @@ $tinySmall: 420;
       flex: 1 1 100%;
       padding: 12px;
     }
-
+    .ToyamaAlert-block-detail {
+      border: 3px solid #ad2121;
+      border-radius: 3px;
+    }
   }
 }
 </style>
