@@ -141,7 +141,7 @@ export default Vue.extend({
       type: Array,
       required: true
     }
-  },{
+  },
   components: {
     LinkToInformationAboutRoadmap
   }
