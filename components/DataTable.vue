@@ -9,7 +9,7 @@
       :items="chartData.datasets"
       :items-per-page="-1"
       :hide-default-footer="true"
-      :height="240"
+      :height="300"
       :fixed-header="true"
       :mobile-breakpoint="0"
       :custom-sort="customSort"
