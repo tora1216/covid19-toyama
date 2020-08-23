@@ -221,6 +221,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             {
               stacked: true,
               ticks: {
+                fontColor: '#808080',
                 suggestedMax: 50,
                 suggestedMin: 0,
                 stepSize: 5
@@ -230,7 +231,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           yAxes: [
             {
               stacked: true,
+              gridLines: {
+                display: false
+              },
               ticks: {
+                fontColor: '#808080',
                 autoSkip: false
               }
             }
