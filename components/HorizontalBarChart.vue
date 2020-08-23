@@ -142,7 +142,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayData() {
       this.valueOfEach = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       this.chartData.map((d: any) => {
-        switch (d['年代']) {
+        switch (d['居住地']) {
           case '舟橋村':
             this.valueOfEach[14] += 1
             break
