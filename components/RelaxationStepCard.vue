@@ -20,10 +20,10 @@
       </div>
       <div class="RelaxationStep-block RelaxationStep-block-steps">
         <ul class="RelaxationStep-steps-list">
-          <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
+          <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-on">
             Stage1
           </span></li>
-          <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-on">
+          <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
             Stage2
           </span></li>
           <li class="RelaxationStep-steps-item"><span class="RelaxationStep-steps RelaxationStep-steps-off">
