@@ -14,6 +14,23 @@ const VueChartPlugin: Plugin = () => {
   const { reactiveProp } = mixins
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
+    'horizontal-bar',
+    {
+      extends: HorizontalBar,
+      mixins: [reactiveProp],
+      props: {
+        options: {
+          type: Object as PropType<ChartOptions>,
+          default: () => {}
+        }
+      },
+      mounted(): void {
+        this.renderChart(this.chartData, this.options)
+      }
+    }
+  )
+
+  Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
     'doughnut-chart',
     {
       extends: Doughnut,
