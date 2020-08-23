@@ -2,7 +2,7 @@
   <div class="ToyamaAlert">
     <div class="ToyamaAlert-heading">
       <h3 class="ToyamaAlert-title">
-        {{ $t('富山アラート') }}
+        {{ $t('新型コロナウイルス感染拡大警報(富山アラート)') }}
       </h3>
       <div class="ToyamaAlert-link">
         <link-to-information-about-toyamaalert />
@@ -13,7 +13,7 @@
         <p>
           {{
             $t(
-              '今後さらに感染が拡大すると、「Stage2」に移行となり、夜間の外出自粛や感染拡大地域への移動自粛などをお願いせざるを得ない状況となります。以下、改めてのお願いです。'
+              '今後さらに感染が拡大すると、夜間の外出自粛や感染拡大地域への移動自粛などをお願いせざるを得ない状況となります。以下、改めてお願いいたします。'
             )
           }}
         </p>

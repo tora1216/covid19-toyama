@@ -6,7 +6,7 @@
     >
       <antenna-icon aria-hidden="true" :class="$style.svgIcon" />
       <span :class="$style.text">
-        {{ $t('富山アラート発動中') }}
+        {{ $t('富山アラート発出中') }}
       </span>
     </external-link>
   </span>
