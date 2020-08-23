@@ -39,7 +39,7 @@ export default {
       this.$t('上市町'),
       this.$t('朝日町'),
       this.$t('舟橋村'),
-      this.$t('富山県外')
+      this.$t('その他')
     ]
     return {
       updatedAt: Data.patients.date,
