@@ -249,12 +249,12 @@ $tinySmall: 420;
             z-index: 10;
         }
 
-        .RelaxationStep-steps-list li .active {
+        .RelaxationStep-steps-list li.active {
             color: #fff !important;
             background: #00a040 !important;
         }
         
-        .RelaxationStep-steps-list li .active:after {
+        .RelaxationStep-steps-list li.active:after {
             border-color: transparent transparent transparent #00a040;
         }
 

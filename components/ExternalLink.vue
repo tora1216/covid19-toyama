@@ -26,7 +26,11 @@
     .ExternalLinkIcon {
       vertical-align: text-bottom;
     }
-}
+  }
+  .ExternalLink:hover {
+    color: #fff !important;
+    background-color: #00a040;
+  }
 </style>
 <script lang="ts">
 import Vue from 'vue'

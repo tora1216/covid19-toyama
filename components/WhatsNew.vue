@@ -1,12 +1,6 @@
 <template>
   <div class="WhatsNew">
-    <h3 class="WhatsNew-heading">
-      <v-icon size="24" class="WhatsNew-heading-icon">
-        mdi-bullhorn
-      </v-icon>
-      {{ $t('富山県の対策指針') }}
-    </h3>
-    <p>{{ $t('富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。') }}</p>
+
     <div class="RoadMap-stage-alert">
       <h4>{{ $t('「富山アラート」発令中') }}</h4>
       <p>
@@ -20,102 +14,7 @@
         <li>{{ $t('重症化しやすい高齢者への感染予防行動の徹底、大声をあげる環境の徹底的な回避') }}</li>
       </ul>
     </div>
-    <div class="row" style="margin-bottom:16px;">
-      <div class="col-sm-12 col-md-6 col-lg-6 col-12">
-        <div class="RoadMap-stage">
-          <p class="RoadMap-stage-label">{{ $t('現在「Stage1」を適用中です') }}</p>
-          <ul class="RoadMap-stages">
-            <li class="RoadMap-stages-stage1">Stage1</li>
-            <li>Stage2</li>
-            <li>Stage3</li>
-          </ul>
-          <table class="RoadMap-stage-content">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="RoadMap-stages-stage1">Stage1</th>
-                <th class="RoadMap-stages-stage2">Stage2</th>
-                <th class="RoadMap-stages-stage3">Stage3</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <th>{{ $t('外出') }}</th>
-              <td>〇</td>
-              <td>△</td>
-              <td>×</td>
-            </tr>
-            <tr>
-              <th>{{ $t('県外への移動') }}</th>
-              <td>△</td>
-              <td>△</td>
-              <td>×</td>
-            </tr>
-            <tr>
-              <th>{{ $t('接待を伴う飲食店の利用') }}</th>
-              <td>〇</td>
-              <td>×</td>
-              <td>×</td>
-            </tr>
-            <tr>
-              <th>{{ $t('大規模催物の開催') }}</th>
-              <td>△</td>
-              <td>△</td>
-              <td>×</td>
-            </tr>
-            <tr>
-              <th>{{ $t('店舗等の営業') }}</th>
-              <td>〇</td>
-              <td>〇</td>
-              <td>△</td>
-            </tr>
-            </tbody>
-          </table>
-          <small>{{ $t('（注）〇:自粛または制限なし(「新しい生活様式」や感染防止対策が前提)、△:制限、×:自粛') }}</small>
-          <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html" target="_blank" rel="noopener" class="RoadMap-stage-button">{{ $t('詳細を見る') }}</a>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-6 col-12">
 
-    <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('ステージの変更基準') }}</h3></div>
-    <div class="DataView-Description">
-    <ul>
-      <li>{{ $t('（注）各指標は、直近1週間の平均値') }}</li>
-      <li>{{ $t('（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値') }}</li>
-    </ul>
-    </div>
-    <div class="DataView-CardText">
-    <div style="overflow-y:scroll;box-shadow: 0 -20px 12px -12px #0003 inset;">
-    <table class="mapTable" style="box-shadow: 0 -20px 12px -12px #0003 inset;">
-      <thead>
-        <tr>
-          <th>1.{{ $t('入院者数') }}</th>
-          <th>2.{{ $t('重症病床稼働率') }}</th>
-          <th>3.{{ $t('新規陽性者数') }}</th>
-          <th>4.{{ $t('感染経路不明者数') }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>100 {{ $t('人') }}<br>({{ $t('未満') }})</td>
-          <td>30 %<br>({{ $t('未満') }})</td>
-          <td>2.5 {{ $t('人') }}<br>({{ $t('未満') }})</td>
-          <td>1 {{ $t('人') }}<br>({{ $t('未満') }})</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    </div>
-
-        <p>{{ $t('ステージの強化は、以下の通り決定します。') }}</p>
-        <ul style="margin-bottom:16px;">
-          <li>{{ $t('警戒情報：指標3と4のいずれもが基準に到達し、指標1または2が一定程度上昇した際に発令') }}</li>
-          <li>{{ $t('Stage2：指標3と4のいずれもが基準に到達し、指標1または2が基準の50%に到達し数日継続した際に発令') }}</li>
-          <li>{{ $t('Stage3：指標1～4のすべてが基準に到達し、数日継続した際に発令') }}</li>
-        </ul>
-        <p>{{ $t('ステージの緩和は、全ての指標が基準を下回る状況が1～2週間続く場合に専門家の意見を踏まえ決定します。') }}</p>
-      </div>
-    </div>
 
     <div class="DataView-Header"><h3 class="DataView-Title">{{ $t('モニタリング指標の状況') }}</h3></div>
     <div class="DataView-Description">
@@ -155,34 +54,6 @@
       <a href="http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html" target="_blank" rel="noopener" style="font-size:12px;display:block;overflow-wrap: break-word;text-decoration: none;">[新型コロナウイルス感染症に打ち克つためのロードマップ]富山県HP(http://www.pref.toyama.jp/cms_sec/1205/kj00022038.html)を元に作成</a>
     </div>
 
-
-    <!--<ul class="WhatsNew-list">
-      <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
-        <a
-          class="WhatsNew-list-item-anchor"
-          :href="item.url"
-          target="_blank"
-          rel="noopener"
-        >
-          <time
-            class="WhatsNew-list-item-anchor-time px-2"
-            :datetime="formattedDate(item.date)"
-          >
-            {{ item.date }}
-          </time>
-          <span class="WhatsNew-list-item-anchor-link">
-            {{ item.text }}
-            <v-icon
-              v-if="!isInternalLink(item.url)"
-              class="WhatsNew-item-ExternalLinkIcon"
-              size="12"
-            >
-              mdi-open-in-new
-            </v-icon>
-          </span>
-        </a>
-      </li>
-    </ul>-->
   </div>
 </template>
 
