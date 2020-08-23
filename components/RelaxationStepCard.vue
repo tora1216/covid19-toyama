@@ -35,6 +35,99 @@
         </p>
       </div>
     </div>
+
+      <div class="Roadmap-Status-Content">
+        <table class="Roadmap-Status">
+    <thead>
+        <tr>
+            <td colspan="3">
+                判断指標
+            </td>
+            <td>
+                基準
+            </td>
+            <td>
+                {{ items[0]['日付'] }}現状
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2" class="rowTitleSub">
+                医療提供体制
+            </td>
+            <td class="rowTitleNumber">
+                ①
+            </td>
+            <td class="rowTitle">
+                入院者数
+            </td>
+            <td class="rowItem">
+                100<span class="unit">人</span><span class="range">未満</span></td>
+            <td class="rowItem cellToday">
+                {{ items[0]['入院者数'] }}<span class="unit">人</span></td>
+        </tr>
+        <tr class="border">
+            <td class="rowTitleNumber">
+                ②
+            </td>
+            <td class="rowTitle">
+                重症病床稼働率
+            </td>
+            <td class="rowItem">
+                30<span class="unit">%</span><span class="range">未満</span></td>
+            <td class="rowItem cellToday">
+                {{ items[0]['重症病床稼働率'] }}<span class="unit">%</span></td>
+        </tr>
+        <tr class="border">
+            <td rowspan="2" class="rowTitleSub">
+                感染状況
+            </td>
+            <td class="rowTitleNumber">
+                ③
+            </td>
+            <td class="rowTitle">
+                新規陽性者数
+            </td>
+            <td class="rowItem">
+                2.5<span class="unit">人</span><span class="range">未満</span></td>
+            <td class="rowItem cellToday">
+                {{ items[0]['新規陽性者数'] }}<span class="unit">人</span></td>
+        </tr>
+        <tr class="border">
+            <td class="rowTitleNumber">
+                ④
+            </td>
+            <td class="rowTitle">
+                感染経路不明者数
+            </td>
+            <td class="rowItem">
+                1<span class="unit">人</span><span class="range">未満</span></td>
+            <td class="rowItem cellToday">
+                {{ items[0]['感染経路不明者数'] }}<span class="unit">人</span></td>
+        </tr>
+        <tr class="border">
+            <td rowspan="2" class="rowTitleSub">
+                (参考指標)
+            </td>
+            <td class="rowTitleNumber">
+                ⑤
+            </td>
+            <td class="rowTitle">
+                陽性率
+            </td>
+            <td class="rowItem">
+                7<span class="unit">%</span><span class="range">未満</span></td>
+            <td class="rowItem cellToday">
+                {{ items[0]['陽性率'] }}<span class="unit">%</span></td>
+        </tr>
+    </tbody>
+</table>
+<ul class="note">
+<li>（注）各指標は、直近1週間1日当たりの平均値</li>
+<li>（注）新規陽性者数と感染経路不明者数は、人口100万人当たりの値</li>
+      </div>
+
   </div>
 </template>
 
@@ -264,6 +357,74 @@ $tinySmall: 420;
       text-align: center;
       @include font-size(16);
     }
+
+    div.Roadmap-Status-Content{
+      padding: 12px;
+    }
+    table.Roadmap-Status {
+        border-collapse: collapse;
+        color: #333;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    table.Roadmap-Status>thead>tr>td {
+        background-color: #d9d9d9;
+        border: #fff solid 2px;
+        padding: 3px;
+        text-align: center;
+    }
+
+    table.Roadmap-Status>tbody>tr.border {
+        padding: 5px 0 5px 0;
+        border-top: 1px solid #999;
+    }
+
+    table.Roadmap-Status>tbody>tr>td {
+        padding: 0;
+    }
+
+    table.Roadmap-Status>tbody>tr>td.rowTitleSub {
+        text-align: center;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    table.Roadmap-Status>tbody>tr>td.rowTitleNumber {
+        padding: 0;
+        font-size: 12px;
+    }
+
+    table.Roadmap-Status>tbody>tr>td.rowTitle {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    table.Roadmap-Status>tbody>tr>td.rowItem {
+        text-align: center;
+    }
+
+    table.Roadmap-Status>tbody>tr>td.rowItem>.unit {
+        padding-left: 2px;
+        font-size: 12px;
+    }
+
+    table.Roadmap-Status>tbody>tr>td.rowItem>.range {
+        font-size: 11px;
+    }
+
+    table.Roadmap-Status>tbody>tr>td.cellToday {
+        font-weight: 700;
+    }
+
+    .note{
+      list-style-type: none;
+      padding: 0;
+       margin: 10px 0 0;
+      font-size: 12px;
+      color: #707070;
+    }
+
   }
 }
 </style>
