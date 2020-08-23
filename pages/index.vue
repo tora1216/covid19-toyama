@@ -38,7 +38,7 @@
       </a>
     </div>-->
     <whats-new class="mb-4" :items="newsItems" />
-    <!--<relax-step-card />-->
+    <relax-step-card />
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
