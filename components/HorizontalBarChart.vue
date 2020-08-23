@@ -1,9 +1,5 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
-    <template v-slot:button>
-      <p class="Graph-Desc">
-      </p>
-    </template>
     <horizontal-bar
       :style="{ display: canvas ? 'block' : 'none' }"
       :chart-id="chartId"
