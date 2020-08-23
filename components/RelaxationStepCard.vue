@@ -47,7 +47,7 @@
                 基準
             </td>
             <td>
-                {{ items[0]['日付'] }}現状
+                {{ item['日付'] }}現状
             </td>
         </tr>
     </thead>
@@ -65,7 +65,7 @@
             <td class="rowItem">
                 100<span class="unit">人</span><span class="range">未満</span></td>
             <td class="rowItem cellToday">
-                {{ items[0]['入院者数'] }}<span class="unit">人</span></td>
+                {{ item['入院者数'] }}<span class="unit">人</span></td>
         </tr>
         <tr class="border">
             <td class="rowTitleNumber">
@@ -77,7 +77,7 @@
             <td class="rowItem">
                 30<span class="unit">%</span><span class="range">未満</span></td>
             <td class="rowItem cellToday">
-                {{ items[0]['重症病床稼働率'] }}<span class="unit">%</span></td>
+                {{ item['重症病床稼働率'] }}<span class="unit">%</span></td>
         </tr>
         <tr class="border">
             <td rowspan="2" class="rowTitleSub">
@@ -92,7 +92,7 @@
             <td class="rowItem">
                 2.5<span class="unit">人</span><span class="range">未満</span></td>
             <td class="rowItem cellToday">
-                {{ items[0]['新規陽性者数'] }}<span class="unit">人</span></td>
+                {{ item['新規陽性者数'] }}<span class="unit">人</span></td>
         </tr>
         <tr class="border">
             <td class="rowTitleNumber">
@@ -104,7 +104,7 @@
             <td class="rowItem">
                 1<span class="unit">人</span><span class="range">未満</span></td>
             <td class="rowItem cellToday">
-                {{ items[0]['感染経路不明者数'] }}<span class="unit">人</span></td>
+                {{ item['感染経路不明者数'] }}<span class="unit">人</span></td>
         </tr>
         <tr class="border">
             <td rowspan="2" class="rowTitleSub">
@@ -119,7 +119,7 @@
             <td class="rowItem">
                 7<span class="unit">%</span><span class="range">未満</span></td>
             <td class="rowItem cellToday">
-                {{ items[0]['陽性率'] }}<span class="unit">%</span></td>
+                {{ item['陽性率'] }}<span class="unit">%</span></td>
         </tr>
     </tbody>
 </table>

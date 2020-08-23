@@ -22,8 +22,8 @@
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
     <toyama-alert-card />
-    <relax-step-card :items="statusItems" />
-    <!--<whats-new class="mb-4" :items="statusItems" />-->
+    <relax-step-card :item="statusItem" />
+    <!--<whats-new class="mb-4" :items="statusItem" />-->
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
@@ -118,7 +118,7 @@ export default Vue.extend({
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('県内の最新感染動向')
       },
-      statusItems: Status.statusItems
+      statusItem: Status.statusItems[0]
     }
     return data
   },
