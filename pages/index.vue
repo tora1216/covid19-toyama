@@ -23,7 +23,7 @@
     </div>
     <toyama-alert-card />
     <relax-step-card :items="statusItems" />
-    <!--<whats-new class="mb-4" :items="newsItems" />-->
+    <!--<whats-new class="mb-4" :items="statusItems" />-->
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
