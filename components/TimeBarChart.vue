@@ -288,7 +288,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 maxRotation: 60,
                 minRotation: 0,
                 max: this.chartData[this.graphRange[1]].label,
-                min: this.chartData[this.graphRange[0]].label
+                min: this.chartData[this.graphRange[0]].label,
+                callback(label) {
+                  return `${label} ${unit}`
+                }
               }
             }
           ],
