@@ -5,7 +5,7 @@
       :chart-id="chartId"
       :chart-data="displayData"
       :options="displayOption"
-      :height="240"
+      :height="300"
     />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
