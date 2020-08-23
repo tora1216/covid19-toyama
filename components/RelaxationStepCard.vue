@@ -364,10 +364,14 @@ $tinySmall: 420;
       text-align: center;
       @include font-size(16);
     }
+  }
+}
+
 
     div.Roadmap-Status-Content{
       padding: 12px;
     }
+    
     table.Roadmap-Status {
         border-collapse: collapse;
         color: #333;
@@ -431,7 +435,4 @@ $tinySmall: 420;
       font-size: 12px;
       color: #707070;
     }
-
-  }
-}
 </style>
