@@ -32,7 +32,7 @@ for status in df_status:
     data["重症病床稼働率"] = round(status[4]*100,2)
     data["新規陽性者数"] = float(mojimoji.zen_to_han(status[5][:-1]))
     data["感染経路不明者数"] = float(mojimoji.zen_to_han(status[6][:-1]))
-    data["陽性率"] = float(mojimoji.zen_to_han(status[7][:-1]))
+    data["陽性率"] = round(status[7]*100,1)
     data["達成状況"] = status[9]
     result.append(data)
 
