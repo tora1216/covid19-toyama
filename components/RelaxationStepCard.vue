@@ -52,7 +52,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="border">
             <td rowspan="2" class="rowTitleSub">
                 {{ $t('医療提供体制') }}
             </td>
@@ -388,7 +388,7 @@ $tinySmall: 420;
 
     table.Roadmap-Status>tbody>tr.border {
         padding: 5px 0 5px 0;
-        border-top: 1px solid #999;
+        border-bottom: 1px solid #999;
     }
 
     table.Roadmap-Status>tbody>tr>td {
@@ -431,7 +431,7 @@ $tinySmall: 420;
     .note{
       text-align: left;
       list-style-type: none;
-      padding: 0;
+      padding: 0 !important;
       margin: 10px 0 0;
       font-size: 12px;
       color: #707070;
