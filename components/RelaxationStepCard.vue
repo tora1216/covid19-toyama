@@ -63,7 +63,7 @@
                 {{ $t('入院者数') }}
             </td>
             <td class="rowItem">
-                100<span class="unit">{{ $t('人') }}</span>(<span class="range">{{ $t('未満') }}</span>)</td>
+                100<span class="unit">{{ $t('人') }}</span><span class="range">({{ $t('未満') }})</span></td>
             <td class="rowItem cellToday">
                 {{ items[0]['入院者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
@@ -75,7 +75,7 @@
                 {{ $t('重症病床稼働率') }}
             </td>
             <td class="rowItem">
-                30<span class="unit">%</span>(<span class="range">{{ $t('未満') }}</span>)</td>
+                30<span class="unit">%</span><span class="range">({{ $t('未満') }})</span></td>
             <td class="rowItem cellToday">
                 {{ items[0]['重症病床稼働率'] }}<span class="unit">%</span></td>
         </tr>
@@ -90,7 +90,7 @@
                 {{ $t('新規陽性者数') }}
             </td>
             <td class="rowItem">
-                2.5<span class="unit">{{ $t('人') }}</span>(<span class="range">{{ $t('未満') }}</span>)</td>
+                2.5<span class="unit">{{ $t('人') }}</span><span class="range">({{ $t('未満') }})</span></td>
             <td class="rowItem cellToday">
                 {{ items[0]['新規陽性者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
@@ -102,7 +102,7 @@
                 {{ $t('感染経路不明者数') }}
             </td>
             <td class="rowItem">
-                1<span class="unit">{{ $t('人') }}</span>(<span class="range">{{ $t('未満') }}</span>)</td>
+                1<span class="unit">{{ $t('人') }}</span><span class="range">({{ $t('未満') }})</span></td>
             <td class="rowItem cellToday">
                 {{ items[0]['感染経路不明者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
@@ -117,7 +117,7 @@
                 {{ $t('陽性率') }}
             </td>
             <td class="rowItem">
-                7<span class="unit">%</span>(<span class="range">{{ $t('未満') }}</span>)</td>
+                7<span class="unit">%</span><span class="range">({{ $t('未満') }})</span></td>
             <td class="rowItem cellToday">
                 {{ items[0]['陽性率'] }}<span class="unit">%</span></td>
         </tr>
