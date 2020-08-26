@@ -48,6 +48,7 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
+import ToyamaAlertCard from '@/components/ToyamaAlertCard.vue'
 import RelaxStepCard from '@/components/RelaxationStepCard.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
@@ -69,6 +70,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
+    ToyamaAlertCard,
     RelaxStepCard,
     StaticInfo,
     ConfirmedCasesDetailsCard,

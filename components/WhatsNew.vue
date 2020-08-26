@@ -5,7 +5,7 @@
         {{ $t('最新のお知らせ') }}
       </h3>
       <div class="WhatsNew-link">
-        <link-to-information-about-WhatsNew />
+        <link-to-twitter-account />
       </div>
     </div>
     <div class="WhatsNew-content">
@@ -68,10 +68,6 @@ $tinySmall: 420;
     @include font-size(14);
     display: flex;
     flex-wrap: wrap;
-    .WhatsNew-block {
-      flex: 1 1 100%;
-      padding: 12px;
-    }
     .WhatsNew-block-timeline {
       width: 50%;
       margin: auto;
