@@ -4,9 +4,8 @@
       :class="$style.textLink"
       url="https://twitter.com/covid19_toyama"
     >
-      <twitter-icon aria-hidden="true" :class="$style.svgIcon" />
       <span :class="$style.text">
-        {{ $t('フォローする') }}
+        {{ $t('@covid19_toyamaをフォロー') }}
       </span>
     </external-link>
   </span>
@@ -15,11 +14,9 @@
 <script lang="ts">
 import Vue from 'vue'
 import ExternalLink from '@/components/ExternalLink.vue'
-import TwitterIcon from '@/static/twitter.svg'
 export default Vue.extend({
   components: {
-    ExternalLink,
-    TwitterIcon,
+    ExternalLink
   },
 })
 </script>
@@ -34,14 +31,8 @@ export default Vue.extend({
   margin-right: 8px;
   display: inline-flex;
   @include font-size(14);
-  .svgIcon path {
-    fill: $white;
-  }
   &:hover {
     background-color: $white;
-    .svgIcon path {
-      fill: #00acee;
-    }
   }
   .textLink {
     display: flex;
