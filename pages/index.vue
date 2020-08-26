@@ -12,18 +12,9 @@
         <span>{{ $t('注釈') }} </span>
       </div>
     </div>
-    <div class="TwitterTimelineBlock mb-4">
-      <h3 class="WhatsNew-heading"><i aria-hidden="true" class="v-icon notranslate WhatsNew-heading-icon mdi mdi-information theme--light" style="font-size: 24px;"></i>
-        {{ $t('最新のお知らせ') }} 
-      </h3>
-      <div class="EmbeddedTwitterTimeline">
-        <a class="twitter-timeline" data-height="300px" data-chrome="noheader nofooter" href="https://twitter.com/covid19_toyama?ref_src=twsrc%5Etfw">Loading...</a>
-      </div>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
+    <whats-new />
     <toyama-alert-card />
     <relax-step-card :items="statusItems" />
-    <!--<whats-new class="mb-4" :items="statusItems" />-->
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
@@ -42,73 +33,59 @@
       <tested-cases-details-card />
       <positive-rate-card />
       <inspection-persons-number-card />
-      <!-- <tested-number-card /> -->
       <telephone-advisory-reports-number-card />
       <consultation-desk-reports-number-card />
       <population-card />
-      <!-- <metro-card /> -->
-      <!-- <agency-card /> -->
-      <!-- <shinjuku-visitors-card /> -->
-      <!-- <chiyoda-visitors-card /> -->
     </v-row>
   </div>
 </template>
 
 <script lang="ts">
+import Data from '@/data/data.json'
+import StatusData from '@/data/status.json'
+
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
-import ToyamaAlertCard from '@/components/ToyamaAlertCard.vue'
+import WhatsNewCard from '@/components/WhatsNewCard.vue'
 import RelaxStepCard from '@/components/RelaxationStepCard.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
-import Data from '@/data/data.json'
-import Status from '@/data/status.json'
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-// import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
-// import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
-import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
-// import MetroCard from '@/components/cards/MetroCard.vue'
-// import AgencyCard from '@/components/cards/AgencyCard.vue'
-// import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
-// import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
 import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
 import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 import DeadPersonsNumberCard from '@/components/cards/DeadPersonsNumberCard.vue'
 import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNumberCard.vue'
+import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
+import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
+import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
+import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 import PopulationCard from '@/components/cards/PopulationCard.vue'
+
 export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
-    ToyamaAlertCard,
+    WhatsNewCard,
     RelaxStepCard,
     StaticInfo,
+    ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
-    ConfirmedCasesDetailsCard,
-    TestedCasesDetailsCard,
-    // TestedNumberCard,
-    InspectionPersonsNumberCard,
-    PositiveRateCard,
-    TelephoneAdvisoryReportsNumberCard,
-    ConsultationDeskReportsNumberCard,
-    // MetroCard,
-    // AgencyCard,
-    // ShinjukuVisitorsCard,
-    // ChiyodaVisitorsCard,
     PatientsByResidenceCard,
     PatientsByAgeCard,
     PatientsByGenderCard,
     DeadPersonsNumberCard,
     DischargedPersonsNumberCard,
+    TestedCasesDetailsCard,
+    PositiveRateCard,
+    InspectionPersonsNumberCard,
+    TelephoneAdvisoryReportsNumberCard,
+    ConsultationDeskReportsNumberCard,
     PopulationCard
   },
   data() {
@@ -118,7 +95,7 @@ export default Vue.extend({
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('県内の最新感染動向')
       },
-      statusItems: Status.statusItems
+      statusItems: StatusData.statusItems
     }
     return data
   },
@@ -156,26 +133,6 @@ export default Vue.extend({
     color: $gray-3;
     @include largerThan($small) {
       margin: 0 0 0 auto;
-    }
-  }
-  .TwitterTimelineBlock {
-    margin: 20px 0;
-    background-color: #fff;
-    box-shadow: 0 0 2px rgba(112, 15, 15, 0.15);
-    border: 0.5px solid #d9d9d9 !important;
-    border-radius: 4px;
-    padding: 10px;
-    .EmbeddedTwitterTimeline {
-      display: block;
-      width: 50%;
-      margin: auto;
-      margin-top: 16px;
-      @include lessThan($medium) {
-        width: 75%;
-      }
-      @include lessThan($small) {
-        width: 100%;
-      }
     }
   }
   .EmergencyBlock {

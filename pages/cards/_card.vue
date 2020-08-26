@@ -3,57 +3,14 @@
     <confirmed-cases-details-card
       v-if="this.$route.params.card == 'details-of-confirmed-cases'"
     />
-    <tested-cases-details-card
-      v-else-if="this.$route.params.card == 'details-of-tested-cases'"
-    />
     <confirmed-cases-number-card
       v-else-if="this.$route.params.card == 'number-of-confirmed-cases'"
     />
     <confirmed-cases-attributes-card
       v-else-if="this.$route.params.card == 'attributes-of-confirmed-cases'"
     />
-    <tested-number-card
-      v-else-if="this.$route.params.card == 'number-of-tested'"
-    />
-    <inspection-persons-number-card
-      v-else-if="this.$route.params.card == 'number-of-inspection-persons'"
-    />
-    <positive-rate-card
-      v-else-if="this.$route.params.card == 'rate-of-confirmed-cases'"
-    />
-    <telephone-advisory-reports-number-card
-      v-else-if="
-        this.$route.params.card ==
-          'number-of-reports-to-covid19-telephone-advisory-center'
-      "
-    />
-    <consultation-desk-reports-number-card
-      v-else-if="
-        this.$route.params.card ==
-          'number-of-reports-to-covid19-consultation-desk'
-      "
-    />
-    <metro-card
-      v-else-if="
-        this.$route.params.card == 'predicted-number-of-toei-subway-passengers'
-      "
-    />
-    <population-card
-      v-else-if="
-        this.$route.params.card == 'changes-of-population-around-toyama-station'
-      "
-    />
-    <agency-card v-else-if="this.$route.params.card == 'agency'" />
-    <shinjuku-visitors-card
-      v-else-if="this.$route.params.card == 'shinjuku-visitors'"
-    />
-    <chiyoda-visitors-card
-      v-else-if="this.$route.params.card == 'chiyoda-visitors'"
-    />
     <patients-by-residence-card
-      v-else-if="
-        this.$route.params.card == 'number-of-confirmed-cases-by-residence'
-      "
+      v-else-if="this.$route.params.card == 'number-of-confirmed-cases-by-residence'"
     />
     <patients-by-age-card
       v-else-if="this.$route.params.card == 'number-of-confirmed-cases-by-age'"
@@ -67,57 +24,63 @@
     <discharged-persons-number-card
       v-else-if="this.$route.params.card == 'number-of-discharged-persons'"
     />
+    <tested-cases-details-card
+      v-else-if="this.$route.params.card == 'details-of-tested-cases'"
+    />
+    <positive-rate-card
+      v-else-if="this.$route.params.card == 'rate-of-confirmed-cases'"
+    />
+    <inspection-persons-number-card
+      v-else-if="this.$route.params.card == 'number-of-inspection-persons'"
+    />
+    <telephone-advisory-reports-number-card
+      v-else-if="this.$route.params.card == 'number-of-reports-to-covid19-telephone-advisory-center'"
+    />
+    <consultation-desk-reports-number-card
+      v-else-if="this.$route.params.card == 'number-of-reports-to-covid19-consultation-desk'"
+    />
+    <population-card
+      v-else-if="this.$route.params.card == 'changes-of-population-around-toyama-station'"
+    />
   </div>
 </template>
 
 <script>
 import Data from '@/data/data.json'
 import PopulationData from '@/data/population.json'
-import MetroData from '@/data/metro.json'
-import agencyData from '@/data/agency.json'
-import ShinjukuData from '@/data/13104_daily_visitors.json'
-import ChiyodaData from '@/data/13101_daily_visitors.json'
+
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
-import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
-import MetroCard from '@/components/cards/MetroCard.vue'
-import PopulationCard from '@/components/cards/PopulationCard.vue'
-import AgencyCard from '@/components/cards/AgencyCard.vue'
-import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
-import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
 import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
 import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 import DeadPersonsNumberCard from '@/components/cards/DeadPersonsNumberCard.vue'
 import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNumberCard.vue'
 
+import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
+import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
+import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
+import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
+import PopulationCard from '@/components/cards/PopulationCard.vue'
+
 export default {
   components: {
     ConfirmedCasesDetailsCard,
-    TestedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
-    TestedNumberCard,
-    InspectionPersonsNumberCard,
-    PositiveRateCard,
-    TelephoneAdvisoryReportsNumberCard,
-    ConsultationDeskReportsNumberCard,
-    MetroCard,
-    PopulationCard,
-    AgencyCard,
-    ShinjukuVisitorsCard,
-    ChiyodaVisitorsCard,
     PatientsByResidenceCard,
     PatientsByAgeCard,
     PatientsByGenderCard,
     DeadPersonsNumberCard,
-    DischargedPersonsNumberCard
+    DischargedPersonsNumberCard,
+    TestedCasesDetailsCard,
+    PositiveRateCard,
+    InspectionPersonsNumberCard,
+    TelephoneAdvisoryReportsNumberCard,
+    ConsultationDeskReportsNumberCard,
+    PopulationCard
   },
   data() {
     let title, updatedAt
@@ -126,10 +89,6 @@ export default {
         title = this.$t('検査陽性者の状況')
         updatedAt = Data.main_summary.date
         break
-      case 'details-of-tested-cases':
-        title = this.$t('検査実施状況')
-        updatedAt = Data.inspection_status_summary.date
-        break
       case 'number-of-confirmed-cases':
         title = this.$t('陽性患者数')
         updatedAt = Data.patients_summary.date
@@ -137,46 +96,6 @@ export default {
       case 'attributes-of-confirmed-cases':
         title = this.$t('陽性患者の属性')
         updatedAt = Data.patients.date
-        break
-      case 'number-of-tested':
-        title = this.$t('検査実施件数')
-        updatedAt = Data.inspections_summary.date
-        break
-      case 'number-of-inspection-persons':
-        title = this.$t('検査実施人数')
-        updatedAt = Data.inspection_persons.date
-        break
-      case 'rate-of-confirmed-cases':
-        title = this.$t('検査陽性率')
-        updatedAt = Data.positive_rate.date
-        break
-      case 'number-of-reports-to-covid19-telephone-advisory-center':
-        title = this.$t('新型コロナウイルス感染症に関する一般相談件数')
-        updatedAt = Data.contacts.date
-        break
-      case 'number-of-reports-to-covid19-consultation-desk':
-        title = this.$t('帰国者・接触者相談センターへの相談件数')
-        updatedAt = Data.querents.date
-        break
-      case 'predicted-number-of-toei-subway-passengers':
-        title = this.$t('都営地下鉄の利用者数の推移')
-        updatedAt = MetroData.date
-        break
-      case 'changes-of-population-around-toyama-station':
-        title = this.$t('富山駅周辺の人口の推移（参考値）')
-        updatedAt = PopulationData.date
-        break
-      case 'agency':
-        title = this.$t('都庁来庁者数の推移')
-        updatedAt = agencyData.date
-        break
-      case 'shinjuku-visitors':
-        title = this.$t('新宿区エリアの来訪者数の推移（参考値）')
-        updatedAt = ShinjukuData.date
-        break
-      case 'chiyoda-visitors':
-        title = this.$t('千代田区エリアの来訪者数の推移（参考値）')
-        updatedAt = ChiyodaData.date
         break
       case 'patients-by-residence':
         title = this.$t('陽性患者数(居住地別)')
@@ -197,6 +116,30 @@ export default {
       case 'number-of-discharged-persons':
         title = this.$t('退院者数')
         updatedAt = Data.discharged_persons.date
+        break
+      case 'details-of-tested-cases':
+        title = this.$t('検査実施状況')
+        updatedAt = Data.inspection_status_summary.date
+        break
+      case 'rate-of-confirmed-cases':
+        title = this.$t('検査陽性率')
+        updatedAt = Data.positive_rate.date
+        break
+      case 'number-of-inspection-persons':
+        title = this.$t('検査実施人数')
+        updatedAt = Data.inspection_persons.date
+        break
+      case 'number-of-reports-to-covid19-telephone-advisory-center':
+        title = this.$t('新型コロナウイルス感染症に関する一般相談件数')
+        updatedAt = Data.contacts.date
+        break
+      case 'number-of-reports-to-covid19-consultation-desk':
+        title = this.$t('帰国者・接触者相談センターへの相談件数')
+        updatedAt = Data.querents.date
+        break
+      case 'changes-of-population-around-toyama-station':
+        title = this.$t('富山駅周辺の人口の推移（参考値）')
+        updatedAt = PopulationData.date
         break
     }
 
