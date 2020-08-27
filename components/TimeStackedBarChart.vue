@@ -151,7 +151,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   created() {
     this.canvas = process.browser
-    this.sliderUpdate([-3, this.sliderMax])
+    this.sliderUpdate([0, this.sliderMax])
   },
   components: { DataView, DataSelector, DateSelectSlider, DataViewBasicInfoPanel },
   props: {
@@ -404,6 +404,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return sumArray
     },
     sliderUpdate(sliderValue) {
+      console.log(sliderValue);
       this.graphRange = sliderValue
     }
   }
