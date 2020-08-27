@@ -9,7 +9,7 @@
           {{ $t('（注）2/27には、2/26までの累計数を含む') }}
         </li>
         <li>
-          {{ $t('（注）県実施分には、退院時の検査などは含まれない') }}
+          {{ $t('（注）県実施分には、退院時の検査などは含まない') }}
         </li>
         <li>
           {{ $t('（注）把握には一定の期間を要しており、更新日の情報とは異なる場合あり') }}
@@ -363,10 +363,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return options
     },
     sliderMax() {
-      if (!this.labels || this.labels.length === 0) {
+      if (!this.chartData[0] || this.chartData[0].length === 0) {
         return 1
       }
-      return this.labels.length - 1
+      return this.chartData[0].length - 1
     }
   },
   methods: {
