@@ -133,7 +133,7 @@ type Props = {
   title: string
   titleId: string
   chartId: string
-  chartData: number[][]
+  chartData: number[][][]
   date: string
   items: string[]
   labels: string[]
@@ -333,7 +333,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               ticks: {
                 fontColor: '#808080',
                 maxRotation: 60,
-                minRotation: 0
+                minRotation: 0,
+                max: this.labels[this.labels.length - 1],
+                min: this.labels[0]
               }
             }
           ],
