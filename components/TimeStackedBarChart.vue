@@ -3,10 +3,16 @@
     <template v-slot:button>
       <ul :class="$style.GraphDesc">
         <li>
-          {{ $t('（注）医療機関が保険適用で行った検査は含まれていない') }}
+          {{ $t('（注）日付は検査結果判明日を基準にしている') }}
         </li>
         <li>
-          {{ $t('（注）同一の対象者について複数の検体を検査する場合あり') }}
+          {{ $t('（注）2/27には、2/26までの累計数を含む') }}
+        </li>
+        <li>
+          {{ $t('（注）県実施分には、退院時の検査などは含まれない') }}
+        </li>
+        <li>
+          {{ $t('（注）把握には一定の期間を要しており、更新日の情報とは異なる場合あり') }}
         </li>
         <li>
           {{
@@ -61,7 +67,7 @@ import { TranslateResult } from 'vue-i18n'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { double as colors } from '@/utils/colors'
+import { triple as colors } from '@/utils/colors'
 interface HTMLElementEvent<T extends HTMLElement> extends Event {
   currentTarget: T
 }

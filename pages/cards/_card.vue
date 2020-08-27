@@ -33,6 +33,9 @@
     <inspection-persons-number-card
       v-else-if="this.$route.params.card == 'number-of-inspection-persons'"
     />
+    <tested-number-card
+      v-else-if="this.$route.params.card == 'number-of-tested'"
+    />
     <telephone-advisory-reports-number-card
       v-else-if="this.$route.params.card == 'number-of-reports-to-covid19-telephone-advisory-center'"
     />
@@ -48,6 +51,7 @@
 <script>
 import Data from '@/data/data.json'
 import PopulationData from '@/data/population.json'
+import TestData from '@/data/test.json'
 
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
@@ -61,6 +65,7 @@ import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNum
 import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
+import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 import PopulationCard from '@/components/cards/PopulationCard.vue'
@@ -78,6 +83,7 @@ export default {
     TestedCasesDetailsCard,
     PositiveRateCard,
     InspectionPersonsNumberCard,
+    TestedNumberCard,
     TelephoneAdvisoryReportsNumberCard,
     ConsultationDeskReportsNumberCard,
     PopulationCard
@@ -128,6 +134,10 @@ export default {
       case 'number-of-inspection-persons':
         title = this.$t('検査実施人数')
         updatedAt = Data.inspection_persons.date
+        break
+      case 'number-of-tested':
+        title = this.$t('検査実施数')
+        updatedAt = TestData.date
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         title = this.$t('新型コロナウイルス感染症に関する一般相談件数')
