@@ -209,7 +209,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       if (this.dataKind === 'transition') {
         return {
           lText: this.sum(this.pickLastNumber(this.chartData)).toLocaleString(),
-          sText: `${this.$t('{date}の合計', {
+          sText: `${this.$t('{date} 実績値', {
             date: this.labels[this.labels.length - 1]
           })}`,
           unit: this.unit
@@ -217,7 +217,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
       return {
         lText: this.sum(this.cumulativeSum(this.chartData)).toLocaleString(),
-        sText: `${this.$t('{date}の全体累計', {
+        sText: `${this.$t('{date} 累計値', {
           date: this.labels[this.labels.length - 1]
         })}`,
         unit: this.unit
