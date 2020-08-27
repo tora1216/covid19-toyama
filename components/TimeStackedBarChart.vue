@@ -334,8 +334,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontColor: '#808080',
                 maxRotation: 60,
                 minRotation: 0,
-                max: this.labels[this.labels.length - 1],
-                min: this.labels[0]
+                max: this.chartData.labels[this.graphRange[1]],
+                min: this.chartData.labels[this.graphRange[0]]
               }
             }
           ],
