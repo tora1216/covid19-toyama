@@ -92,6 +92,11 @@ export default {
         return this.chartData[id].label
       }catch(err){
         console.log(id);
+        console.log(this.chartData);
+        console.log(this.labels);
+        console.log(this.value);
+        console.log(this.sliderMin);
+        console.log(this.sliderMax);
         return this.labels[id]
       }
       

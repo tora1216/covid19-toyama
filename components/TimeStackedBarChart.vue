@@ -404,7 +404,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return sumArray
     },
     sliderUpdate(sliderValue) {
-      console.log(sliderValue);
       this.graphRange = sliderValue
     }
   }
