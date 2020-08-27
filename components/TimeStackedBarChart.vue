@@ -326,7 +326,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           xAxes: [
             {
               position: 'bottom',
-              stacked: false,
+              stacked: true,
               gridLines: {
                 display: false
               },
@@ -334,8 +334,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontColor: '#808080',
                 maxRotation: 60,
                 minRotation: 0,
-                max: this.labels[this.graphRange[1]],
-                min: this.labels[this.graphRange[0]]
+                max: data.labels[this.graphRange[1]],
+                min: data.labels[this.graphRange[0]]
               }
             }
           ],
