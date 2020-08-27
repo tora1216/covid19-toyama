@@ -87,7 +87,8 @@ export default {
       try{
         return this.chartData[id].label
       }catch(err){
-        return this.labels[id]
+        console.log(this.labels);
+        return id
       }
       
     }
