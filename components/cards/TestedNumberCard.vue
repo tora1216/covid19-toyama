@@ -35,7 +35,7 @@ export default {
       this.$t('PCR検査数(医療機関実施分)'),
       this.$t('抗原検査数(医療機関実施分)')
     ]
-    const inspectionsLabels = Data.labels
+    const inspectionsLabels = Data.data.labels
     const inspectionsDataLabels = [
       this.$t('PCR検査数(県実施分)'),
       this.$t('PCR検査数(医療機関実施分)'),
