@@ -91,7 +91,6 @@ export default {
       try{
         return this.chartData[id].label
       }catch(err){
-        console.log(this.labels);
         return this.labels[id]
       }
       

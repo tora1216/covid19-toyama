@@ -50,6 +50,7 @@
       :chart-data="chartData"
       :labels="labels"
       :value="[0, sliderMax]"
+      :slider-min="0"
       :slider-max="sliderMax"
       @sliderInput="sliderUpdate"
     />
