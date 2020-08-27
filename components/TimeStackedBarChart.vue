@@ -133,7 +133,7 @@ type Props = {
   title: string
   titleId: string
   chartId: string
-  chartData: number[][][]
+  chartData: number[][]
   date: string
   items: string[]
   labels: string[]
@@ -398,7 +398,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     eachArraySum(chartDataArray: number[][]) {
       const sumArray: number[] = []
       for (let i = 0; i < chartDataArray[0].length; i++) {
-        sumArray.push(chartDataArray[0][i] + chartDataArray[1][i])
+        sumArray.push(chartDataArray[0][i] + chartDataArray[1][i] + chartDataArray[2][i])
       }
       return sumArray
     },
