@@ -50,6 +50,12 @@
     <p :class="$style.DataViewDesc">
       <slot name="additionalNotes" />
     </p>
+    <date-select-slider
+      :chart-data="chartData"
+      :value="[0, sliderMax]"
+      :slider-max="sliderMax"
+      @sliderInput="sliderUpdate"
+    />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
@@ -66,6 +72,7 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
+import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import { triple as colors } from '@/utils/colors'
 interface HTMLElementEvent<T extends HTMLElement> extends Event {
@@ -74,6 +81,7 @@ interface HTMLElementEvent<T extends HTMLElement> extends Event {
 type Data = {
   dataKind: 'transition' | 'cumulative'
   canvas: boolean
+  graphRange: number[]
 }
 type Methods = {
   sum: (array: number[]) => number
@@ -81,6 +89,7 @@ type Methods = {
   pickLastNumber: (chartDataArray: number[][]) => number[]
   cumulativeSum: (chartDataArray: number[][]) => number[]
   eachArraySum: (chartDataArray: number[][]) => number[]
+  sliderUpdate: (sliderValue: number[]) => void
 }
 type Computed = {
   displayInfo: {
@@ -105,6 +114,7 @@ type Computed = {
   tableData: {
     [key: number]: number
   }[]
+  sliderMax: number
   options: {
     tooltips: {
       displayColors: boolean
@@ -133,6 +143,7 @@ type Props = {
   labels: string[]
   dataLabels: string[] | TranslateResult[]
   unit: string
+  url: string
 }
 const options: ThisTypedComponentOptionsWithRecordProps<
   Vue,
@@ -143,8 +154,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   created() {
     this.canvas = process.browser
+    this.sliderUpdate([0, this.sliderMax])
   },
-  components: { DataView, DataSelector, DataViewBasicInfoPanel },
+  components: { DataView, DataSelector, DateSelectSlider, DataViewBasicInfoPanel },
   props: {
     title: {
       type: String,
@@ -184,11 +196,16 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     unit: {
       type: String,
       default: ''
+    },
+     url: {
+      type: String,
+      default: ''
     }
   },
   data: () => ({
     dataKind: 'transition',
-    canvas: true
+    canvas: true,
+    graphRange: [0, 1]
   }),
   computed: {
     displayInfo() {
@@ -321,8 +338,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontColor: '#808080',
                 maxRotation: 60,
                 minRotation: 0,
-                // max: this.chartData[this.graphRange[1]].label,
-                // min: this.chartData[this.graphRange[0]].label
+                max: this.chartData[this.graphRange[1]].label,
+                min: this.chartData[this.graphRange[0]].label
               }
             }
           ],
@@ -347,6 +364,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         Object.assign(options, { animation: { duration: 0 } })
       }
       return options
+    },
+    sliderMax() {
+      if (!this.chartData || this.chartData.length === 0) {
+        return 1
+      }
+      return this.chartData.length - 1
     }
   },
   methods: {
@@ -382,6 +405,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         sumArray.push(chartDataArray[0][i] + chartDataArray[1][i])
       }
       return sumArray
+    },
+    sliderUpdate(sliderValue) {
+      this.graphRange = sliderValue
     }
   }
 }
