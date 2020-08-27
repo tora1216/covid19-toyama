@@ -151,7 +151,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   created() {
     this.canvas = process.browser
-    this.sliderUpdate([0, this.sliderMax])
+    this.sliderUpdate([5, this.sliderMax])
   },
   components: { DataView, DataSelector, DateSelectSlider, DataViewBasicInfoPanel },
   props: {
@@ -363,10 +363,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return options
     },
     sliderMax() {
-      if (!this.chartData || this.chartData.length === 0) {
+      if (!this.chartData[0] || this.chartData[0].length === 0) {
         return 1
       }
-      return this.chartData.length - 1
+      return this.chartData[0].length - 1
     }
   },
   methods: {
