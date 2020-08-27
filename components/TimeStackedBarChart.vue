@@ -282,6 +282,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const cumulativeData = this.chartData.map(item => {
         return this.cumulative(item)
       })
+      console.log(this.chartData);
+      console.log(this.labels);
+      console.log(this.dataLabels);
       const cumulativeSumArray = this.eachArraySum(cumulativeData)
       const options = {
         tooltips: {
@@ -334,8 +337,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontColor: '#808080',
                 maxRotation: 60,
                 minRotation: 0,
-                max: data.labels[this.graphRange[1]],
-                min: data.labels[this.graphRange[0]]
+                max: this.data.labels[this.graphRange[1]],
+                min: this.data.labels[this.graphRange[0]]
               }
             }
           ],
