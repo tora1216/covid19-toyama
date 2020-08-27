@@ -1,5 +1,5 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date">
+  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <ul :class="$style.GraphDesc">
         <li>
@@ -312,68 +312,17 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         scales: {
           xAxes: [
             {
-              id: 'day',
-              stacked: true,
+              position: 'bottom',
+              stacked: false,
               gridLines: {
                 display: false
               },
               ticks: {
-                fontSize: 9,
-                maxTicksLimit: 20,
                 fontColor: '#808080',
-                maxRotation: 0,
+                maxRotation: 60,
                 minRotation: 0,
-                callback: (label: string) => {
-                  return label.split('/')[1]
-                }
-              }
-            },
-            {
-              id: 'month',
-              stacked: true,
-              gridLines: {
-                drawOnChartArea: false,
-                drawTicks: true,
-                drawBorder: false,
-                tickMarkLength: 10
-              },
-              ticks: {
-                fontSize: 11,
-                fontColor: '#808080',
-                padding: 3,
-                fontStyle: 'bold',
-                callback: (label: string) => {
-                  const monthStringArry = [
-                    'Jan',
-                    'Feb',
-                    'Mar',
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec'
-                  ]
-                  const mm = monthStringArry.indexOf(label.split(' ')[0]) + 1
-                  const year = new Date().getFullYear()
-                  const mdate = new Date(year + '-' + mm + '-1')
-                  let localString
-                  if (this.$root.$i18n.locale === 'ja-basic') {
-                    localString = 'ja'
-                  } else {
-                    localString = this.$root.$i18n.locale
-                  }
-                  return mdate.toLocaleString(localString, {
-                    month: 'short'
-                  })
-                }
-              },
-              type: 'time',
-              time: {
-                unit: 'month'
+                // max: this.chartData[this.graphRange[1]].label,
+                // min: this.chartData[this.graphRange[0]].label
               }
             }
           ],
