@@ -363,10 +363,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return options
     },
     sliderMax() {
-      if (!this.chartData[0] || this.chartData[0].length === 0) {
+      if (!this.chartData || this.chartData.length === 0) {
         return 1
       }
-      return this.chartData[0].length - 1
+      return this.chartData.length - 1
     }
   },
   methods: {
