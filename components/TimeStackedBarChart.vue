@@ -48,6 +48,7 @@
     </p>
     <date-select-slider
       :chart-data="chartData"
+      :labels="labels"
       :value="[0, sliderMax]"
       :slider-max="sliderMax"
       @sliderInput="sliderUpdate"

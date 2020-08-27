@@ -35,6 +35,10 @@ export default {
       type: Array,
       required: true
     },
+    labels: {
+      type: Array,
+      default: () => []
+    },
     arrType: {
       type: String,
       required: true
@@ -88,7 +92,7 @@ export default {
         return this.chartData[id].label
       }catch(err){
         console.log(this.labels);
-        return id
+        return this.labels[id]
       }
       
     }
