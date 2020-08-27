@@ -151,7 +151,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   created() {
     this.canvas = process.browser
-    this.sliderUpdate([5, this.sliderMax])
+    this.sliderUpdate([-3, this.sliderMax])
   },
   components: { DataView, DataSelector, DateSelectSlider, DataViewBasicInfoPanel },
   props: {
