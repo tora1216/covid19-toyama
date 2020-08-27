@@ -282,9 +282,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const cumulativeData = this.chartData.map(item => {
         return this.cumulative(item)
       })
-      console.log(this.chartData);
-      console.log(this.labels);
-      console.log(this.dataLabels);
       const cumulativeSumArray = this.eachArraySum(cumulativeData)
       const options = {
         tooltips: {
@@ -365,10 +362,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return options
     },
     sliderMax() {
-      if (!this.chartData || this.chartData.length === 0) {
+      if (!this.labels || this.labels.length === 0) {
         return 1
       }
-      return this.chartData.length - 1
+      return this.labels.length - 1
     }
   },
   methods: {
