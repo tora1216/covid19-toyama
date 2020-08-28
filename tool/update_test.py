@@ -5,7 +5,7 @@ import json
 data = {}
 
 # 現在時刻
-dt_now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+dt_now = datetime.datetime.now().strftime("%Y/%m/%d %H:%M")
 
 data["date"] = dt_now
 
@@ -18,6 +18,9 @@ df = df.dropna(subset=['年月日', '陰性人数', '陽性人数', '一般相�
 
 # 必要なデータを取り出し
 df_test = df.loc[:, ("年月日", "県_PCR検査数", "医療機関_PCR検査数", "医療機関_抗原検査数")].copy()
+
+# 日付形式変換
+pd.to_datetime(df_test['年月日'], format='%Y/%m/%d')
 
 # 欠損値を0埋め
 df_test = df_test.fillna(0)
