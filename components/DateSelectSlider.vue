@@ -88,12 +88,10 @@ export default {
       if (this.arrType === 'multi') {
         return this.chartData[id]
       }
-      try{
-        return this.chartData[id].label
-      }catch(err){
-        console.log(this.labels);
+      if (this.labels){
         return this.labels[id]
       }
+      return this.chartData[id].label
       
     }
   }
