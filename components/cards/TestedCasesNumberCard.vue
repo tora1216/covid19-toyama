@@ -1,9 +1,9 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <time-stacked-bar-chart
-      :title="$t('検査実施人数')"
-      :title-id="'number-of-tested'"
-      :chart-id="'number-of-tested'"
+      :title="$t('検査実施数')"
+      :title-id="'number-of-tested-cases'"
+      :chart-id="'number-of-tested-cases'"
       :chart-data="inspectionsGraph"
       :date="Data.date"
       :items="inspectionsItems"

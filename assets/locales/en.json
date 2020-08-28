@@ -248,6 +248,12 @@
 
   "検査実施人数": "Number of people tested",
 
+  "検査実施数":"Number of tested cases",
+  "（注）県実施分には、退院時の検査などは含まない": "",
+  "PCR検査数(県実施分)": "Number of PCR tests (by prefecture)",
+  "PCR検査数(医療機関実施分)": "Number of PCR tests (by medical institutions)",
+  "抗原検査数(医療機関実施分)": "Number of antigen tests (by medical institutions)",
+
   "新型コロナウイルス感染症に関する一般相談件数": "Number of general calls about Novel Coronavirus",
 
   "帰国者・接触者相談センターへの相談件数": "Number of calls to the consultation center for returnees and those in close contact with them",
