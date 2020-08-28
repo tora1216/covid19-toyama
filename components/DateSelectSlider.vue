@@ -59,8 +59,6 @@ export default {
     }
   },
   data() {
-    console.log("d");
-    console.log(this);
     return {
       sliderValue: this.value,
       rules: [
@@ -71,8 +69,6 @@ export default {
     }
   },
   watch: {
-    console.log("w");
-    console.log(this);
     sliderMax() {
       this.sliderValue = [this.sliderMin, this.sliderMax]
     },
@@ -95,6 +91,9 @@ export default {
       try{
         return this.chartData[id].label
       }catch(err){
+        if(!id){
+          id=0
+        }
         return this.labels[id]
       }
       
