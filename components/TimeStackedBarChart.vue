@@ -308,7 +308,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }: ${cases} ${unit}`
             },
             title(tooltipItem: any, data: any) {
-              return `${data.labels[tooltipItem[0].index}]  (${this.$t('当日合計')}: ${casesTotal} ${unit})`
+              return `${data.labels[tooltipItem[0].index]}  (${this.$t('当日合計')}: ${casesTotal} ${unit})`
             }
           }
         },
