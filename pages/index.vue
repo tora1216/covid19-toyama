@@ -32,7 +32,7 @@
       <discharged-persons-number-card />
       <tested-cases-details-card />
       <positive-rate-card />
-      <inspection-persons-number-card />
+      <tested-cases-number-card />
       <telephone-advisory-reports-number-card />
       <consultation-desk-reports-number-card />
       <population-card />
@@ -61,7 +61,7 @@ import DeadPersonsNumberCard from '@/components/cards/DeadPersonsNumberCard.vue'
 import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNumberCard.vue'
 import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
-import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
+import TestedCasesNumberCard from '@/components/cards/TestedCasesNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 import PopulationCard from '@/components/cards/PopulationCard.vue'
@@ -83,7 +83,7 @@ export default Vue.extend({
     DischargedPersonsNumberCard,
     TestedCasesDetailsCard,
     PositiveRateCard,
-    InspectionPersonsNumberCard,
+    TestedCasesNumberCard,
     TelephoneAdvisoryReportsNumberCard,
     ConsultationDeskReportsNumberCard,
     PopulationCard

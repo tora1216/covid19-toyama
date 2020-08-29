@@ -32,6 +32,7 @@ jobs:
         git checkout development
         cd tool
         python update_data.py
+        python update_test.py
         cd ..
         git add .
         git commit -m "[Bot] GitHub Actions - auto run (AM 10:00)"
