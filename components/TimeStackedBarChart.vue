@@ -305,7 +305,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }
               return `${
                 this.dataLabels[tooltipItem.datasetIndex]
-              }: ${cases} ${unit} <br>  (${this.$t('当日合計')}: ${casesTotal} ${unit})`
+              } ${cases} ${unit} (${this.$t('合計')} ${casesTotal} ${unit})`
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
