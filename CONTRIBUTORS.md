@@ -10,6 +10,7 @@
 | iga50storms | [@iga50storms](https://github.com/iga50storms) |  | API Layout |
 | imabari | [@imabari](https://github.com/imabari) |  | Coding |
 | Luong Henry Gate | [@Luonghenrygate](https://github.com/Luonghenrygate) |  | Translation |
+| Yusuke |  |  | Coding |
 
 
 ご協力に感謝です！！！
