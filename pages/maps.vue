@@ -5,7 +5,7 @@
     </page-header>
   
     <StaticCard>
-     <iflame class="maps" src="https://tera-chan.com/covid19-toyama/maps/"></iflame>
+     <iframe class="maps" src="https://tera-chan.com/covid19-toyama/maps/"></iframe>
     </StaticCard>
   </div>
 </template>
