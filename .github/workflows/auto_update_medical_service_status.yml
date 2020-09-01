@@ -1,0 +1,30 @@
+name: GitHub Actions - auto run (AM 1:15)
+
+on:
+  schedule:
+    - cron: '15 16 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run script
+      env:
+        TZ: Asia/Tokyo
+        NAME: Terachan0117
+        EMAIL: contact@tera-chan.com
+        PASSWORD: ${{ secrets.PASSWORD }}
+      run: |
+        git config user.name ${NAME}
+        git config user.email ${EMAIL}
+        git remote set-url origin https://${NAME}:${PASSWORD}@github.com/${NAME}/covid19-toyama
+        git checkout development
+        cd data
+        curl -o medical_service_status.json https://opendata.corona.go.jp/api/covid19DailySurvey?prefName=%E5%AF%8C%E5%B1%B1%E7%9C%8C
+        cd ..
+        git add .
+        git commit -m "[Bot] GitHub Actions - auto run (AM 1:15)"
+        git push origin development
