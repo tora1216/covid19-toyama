@@ -31,7 +31,7 @@ export default Vue.extend({
 
 <style>
 .maps{
-  height:60vh;
+  height:70vh;
   width:100%;
   border:none;
 }
