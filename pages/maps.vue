@@ -5,12 +5,12 @@
     </page-header>
   
     <StaticCard>
-     <ul class="note">
-       <li>{{ $t('※内閣官房新型コロナウイルス感染症対策推進室のホームページにて公開されている医療機関の状況を元にしています。') }}</li>
-       <li>{{ $t('※都道府県の協力により調査対象医療機関を日々追加していますが、すべての入院病床を有する病院の情報を網羅しているものではありません。') }}</li>
-       <li>{{ $t('※この地図に載っていない医療機関がある場合は、その病院のホームページ等でご確認ください。') }}</li>
-     </ul>
      <iframe class="maps" src="https://tera-chan.com/covid19-toyama/maps/" allowfullscreen></iframe>
+     <ul class="note">
+       <li><a href="https://corona.go.jp/" target="_blank">{{ $t('[全国医療機関の医療提供体制の状況]内閣官房 新型コロナウイルス感染症対策推進室HP(https://corona.go.jp/dashboard/)を元に作成') }}</a></li>
+       <li>{{ $t('（注）すべての入院病床を有する医療機関の情報を網羅しているものではない') }}</li>
+       <li>{{ $t('（注）把握には一定の期間を要しており、更新日の情報とは異なる場合あり') }}</li>
+     </ul>
     </StaticCard>
   </div>
 </template>
