@@ -11,7 +11,7 @@
      </ul>
      <iframe class="maps" src="https://tera-chan.com/covid19-toyama/maps/" allowfullscreen></iframe>
      <ul class="note">
-       <li><a href="https://corona.go.jp/" target="_blank">{{ $t('[全国医療機関の医療提供体制の状況]内閣官房 新型コロナウイルス感染症対策推進室HP(https://corona.go.jp/dashboard/)を元に作成') }}</a></li>
+       <li><a href="https://corona.go.jp/dashboard/" target="_blank">{{ $t('[全国医療機関の医療提供体制の状況]内閣官房 新型コロナウイルス感染症対策推進室HP(https://corona.go.jp/dashboard/)を元に作成') }}</a></li>
      </ul>
     </StaticCard>
   </div>
