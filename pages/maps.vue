@@ -48,4 +48,7 @@ export default Vue.extend({
   font-size: 12px;
   color: #707070;
 }
+.note>a{
+  text-decoration: none;
+}
 </style>
