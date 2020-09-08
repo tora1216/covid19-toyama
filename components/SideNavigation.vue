@@ -185,6 +185,10 @@ export default Vue.extend({
           divider: true
         },
         {
+          title: this.$t('県内の医療提供体制'),
+          link: this.localePath('/maps')
+        },
+        {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
         }
