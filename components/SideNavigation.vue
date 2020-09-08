@@ -185,7 +185,7 @@ export default Vue.extend({
           divider: true
         },
         {
-          title: this.$t('県内の医療提供体制'),
+          title: this.$t('県内の医療提供体制マップ'),
           link: this.localePath('/maps')
         },
         {

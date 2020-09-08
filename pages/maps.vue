@@ -1,7 +1,7 @@
 <template>
   <div class="Parent">
     <page-header class="mb-3">
-      {{ $t('県内の医療提供体制') }}
+      {{ $t('県内の医療提供体制マップ') }}
     </page-header>
   
     <StaticCard>
@@ -30,7 +30,7 @@ export default Vue.extend({
   },
   head(): MetaInfo {
     return {
-      title: this.$t('県内の医療提供体制') as string
+      title: this.$t('県内の医療提供体制マップ') as string
     }
   }
 })
