@@ -27,18 +27,18 @@ soup = BeautifulSoup(r.content, "html.parser")
 summary = soup.find("div", id="main").get_text(strip=True)
 
 # 陽性患者数
-total = int(mojimoji.zen_to_han(re.search(r"(\d+?)例", summary).group(1)))
+total = int(mojimoji.zen_to_han(re.search(r"(\d+?)人", summary).group(1)))
 # 入院中・入院等調整中
 hospitalized = int(mojimoji.zen_to_han(
-    re.search(r"入院中又は入院等調整中(.+?)例", summary).group(1)))
+    re.search(r"入院中又は入院等調整中(.+?)人", summary).group(1)))
 # 重症
 severe = int(mojimoji.zen_to_han(re.search(r"重症者 (.+?)人", summary).group(1)))
 # 無症状・軽症・中等症
 mild = hospitalized - severe
 # 死亡
-death = int(mojimoji.zen_to_han(re.search(r"死亡(.+?)例", summary).group(1)))
+death = int(mojimoji.zen_to_han(re.search(r"死亡(.+?)人", summary).group(1)))
 # 退院
-discharged = int(mojimoji.zen_to_han(re.search(r"退院(.+?)例", summary).group(1)))
+discharged = int(mojimoji.zen_to_han(re.search(r"退院(.+?)人", summary).group(1)))
 
 # 検査陽性者の状況
 data["main_summary"] = {
