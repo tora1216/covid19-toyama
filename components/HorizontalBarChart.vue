@@ -181,7 +181,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             this.valueOfEach[0] += 1
             break
           default:
-            this.valueOfEach[15] += 1
+            if(d['居住地'] != "-"){
+              this.valueOfEach[15] += 1
+            }
             break
         }
       })

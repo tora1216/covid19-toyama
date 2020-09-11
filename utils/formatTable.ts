@@ -1,5 +1,3 @@
-import dayjs from 'dayjs'
-
 const headers = [
   { text: 'No', value: 'No' },
   { text: '判明日', value: '判明日' },
@@ -11,7 +9,7 @@ const headers = [
 
 type DataType = {
   No: string | null
-  判明日: string
+  判明日: string | null
   居住地: string | null
   年代: string | null
   性別: '男性' | '女性' | string
@@ -21,7 +19,7 @@ type DataType = {
 
 type TableDataType = {
   No: DataType['No']
-  判明日: string
+  判明日: DataType['判明日']
   居住地: DataType['居住地']
   年代: DataType['年代']
   性別: DataType['性別'] | '不明'
@@ -46,7 +44,7 @@ export default (data: DataType[]) => {
   data.forEach(d => {
     const TableRow: TableDataType = {
       No: d.No ?? '-',
-      判明日: dayjs(d['判明日']).format('MM/DD') ?? '不明',
+      判明日: d['判明日'] ?? '不明',
       居住地: d['居住地'] ?? '不明',
       年代: d['年代'] ?? '不明',
       性別: d['性別'] ?? '不明',
