@@ -13,7 +13,7 @@
       </div>
     </div>
     <whats-new />
-    <toyama-alert-card />
+    <!--<toyama-alert-card />-->
     <relax-step-card :items="statusItems" />
     <static-info
       class="mb-4"
