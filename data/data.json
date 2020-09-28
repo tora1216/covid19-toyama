@@ -1,5 +1,5 @@
 {
-    "lastUpdate": "2020-09-28 17:55",
+    "lastUpdate": "2020-09-28 19:34",
     "main_summary": {
         "attr": "陽性患者数",
         "date": "2020-09-28 17:55",
@@ -7,7 +7,7 @@
         "children": [
             {
                 "attr": "入院中・入院等調整中",
-                "value": 6 ,
+                "value": 6,
                 "children": [
                     {
                         "attr": "無症状・軽症・中等症",
