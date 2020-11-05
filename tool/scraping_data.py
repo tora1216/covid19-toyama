@@ -38,7 +38,7 @@ mild = hospitalized - severe
 # 死亡
 death = int(mojimoji.zen_to_han(re.search(r"死亡(.+?)人", summary).group(1)))
 # 退院
-discharged = int(mojimoji.zen_to_han(re.search(r"退院(.+?)人", summary).group(1)))
+discharged = int(mojimoji.zen_to_han(re.search(r"退院等(.+?)人", summary).group(1)))
 
 # 検査陽性者の状況
 data["main_summary"] = {
