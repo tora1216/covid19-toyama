@@ -26,20 +26,17 @@ export default {
   },
   data() {
     const inspectionsGraph = [
-      Data.data['PCR検査数(県実施分)'],
-      Data.data['PCR検査数(医療機関実施分)'],
-      Data.data['抗原検査数(医療機関実施分)'],
+      Data.data['PCR検査数'],
+      Data.data['抗原検査数'],
     ]
     const inspectionsItems = [
-      this.$t('PCR検査数(県実施分)'),
-      this.$t('PCR検査数(医療機関実施分)'),
-      this.$t('抗原検査数(医療機関実施分)')
+      this.$t('PCR検査数'),
+      this.$t('抗原検査数')
     ]
     const inspectionsLabels = Data.data.labels
     const inspectionsDataLabels = [
-      this.$t('PCR検査数(県実施分)'),
-      this.$t('PCR検査数(医療機関実施分)'),
-      this.$t('抗原検査数(医療機関実施分)')
+      this.$t('PCR検査数'),
+      this.$t('抗原検査数')
     ]
 
     const data = {

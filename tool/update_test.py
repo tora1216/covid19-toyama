@@ -17,7 +17,7 @@ df = pd.read_csv(URL)
 df = df.dropna(subset=['年月日', '陰性人数', '陽性人数', '一般相談件数', '帰国者相談件数', '退院者数', '死亡者数'])
 
 # 必要なデータを取り出し
-df_test = df.loc[:, ("年月日", "県_PCR検査数", "医療機関_PCR検査数", "医療機関_抗原検査数")].copy()
+df_test = df.loc[:, ("年月日", "PCR検査数", "抗原検査数")].copy()
 
 # 欠損値を0埋め
 df_test = df_test.fillna(0)
@@ -25,11 +25,7 @@ df_test = df_test.fillna(0)
 # データ形式指定
 df_test['年月日'] = pd.to_datetime(df_test['年月日'])
 df_test['年月日'] = df_test['年月日'].dt.strftime('%Y/%m/%d')
-df_test = df_test.astype({'年月日': str, '県_PCR検査数': int, '医療機関_PCR検査数': int, '医療機関_抗原検査数': int})
-
-# コラムネーム指定
-df_test.rename(
-    columns={"年月日": "labels", "県_PCR検査数": "PCR検査数(県実施分)", "医療機関_PCR検査数": "PCR検査数(医療機関実施分)", "医療機関_抗原検査数": "抗原検査数(医療機関実施分)"}, inplace=True)
+df_test = df_test.astype({'年月日': str, 'PCR検査数': int, '抗原検査数': int})
 
 # 辞書型に変換
 df_test = df_test.to_dict(orient="list")

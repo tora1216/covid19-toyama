@@ -25,7 +25,7 @@ df_counts = df_counts.dropna(subset=['年月日', '陰性人数', '陽性人数'
 df_counts = df_counts.fillna(0)
 
 # データ形式の指定
-df_counts = df_counts.astype({'年月日': str, '県_PCR検査数': int, '医療機関_PCR検査数': int, '医療機関_抗原検査数': int, '陰性人数': int, '陽性人数': int, '一般相談件数': int, '帰国者相談件数': int, '退院者数': int, '死亡者数': int})
+df_counts = df_counts.astype({'年月日': str, 'PCR検査数': int, '抗原検査数': int, '陰性人数': int, '陽性人数': int, '一般相談件数': int, '帰国者相談件数': int, '退院者数': int, '死亡者数': int})
 
 # 死亡者数
 df_dead = df_counts.loc[:, ("年月日", "死亡者数")].copy()
@@ -41,14 +41,14 @@ data["discharged_persons"] = {"date": dt_now, "data": df_disc.to_dict(orient="re
 data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())}, {"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
 
 # 検査実施人数
-df_insp = df_counts.loc[:, ("年月日", "県_PCR検査数")].copy()
-df_insp.rename(columns={"年月日": "日付", "県_PCR検査数": "小計"}, inplace=True)
+df_insp = df_counts.loc[:, ("年月日", "PCR検査数")].copy()
+df_insp.rename(columns={"年月日": "日付", "PCR検査数": "小計"}, inplace=True)
 data["inspection_persons"] = {"date": dt_now, "data": df_insp.to_dict(orient="recodes")}
 
 # 陽性率
-df_rate = df_counts.loc[:, ["年月日", "県_PCR検査数", "医療機関_PCR検査数", "陽性人数"]].set_index("年月日").copy()
+df_rate = df_counts.loc[:, ["年月日", "PCR検査数", "陽性人数"]].set_index("年月日").copy()
 df_positive_7d = df_rate.rolling(window=7).mean()
-df_positive_7d["陽性率"] = df_positive_7d["陽性人数"] / (df_positive_7d["県_PCR検査数"] + df_positive_7d["医療機関_PCR検査数"]) * 100
+df_positive_7d["陽性率"] = df_positive_7d["陽性人数"] / (df_positive_7d["PCR検査数"]) * 100
 positive_rate_data = df_positive_7d["陽性率"].fillna(0).round(2).reset_index()
 positive_rate_data.rename(columns={"年月日": "日付", "陽性率": "小計"}, inplace=True)
 data["positive_rate"] = {"date": dt_now, "data": positive_rate_data.to_dict(orient="recodes")}
