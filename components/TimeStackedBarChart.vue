@@ -77,7 +77,7 @@ import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { triple as colors } from '@/utils/colors'
+import { double as colors } from '@/utils/colors'
 interface HTMLElementEvent<T extends HTMLElement> extends Event {
   currentTarget: T
 }
@@ -89,9 +89,9 @@ type Data = {
 type Methods = {
   sum: (array: number[]) => number
   cumulative: (array: number[]) => number[]
-  pickLastNumber: (chartDataArray: number[][]) => number[]
-  cumulativeSum: (chartDataArray: number[][]) => number[]
-  eachArraySum: (chartDataArray: number[][]) => number[]
+  pickLastNumber: (chartDataArray: number[]) => number[]
+  cumulativeSum: (chartDataArray: number[]) => number[]
+  eachArraySum: (chartDataArray: number[]) => number[]
   sliderUpdate: (sliderValue: number[]) => void
 }
 type Computed = {
@@ -140,7 +140,7 @@ type Props = {
   title: string
   titleId: string
   chartId: string
-  chartData: number[][]
+  chartData: number[]
   date: string
   items: string[]
   labels: string[]
@@ -405,7 +405,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     eachArraySum(chartDataArray: number[][]) {
       const sumArray: number[] = []
       for (let i = 0; i < chartDataArray[0].length; i++) {
-        sumArray.push(chartDataArray[0][i] + chartDataArray[1][i] + chartDataArray[2][i])
+        sumArray.push(chartDataArray[0][i] + chartDataArray[1][i])
       }
       return sumArray
     },
