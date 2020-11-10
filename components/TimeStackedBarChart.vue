@@ -52,13 +52,6 @@
     <p :class="$style.DataViewDesc">
       <slot name="additionalNotes" />
     </p>
-    <date-select-slider
-      :chart-data="chartData"
-      :labels="labels"
-      :value="[0, sliderMax]"
-      :slider-max="sliderMax"
-      @sliderInput="sliderUpdate"
-    />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
@@ -75,7 +68,6 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
-import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import { double as colors } from '@/utils/colors'
 interface HTMLElementEvent<T extends HTMLElement> extends Event {
@@ -84,15 +76,13 @@ interface HTMLElementEvent<T extends HTMLElement> extends Event {
 type Data = {
   dataKind: 'transition' | 'cumulative'
   canvas: boolean
-  graphRange: number[]
 }
 type Methods = {
   sum: (array: number[]) => number
   cumulative: (array: number[]) => number[]
-  pickLastNumber: (chartDataArray: number[]) => number[]
-  cumulativeSum: (chartDataArray: number[]) => number[]
-  eachArraySum: (chartDataArray: number[]) => number[]
-  sliderUpdate: (sliderValue: number[]) => void
+  pickLastNumber: (chartDataArray: number[][]) => number[]
+  cumulativeSum: (chartDataArray: number[][]) => number[]
+  eachArraySum: (chartDataArray: number[][]) => number[]
 }
 type Computed = {
   displayInfo: {
@@ -117,7 +107,6 @@ type Computed = {
   tableData: {
     [key: number]: number
   }[]
-  sliderMax: number
   options: {
     tooltips: {
       displayColors: boolean
@@ -140,7 +129,7 @@ type Props = {
   title: string
   titleId: string
   chartId: string
-  chartData: number[]
+  chartData: number[][]
   date: string
   items: string[]
   labels: string[]
@@ -157,9 +146,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   created() {
     this.canvas = process.browser
-    this.sliderUpdate([0, this.sliderMax])
   },
-  components: { DataView, DataSelector, DateSelectSlider, DataViewBasicInfoPanel },
+  components: { DataView, DataSelector, DataViewBasicInfoPanel },
   props: {
     title: {
       type: String,
@@ -207,15 +195,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   },
   data: () => ({
     dataKind: 'transition',
-    canvas: true,
-    graphRange: [0, 1]
+    canvas: true
   }),
   computed: {
     displayInfo() {
       if (this.dataKind === 'transition') {
         return {
           lText: this.sum(this.pickLastNumber(this.chartData)).toLocaleString(),
-          sText: `${this.$t('{date} 実績値', {
+          sText: `${this.$t('{date}の合計', {
             date: this.labels[this.labels.length - 1]
           })}`,
           unit: this.unit
@@ -223,7 +210,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
       return {
         lText: this.sum(this.cumulativeSum(this.chartData)).toLocaleString(),
-        sText: `${this.$t('{date} 累計値', {
+        sText: `${this.$t('{date}の全体累計', {
           date: this.labels[this.labels.length - 1]
         })}`,
         unit: this.unit
@@ -311,7 +298,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }
               return `${
                 this.dataLabels[tooltipItem.datasetIndex]
-              } ${cases} ${unit} (${this.$t('合計')} ${casesTotal} ${unit})`
+              }: ${cases} ${unit} (${this.$t('合計')}: ${casesTotal} ${unit})`
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
@@ -332,17 +319,68 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         scales: {
           xAxes: [
             {
-              position: 'bottom',
+              id: 'day',
               stacked: true,
               gridLines: {
                 display: false
               },
               ticks: {
+                fontSize: 9,
+                maxTicksLimit: 20,
                 fontColor: '#808080',
-                maxRotation: 60,
+                maxRotation: 0,
                 minRotation: 0,
-                max: this.labels[this.graphRange[1]],
-                min: this.labels[this.graphRange[0]]
+                callback: (label: string) => {
+                  return label.split('/')[1]
+                }
+              }
+            },
+            {
+              id: 'month',
+              stacked: true,
+              gridLines: {
+                drawOnChartArea: false,
+                drawTicks: true,
+                drawBorder: false,
+                tickMarkLength: 10
+              },
+              ticks: {
+                fontSize: 11,
+                fontColor: '#808080',
+                padding: 3,
+                fontStyle: 'bold',
+                callback: (label: string) => {
+                  const monthStringArry = [
+                    'Jan',
+                    'Feb',
+                    'Mar',
+                    'Apr',
+                    'May',
+                    'Jun',
+                    'Jul',
+                    'Aug',
+                    'Sep',
+                    'Oct',
+                    'Nov',
+                    'Dec'
+                  ]
+                  const mm = monthStringArry.indexOf(label.split(' ')[0]) + 1
+                  const year = new Date().getFullYear()
+                  const mdate = new Date(year + '-' + mm + '-1')
+                  let localString
+                  if (this.$root.$i18n.locale === 'ja-basic') {
+                    localString = 'ja'
+                  } else {
+                    localString = this.$root.$i18n.locale
+                  }
+                  return mdate.toLocaleString(localString, {
+                    month: 'short'
+                  })
+                }
+              },
+              type: 'time',
+              time: {
+                unit: 'month'
               }
             }
           ],
@@ -367,12 +405,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         Object.assign(options, { animation: { duration: 0 } })
       }
       return options
-    },
-    sliderMax() {
-      if (!this.chartData[0] || this.chartData[0].length === 0) {
-        return 1
-      }
-      return this.chartData[0].length - 1
     }
   },
   methods: {
@@ -408,9 +440,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         sumArray.push(chartDataArray[0][i] + chartDataArray[1][i])
       }
       return sumArray
-    },
-    sliderUpdate(sliderValue) {
-      this.graphRange = sliderValue
     }
   }
 }
