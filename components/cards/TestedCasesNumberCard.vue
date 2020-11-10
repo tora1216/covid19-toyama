@@ -33,7 +33,7 @@ export default {
       this.$t('PCR検査数'),
       this.$t('抗原検査数')
     ]
-    const inspectionsLabels = Data.labels
+    const inspectionsLabels = Data.data['年月日']
     const inspectionsDataLabels = [
       this.$t('PCR検査数'),
       this.$t('抗原検査数')
