@@ -3,13 +3,19 @@
     <template v-slot:button>
       <ul :class="$style.GraphDesc">
         <li>
-          {{ $t('（注）日付は検査結果判明日を基準にしている') }}
+          {{ $t('（注）2020/10/31までは、検査結果判明日ベースで計上') }}
         </li>
         <li>
-          {{ $t('（注）2/27には、2/26までの累計数を含む') }}
+          {{ $t('（注）2020/10/31のみ、検査結果判明日ベースでの2020/10/31-2020/11/02の合計で計上') }}
         </li>
         <li>
-          {{ $t('（注）県実施分には、退院時の検査などは含まない') }}
+          {{ $t('（注）2020/11/01以降は、採取日ベースで計上') }}
+        </li>
+        <li>
+          {{ $t('（注）2020/02/27には、2020/02/26までの累計数を含む') }}
+        </li>
+        <li>
+          {{ $t('（注）医療機関で実施したPCR検査・抗原検査も含む') }}
         </li>
         <li>
           {{ $t('（注）把握には一定の期間を要しており、更新日の情報とは異なる場合あり') }}
@@ -71,7 +77,7 @@ import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DateSelectSlider from '@/components/DateSelectSlider.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { triple as colors } from '@/utils/colors'
+import { double as colors } from '@/utils/colors'
 interface HTMLElementEvent<T extends HTMLElement> extends Event {
   currentTarget: T
 }
