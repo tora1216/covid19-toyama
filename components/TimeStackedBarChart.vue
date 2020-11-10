@@ -1,5 +1,5 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date">
+  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <ul :class="$style.GraphDesc">
         <li>
@@ -135,6 +135,7 @@ type Props = {
   labels: string[]
   dataLabels: string[] | TranslateResult[]
   unit: string
+  url: string
 }
 const options: ThisTypedComponentOptionsWithRecordProps<
   Vue,
@@ -186,6 +187,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     unit: {
       type: String,
       default: ''
+    },
+     url: {
+      type: String,
+      default: ''
     }
   },
   data: () => ({
@@ -197,7 +202,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       if (this.dataKind === 'transition') {
         return {
           lText: this.sum(this.pickLastNumber(this.chartData)).toLocaleString(),
-          sText: `${this.$t('{date}の合計', {
+          sText: `${this.$t('{date} 実績値', {
             date: this.labels[this.labels.length - 1]
           })}`,
           unit: this.unit
@@ -205,7 +210,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
       return {
         lText: this.sum(this.cumulativeSum(this.chartData)).toLocaleString(),
-        sText: `${this.$t('{date}の全体累計', {
+        sText: `${this.$t('{date} 累計値', {
           date: this.labels[this.labels.length - 1]
         })}`,
         unit: this.unit
