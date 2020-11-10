@@ -38,7 +38,7 @@ df_disc.rename(columns={"年月日": "日付", "退院者数": "小計"}, inplac
 data["discharged_persons"] = {"date": dt_now, "data": df_disc.to_dict(orient="recodes")}
 
 # 検査実施状況
-data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())}, {"attr": "陰性人数", "value": int(df_counts["陰性人数"].sum())}]}
+data["inspection_status_summary"] = {"date": dt_now, "children": [{"attr": "検査実施数", "value": int(df_counts["PCR検査数"].sum()) + int(df_counts["抗原検査数"].sum())}, {"attr": "陽性人数", "value": int(df_counts["陽性人数"].sum())}, {"attr": "陰性人数", "value": int(df_counts["PCR検査数"].sum()) + int(df_counts["抗原検査数"].sum()) - int(df_counts["陽性人数"].sum())}]}
 
 # 検査実施人数
 df_insp = df_counts.loc[:, ("年月日", "PCR検査数")].copy()

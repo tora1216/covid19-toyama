@@ -140,7 +140,7 @@ type Props = {
   title: string
   titleId: string
   chartId: string
-  chartData: number[][]
+  chartData: number[]
   date: string
   items: string[]
   labels: string[]
