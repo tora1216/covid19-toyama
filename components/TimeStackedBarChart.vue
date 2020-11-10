@@ -1,5 +1,5 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
+  <data-view :title="title" :title-id="titleId" :date="date">
     <template v-slot:button>
       <ul :class="$style.GraphDesc">
         <li>
@@ -135,7 +135,6 @@ type Props = {
   labels: string[]
   dataLabels: string[] | TranslateResult[]
   unit: string
-  url: string
 }
 const options: ThisTypedComponentOptionsWithRecordProps<
   Vue,
@@ -185,10 +184,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       default: () => []
     },
     unit: {
-      type: String,
-      default: ''
-    },
-     url: {
       type: String,
       default: ''
     }
