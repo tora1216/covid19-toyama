@@ -14,7 +14,7 @@ URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJuQThafLPC7OPqUC9TbLV1D
 df = pd.read_csv(URL)
 
 # 指定した列のいずれかに欠損値がある行をすべて削除
-df = df.dropna(subset=['年月日', '陰性人数', '陽性人数', '一般相談件数', '帰国者相談件数', '退院者数', '死亡者数'])
+df = df.dropna(subset=['年月日', '陰性人数', '陽性人数', '一般相談件数', '相談センター相談件数', '退院者数', '死亡者数'])
 
 # 必要なデータを取り出し
 df_test = df.loc[:, ("年月日", "PCR検査数", "抗原検査数")].copy()
