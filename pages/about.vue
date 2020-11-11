@@ -244,12 +244,12 @@
         path="当サイトに関するお問合わせは{contactWebsite}にて受け付けています。"
       >
         <a
-          href="https://tera-chan.com/contact.html"
+          href="https://tera-chan.com/#contact"
           target="_blank"
           rel="noopener"
           place="contactWebsite"
         >
-          {{ $t('Contact | Terachan Official Site') }}
+          {{ $t('Contact') }}
         </a>
       </i18n>
     </StaticCard>
