@@ -176,7 +176,7 @@ export default Vue.extend({
         {
           icon: 'CovidIcon',
           title: this.$t('新型コロナウイルス感染症が心配なときに'),
-          link: this.localePath('/flow')
+          link: 'http://www.pref.toyama.jp/cms_sec/1205/kj00021473.html'
         },
         {
           icon: 'MaskTrashIcon',
