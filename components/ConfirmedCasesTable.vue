@@ -89,8 +89,9 @@
           <div :class="$style.pillar">
             <div :class="$style.content">
               <span>
-                {{ $t('退院') }}・
-                <br />{{ $t('療養解除') }}
+                {{ $t('退院') }}
+                <br />
+                {{ $t('療養解除') }}
               </span>
               <span>
                 <strong>{{ 退院 }}</strong>
