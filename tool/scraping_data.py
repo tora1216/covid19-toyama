@@ -35,6 +35,8 @@ hospitalized = int(mojimoji.zen_to_han(
 severe = int(mojimoji.zen_to_han(re.search(r"重症者 (.+?)人", summary).group(1)))
 # 無症状・軽症・中等症
 mild = hospitalized - severe
+# 宿泊療養
+lodging = int(mojimoji.zen_to_han(re.search(r"宿泊療養施設入所者数(.+?)人", summary).group(1)))
 # 死亡
 death = int(mojimoji.zen_to_han(re.search(r"死亡(.+?)人", summary).group(1)))
 # 退院
@@ -59,6 +61,10 @@ data["main_summary"] = {
                     "value":  severe
                 }
             ]
+        },
+        {
+            "attr": "宿泊療養",
+            "value":  lodging
         },
         {
             "attr": "死亡",

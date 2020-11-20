@@ -38,34 +38,46 @@
                   <br />
                   {{ $t('中等症') }}
                   </span>
-                  <span>
+                  <span v-if="無症状軽症中等症 !== null">
                     <strong>{{ 無症状軽症中等症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
                   </span>
+                  <span v-else> --- </span>
                 </div>
               </div>
             </li>
             <li :class="[$style.box, $style.short, $style.severe]">
               <div :class="$style.pillar">
                 <div :class="$style.content">
-                  <span>
-                  {{ $t('重症') }}
-                  </span>
-                  <span>
+                  <span>{{ $t('重症') }}</span>
+                  <span v-if="重症 !== null">
                     <strong>{{ 重症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
                   </span>
+                  <span v-else> --- </span>
                 </div>
               </div>
             </li>
           </ul>
         </li>
+        <li :class="[$style.box, $style.staying]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('宿泊療養')" />
+              <!-- eslint-enable vue/no-v-html-->
+              <span v-if="宿泊療養 !== null">
+                <strong>{{ 宿泊療養 }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+              <span v-else> --- </span>
+            </div>
+          </div>
+        </li>
         <li :class="[$style.box, $style.deceased]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>
-              {{ $t('死亡') }}
-               </span>
+              <span>{{ $t('死亡') }}</span>
               <span>
                 <strong>{{ 死亡 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -77,7 +89,8 @@
           <div :class="$style.pillar">
             <div :class="$style.content">
               <span>
-              {{ $t('退院') }}
+                {{ $t('退院') }}・
+                <br />{{ $t('療養解除') }}
               </span>
               <span>
                 <strong>{{ 退院 }}</strong>
@@ -93,7 +106,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
   props: {
@@ -110,6 +122,10 @@ export default Vue.extend({
       required: true
     },
     重症: {
+      type: Number,
+      required: true
+    },
+    宿泊療養: {
       type: Number,
       required: true
     },
@@ -152,9 +168,7 @@ export default Vue.extend({
 $default-bdw: 3px;
 $default-boxh: 150px;
 $default-boxdiff: 35px;
-
 // .container > .box > (.group > .box > ...) .pillar > .content
-
 .container {
   width: 100%;
   display: flex;
@@ -162,18 +176,15 @@ $default-boxdiff: 35px;
   box-sizing: border-box;
   color: $green-1;
   line-height: 1.35;
-
   * {
     box-sizing: border-box;
   }
   // override default styles
   padding-left: 0 !important;
-
   ul {
     padding-left: 0;
   }
 }
-
 .pillar {
   display: flex;
   flex-direction: column;
@@ -183,7 +194,6 @@ $default-boxdiff: 35px;
   width: 100%;
   border: $default-bdw solid $green-1;
 }
-
 .group {
   display: flex;
   flex: 0 0 auto;
@@ -192,16 +202,13 @@ $default-boxdiff: 35px;
   border-top: $default-bdw solid $green-1;
   border-left: $default-bdw solid $green-1;
 }
-
 .box {
   display: flex;
-
   &.parent {
     border-top: $default-bdw solid $green-1;
     border-left: $default-bdw solid $green-1;
     position: relative;
     padding-top: $default-boxdiff - $default-bdw * 2;
-
     &::after {
       content: '';
       display: block;
@@ -211,7 +218,6 @@ $default-boxdiff: 35px;
       height: $default-boxdiff - $default-bdw - 2;
       border-left: $default-bdw solid $green-1;
     }
-
     > .pillar {
       margin-top: -($default-boxdiff - $default-bdw * 2);
       border-top: none;
@@ -219,44 +225,37 @@ $default-boxdiff: 35px;
       border-left: none;
     }
   }
-
   &.confirmed {
     width: 100%;
-
     > .pillar {
       // [6列] 1/6
       width: calc((100% + #{$default-bdw} * 2) / 6 - #{$default-bdw} * 3);
     }
-
     > .group {
       // [6列] 5/6
       width: calc((100% + #{$default-bdw} * 2) / 6 * 5 + #{$default-bdw});
     }
   }
-
   &.hospitalized {
     margin-left: $default-bdw;
     // [5列] 3/5
     width: calc(100% / 5 * 3 - #{$default-bdw});
-
     > .pillar {
       // [3列] 1/3
       width: calc((100% + #{$default-bdw} * 2) / 3 - #{$default-bdw} * 3);
     }
-
     > .group {
       // [3列] 2/3
       width: calc((100% + #{$default-bdw} * 2) / 3 * 2 + #{$default-bdw});
     }
   }
-
   &.minor,
   &.severe {
     margin-left: $default-bdw;
     // [2列] 1/2
     width: calc(100% / 2 - #{$default-bdw});
   }
-
+  &.staying,
   &.deceased,
   &.recovered {
     margin-left: $default-bdw;
@@ -264,7 +263,6 @@ $default-boxdiff: 35px;
     width: calc(100% / 5 - #{$default-bdw});
   }
 }
-
 .content {
   min-height: $default-boxh;
   padding: 10px 2px;
@@ -272,16 +270,13 @@ $default-boxdiff: 35px;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-
   > span {
     display: block;
-
+    width: 100%;
     @include font-size(16);
-
     &:last-child {
       margin-top: 0.1em;
     }
-
     &:not(:last-child) {
       word-break: break-all;
     }
@@ -289,12 +284,10 @@ $default-boxdiff: 35px;
   span strong {
     @include font-size(18);
   }
-
   span.unit {
     @include font-size(16);
   }
 }
-
 @function px2vw($px, $vw: 0) {
   @if $vw > 0 {
     @return ceil($px / $vw * 100000vw) / 1000;
@@ -302,18 +295,15 @@ $default-boxdiff: 35px;
     @return $px * 1px;
   }
 }
-
 @mixin override($vw, $bdw, $fz, $boxh, $boxdiff) {
   .pillar {
     border-width: px2vw($bdw, $vw);
   }
-
   .group {
     padding-top: px2vw($bdw, $vw);
     border-top-width: px2vw($bdw, $vw);
     border-left-width: px2vw($bdw, $vw);
   }
-
   .content {
     > span {
       @include font-size($fz);
@@ -321,65 +311,54 @@ $default-boxdiff: 35px;
     span strong {
       @include font-size($fz + 2);
     }
-
     span.unit {
       @include font-size($fz);
     }
   }
-
   .box {
     &.parent {
       border-top-width: px2vw($bdw, $vw);
       border-left-width: px2vw($bdw, $vw);
       padding-top: px2vw($boxdiff, $vw) - px2vw($bdw, $vw) * 2;
-
       &::after {
         height: px2vw($boxdiff - $bdw, $vw);
         border-left-width: px2vw($bdw, $vw);
       }
-
       > .pillar {
         margin-top: px2vw((-($boxdiff - $bdw * 2)), $vw);
       }
     }
-
     &.confirmed {
       > .pillar {
         width: calc(
           (100% + #{px2vw($bdw, $vw)} * 2) / 6 - #{px2vw($bdw, $vw)} * 3
         );
       }
-
       > .group {
         width: calc(
           (100% + #{px2vw($bdw, $vw)} * 2) / 6 * 5 + #{px2vw($bdw, $vw)}
         );
       }
     }
-
     &.hospitalized {
       margin-left: px2vw($bdw, $vw);
       width: calc(100% / 5 * 3 - #{px2vw($bdw, $vw)});
-
       > .pillar {
         width: calc(
           (100% + #{px2vw($bdw, $vw)} * 2) / 3 - #{px2vw($bdw, $vw)} * 3
         );
       }
-
       > .group {
         width: calc(
           (100% + #{px2vw($bdw, $vw)} * 2) / 3 * 2 + #{px2vw($bdw, $vw)}
         );
       }
     }
-
     &.minor,
     &.severe {
       margin-left: px2vw($bdw, $vw);
       width: calc(100% / 2 - #{px2vw($bdw, $vw)});
     }
-
     &.deceased,
     &.recovered {
       margin-left: px2vw($bdw, $vw);
@@ -387,36 +366,29 @@ $default-boxdiff: 35px;
     }
   }
 }
-
 // variables.scss Breakpoints: huge (1440)
 @include lessThan(1440) {
   @include override(1440, 3, 15, 150, 35);
 }
-
 // Vuetify Breakpoints: Large (1264)
 @include lessThan(1263) {
   @include override(1263, 2, 13, 107, 24);
 }
-
 // variables.scss Breakpoints: large (1170)
 @include lessThan(1170) {
   @include override(1170, 2, 13, 107, 24);
 }
-
 // Vuetify Breakpoints: Small (960)
 @include lessThan(959) {
   @include override(960, 4, 14, 180, 40);
 }
-
 @include lessThan(767) {
   @include override(960, 3, 14, 180, 40);
 }
-
 // Vuetify Breakpoints: Extra Small (600)
 @include lessThan(600) {
   @include override(600, 3, 14, 150, 35);
 }
-
 @include lessThan(420) {
   @include override(600, 2, 12, 150, 35);
 }
