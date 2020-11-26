@@ -3,7 +3,7 @@
     <div class="Flow-Heading">
       <CovidIcon aria-hidden="true" />
       <page-header class="Flow-Heading-Title">
-        {{ $t('新型コロナウイルス感染症が心配なときに') }}
+        {{ $t('新型コロナウイルス感染症が心配なときに(※このページは現在更新されていません)') }}
       </page-header>
     </div>
     <div>
