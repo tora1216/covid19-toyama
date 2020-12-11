@@ -55,36 +55,6 @@
         <a class="SideNavigation-BanerLink" href="http://opendata.pref.toyama.jp/" target="_blank" rel="noopener">
           <img src="/bnr-toyama-opendata.png" :alt="$t('富山県オープンデータポータルサイト')">
         </a>
-        <a class="SideNavigation-BanerLink" href="http://www.pref.toyama.jp/cms_sec/1118/kj00022311.html" target="_blank" rel="noopener">
-          <img src="/bnr-make-toyama-style.png" :alt="$t('MAKE TOYAMA STYLE')">
-        </a>
-        <a class="SideNavigation-BanerLink" href="https://sdgs.city.toyama.lg.jp/" target="_blank" rel="noopener">
-          <img src="/bnr-sdgs-toyama.png" :alt="$t('SDGs TOYAMA')">
-        </a>
-        <small class="SideNavigation-Copyright">
-          &copy; 2020
-          <a
-            :href="$t('https://tera-chan.com')"
-            target="_blank"
-            class="SideNavigation-Link"
-          >
-            {{ $t('Terachan') }}
-          </a>
-          All Rights Reserved.
-          <br />
-          {{ $t('Terachanは、富山市SDGsサポーターに登録しています。') }}
-          <br />
-          {{ $t('このサイトの内容物は') }}
-          <a
-            :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
-            target="_blank"
-            rel="license"
-            class="SideNavigation-Link"
-          >
-            {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
-          </a>
-          {{ $t('の下に提供されています。') }}
-        </small>
         <div class="SideNavigation-Social">
           <a
             href="https://line.me/R/ti/p/%40925tfblm"
@@ -141,6 +111,36 @@
             </picture>
           </a>
         </div>
+        <a class="SideNavigation-BanerLink" href="http://www.pref.toyama.jp/cms_sec/1118/kj00022311.html" target="_blank" rel="noopener">
+          <img src="/bnr-make-toyama-style.png" :alt="$t('MAKE TOYAMA STYLE')">
+        </a>
+        <a class="SideNavigation-BanerLink" href="https://sdgs.city.toyama.lg.jp/" target="_blank" rel="noopener">
+          <img src="/bnr-sdgs-toyama.png" :alt="$t('SDGs TOYAMA')">
+        </a>
+        <small class="SideNavigation-Copyright">
+          &copy; 2020
+          <a
+            :href="$t('https://tera-chan.com')"
+            target="_blank"
+            class="SideNavigation-Link"
+          >
+            {{ $t('Terachan') }}
+          </a>
+          All Rights Reserved.
+          <br />
+          {{ $t('Terachanは、富山市SDGsサポーターに登録しています。') }}
+          <br />
+          {{ $t('このサイトの内容物は') }}
+          <a
+            :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
+            target="_blank"
+            rel="license"
+            class="SideNavigation-Link"
+          >
+            {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
+          </a>
+          {{ $t('の下に提供されています。') }}
+        </small>
       </footer>
     </div>
   </div>
@@ -386,7 +386,7 @@ export default Vue.extend({
 
 .SideNavigation-Social {
   display: flex;
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .SideNavigation-SocialLink {
