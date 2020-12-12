@@ -18,7 +18,7 @@ soup = BeautifulSoup(r.content, "html.parser")
 file_list = soup.find("div", id="file")
 link = file_list.find(
     "a", text="強化・緩和の判断指標（直近１週間平均）の推移").get("href")
-df_status = pd.read_excel(link, header=None , index_col=None)
+df_status = pd.read_excel(link, header=None, index_col=None, engine="openpyxl")
 df_status = df_status.iloc[2:10, 3:].fillna("-")
 df_status = df_status.T
 df_status = df_status.sort_index(ascending=False)

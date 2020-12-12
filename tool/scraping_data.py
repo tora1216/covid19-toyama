@@ -81,7 +81,7 @@ data["main_summary"] = {
 file_list = soup.find("div", id="file")
 link = file_list.find(
     "a", text="富山県内における新型コロナウイルス感染症の発生状況一覧（Excelファイル）").get("href")
-df_kanjya = pd.read_excel(link, skiprows=2)
+df_kanjya = pd.read_excel(link, skiprows=2, engine="openpyxl")
 
 # エクセル内データを定義書準拠形式に変換
 df_kanjya.rename(columns={"県番号": "No"}, inplace=True)
