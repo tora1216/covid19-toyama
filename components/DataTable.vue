@@ -4,7 +4,7 @@
       <span />
     </template>
     <template v-slot:description>
-      {{ $t('（注）No406・No407・No425の事例は、患者発生届が取り下げられている') }}
+      {{ $t('（注）患者発生届が取り下げられた事例は属性が空白(-)となっている') }}
     </template>
     <v-data-table
       :ref="'displayedTable'"
