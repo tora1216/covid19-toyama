@@ -22,6 +22,7 @@
   "富山県主催等 中止又は延期するイベント等": "Các sự kiện công cộng được hủy bỏ hoặc trì hoãn",
   "知事からのメッセージ": "Thông điệp từ Thống đốc",
   "富山県公式ホームページ": "Trang chủ chính thức của chính quyền tỉnh Toyama",
+  "Terachanは、富山市SDGsサポーターに登録しています。": "Tera-chan được đăng ký là người ủng hộ các SDG của Thành phố Toyama.",
   "このサイトの内容物は": "Nội dung của trang web này ",
   "クリエイティブ・コモンズ 表示 4.0 ライセンス": "Được cung cấp theo Giấy phép Creative Commons Attribution 4.0. ",
   "の下に提供されています。": "",
@@ -103,10 +104,14 @@
   "軽症": "Nhẹ",
   "中等症": "Trung bình",
   "重症": "Triệu chứng nặng",
+  "宿泊療養": "Phục hồi tại các khách sạn được chỉ định",
   "死亡": "Tử vong",
   "退院": "Xuất viện",
+  "療養解除": "Khôi phục hoàn thành",
 
   "検査実施状況": "Kiểm tra trạng thái xét nghiệm",
+  "（注）医療機関で実施したPCR検査・抗原検査も含む": "(Lưu ý) Bao gồm xét nghiệm PCR và xét nghiệm kháng nguyên được thực hiện tại các cơ sở y tế",
+  "（注）抗原検査分は含まれていない": "(Lưu ý) Kiểm tra kháng nguyên không được bao gồm",
   "検査陽性率": "Tỷ lệ dương tính của các xét nghiệm được tiến hành",
   "実施件数": "Số lượng xét nghiệm được thực hiện",
   "実施人数": "Số người kiểm tra",
@@ -115,6 +120,7 @@
   "陰性人数": "Âm tính",
 
   "陽性患者の属性": "Đặc điểm các ca dương tính",
+  "（注）患者発生届が取り下げられた事例は属性が空白(-)となっている": "(Lưu ý) Thuộc tính để trống trong trường hợp báo cáo bùng phát bệnh nhân được rút lại.",
   "判明日": "Ngày",
   "居住地": "Nơi cư trú",
   "年代": "Tuổi",
@@ -208,7 +214,7 @@
 
   "新型コロナウイルス感染症に関する一般相談件数": "Số lượng người liên hệ trao đổi về dịch Covid-19 ( Công dân bình thường )",
 
-  "帰国者・接触者相談センターへの相談件数": "Số lượng người liên hệ trao đổi về dịch Covid-19 ( Công dân sau khi về nước hoặc có tiếp xúc với người bị nhiễm )",
+  "受診・相談センターへの相談件数": "Số cuộc gọi đến trung tâm khám / tư vấn",
 
   "県内の医療提供体制マップ": "Bản đồ hệ thống dịch vụ y tế ở Toyama",
   "（注）すべての入院病床を有する医療機関の情報を網羅しているものではない": "(Lưu ý) Không phải tất cả thông tin về tất cả các cơ sở y tế có giường đều được đề cập",

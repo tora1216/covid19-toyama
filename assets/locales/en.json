@@ -22,6 +22,7 @@
   "富山県主催等 中止又は延期するイベント等": "Cancellation or postponement of events held by the Toyama Prefecture",
   "知事からのメッセージ": "Message from Governor on COVID-19",
   "富山県公式ホームページ": "Official website of the Toyama Prefecture",
+  "Terachanは、富山市SDGsサポーターに登録しています。": "Terachan is registered as a Toyama City SDGs supporter.",
   "このサイトの内容物は": "Content on This Site is Licensed Under a",
   "クリエイティブ・コモンズ 表示 4.0 ライセンス": " Creative Commons Attribution 4.0 International License",
   "の下に提供されています。": " provided under ",
@@ -146,10 +147,14 @@
   "軽症": "Mild",
   "中等症": "Moderate",
   "重症": "Severe",
+  "宿泊療養": "Recovering at designated hotels",
   "死亡": "Deaths",
   "退院": "Discharged",
+  "療養解除": "Recovery completed",
 
   "検査実施状況": "Status of conducted tests",
+  "（注）医療機関で実施したPCR検査・抗原検査も含む": "(Note) Including PCR tests and antigen tests conducted at medical institutions",
+  "（注）抗原検査分は含まれていない": "(Note) Antigen test is not included",
   "検査陽性率": "Positive rate of conducted tests",
   "実施件数": "Number of case tested",
   "実施人数": "Number of people tested",
@@ -158,6 +163,7 @@
   "陰性人数": "Negative",
 
   "陽性患者の属性": "Details of patients testing positive",
+  "（注）患者発生届が取り下げられた事例は属性が空白(-)となっている": "(Note) The attribute is blank in the case where the patient outbreak report was withdrawn.",
   "判明日": "Date",
   "居住地": "Residence",
   "年代": "Age",
@@ -258,7 +264,7 @@
 
   "新型コロナウイルス感染症に関する一般相談件数": "Number of general calls about Novel Coronavirus",
 
-  "帰国者・接触者相談センターへの相談件数": "Number of calls to the consultation center for returnees and those in close contact with them",
+  "受診・相談センターへの相談件数": "Number of calls to the examination / consultation center",
 
   "富山駅周辺の人口の推移（参考値）": "Changes of population around Toyama Station (Reference value)",
   "（注）NTTドコモの携帯電話ネットワークのしくみを使用して作成される、人口の統計情報を元にした直近1週間の増減率": "(Note) Rate of increase/decrease for the most recent week based on demographic information created using the NTT docomo mobile phone network mechanism",
