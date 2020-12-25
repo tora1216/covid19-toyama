@@ -156,7 +156,7 @@ $tinySmall: 420;
 }
 .RelaxationStep {
   @include card-container();
-  padding: 10px;
+  padding: 22px;
   margin-bottom: 20px;
   .RelaxationStep-heading {
     display: flex;

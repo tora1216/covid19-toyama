@@ -35,7 +35,7 @@ $tinySmall: 420;
 }
 .WhatsNew {
   @include card-container();
-  padding: 10px;
+  padding: 22px;
   margin-bottom: 20px;
   .WhatsNew-heading {
     display: flex;

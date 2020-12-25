@@ -47,7 +47,7 @@ $tinySmall: 420;
 }
 .ToyamaAlert {
   @include card-container();
-  padding: 10px;
+  padding: 22px;
   margin-bottom: 20px;
   .ToyamaAlert-heading {
     display: flex;
