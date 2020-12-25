@@ -57,7 +57,7 @@
         </a>
         <div class="SideNavigation-Social">
           <a
-            href="https://line.me/R/ti/p/%40925tfblm"
+            href="https://lin.ee/lMbYA9u"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
