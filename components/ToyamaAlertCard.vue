@@ -83,9 +83,13 @@ $tinySmall: 420;
     .ToyamaAlert-block {
       flex: 1 1 100%;
       padding: 12px;
+      p {
+        margin-bottom: 0;
+      }
     }
     .ToyamaAlert-block-detail {
-      border: 3px solid #ad2121;
+      background-color: #ad2121;
+      color: #fff;
       border-radius: 3px;
     }
   }
