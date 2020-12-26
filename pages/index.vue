@@ -28,8 +28,10 @@
       <confirmed-cases-number-card />
       <confirmed-cases-attributes-card />
       <patients-by-residence-card />
+      <!--
       <patients-by-age-card />
       <patients-by-gender-card />
+      -->
       <dead-persons-number-card />
       <discharged-persons-number-card />
       <tested-cases-details-card />
