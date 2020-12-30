@@ -12,12 +12,6 @@
     <patients-by-residence-card
       v-else-if="this.$route.params.card == 'number-of-confirmed-cases-by-residence'"
     />
-    <patients-by-age-card
-      v-else-if="this.$route.params.card == 'number-of-confirmed-cases-by-age'"
-    />
-    <patients-by-gender-card
-      v-else-if="this.$route.params.card == 'number-of-confirmed-cases-by-gender'"
-    />
     <dead-persons-number-card
       v-else-if="this.$route.params.card == 'number-of-dead-persons'"
     />
@@ -57,8 +51,6 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
-import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
-import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 import DeadPersonsNumberCard from '@/components/cards/DeadPersonsNumberCard.vue'
 import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNumberCard.vue'
 
@@ -76,8 +68,6 @@ export default {
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
     PatientsByResidenceCard,
-    PatientsByAgeCard,
-    PatientsByGenderCard,
     DeadPersonsNumberCard,
     DischargedPersonsNumberCard,
     TestedCasesDetailsCard,
@@ -106,14 +96,6 @@ export default {
       case 'patients-by-residence':
         title = this.$t('陽性患者数(居住地別)')
         updatedAt = Data.patients_by_residence.date
-        break
-      case 'patients-by-age':
-        title = this.$t('陽性患者数(年代別)')
-        updatedAt = Data.patients_by_age.date
-        break
-      case 'patients-by-gender':
-        title = this.$t('陽性患者数(性別)')
-        updatedAt = Data.patients_by_gender.date
         break
       case 'number-of-dead-persons':
         title = this.$t('死亡者数')
