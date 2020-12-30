@@ -28,10 +28,6 @@
       <confirmed-cases-number-card />
       <confirmed-cases-attributes-card />
       <patients-by-residence-card />
-      <!--
-      <patients-by-age-card />
-      <patients-by-gender-card />
-      -->
       <dead-persons-number-card />
       <discharged-persons-number-card />
       <tested-cases-details-card />
@@ -59,8 +55,6 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
-import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
-import PatientsByGenderCard from '@/components/cards/PatientsByGenderCard.vue'
 import DeadPersonsNumberCard from '@/components/cards/DeadPersonsNumberCard.vue'
 import DischargedPersonsNumberCard from '@/components/cards/DischargedPersonsNumberCard.vue'
 import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
@@ -81,8 +75,6 @@ export default Vue.extend({
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
     PatientsByResidenceCard,
-    PatientsByAgeCard,
-    PatientsByGenderCard,
     DeadPersonsNumberCard,
     DischargedPersonsNumberCard,
     TestedCasesDetailsCard,
