@@ -5,7 +5,7 @@
       :title-id="'attributes-of-confirmed-cases'"
       :chart-data="patientsTable"
       :chart-option="{}"
-      :date="Data.patients.date"
+      :date="PatientsData.date"
       :info="sumInfoOfPatients"
       :url="'http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html'"
       :custom-sort="customSort"
@@ -28,7 +28,7 @@ export default {
     // 感染者数グラフ
     const patientsGraph = formatGraph(Data.patients_summary.data)
     // 感染者数
-    const patientsTable = formatTable(PatientsData)
+    const patientsTable = formatTable(PatientsData.data)
 
     const sumInfoOfPatients = {
       lText: patientsGraph[
@@ -74,6 +74,7 @@ export default {
 
     const data = {
       Data,
+      PatientsData,
       patientsTable,
       sumInfoOfPatients
     }
