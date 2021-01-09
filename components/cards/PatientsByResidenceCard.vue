@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Data from '@/data/data.json'
+import Data from '@/data/patients.json'
 import formatGraph from '@/utils/formatGraph'
 import HorizontalBarChart from '@/components/HorizontalBarChart.vue'
 export default {
@@ -42,10 +42,10 @@ export default {
       this.$t('富山県外')
     ]
     return {
-      updatedAt: Data.patients.date,
+      updatedAt: Data.date,
       graphLabels,
       // 陽性患者の詳細
-      patientsGraph: Data.patients.data
+      patientsGraph: Data.data
     }
   }
 }
