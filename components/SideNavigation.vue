@@ -194,6 +194,14 @@ export default Vue.extend({
           link: this.localePath('/maps')
         },
         {
+          title: this.$t('富山県新型コロナウイルス感染症対策本部会議'),
+          link: 'http://www.pref.toyama.jp/cms_sec/1205/kj00021555.html'
+        },
+        {
+          title: this.$t('富山県新型コロナウイルス感染症支援情報ナビ'),
+          link: 'https://tera-chan.com/covid19-toyama/supportnavi/'
+        },
+        {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
         }
