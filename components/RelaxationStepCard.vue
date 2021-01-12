@@ -64,7 +64,7 @@
             </td>
             <td class="rowItem">
                 100<span class="unit">{{ $t('人') }}</span><span class="range">({{ $t('未満') }})</span></td>
-            <td class="rowItem cellToday">
+            <td class="rowItem cellToday" :class="items[0]['入院者数'] >= 100 ? 'cellHigh' : ''">
                 {{ items[0]['入院者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
         <tr class="border">
@@ -76,7 +76,7 @@
             </td>
             <td class="rowItem">
                 30<span class="unit">%</span><span class="range">({{ $t('未満') }})</span></td>
-            <td class="rowItem cellToday">
+            <td class="rowItem cellToday" :class="items[0]['重症病床稼働率'] >= 30 ? 'cellHigh' : ''">
                 {{ items[0]['重症病床稼働率'] }}<span class="unit">%</span></td>
         </tr>
         <tr class="border">
@@ -91,7 +91,7 @@
             </td>
             <td class="rowItem">
                 2.5<span class="unit">{{ $t('人') }}</span><span class="range">({{ $t('未満') }})</span></td>
-            <td class="rowItem cellToday">
+            <td class="rowItem cellToday" :class="items[0]['新規陽性者数'] >= 2.5 ? 'cellHigh' : ''">
                 {{ items[0]['新規陽性者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
         <tr class="border">
@@ -103,7 +103,7 @@
             </td>
             <td class="rowItem">
                 1<span class="unit">{{ $t('人') }}</span><span class="range">({{ $t('未満') }})</span></td>
-            <td class="rowItem cellToday">
+            <td class="rowItem cellToday" :class="items[0]['感染経路不明者数'] >= 1 ? 'cellHigh' : ''">
                 {{ items[0]['感染経路不明者数'] }}<span class="unit">{{ $t('人') }}</span></td>
         </tr>
         <tr class="border">
