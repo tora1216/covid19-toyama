@@ -20,10 +20,10 @@
       </div>
       <div class="RelaxationStep-block RelaxationStep-block-detail">
         <ul class="RelaxationStep-steps-list">
-          <li class="RelaxationStep-steps-item active">
+          <li class="RelaxationStep-steps-item">
             Stage1
           </li>
-          <li class="RelaxationStep-steps-item">
+          <li class="RelaxationStep-steps-item active">
             Stage2
           </li>
           <li class="RelaxationStep-steps-item">
@@ -31,7 +31,7 @@
           </li>
         </ul>
         <p class="RelaxationStep-changed-text">
-          {{ $t('現在 Stage1 を適用中です') }}
+          {{ $t('現在 Stage2 を適用中です') }}
         </p>
       </div>
     </div>
@@ -378,7 +378,7 @@ $tinySmall: 420;
 
     .RelaxationStep-changed-text {
       font-weight: bold;
-      color: $green-1;
+      color: #fdbe40;
       text-align: center;
       @include font-size(16);
     }
