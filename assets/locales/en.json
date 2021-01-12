@@ -49,6 +49,8 @@
   "ロードマップについて": "About roadmap",
   "富山県では、感染拡大防止のための措置として外出自粛や休業要請を定めた3段階のステージを設定しています。ステージの強化や緩和は、医療提供体制や感染状況等の判断指標を踏まえて行います。": "Toyama Prefecture has set three stages as measures to prevent the spread of infection. It includes restrictions on going out and leave requests. The stage will be changed based on the medical service status and the infection status.",
   "現在 Stage1 を適用中です": "Currently applying Stage1",
+  "現在 Stage2 を適用中です": "Currently applying Stage2",
+  "現在 Stage3 を適用中です": "Currently applying Stage3",
   "判断指標": "Judgment indexes",
   "基準": "Criteria",
   "現状": "status",
