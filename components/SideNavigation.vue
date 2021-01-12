@@ -16,7 +16,6 @@
             :alt="$t('富山県')"
           />
           <div class="SideNavigation-HeaderText">
-            {{ $t('富山県公認') }}<br />
             {{ $t('新型コロナウイルス感染症') }}<br />
             {{ $t('対策サイト') }}
           </div>
