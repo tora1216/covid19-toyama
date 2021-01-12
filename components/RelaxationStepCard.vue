@@ -108,7 +108,7 @@
         </tr>
         <tr class="border">
             <td rowspan="2" class="rowTitleSub">
-                ({{ $t('参考指標') }})
+                {{ $t('参考指標') }}
             </td>
             <td class="rowTitleNumber">
                 ⑤
@@ -349,13 +349,31 @@ $tinySmall: 420;
             z-index: 10;
         }
 
-        .RelaxationStep-steps-list li.active {
+        .RelaxationStep-steps-list li.active:nth-child(1) {
             color: #fff !important;
             background: #00a040 !important;
         }
         
-        .RelaxationStep-steps-list li.active:after {
+        .RelaxationStep-steps-list li.active:nth-child(1):after {
             border-color: transparent transparent transparent #00a040;
+        }
+
+        .RelaxationStep-steps-list li.active:nth-child(2) {
+            color: #fff !important;
+            background: #fdbe40 !important;
+        }
+        
+        .RelaxationStep-steps-list li.active:nth-child(2):after {
+            border-color: transparent transparent transparent #fdbe40;
+        }
+
+        .RelaxationStep-steps-list li.active:nth-child(3) {
+            color: #fff !important;
+            background: #fa1629 !important;
+        }
+        
+        .RelaxationStep-steps-list li.active:nth-child(3):after {
+            border-color: transparent transparent transparent #fa1629;
         }
 
     .RelaxationStep-changed-text {

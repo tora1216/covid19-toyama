@@ -2,7 +2,7 @@
   <span :class="$style.linkButton">
     <external-link
       :class="$style.textLink"
-      url="http://www.pref.toyama.jp/cms_sec/1205/kj00022462.html"
+      url="http://www.pref.toyama.jp/cms_sec/1205/kj00022481.html"
     >
       <span :class="$style.text">
         {{ $t('ロードマップについて') }}
