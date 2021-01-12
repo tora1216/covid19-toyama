@@ -118,7 +118,7 @@
             </td>
             <td class="rowItem">
                 7<span class="unit">%</span><span class="range">({{ $t('未満') }})</span></td>
-            <td class="rowItem cellToday" :class='{"cellHigh", items[0]['陽性率'] >= 7}'>
+            <td class="rowItem cellToday" :class="items[0]['陽性率'] >= 7 ? 'cellHigh' : ''">
                 {{ items[0]['陽性率'] }}<span class="unit">%</span></td>
         </tr>
     </tbody>
